@@ -531,13 +531,13 @@
   //  4. In Firebase Console → Realtime Database → Rules, use:
   //     { "rules": { "fishfinder": { ".read": true, ".write": true } } }
   const FIREBASE_CONFIG = {
-    apiKey:            'YOUR_API_KEY',
-    authDomain:        'YOUR_PROJECT.firebaseapp.com',
-    databaseURL:       'https://YOUR_PROJECT-default-rtdb.firebaseio.com',
-    projectId:         'YOUR_PROJECT',
-    storageBucket:     'YOUR_PROJECT.appspot.com',
-    messagingSenderId: 'YOUR_SENDER_ID',
-    appId:             'YOUR_APP_ID',
+    apiKey:            'AIzaSyBi-nz0TTX502uIqyXx5MsohvwHf0H8KAU',
+    authDomain:        'fishfinder-e914a.firebaseapp.com',
+    databaseURL:       'https://fishfinder-e914a-default-rtdb.firebaseio.com',
+    projectId:         'fishfinder-e914a',
+    storageBucket:     'fishfinder-e914a.firebasestorage.app',
+    messagingSenderId: '971130529851',
+    appId:             '1:971130529851:web:2aec86db0aaabcd8df541e',
   };
   const TRACKING_ENABLED = FIREBASE_CONFIG.databaseURL !== 'https://YOUR_PROJECT-default-rtdb.firebaseio.com';
 
@@ -668,7 +668,7 @@
 
       '[Author(s)] ([Year]). FISHFINDER: A web-based validator for scientific fish names in ' +
       'manuscript text. [Journal / Technical Note]. [DOI]. ' +
-      'Available at: https://zdzbinden.github.io/fish-name-checker/',
+      'Available at: https://zdzbinden.github.io/FISHFINDER/',
     ].join('\n\n');
 
     navigator.clipboard.writeText(text).then(() => {
