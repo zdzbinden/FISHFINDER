@@ -221,6 +221,9 @@ textarea::-webkit-scrollbar-thumb   { background: var(--lcd-muted); border-radiu
   position: relative;
   z-index: 2;
 }
+.loading[hidden] {
+  display: none;
+}
 .loading-spinner {
   flex-shrink: 0;
   width: 14px;
