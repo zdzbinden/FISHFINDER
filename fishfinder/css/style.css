@@ -1,0 +1,774 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   FISHFINDER — Lowrance-inspired retro fish finder UI
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Variables ─────────────────────────────────────────────────────────────── */
+:root {
+  /* Device housing (charcoal gray, like the Lowrance body) */
+  --housing:       #50545a;
+  --housing-dark:  #3e4146;
+  --housing-light: #62666c;
+  --housing-edge:  #2e3136;
+
+  /* LCD screen (muted sage green, classic fish finder) */
+  --lcd:         #8d9b76;
+  --lcd-dark:    #7d8b66;
+  --lcd-darker:  #6d7b56;
+  --lcd-text:    #0e1a04;
+  --lcd-muted:   #3a4a28;
+
+  /* Highlight colors — tuned for readability on LCD green */
+  --hl-valid-bg:       #9ab882;
+  --hl-valid-text:     #1a3a08;
+  --hl-changed-bg:     #82a8c8;
+  --hl-changed-text:   #082840;
+  --hl-outdated-bg:    #c8b060;
+  --hl-outdated-text:  #483800;
+  --hl-misspelled-bg:  #c88080;
+  --hl-misspelled-text:#480808;
+  --hl-unknown-bg:     #a080b8;
+  --hl-unknown-text:   #280838;
+  --hl-common-bg:      #80b8a8;
+  --hl-common-text:    #083830;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #2a2520;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DEVICE HOUSING
+   ══════════════════════════════════════════════════════════════════════════════ */
+.device {
+  background: linear-gradient(175deg, var(--housing-light) 0%, var(--housing) 40%, var(--housing-dark) 100%);
+  border-radius: 14px;
+  border: 2px solid var(--housing-edge);
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.5),
+    0 4px 12px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+  max-width: 920px;
+  width: 100%;
+  padding: 1.25rem 1.5rem 1rem;
+}
+
+/* ── Brand header ──────────────────────────────────────────────────────────── */
+.device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.25rem 0.5rem 0.75rem;
+}
+
+.brand {
+  font-family: "Arial Black", Impact, "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: #e8eaed;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.model {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #90949a;
+  letter-spacing: 0.05em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   SCREEN
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Dark bezel frame (recessed look) */
+.screen-bezel {
+  background: #2a2e34;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow:
+    inset 2px 2px 8px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* LCD surface */
+.screen {
+  position: relative;
+  background: var(--lcd);
+  border-radius: 3px;
+  padding: 1.25rem;
+  color: var(--lcd-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Scanline overlay — subtle horizontal lines for LCD feel */
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.03) 3px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content sits above scanlines visually but remains interactive */
+.screen-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Screen labels (LCD readout style) ─────────────────────────────────────── */
+.screen-label {
+  display: block;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--lcd-muted);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.input-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 0.3rem;
+}
+
+.input-hint {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.65rem;
+  color: var(--lcd-muted);
+  opacity: 0.7;
+  letter-spacing: 0.03em;
+}
+
+.file-name {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.65rem;
+  color: var(--lcd-muted);
+  letter-spacing: 0.03em;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-name:empty { display: none; }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   TEXTAREA (inset LCD area)
+   ══════════════════════════════════════════════════════════════════════════════ */
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  background: var(--lcd-dark);
+  border: 1px solid var(--lcd-darker);
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.15);
+  color: var(--lcd-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+textarea::placeholder {
+  color: var(--lcd-muted);
+  opacity: 0.6;
+}
+textarea:focus {
+  outline: none;
+  border-color: var(--lcd-muted);
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.15), 0 0 0 2px rgba(30,46,16,0.15);
+}
+
+/* LCD-themed scrollbar */
+textarea::-webkit-scrollbar         { width: 8px; }
+textarea::-webkit-scrollbar-track   { background: var(--lcd-darker); }
+textarea::-webkit-scrollbar-thumb   { background: var(--lcd-muted); border-radius: 4px; }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   LOADING / ERROR STATES
+   ══════════════════════════════════════════════════════════════════════════════ */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0 0.75rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--lcd-muted);
+  position: relative;
+  z-index: 2;
+}
+.loading-spinner {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--lcd-darker);
+  border-top-color: var(--lcd-text);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.load-error {
+  padding: 0.8rem;
+  background: var(--lcd-dark);
+  border: 1px solid #8a6a5a;
+  border-radius: 3px;
+  color: #5a2820;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 2;
+}
+.load-error code {
+  background: var(--lcd-darker);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  font-size: 0.85em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESULTS
+   ══════════════════════════════════════════════════════════════════════════════ */
+#results-section {
+  position: relative;
+  z-index: 2;
+}
+
+.results-divider {
+  height: 1px;
+  background: var(--lcd-darker);
+  margin: 1rem 0;
+}
+
+/* ── Legend (LCD status indicators) ────────────────────────────────────────── */
+.legend {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.legend-item {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+.legend-item.valid      { background: var(--hl-valid-bg);      color: var(--hl-valid-text); }
+.legend-item.changed    { background: var(--hl-changed-bg);    color: var(--hl-changed-text); }
+.legend-item.outdated   { background: var(--hl-outdated-bg);   color: var(--hl-outdated-text); }
+.legend-item.misspelled { background: var(--hl-misspelled-bg); color: var(--hl-misspelled-text); }
+.legend-item.unknown    { background: var(--hl-unknown-bg);    color: var(--hl-unknown-text); }
+.legend-item.common     { background: var(--hl-common-bg);     color: var(--hl-common-text); }
+
+/* ── Results grid ──────────────────────────────────────────────────────────── */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.panel-header {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--lcd-muted);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Highlighted text (LCD readout area) ───────────────────────────────────── */
+.highlighted-text {
+  background: var(--lcd-dark);
+  border: 1px solid var(--lcd-darker);
+  border-radius: 3px;
+  padding: 0.75rem 0.85rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+  color: var(--lcd-text);
+}
+
+.highlighted-text::-webkit-scrollbar       { width: 8px; }
+.highlighted-text::-webkit-scrollbar-track { background: var(--lcd-darker); }
+.highlighted-text::-webkit-scrollbar-thumb { background: var(--lcd-muted); border-radius: 4px; }
+
+/* ── Species list (inside highlighted-text container) ──────────────────────── */
+.species-row {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.species-row:last-child { border-bottom: none; }
+
+.species-empty {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.75rem;
+  color: var(--lcd-muted);
+  text-align: center;
+  padding: 1rem;
+}
+
+.species-badge {
+  background: var(--lcd-darker);
+  color: var(--lcd-muted);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  font-family: Consolas, "Courier New", monospace;
+}
+.species-badge:empty { display: none; }
+
+.confirm-hint {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.65rem;
+  color: var(--hl-changed-text);
+  opacity: 0.8;
+  font-style: normal;
+}
+
+/* ── Highlight spans ───────────────────────────────────────────────────────── */
+.hl {
+  border-radius: 2px;
+  padding: 0.05em 0.18em;
+  cursor: help;
+}
+.hl.valid      { background: var(--hl-valid-bg);      color: var(--hl-valid-text); }
+.hl.changed    { background: var(--hl-changed-bg);    color: var(--hl-changed-text);
+                 text-decoration: underline; text-decoration-style: dotted; }
+.hl.outdated   { background: var(--hl-outdated-bg);   color: var(--hl-outdated-text);
+                 text-decoration: underline; text-decoration-style: wavy; }
+.hl.misspelled { background: var(--hl-misspelled-bg); color: var(--hl-misspelled-text);
+                 text-decoration: underline; text-decoration-style: wavy; }
+.hl.unknown    { background: var(--hl-unknown-bg);    color: var(--hl-unknown-text);
+                 text-decoration: underline; text-decoration-style: dotted; }
+.hl.common     { background: var(--hl-common-bg);     color: var(--hl-common-text); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ISSUES TABLE
+   ══════════════════════════════════════════════════════════════════════════════ */
+.issue-badge {
+  background: #7a3838;
+  color: #f0d0d0;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  font-family: Consolas, "Courier New", monospace;
+}
+.issue-badge:empty { display: none; }
+
+.no-issues {
+  padding: 0.6rem 0.8rem;
+  background: var(--hl-valid-bg);
+  color: var(--hl-valid-text);
+  border-radius: 3px;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+#table-wrap {
+  overflow-x: auto;
+  border-radius: 3px;
+  border: 1px solid var(--lcd-darker);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  background: var(--lcd-dark);
+  color: var(--lcd-text);
+}
+th {
+  background: var(--lcd-darker);
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--lcd-muted);
+  color: var(--lcd-muted);
+}
+td {
+  padding: 0.4rem 0.65rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+td.name-cell { font-style: italic; }
+
+/* Status badges — colored pills for readability on LCD */
+.status-valid,
+.status-changed,
+.status-outdated,
+.status-misspelled,
+.status-unknown {
+  display: inline-block;
+  padding: 0.08em 0.4em;
+  border-radius: 2px;
+  font-weight: 700;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+.status-valid      { background: var(--hl-valid-bg);      color: var(--hl-valid-text); }
+.status-changed    { background: var(--hl-changed-bg);    color: var(--hl-changed-text); }
+.status-outdated   { background: var(--hl-outdated-bg);   color: var(--hl-outdated-text); }
+.status-misspelled { background: var(--hl-misspelled-bg); color: var(--hl-misspelled-text); }
+.status-unknown    { background: var(--hl-unknown-bg);    color: var(--hl-unknown-text); }
+.status-common     { background: var(--hl-common-bg);     color: var(--hl-common-text); }
+
+.common-name {
+  color: var(--lcd-muted);
+  font-style: normal;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DEVICE BUTTONS (Lowrance-style physical controls)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 0 0.25rem;
+  flex-wrap: wrap;
+}
+
+.device-btn {
+  background: linear-gradient(180deg, #50545a 0%, #42464c 50%, #36393e 100%);
+  border: 1.5px solid var(--housing-edge);
+  border-radius: 18px;
+  color: #a8b0b8;
+  padding: 0.55rem 1.6rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: all 0.1s;
+  min-width: 80px;
+}
+.device-btn:hover:not(:disabled) {
+  background: linear-gradient(180deg, #5a5e64 0%, #4c5056 50%, #404448 100%);
+  color: #c0c8d0;
+}
+.device-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.3),
+    inset 0 1px 3px rgba(0,0,0,0.2);
+}
+.device-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary button (SCAN) — subtle blue accent like Lowrance branding */
+.device-btn.primary {
+  background: linear-gradient(180deg, #445566 0%, #3a4a5a 50%, #304050 100%);
+  border-color: #283848;
+  color: #a0c8e8;
+}
+.device-btn.primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #4e6070 0%, #445464 50%, #3a4a5a 100%);
+  color: #b0d8f8;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   DEVICE FOOTER
+   ══════════════════════════════════════════════════════════════════════════════ */
+.device-footer {
+  text-align: center;
+  padding: 0.75rem 0.5rem 0.25rem;
+  font-size: 0.65rem;
+  color: #80848a;
+  letter-spacing: 0.01em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   INFO MODAL
+   ══════════════════════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal {
+  background: var(--lcd);
+  border-radius: 6px;
+  border: 2px solid var(--housing-edge);
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  position: relative;
+  padding: 1.5rem;
+}
+.modal::-webkit-scrollbar       { width: 8px; }
+.modal::-webkit-scrollbar-track { background: var(--lcd-darker); }
+.modal::-webkit-scrollbar-thumb { background: var(--lcd-muted); border-radius: 4px; }
+
+.modal-header {
+  font-family: "Arial Black", Impact, "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--lcd-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--lcd-darker);
+  padding-right: 2rem; /* room for close button */
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--lcd-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.modal-close:hover { color: var(--lcd-text); }
+
+.modal-body {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--lcd-text);
+}
+.modal-body p { margin-bottom: 0.6rem; }
+.modal-body h3 {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lcd-muted);
+  margin: 1.1rem 0 0.4rem;
+  border-top: 1px solid var(--lcd-darker);
+  padding-top: 0.6rem;
+}
+.modal-body ol, .modal-body ul {
+  padding-left: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.modal-body li { margin-bottom: 0.25rem; }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   CITATIONS SECTION
+   ══════════════════════════════════════════════════════════════════════════════ */
+.citations-section {
+  max-width: 920px;
+  width: 100%;
+  background: #211f1b;
+  border: 1px solid #3a3630;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.citations-header {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #70746a;
+  margin-bottom: 0.85rem;
+}
+
+.citations-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.citation-entry {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #9a9e94;
+  padding-left: 1.2rem;
+  text-indent: -1.2rem;
+}
+.citation-entry em { font-style: italic; }
+
+.citation-placeholder {
+  color: #6a6e64;
+  font-style: italic;
+  border-left: 2px solid #3a3630;
+  padding-left: 0.75rem;
+  text-indent: 0;
+}
+
+.cite-copy-btn {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #2e2c28 0%, #252320 100%);
+  border: 1px solid #3a3630;
+  border-radius: 4px;
+  color: #80847a;
+  padding: 0.4rem 1rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.cite-copy-btn:hover {
+  background: linear-gradient(180deg, #363430 0%, #2c2a26 100%);
+  color: #a0a498;
+  border-color: #504c48;
+}
+.cite-copy-btn:active {
+  transform: translateY(1px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   USAGE DASHBOARD
+   ══════════════════════════════════════════════════════════════════════════════ */
+.dashboard {
+  max-width: 920px;
+  width: 100%;
+  background: #211f1b;
+  border: 1px solid #3a3630;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem 1rem;
+}
+
+.dashboard-header {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #70746a;
+  margin-bottom: 1rem;
+}
+
+.stats-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card {
+  flex: 1;
+  background: #1a1816;
+  border: 1px solid #2e2c28;
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  text-align: center;
+}
+
+.stat-value {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #a8c080;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.stat-label {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: #565a52;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+}
+
+.usage-map {
+  height: 300px;
+  border-radius: 5px;
+  border: 1px solid #2e2c28;
+  overflow: hidden;
+  background: #1a1816;
+  margin-bottom: 0.6rem;
+  /* Leaflet overrides for dark theme */
+}
+.usage-map .leaflet-container {
+  background: #1a2030;
+}
+
+.dashboard-note {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.58rem;
+  color: #484c44;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-setup-msg {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #565a52;
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  body { padding: 0.5rem; gap: 1rem; }
+  .device { padding: 0.75rem 1rem 0.75rem; border-radius: 10px; }
+  .screen { padding: 0.85rem; }
+  .results-grid { grid-template-columns: 1fr; }
+  .brand { font-size: 1.1rem; }
+  .stats-row { flex-direction: column; }
+  .citations-section, .dashboard { padding: 1rem; }
+}

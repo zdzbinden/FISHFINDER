@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 parse_pdf.py — Extract fish names and metadata from the AFS 8th edition
-"Names of Fishes" Table 1 PDF and write fish-name-checker/data/fish_names.json.
+"Names of Fishes" Table 1 PDF and write fishfinder/data/fish_names.json.
 
 Source: names_of_fishes/Names-of-Fishes-8-Table1.pdf
 This is the table-only PDF distributed by AFS. Each species row uses dot-leader
@@ -26,7 +26,7 @@ except ImportError:
     sys.exit(1)
 
 PDF_PATH    = Path(__file__).parent / "names_of_fishes" / "Names-of-Fishes-8-Table1.pdf"
-OUTPUT_PATH = Path(__file__).parent / "fish-name-checker" / "data" / "fish_names.json"
+OUTPUT_PATH = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 
 # ── Regexes ───────────────────────────────────────────────────────────────────
 

@@ -29,7 +29,7 @@ except ImportError:
     print("Run: uv run --with requests --with beautifulsoup4 python scrape_eschmeyer.py")
     sys.exit(1)
 
-DATA_PATH  = Path(__file__).parent / "fish-name-checker" / "data" / "fish_names.json"
+DATA_PATH  = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 CACHE_PATH = Path(__file__).parent / "eschmeyer_cache.json"
 
 BASE_URL = (

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISHFINDER — Scientific Name Validator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── Info modal ─────────────────────────────────────────────────────────── -->
+<div id="info-modal" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header" id="modal-title">FISHFINDER — HOW TO USE</div>
+    <div class="modal-body">
+      <p><strong>FISHFINDER</strong> validates scientific fish names in manuscript text against the <em>Common and Scientific Names of Fishes from the United States, Canada, and Mexico</em>, 8th edition (Page et al., 2023), supplemented by synonym data from Eschmeyer's Catalog of Fishes.</p>
+
+      <h3>Getting started</h3>
+      <ol>
+        <li>Paste your manuscript text into the <strong>TEXT INPUT</strong> area, or press <strong>LOAD</strong> to upload a .txt, .docx, .xlsx, or .pdf file.</li>
+        <li>Press <strong>SCAN</strong> (or Ctrl+Enter) to analyze the text.</li>
+        <li>Review detected species names in the <strong>SPECIES DETECTED</strong> panel and any flagged issues in the <strong>ISSUES DETECTED</strong> panel.</li>
+        <li>Press <strong>COPY</strong> to copy corrected text to the clipboard — outdated synonyms and misspellings are automatically updated.</li>
+      </ol>
+
+      <h3>Classification codes</h3>
+      <ul>
+        <li><span class="hl valid">VALID</span> &mdash; recognized in the AFS 8th edition</li>
+        <li><span class="hl changed">CHANGED</span> &mdash; valid but revised from the 7th edition; confirm species identity</li>
+        <li><span class="hl outdated">OUTDATED</span> &mdash; known synonym; current valid name shown</li>
+        <li><span class="hl misspelled">MISSPELLED</span> &mdash; close match found; suggestion shown</li>
+        <li><span class="hl unknown">UNKNOWN</span> &mdash; genus recognized but species not in database</li>
+        <li><span class="hl common">COMMON NAME</span> &mdash; English common name detected; scientific equivalent shown</li>
+      </ul>
+
+      <h3>Coverage</h3>
+      <p>Covers ~5,086 species from U.S., Canadian, and Mexican waters (AFS 8th edition) with synonyms from Eschmeyer's Catalog of Fishes. Both freshwater and marine species are included. Scientific names only are validated.</p>
+
+      <h3>Key changes in the 8th edition</h3>
+      <p>Several well-known names were revised. Notably, Largemouth Bass changed from <em>Micropterus salmoides</em> to <em>Micropterus nigricans</em>; <em>Micropterus salmoides</em> now refers exclusively to Florida Bass. Names flagged <span class="hl changed">CHANGED</span> warrant careful review.</p>
+
+      <h3>Privacy</h3>
+      <p>No text you enter is transmitted off your device. Anonymous usage statistics (approximate location from IP address, scan counts) are collected to document tool reach and impact.</p>
+    </div>
+  </div>
+</div>
+
+<div class="device">
+
+  <!-- Brand header — mimics Lowrance top bar -->
+  <div class="device-header">
+    <div class="brand">FISHFINDER</div>
+    <div class="model">FF-8</div>
+  </div>
+
+  <!-- Screen bezel + LCD -->
+  <div class="screen-bezel">
+    <div class="screen">
+
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <span>Loading species database&hellip;</span>
+      </div>
+
+      <div id="load-error" class="load-error" hidden>
+        <strong>SIGNAL LOST</strong> &mdash;
+        Run <code>parse_pdf.py</code> to generate
+        <code>data/fish_names.json</code>, then serve via HTTP
+        (<code>python -m http.server 8080</code>).
+      </div>
+
+      <div class="screen-content">
+
+        <!-- Input area -->
+        <label for="manuscript-text" class="screen-label">TEXT INPUT</label>
+        <textarea
+          id="manuscript-text"
+          rows="14"
+          placeholder="Paste text or load a file&hellip;"
+          spellcheck="false"
+        ></textarea>
+        <div class="input-meta">
+          <span class="input-hint">Ctrl+Enter to scan</span>
+          <span id="file-name" class="file-name"></span>
+        </div>
+        <input type="file" id="file-input"
+               accept=".txt,.csv,.docx,.xlsx,.xls,.pdf" hidden>
+
+        <!-- Results (hidden until scan) -->
+        <div id="results-section" hidden>
+
+          <div class="results-divider"></div>
+
+          <div class="legend">
+            <span class="legend-item valid">VALID</span>
+            <span class="legend-item changed">CHANGED</span>
+            <span class="legend-item outdated">OUTDATED</span>
+            <span class="legend-item misspelled">MISSPELLED</span>
+            <span class="legend-item unknown">UNKNOWN</span>
+            <span class="legend-item common">COMMON NAME</span>
+          </div>
+
+          <div class="results-grid">
+
+            <div class="panel">
+              <div class="panel-header">SPECIES DETECTED <span id="species-count" class="species-badge"></span></div>
+              <div id="highlighted-text" class="highlighted-text"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                ISSUES DETECTED
+                <span id="issue-count" class="issue-badge"></span>
+              </div>
+              <p id="no-issues" class="no-issues" hidden>
+                ALL CLEAR &mdash; no issues detected
+              </p>
+              <div id="table-wrap">
+                <table id="summary-table" hidden>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>Suggestion</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summary-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /.screen-content -->
+    </div><!-- /.screen -->
+  </div><!-- /.screen-bezel -->
+
+  <!-- Device buttons — styled like Lowrance physical controls -->
+  <div class="controls">
+    <button id="load-btn" class="device-btn">LOAD</button>
+    <button id="check-btn" class="device-btn primary" disabled>SCAN</button>
+    <button id="clear-btn" class="device-btn">CLEAR</button>
+    <button id="copy-btn" class="device-btn">COPY</button>
+    <button id="info-btn" class="device-btn">INFO</button>
+  </div>
+
+  <!-- Footer / brief credit -->
+  <div class="device-footer">
+    <em>Common and Scientific Names of Fishes</em>, 8th&nbsp;ed.
+    (Page&nbsp;et&nbsp;al.,&nbsp;2023 &mdash; AFS/ASIH) &middot;
+    Synonyms via Eschmeyer's Catalog of Fishes
+  </div>
+
+</div><!-- /.device -->
+
+<!-- ── Citations panel ───────────────────────────────────────────────────── -->
+<section class="citations-section">
+  <div class="citations-header">REFERENCES &amp; CITATIONS</div>
+  <div class="citations-body" id="citations-body">
+    <p class="citation-entry">
+      Page, L.M., Espinosa-P&eacute;rez, H., Findley, L.T., Gilbert, C.R., Lea, R.N., Mandrak, N.E.,
+      Mayden, R.L., and Nelson, J.S. (2023). <em>Common and Scientific Names of Fishes from the
+      United States, Canada, and Mexico</em>, 8th edition. American Fisheries Society Special
+      Publication 36. American Fisheries Society, Bethesda, Maryland.
+    </p>
+    <p class="citation-entry">
+      Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (2025).
+      <em>Eschmeyer's Catalog of Fishes: Genera, Species, References.</em>
+      California Academy of Sciences. Electronic version accessed 2025.
+    </p>
+    <p class="citation-entry citation-placeholder">
+      [Author(s)] ([Year]). FISHFINDER: A web-based validator for scientific fish names in
+      manuscript text. [Journal / Technical Note]. [DOI].
+      Available at: https://zdzbinden.github.io/fish-name-checker/
+    </p>
+  </div>
+  <button id="cite-btn" class="cite-copy-btn">COPY CITATIONS</button>
+</section>
+
+<!-- ── Usage dashboard ──────────────────────────────────────────────────── -->
+<section class="dashboard">
+  <div class="dashboard-header">USAGE STATISTICS</div>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" id="stat-sessions">—</div>
+      <div class="stat-label">TOTAL USERS</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="stat-species">—</div>
+      <div class="stat-label">SPECIES CHECKED</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="stat-countries">—</div>
+      <div class="stat-label">COUNTRIES REACHED</div>
+    </div>
+  </div>
+  <div id="usage-map" class="usage-map"></div>
+  <p class="dashboard-note">Anonymous usage data &mdash; approximate location from IP address. No text is transmitted off your device.</p>
+</section>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Fish Name Checker
+# FISHFINDER
 
 A static web app that validates scientific fish names in manuscript text against
 *Common and Scientific Names of Fishes from the United States, Canada, and Mexico*,
@@ -11,9 +11,9 @@ and the American Society of Ichthyologists and Herpetologists (ASIH).
 
 1. Visit the deployed URL (GitHub Pages).
 2. Paste your manuscript text into the text box.
-3. Click **Check Names** (or press Ctrl/⌘+Enter).
+3. Click **SCAN** (or press Ctrl/⌘+Enter).
 4. Review the highlighted preview and the issues table.
-5. Click **Copy corrected text** to copy the text with outdated/misspelled names
+5. Click **COPY** to copy the text with outdated/misspelled names
    automatically replaced by the suggested corrections.
 
 ### Color coding
@@ -68,7 +68,7 @@ The app loads `data/fish_names.json` via `fetch()`, so it must be served over HT
 (opening `index.html` directly as a `file://` URL will fail in most browsers).
 
 ```powershell
-cd fish-name-checker
+cd fishfinder
 python -m http.server 8080
 # then open http://localhost:8080
 ```
@@ -96,7 +96,7 @@ When a new edition of *Names of Fishes* is published:
 
 1. Push the repository to GitHub.
 2. Go to **Settings → Pages**, set Source to the branch and `/ (root)` or the
-   `fish-name-checker/` folder, depending on your repo layout.
+   `fishfinder/` folder, depending on your repo layout.
 3. The `.nojekyll` file in this directory prevents GitHub Pages from running
    Jekyll, which would interfere with the `data/` directory.
 
