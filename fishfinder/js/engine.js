@@ -72,12 +72,21 @@
   }
 
   // Species abbreviations that should never be treated as epithets
-  const SPECIES_ABBREVS = new Set(['sp', 'spp', 'cf', 'aff', 'nr', 'var', 'subsp']);
+  const SPECIES_ABBREVS = new Set([
+    'sp', 'spp', 'cf', 'aff', 'nr', 'var', 'subsp',
+    'the', 'and', 'for', 'are', 'but', 'not', 'you', 'all',
+    'can', 'has', 'her', 'was', 'one', 'our', 'out', 'its',
+    'with', 'that', 'have', 'from', 'this', 'will', 'been',
+    'than', 'them', 'into', 'also', 'each', 'which', 'their',
+    'were', 'other', 'about', 'these', 'would', 'there',
+    'after', 'between', 'found', 'used', 'where', 'most',
+    'using', 'during', 'including', 'however',
+  ]);
 
   // ── Classify a candidate binomial ──────────────────────────────────────────
   // Returns null if the name doesn't look like a fish name at all.
   function classifyName(lookups, genus, species) {
-    if (SPECIES_ABBREVS.has(species.toLowerCase())) return null;
+    if (species.length < 3 || SPECIES_ABBREVS.has(species.toLowerCase())) return null;
 
     const binomial = `${genus} ${species}`;
     const lower    = binomial.toLowerCase();
@@ -131,7 +140,7 @@
   }
 
   // ── Extract candidate names from text ─────────────────────────────────────
-  const CANDIDATE_RE = /\b([A-Z][a-z]{2,})\s+([a-z]{2,})\b/g;
+  const CANDIDATE_RE = /\b([A-Z][a-z]{2,})\s+([a-z]{3,})\b/g;
 
   function extractCandidates(text) {
     const hits = [];

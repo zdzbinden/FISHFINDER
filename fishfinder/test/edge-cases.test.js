@@ -97,6 +97,41 @@ describe('fuzzy matching edge cases', () => {
         assert.equal(r, null, `should filter "${abbrev}"`);
       }
     });
+
+    it('filters common English stopwords', () => {
+      for (const word of ['the', 'and', 'for', 'are', 'with', 'from', 'this', 'were', 'their']) {
+        const r = classify('Society', word);
+        assert.equal(r, null, `should filter "${word}"`);
+      }
+    });
+  });
+
+  describe('false positive rejection', () => {
+    it('rejects "Society of" — must not fuzzy-match to a synonym (GH bug)', () => {
+      const r = classify('Society', 'of');
+      assert.equal(r, null);
+    });
+
+    it('rejects short species epithets (2-char words)', () => {
+      for (const word of ['of', 'in', 'on', 'at', 'to', 'by', 'an', 'or']) {
+        const r = classify('American', word);
+        assert.equal(r, null, `should reject 2-char epithet "${word}"`);
+      }
+    });
+
+    it('rejects common manuscript phrases', () => {
+      const phrases = [
+        ['American', 'Fisheries'],
+        ['Conservation', 'Biology'],
+        ['Environmental', 'Science'],
+        ['Population', 'dynamics'],
+        ['Freshwater', 'Research'],
+      ];
+      for (const [g, s] of phrases) {
+        const r = classify(g, s);
+        assert.equal(r, null, `should reject "${g} ${s}"`);
+      }
+    });
   });
 
   describe('database integrity', () => {
