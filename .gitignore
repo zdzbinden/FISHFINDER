@@ -16,6 +16,9 @@ __pycache__/
 # uv
 .python-version
 
+# Publication drafts (local only)
+publication/
+
 # OS
 .DS_Store
 Thumbs.db

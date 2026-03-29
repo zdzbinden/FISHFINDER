@@ -44,7 +44,7 @@ RETRY_BACKOFF = 10   # seconds for first retry; doubles each attempt
 HEADERS = {
     "User-Agent": (
         "FishNameChecker/1.0 (scientific research tool; "
-        "contact via https://github.com/zdzbinden/fish-name-checker)"
+        "contact via https://github.com/zdzbinden/FISHFINDER)"
     )
 }
 

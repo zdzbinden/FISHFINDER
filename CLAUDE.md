@@ -10,7 +10,7 @@ Design inspired by the classic Lowrance fish finder (retro green LCD aesthetic).
 
 Intended audience: fisheries scientists and ichthyologists proofreading manuscripts.
 Goal: eventually host on GitHub Pages for public use by the field.
-GitHub: https://github.com/zdzbinden/fish-name-checker (private)
+GitHub: https://github.com/zdzbinden/FISHFINDER (private)
 
 ## Repository layout
 
