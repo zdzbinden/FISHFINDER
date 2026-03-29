@@ -25,6 +25,9 @@ node_modules/
 # Firebase
 .firebase/
 
+# Claude Code
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
