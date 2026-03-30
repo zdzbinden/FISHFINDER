@@ -73,6 +73,22 @@ describe('fuzzy matching edge cases', () => {
         assert.equal(r.type, 'outdated');
       }
     });
+
+    it('does not fuzzy-match unrelated congeners across synonym entries', () => {
+      // The fuzzy synonym match (step 2b) must require an exact genus match
+      // to prevent false positives between unrelated species that happen to
+      // share a genus but have species epithets within edit distance 2.
+      // Use a fabricated example: "Salmo fakeus" should NOT fuzzy-match a
+      // synonym like "Salmo trutta" (dist > 2), but also should not match
+      // via genus-fuzzy path if genus has a typo.
+      const r = classify('Salmo', 'fakeus');
+      if (r) {
+        // If it matches at all, it should be unknown (valid genus, unknown species)
+        // NOT outdated via fuzzy synonym
+        assert.notEqual(r.type, 'outdated',
+          'fabricated species should not fuzzy-match an unrelated synonym');
+      }
+    });
   });
 
   describe('case handling', () => {

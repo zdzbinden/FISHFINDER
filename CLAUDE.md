@@ -32,14 +32,16 @@ FISHFINDER/
 │   ├── appendix.md               ← Technical appendix source (Markdown)
 │   ├── generate_appendix.py      ← Reads appendix.md → styled .docx
 │   ├── drafts/                   ← Archived old files
+│   ├── meta_analysis_appendix.md  ← Meta-analysis methods appendix (Markdown)
 │   └── meta_analysis/            ← Automated literature analysis pipeline
-│       ├── config.py             ← Paths, API URLs, rate limits, search terms
-│       ├── 01_discover_papers.py ← OpenAlex API → papers.json
-│       ├── 02_download_pdfs.py   ← Unpaywall/OA → cache/pdfs/
+│       ├── config.py             ← Paths, API URLs, rate limits, filters, thresholds
+│       ├── 01_discover_papers.py ← OpenAlex API → papers.json (newest-first, title filter)
+│       ├── 02_download_pdfs.py   ← Publisher heuristics + Unpaywall → cache/pdfs/
 │       ├── 03_extract_text.py    ← PyMuPDF → cache/texts/
 │       ├── 04_analyze_names.js   ← Node.js engine wrapper → cache/results/
-│       ├── 05_summarize.py       ← Aggregate stats → summary.json + .md
-│       └── run_pipeline.py       ← Orchestrator (runs steps 1-5)
+│       ├── 05_summarize.py       ← Aggregate stats + NA ratio filter → summary.json + .md
+│       ├── 06_make_figures.py    ← Publication figures (PNG+PDF), CSV tables, captions
+│       └── run_pipeline.py       ← Orchestrator (runs steps 1-6)
 └── fishfinder/                   ← static web app (GitHub Pages target)
     ├── index.html
     ├── css/style.css             ← Lowrance-inspired retro fish finder UI

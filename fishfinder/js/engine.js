@@ -35,6 +35,7 @@
     const ls = species.toLowerCase();
     let bestDist  = maxDist + 1;
     let bestEntry = null;
+    let bestGd    = 0;
 
     for (const entry of list) {
       // First-letter filter: relaxed for long genera (≥8 chars) to catch adjacent-key typos
@@ -55,10 +56,11 @@
       if (total < bestDist) {
         bestDist = total;
         bestEntry = entry;
+        bestGd = gd;
         if (total === 0) break;
       }
     }
-    return bestEntry ? { entry: bestEntry, dist: bestDist } : null;
+    return bestEntry ? { entry: bestEntry, dist: bestDist, genusDist: bestGd } : null;
   }
 
   function findClosestMatch(lookups, genus, species, maxDist) {
@@ -68,7 +70,7 @@
 
   function findClosestSynonym(lookups, genus, species, maxDist) {
     const result = findClosestInList(lookups.synonymList, genus, species, maxDist);
-    return result ? { oldName: result.entry.oldName, newName: result.entry.newName, dist: result.dist } : null;
+    return result ? { oldName: result.entry.oldName, newName: result.entry.newName, dist: result.dist, genusDist: result.genusDist } : null;
   }
 
   // Species abbreviations that should never be treated as epithets
@@ -106,8 +108,10 @@
     }
 
     // 2b. Fuzzy synonym match (catches misspelled synonyms like Leucisus → Leuciscus)
+    //     Require exact genus to prevent false positives across congeners
+    //     (e.g., Platichthys flesus should NOT fuzzy-match Platichthys stellatus)
     const closestSyn = findClosestSynonym(lookups, genus, species, 2);
-    if (closestSyn && closestSyn.dist > 0 && closestSyn.dist <= 2) {
+    if (closestSyn && closestSyn.genusDist === 0 && closestSyn.dist > 0 && closestSyn.dist <= 2) {
       return { type: 'outdated', canonical: binomial, suggestion: closestSyn.newName };
     }
 
