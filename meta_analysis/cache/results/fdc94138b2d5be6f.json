@@ -1,0 +1,525 @@
+{
+  "candidates_found": 527,
+  "unique_binomials": 85,
+  "classifications": {
+    "valid": 69,
+    "common": 7,
+    "unknown": 2,
+    "misspelled": 3,
+    "changed": 2,
+    "outdated": 2
+  },
+  "details": [
+    {
+      "binomial": "Hypophthalmichthys molitrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Dorosoma cepedianum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gizzard Shad"
+    },
+    {
+      "binomial": "Notropis atherinoides",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Emerald Shiner"
+    },
+    {
+      "binomial": "Opsopoeodus emiliae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pugnose Minnow"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Morone mississippiensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Bass"
+    },
+    {
+      "binomial": "Hybopsis amnis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pallid Shiner"
+    },
+    {
+      "binomial": "Silver carp",
+      "type": "common",
+      "suggestion": "Hypophthalmichthys molitrix",
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Hypophthalmichthys moli",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Polydon spathula",
+      "type": "misspelled",
+      "suggestion": "Polyodon spathula",
+      "commonName": null
+    },
+    {
+      "binomial": "Hybognathus nuchalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mississippi Silvery Minnow"
+    },
+    {
+      "binomial": "Alosa chrysochloris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Skipjack Herring"
+    },
+    {
+      "binomial": "Atractosteus spatula",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Alligator Gar"
+    },
+    {
+      "binomial": "Hypopthalmichthys nobilis",
+      "type": "misspelled",
+      "suggestion": "Hypophthalmichthys nobilis",
+      "commonName": null
+    },
+    {
+      "binomial": "Pimephales vigilax",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bullhead Minnow"
+    },
+    {
+      "binomial": "Ictiobus niger",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Buffalo"
+    },
+    {
+      "binomial": "Mylopharyngodon piceus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Carp"
+    },
+    {
+      "binomial": "Pomoxis nigromaculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Crappie"
+    },
+    {
+      "binomial": "Labidesthes sicculus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brook Silverside"
+    },
+    {
+      "binomial": "Ictalurus furcatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Blue Catfish"
+    },
+    {
+      "binomial": "Ictiobus cyprinellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigmouth Buffalo"
+    },
+    {
+      "binomial": "Etheostoma chlorosomum",
+      "type": "misspelled",
+      "suggestion": "Etheostoma chlorosoma",
+      "commonName": null
+    },
+    {
+      "binomial": "Pimephales notatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluntnose Minnow"
+    },
+    {
+      "binomial": "Elassoma zonatum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Banded Pygmy Sunfish"
+    },
+    {
+      "binomial": "Fundulus olivaceus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackspotted Topminnow"
+    },
+    {
+      "binomial": "Percina maculata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackside Darter"
+    },
+    {
+      "binomial": "Cyprinella venusta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacktail Shiner"
+    },
+    {
+      "binomial": "Fundulus notatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackstripe Topminnow"
+    },
+    {
+      "binomial": "Amia calva",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bowfin"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Ictalurus punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Channel Catfish"
+    },
+    {
+      "binomial": "Chestnut lamprey",
+      "type": "common",
+      "suggestion": "Ichthyomyzon castaneus",
+      "commonName": "Chestnut Lamprey"
+    },
+    {
+      "binomial": "Ichthyomyzon castaneus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chestnut Lamprey"
+    },
+    {
+      "binomial": "Etheostoma proeliare",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cypress Darter"
+    },
+    {
+      "binomial": "Hybognathus hayi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cypress Minnow"
+    },
+    {
+      "binomial": "Dollar sunfish",
+      "type": "common",
+      "suggestion": "Lepomis marginatus",
+      "commonName": "Dollar Sunfish"
+    },
+    {
+      "binomial": "Lepomis marginatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dollar Sunfish"
+    },
+    {
+      "binomial": "Percina sciera",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dusky Darter"
+    },
+    {
+      "binomial": "Pylodictis olivaris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Flathead Catfish"
+    },
+    {
+      "binomial": "Centrarchus macropterus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Flier"
+    },
+    {
+      "binomial": "Aplodinotus grunniens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Freshwater Drum"
+    },
+    {
+      "binomial": "Notemigonus crysoleucas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Golden Shiner"
+    },
+    {
+      "binomial": "Hiodon alosoides",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Goldeye"
+    },
+    {
+      "binomial": "Lepomis cyanellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Sunfish"
+    },
+    {
+      "binomial": "Ctenopharyngodon idella",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Grass Carp"
+    },
+    {
+      "binomial": "Esox americanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Redfin Pickerel"
+    },
+    {
+      "binomial": "Carpiodes velifer",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Highfin Carpsucker"
+    },
+    {
+      "binomial": "Lepomis megalotis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longear Sunfish"
+    },
+    {
+      "binomial": "Percina caprodes",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Logperch"
+    },
+    {
+      "binomial": "Erimyzon sucetta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Chubsucker"
+    },
+    {
+      "binomial": "Micropterus nigricans",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Lepisosteus osseus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Gar"
+    },
+    {
+      "binomial": "Etheostoma asprigene",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mud Darter"
+    },
+    {
+      "binomial": "Notropis volucellus",
+      "type": "outdated",
+      "suggestion": "Paranotropis volucellus",
+      "commonName": null
+    },
+    {
+      "binomial": "Gambusia affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Fundulus dispar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Starhead Topminnow"
+    },
+    {
+      "binomial": "Lepomis humilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Orangespotted Sunfish"
+    },
+    {
+      "binomial": "Polyodon spathula",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Paddlefish"
+    },
+    {
+      "binomial": "Dorosoma cepedi",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pomoxis annularis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Crappie"
+    },
+    {
+      "binomial": "Aphredoderus sayanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pirate Perch"
+    },
+    {
+      "binomial": "Lepomis microlophus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Redear Sunfish"
+    },
+    {
+      "binomial": "Carpiodes carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "River Carpsucker"
+    },
+    {
+      "binomial": "Percina shumardi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "River Darter"
+    },
+    {
+      "binomial": "Sander canadensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sauger"
+    },
+    {
+      "binomial": "Moxostoma macrolepidotum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shorthead Redhorse"
+    },
+    {
+      "binomial": "Etheostoma gracile",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slough Darter"
+    },
+    {
+      "binomial": "Ictiobus bubalus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smallmouth Buffalo"
+    },
+    {
+      "binomial": "Lepisosteus platostomus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortnose Gar"
+    },
+    {
+      "binomial": "Minytrema melanops",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Sucker"
+    },
+    {
+      "binomial": "Micropterus punctulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Bass"
+    },
+    {
+      "binomial": "Lepisosteus oculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Gar"
+    },
+    {
+      "binomial": "Lepomis punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Sunfish"
+    },
+    {
+      "binomial": "Dorosoma petenense",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Threadfin Shad"
+    },
+    {
+      "binomial": "Notropis maculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Taillight Shiner"
+    },
+    {
+      "binomial": "Noturus gyrinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tadpole Madtom"
+    },
+    {
+      "binomial": "Notropis texanus",
+      "type": "outdated",
+      "suggestion": "Alburnops texanus",
+      "commonName": null
+    },
+    {
+      "binomial": "Lepomis gulosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Warmouth"
+    },
+    {
+      "binomial": "Morone chrysops",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Bass"
+    },
+    {
+      "binomial": "Ameiurus natalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Bullhead"
+    },
+    {
+      "binomial": "Pugnose minnow",
+      "type": "common",
+      "suggestion": "Opsopoeodus emiliae",
+      "commonName": "Pugnose Minnow"
+    },
+    {
+      "binomial": "Smallmouth buffalo",
+      "type": "common",
+      "suggestion": "Ictiobus bubalus",
+      "commonName": "Smallmouth Buffalo"
+    },
+    {
+      "binomial": "Gizzard shad",
+      "type": "common",
+      "suggestion": "Dorosoma cepedianum",
+      "commonName": "Gizzard Shad"
+    },
+    {
+      "binomial": "White crappie",
+      "type": "common",
+      "suggestion": "Pomoxis annularis",
+      "commonName": "White Crappie"
+    },
+    {
+      "binomial": "Hypophthalmichthys nobilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bighead Carp"
+    }
+  ],
+  "source_file": "fdc94138b2d5be6f.txt"
+}

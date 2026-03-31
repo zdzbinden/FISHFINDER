@@ -1,0 +1,123 @@
+{
+  "candidates_found": 446,
+  "unique_binomials": 18,
+  "classifications": {
+    "unknown": 8,
+    "outdated": 1,
+    "valid": 2,
+    "changed": 4,
+    "common": 2,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias gar",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias buthupogon",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias anguillaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias nigrodigitatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tilapia zilli",
+      "type": "outdated",
+      "suggestion": "Coptodon zillii",
+      "commonName": null
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Thunnus thynnus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bluefin Tuna"
+    },
+    {
+      "binomial": "Thunnus albacares",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Yellowfin Tuna"
+    },
+    {
+      "binomial": "Common carp",
+      "type": "common",
+      "suggestion": "Cyprinus carpio",
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Lepisosteus tropicus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Centropomus parallelus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smallscale Fat Snook"
+    },
+    {
+      "binomial": "Lutjanus argentimaculatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias angullaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias batradrus",
+      "type": "misspelled",
+      "suggestion": "Clarias batrachus",
+      "commonName": null
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    }
+  ],
+  "source_file": "1a1dc23bd972cb07.txt"
+}

@@ -1,0 +1,16 @@
+{
+  "candidates_found": 291,
+  "unique_binomials": 1,
+  "classifications": {
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Katsuwonus pelamis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Skipjack Tuna"
+    }
+  ],
+  "source_file": "9bb33ee8cba3455a.txt"
+}

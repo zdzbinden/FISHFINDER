@@ -1,0 +1,97 @@
+{
+  "candidates_found": 193,
+  "unique_binomials": 14,
+  "classifications": {
+    "valid": 8,
+    "changed": 3,
+    "outdated": 1,
+    "unknown": 2
+  },
+  "details": [
+    {
+      "binomial": "Poecilia velifera",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yucatan Molly"
+    },
+    {
+      "binomial": "Poecilia mexicana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortfin Molly"
+    },
+    {
+      "binomial": "Rocio octofasciata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Jack Dempsey"
+    },
+    {
+      "binomial": "Thorichthys meeki",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Firemouth Cichlid"
+    },
+    {
+      "binomial": "Gambusia yucatana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yucatan Gambusia"
+    },
+    {
+      "binomial": "Astyanax altior",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yucatan Tetra"
+    },
+    {
+      "binomial": "Belonesox belizanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pike Killifish"
+    },
+    {
+      "binomial": "Pseudoxiphophorus bimaculatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Spottail Killifish"
+    },
+    {
+      "binomial": "Rivulus marmoratus",
+      "type": "outdated",
+      "suggestion": "Kryptolebias marmoratus",
+      "commonName": null
+    },
+    {
+      "binomial": "Mayaheros urophthalmus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Mayan Cichlid"
+    },
+    {
+      "binomial": "Parachromis multifasciatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Tiger Cichlid"
+    },
+    {
+      "binomial": "Rhamdia guatemalensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pale Catfish"
+    },
+    {
+      "binomial": "Pseudoxiphophorus bimacula",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Rhamdia gua",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "dcc17e897196720d.txt"
+}

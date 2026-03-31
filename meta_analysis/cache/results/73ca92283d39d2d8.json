@@ -1,0 +1,102 @@
+{
+  "candidates_found": 339,
+  "unique_binomials": 15,
+  "classifications": {
+    "common": 5,
+    "valid": 9,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Atlantic herring",
+      "type": "common",
+      "suggestion": "Clupea harengus",
+      "commonName": "Atlantic Herring"
+    },
+    {
+      "binomial": "Pacific herring",
+      "type": "common",
+      "suggestion": "Clupea pallasii",
+      "commonName": "Pacific Herring"
+    },
+    {
+      "binomial": "Clupea harengus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Herring"
+    },
+    {
+      "binomial": "Pollachius virens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pollock"
+    },
+    {
+      "binomial": "Atlantic cod",
+      "type": "common",
+      "suggestion": "Gadus morhua",
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Hippoglossus hippoglossus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Halibut"
+    },
+    {
+      "binomial": "Pseudopleuronectes americanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Winter Flounder"
+    },
+    {
+      "binomial": "Pleuronectes platessa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus gorbuscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pink Salmon"
+    },
+    {
+      "binomial": "Sebastes fasciatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Acadian Redfish"
+    },
+    {
+      "binomial": "Greenland halibut",
+      "type": "common",
+      "suggestion": "Reinhardtius hippoglossoides",
+      "commonName": "Greenland Halibut"
+    },
+    {
+      "binomial": "Clupea pallasii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Herring"
+    }
+  ],
+  "source_file": "73ca92283d39d2d8.txt"
+}

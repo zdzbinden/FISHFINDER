@@ -1,0 +1,65 @@
+{
+  "candidates_found": 313,
+  "unique_binomials": 9,
+  "classifications": {
+    "valid": 8,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Lutjanus campechanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Snapper"
+    },
+    {
+      "binomial": "Archosargus probato",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaetodipterus faber",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Spadefish"
+    },
+    {
+      "binomial": "Mycteroperca microlepis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gag"
+    },
+    {
+      "binomial": "Lutjanus griseus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Snapper"
+    },
+    {
+      "binomial": "Rhomboplites aurorubens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Vermilion Snapper"
+    },
+    {
+      "binomial": "Epinephelus adscensionis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rock Hind"
+    },
+    {
+      "binomial": "Balistes capriscus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Triggerfish"
+    },
+    {
+      "binomial": "Sphyraena barracuda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Great Barracuda"
+    }
+  ],
+  "source_file": "aac77d2eef7b3833.txt"
+}

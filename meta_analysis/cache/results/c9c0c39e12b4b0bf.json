@@ -1,0 +1,193 @@
+{
+  "candidates_found": 464,
+  "unique_binomials": 30,
+  "classifications": {
+    "unknown": 15,
+    "valid": 8,
+    "changed": 5,
+    "outdated": 2
+  },
+  "details": [
+    {
+      "binomial": "Sardinella lemuru",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Auxis thazard",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Frigate Mackerel"
+    },
+    {
+      "binomial": "Auxis rochei",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bullet Mackerel"
+    },
+    {
+      "binomial": "Selar crumenophthalmus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigeye Scad"
+    },
+    {
+      "binomial": "Pseudobalistes flavimarginatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Decapterus macrosoma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortfin Scad"
+    },
+    {
+      "binomial": "Decapterus russelli",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Selar boops",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Carassius gibelio",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Prussian Carp"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus malabaricus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Acanthurus olivaceus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tylosurus crocodilus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Houndfish"
+    },
+    {
+      "binomial": "Cheilopogon katoptron",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sphyraena barracuda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Great Barracuda"
+    },
+    {
+      "binomial": "Sphyraena flavicauda",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sphyraena obtusata",
+      "type": "outdated",
+      "suggestion": "Sphyraena barracuda",
+      "commonName": null
+    },
+    {
+      "binomial": "Alectis ciliaris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "African Pompano"
+    },
+    {
+      "binomial": "Sardinella gibbosa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Priacanthus macracanthus",
+      "type": "outdated",
+      "suggestion": "Heteropriacanthus carolinus",
+      "commonName": null
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Abudefduf vaigiensis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Euthynnus affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Kawakawa"
+    },
+    {
+      "binomial": "Sarda orientalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Bonito"
+    },
+    {
+      "binomial": "Fistularia commersonii",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Reef Cornetfish"
+    },
+    {
+      "binomial": "Sufflamen bursa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sufflamen fraenatum",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Masked Triggerfish"
+    },
+    {
+      "binomial": "Xanthichthys lineopunctatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ostracion solorensis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lagocephalus sceleratus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "c9c0c39e12b4b0bf.txt"
+}

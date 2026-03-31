@@ -1,0 +1,61 @@
+{
+  "candidates_found": 285,
+  "unique_binomials": 8,
+  "classifications": {
+    "valid": 2,
+    "changed": 1,
+    "common": 2,
+    "unknown": 3
+  },
+  "details": [
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Micropterus intro",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salmo marmoratus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Cichla kel",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Common carp",
+      "type": "common",
+      "suggestion": "Cyprinus carpio",
+      "commonName": "Common Carp"
+    }
+  ],
+  "source_file": "cb1fa69bcfc30c80.txt"
+}

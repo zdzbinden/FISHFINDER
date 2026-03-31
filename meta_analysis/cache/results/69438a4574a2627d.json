@@ -1,0 +1,91 @@
+{
+  "candidates_found": 323,
+  "unique_binomials": 13,
+  "classifications": {
+    "valid": 6,
+    "changed": 2,
+    "common": 2,
+    "unknown": 3
+  },
+  "details": [
+    {
+      "binomial": "Gambusia holbrooki",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Eastern Mosquitofish"
+    },
+    {
+      "binomial": "Poecilia reticulata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Guppy"
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    },
+    {
+      "binomial": "Mozambique tilapia",
+      "type": "common",
+      "suggestion": "Oreochromis mossambicus",
+      "commonName": "Mozambique Tilapia"
+    },
+    {
+      "binomial": "Oreochromis mossambicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mozambique Tilapia"
+    },
+    {
+      "binomial": "Paralichthys woolmani",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dappled Flounder"
+    },
+    {
+      "binomial": "Salmo abanticus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Anguilla japonica",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Cichla kelberi",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "69438a4574a2627d.txt"
+}

@@ -1,0 +1,128 @@
+{
+  "candidates_found": 322,
+  "unique_binomials": 19,
+  "classifications": {
+    "outdated": 2,
+    "valid": 7,
+    "changed": 5,
+    "unknown": 4,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Clepticus parrae",
+      "type": "outdated",
+      "suggestion": "Bodianus parrae",
+      "commonName": null
+    },
+    {
+      "binomial": "Chromis insolata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sunshinefish"
+    },
+    {
+      "binomial": "Coryphopterus personatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Masked Goby"
+    },
+    {
+      "binomial": "Canthigaster rostrata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sharpnose Puffer"
+    },
+    {
+      "binomial": "Serranus phoebe",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tattler"
+    },
+    {
+      "binomial": "Pronotogrammus martinicensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Roughtongue Bass"
+    },
+    {
+      "binomial": "Symphysanodon octoactinus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Insular Bunquelovely"
+    },
+    {
+      "binomial": "Palatogobius incendius",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Palatogobius grandoculus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bigeye Goby"
+    },
+    {
+      "binomial": "Antilligobius nikkiae",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Sabre Goby"
+    },
+    {
+      "binomial": "Hollardia hollardi",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Reticulate Spikefish"
+    },
+    {
+      "binomial": "Chrionema squamentum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scalychin Flathead"
+    },
+    {
+      "binomial": "Phenascoscorpius nebrius",
+      "type": "misspelled",
+      "suggestion": "Phenacoscorpius nebris",
+      "commonName": null
+    },
+    {
+      "binomial": "Neoepinnula americana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "American Sackfish"
+    },
+    {
+      "binomial": "Lipogramma species",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Azurina multilineata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brown Chromis"
+    },
+    {
+      "binomial": "Paranthias furcifer",
+      "type": "outdated",
+      "suggestion": "Cephalopholis colonus",
+      "commonName": null
+    },
+    {
+      "binomial": "Coryphopterus goby",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Liopropoma sea",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "7d3239613a3ec208.txt"
+}

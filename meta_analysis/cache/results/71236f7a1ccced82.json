@@ -1,0 +1,60 @@
+{
+  "candidates_found": 422,
+  "unique_binomials": 8,
+  "classifications": {
+    "valid": 3,
+    "unknown": 4,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Sarotherodon galilaeus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coptodon zillii",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Redbelly Tilapia"
+    },
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Hemichromis fasciatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis mossambicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mozambique Tilapia"
+    },
+    {
+      "binomial": "Sarotherodon melanotheron",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackchin Tilapia"
+    },
+    {
+      "binomial": "Trachurus japonicus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "71236f7a1ccced82.txt"
+}

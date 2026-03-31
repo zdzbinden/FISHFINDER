@@ -1,0 +1,22 @@
+{
+  "candidates_found": 335,
+  "unique_binomials": 2,
+  "classifications": {
+    "valid": 2
+  },
+  "details": [
+    {
+      "binomial": "Centropristis striata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Sea Bass"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    }
+  ],
+  "source_file": "5276908568e90251.txt"
+}

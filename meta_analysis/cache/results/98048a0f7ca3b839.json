@@ -1,0 +1,54 @@
+{
+  "candidates_found": 212,
+  "unique_binomials": 7,
+  "classifications": {
+    "unknown": 3,
+    "common": 1,
+    "valid": 3
+  },
+  "details": [
+    {
+      "binomial": "Epinephelus coioides",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Nile tilapia",
+      "type": "common",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Pagrus major",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Paralichthys olivaceus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    }
+  ],
+  "source_file": "98048a0f7ca3b839.txt"
+}

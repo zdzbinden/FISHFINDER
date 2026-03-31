@@ -1,0 +1,15 @@
+Metric,Value
+Papers analyzed,95
+Papers excluded (non-NA),0
+Papers with naming errors,38 (40.0%)
+  with outdated names,29 (30.5%)
+  with misspelled names,22 (23.2%)
+Papers with changed names (8th ed.),48 (50.5%)
+Papers with unknown names,61 (64.2%)
+Total unique species detected,1341
+Journals represented,68
+  Valid,717
+  Changed (8th ed.),112
+  Outdated Synonym,50
+  Misspelled,39
+  Unknown (not in AFS),225

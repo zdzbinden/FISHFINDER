@@ -1,0 +1,54 @@
+{
+  "candidates_found": 195,
+  "unique_binomials": 7,
+  "classifications": {
+    "valid": 3,
+    "unknown": 3,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Fundulus heteroclitus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mummichog"
+    },
+    {
+      "binomial": "Menidia menidia",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Silverside"
+    },
+    {
+      "binomial": "Fundulus hetero",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic silverside",
+      "type": "common",
+      "suggestion": "Menidia menidia",
+      "commonName": "Atlantic Silverside"
+    },
+    {
+      "binomial": "Fundulus het",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Leiostomus xanthurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spot"
+    },
+    {
+      "binomial": "Lepomis mac",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "41286b43658064ce.txt"
+}

@@ -1,0 +1,116 @@
+{
+  "candidates_found": 482,
+  "unique_binomials": 17,
+  "classifications": {
+    "changed": 1,
+    "valid": 12,
+    "common": 2,
+    "outdated": 1,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Thunnus thynnus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bluefin Tuna"
+    },
+    {
+      "binomial": "Isurus oxyrinchus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortfin Mako"
+    },
+    {
+      "binomial": "Lamna nasus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Porbeagle"
+    },
+    {
+      "binomial": "Xiphias gladius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Swordfish"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Alopias vulpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Thresher Shark"
+    },
+    {
+      "binomial": "Albula vulpes",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bonefish"
+    },
+    {
+      "binomial": "Oncorhynchus tshawytscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Makaira nigricans",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blue Marlin"
+    },
+    {
+      "binomial": "Seriola dumerili",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Greater Amberjack"
+    },
+    {
+      "binomial": "Galapagos shark",
+      "type": "common",
+      "suggestion": "Carcharhinus galapagensis",
+      "commonName": "Galapagos Shark"
+    },
+    {
+      "binomial": "Carcharhinus galapagensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Galapagos Shark"
+    },
+    {
+      "binomial": "Seriola lalandi",
+      "type": "outdated",
+      "suggestion": "Seriola rivoliana",
+      "commonName": null
+    },
+    {
+      "binomial": "Cetorhinus maximus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Basking Shark"
+    },
+    {
+      "binomial": "Alopias pelagicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pelagic Thresher"
+    },
+    {
+      "binomial": "Galeocerdo cuvier",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tiger Shark"
+    },
+    {
+      "binomial": "Mobula alfredi",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "b42f391e892d9f21.txt"
+}

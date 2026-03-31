@@ -1,0 +1,23 @@
+{
+  "candidates_found": 95,
+  "unique_binomials": 2,
+  "classifications": {
+    "changed": 1,
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    },
+    {
+      "binomial": "Pimephales promelas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fathead Minnow"
+    }
+  ],
+  "source_file": "0a977bf867e883bb.txt"
+}

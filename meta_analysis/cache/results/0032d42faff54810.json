@@ -1,0 +1,188 @@
+{
+  "candidates_found": 373,
+  "unique_binomials": 29,
+  "classifications": {
+    "valid": 13,
+    "unknown": 4,
+    "common": 9,
+    "changed": 2,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Perca flu",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Black bullhead",
+      "type": "common",
+      "suggestion": "Ameiurus melas",
+      "commonName": "Black Bullhead"
+    },
+    {
+      "binomial": "Ameiurus melas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Bullhead"
+    },
+    {
+      "binomial": "Common carp",
+      "type": "common",
+      "suggestion": "Cyprinus carpio",
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Rhodeus amarus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Anguilla anguilla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Grass carp",
+      "type": "common",
+      "suggestion": "Ctenopharyngodon idella",
+      "commonName": "Grass Carp"
+    },
+    {
+      "binomial": "Ctenopharyngodon idella",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Grass Carp"
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Micropterus nigricans",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Northern pike",
+      "type": "common",
+      "suggestion": "Esox lucius",
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Esox lucius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Sander lucioperca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Zander"
+    },
+    {
+      "binomial": "Prussian carp",
+      "type": "common",
+      "suggestion": "Carassius gibelio",
+      "commonName": "Prussian Carp"
+    },
+    {
+      "binomial": "Carassius gibelio",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Prussian Carp"
+    },
+    {
+      "binomial": "Lepomis gibbosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pumpkinseed"
+    },
+    {
+      "binomial": "Rainbow trout",
+      "type": "common",
+      "suggestion": "Oncorhynchus mykiss",
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Scardinius erythrophthalmus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rudd"
+    },
+    {
+      "binomial": "Gymnocephalus cernua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ruffe"
+    },
+    {
+      "binomial": "Silver carp",
+      "type": "common",
+      "suggestion": "Hypophthalmichthys molitrix",
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Hypophthalmichthys molitrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Tinca tinca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tench"
+    },
+    {
+      "binomial": "Western mosquitofish",
+      "type": "common",
+      "suggestion": "Gambusia affinis",
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Gambusia affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    },
+    {
+      "binomial": "Cyrpinus carpio",
+      "type": "misspelled",
+      "suggestion": "Cyprinus carpio",
+      "commonName": null
+    }
+  ],
+  "source_file": "0032d42faff54810.txt"
+}

@@ -1,0 +1,80 @@
+{
+  "candidates_found": 235,
+  "unique_binomials": 11,
+  "classifications": {
+    "valid": 5,
+    "changed": 3,
+    "outdated": 1,
+    "unknown": 1,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Sardinops sagax",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Sardine"
+    },
+    {
+      "binomial": "Azurina atrilobata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Scissortail Chromis"
+    },
+    {
+      "binomial": "Cephalopholis colonus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Pacific Creolefish"
+    },
+    {
+      "binomial": "Thalassoma lucasanum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cortez Rainbow Wrasse"
+    },
+    {
+      "binomial": "Balistes polylepis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Finescale Triggerfish"
+    },
+    {
+      "binomial": "Prionurus punctatus",
+      "type": "outdated",
+      "suggestion": "Prionurus laticlavius",
+      "commonName": null
+    },
+    {
+      "binomial": "Haemulon flaviguttatum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cortez Grunt"
+    },
+    {
+      "binomial": "Haemulon dispilus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Diodon histrix",
+      "type": "misspelled",
+      "suggestion": "Diodon hystrix",
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus guttatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Rose Snapper"
+    },
+    {
+      "binomial": "Epinephelus labriformis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Flag Cabrilla"
+    }
+  ],
+  "source_file": "b88fdbda7f2a6381.txt"
+}

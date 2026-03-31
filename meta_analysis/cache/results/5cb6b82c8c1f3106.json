@@ -1,0 +1,22 @@
+{
+  "candidates_found": 231,
+  "unique_binomials": 2,
+  "classifications": {
+    "unknown": 2
+  },
+  "details": [
+    {
+      "binomial": "Lutjanus carponotatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaetodon butterflyfishes",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "5cb6b82c8c1f3106.txt"
+}

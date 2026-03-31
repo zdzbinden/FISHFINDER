@@ -1,0 +1,277 @@
+{
+  "candidates_found": 720,
+  "unique_binomials": 44,
+  "classifications": {
+    "valid": 17,
+    "common": 16,
+    "changed": 3,
+    "unknown": 8
+  },
+  "details": [
+    {
+      "binomial": "Coregonus nasus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Broad Whitefish"
+    },
+    {
+      "binomial": "Eleginus gracilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Saffron Cod"
+    },
+    {
+      "binomial": "Salvelinus malma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dolly Varden"
+    },
+    {
+      "binomial": "Myoxocephalus quadricornis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Arctic cisco",
+      "type": "common",
+      "suggestion": "Coregonus autumnalis",
+      "commonName": "Arctic Cisco"
+    },
+    {
+      "binomial": "Coregonus autumnalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Cisco"
+    },
+    {
+      "binomial": "Arctic flounder",
+      "type": "common",
+      "suggestion": "Liopsetta glacialis",
+      "commonName": "Arctic Flounder"
+    },
+    {
+      "binomial": "Liopsetta glacialis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Arctic Flounder"
+    },
+    {
+      "binomial": "Osmerus den",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus pid",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus sardinella",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Least Cisco"
+    },
+    {
+      "binomial": "Gasterosteus aculeatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Threespine Stickleback"
+    },
+    {
+      "binomial": "Polar cod",
+      "type": "common",
+      "suggestion": "Arctogadus glacialis",
+      "commonName": "Polar Cod"
+    },
+    {
+      "binomial": "Boreogadus saida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Arctic cod",
+      "type": "common",
+      "suggestion": "Boreogadus saida",
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Arctic grayling",
+      "type": "common",
+      "suggestion": "Thymallus arcticus",
+      "commonName": "Arctic Grayling"
+    },
+    {
+      "binomial": "Thymallus arcticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Grayling"
+    },
+    {
+      "binomial": "Ammodytes hexapterus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Sand Lance"
+    },
+    {
+      "binomial": "Gymnocanthus tricus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus keta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chum Salmon"
+    },
+    {
+      "binomial": "Pungitius pungitius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Pacific capelin",
+      "type": "common",
+      "suggestion": "Mallotus catervarius",
+      "commonName": "Pacific Capelin"
+    },
+    {
+      "binomial": "Mallotus catervarius",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Pacific Capelin"
+    },
+    {
+      "binomial": "Pacific herring",
+      "type": "common",
+      "suggestion": "Clupea pallasii",
+      "commonName": "Pacific Herring"
+    },
+    {
+      "binomial": "Clupea pallasii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Herring"
+    },
+    {
+      "binomial": "Oncorhynchus gorbuscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pink Salmon"
+    },
+    {
+      "binomial": "Broad whitefish",
+      "type": "common",
+      "suggestion": "Coregonus nasus",
+      "commonName": "Broad Whitefish"
+    },
+    {
+      "binomial": "Osmerus dentex",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Rainbow Smelt"
+    },
+    {
+      "binomial": "Gymnocanthus tricuspis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Staghorn Sculpin"
+    },
+    {
+      "binomial": "Humpback whitefish",
+      "type": "common",
+      "suggestion": "Coregonus pidschian",
+      "commonName": "Humpback Whitefish"
+    },
+    {
+      "binomial": "Least cisco",
+      "type": "common",
+      "suggestion": "Coregonus sardinella",
+      "commonName": "Least Cisco"
+    },
+    {
+      "binomial": "Coregonus sar",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pungitius pun",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chum salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus keta",
+      "commonName": "Chum Salmon"
+    },
+    {
+      "binomial": "Pink salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus gorbuscha",
+      "commonName": "Pink Salmon"
+    },
+    {
+      "binomial": "Saffron cod",
+      "type": "common",
+      "suggestion": "Eleginus gracilis",
+      "commonName": "Saffron Cod"
+    },
+    {
+      "binomial": "Liopsetta gla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Fourhorn sculpin",
+      "type": "common",
+      "suggestion": "Myoxocephalus quadricornis",
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Mallotus cater",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus pidschian",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Humpback Whitefish"
+    },
+    {
+      "binomial": "Oncorhynchus gor",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Threespine stickleback",
+      "type": "common",
+      "suggestion": "Gasterosteus aculeatus",
+      "commonName": "Threespine Stickleback"
+    },
+    {
+      "binomial": "Ninespine stickleback",
+      "type": "common",
+      "suggestion": "Pungitius pungitius",
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Esox lucius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Northern Pike"
+    }
+  ],
+  "source_file": "2387875ba916878a.txt"
+}

@@ -1,0 +1,146 @@
+{
+  "candidates_found": 523,
+  "unique_binomials": 22,
+  "classifications": {
+    "common": 4,
+    "valid": 11,
+    "misspelled": 2,
+    "unknown": 3,
+    "changed": 2
+  },
+  "details": [
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Perca flavescens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Carassiuas auratus",
+      "type": "misspelled",
+      "suggestion": "Carassius auratus",
+      "commonName": null
+    },
+    {
+      "binomial": "Chinook salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus tshawytscha",
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Pleuronectes platessa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Brevoortia patronus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Menhaden"
+    },
+    {
+      "binomial": "Anguilla anguilla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pacific cod",
+      "type": "common",
+      "suggestion": "Gadus macrocephalus",
+      "commonName": "Pacific Cod"
+    },
+    {
+      "binomial": "Gadus macrocephalus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Cod"
+    },
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    },
+    {
+      "binomial": "Girella elevata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus tshawytscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Sciaeops ocellatus",
+      "type": "misspelled",
+      "suggestion": "Sciaenops ocellatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic cod",
+      "type": "common",
+      "suggestion": "Gadus morhua",
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Leiostomus xanthurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spot"
+    },
+    {
+      "binomial": "Lutjanus griseus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Snapper"
+    },
+    {
+      "binomial": "Sebastes melanops",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Rockfish"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Epinephelus guttatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Hind"
+    }
+  ],
+  "source_file": "bd48e9483cf0a350.txt"
+}

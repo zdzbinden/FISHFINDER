@@ -1,0 +1,73 @@
+{
+  "candidates_found": 306,
+  "unique_binomials": 10,
+  "classifications": {
+    "valid": 7,
+    "outdated": 1,
+    "common": 1,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Pimephales promelas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fathead Minnow"
+    },
+    {
+      "binomial": "Clupea pallasi",
+      "type": "outdated",
+      "suggestion": "Clupea pallasii",
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus nerka",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sockeye Salmon"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Fundulus grandis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Killifish"
+    },
+    {
+      "binomial": "Fundulus heteroclitus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mummichog"
+    },
+    {
+      "binomial": "Coryphaena hippurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dolphinfish"
+    },
+    {
+      "binomial": "Menidia beryllina",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Inland Silverside"
+    },
+    {
+      "binomial": "Scophthalmus maximus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    }
+  ],
+  "source_file": "12000366ffc08add.txt"
+}

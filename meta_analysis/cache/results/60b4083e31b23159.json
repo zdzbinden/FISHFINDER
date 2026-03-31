@@ -1,0 +1,35 @@
+{
+  "candidates_found": 156,
+  "unique_binomials": 4,
+  "classifications": {
+    "common": 1,
+    "valid": 3
+  },
+  "details": [
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Nocomis asper",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Redspot Chub"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    }
+  ],
+  "source_file": "60b4083e31b23159.txt"
+}

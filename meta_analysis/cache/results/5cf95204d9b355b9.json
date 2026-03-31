@@ -1,0 +1,103 @@
+{
+  "candidates_found": 164,
+  "unique_binomials": 15,
+  "classifications": {
+    "valid": 9,
+    "misspelled": 3,
+    "unknown": 2,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Pomacanthus arcuatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Angelfish"
+    },
+    {
+      "binomial": "Canthigaster rostrata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sharpnose Puffer"
+    },
+    {
+      "binomial": "Acanthostracion quadricornis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scrawled Cowfish"
+    },
+    {
+      "binomial": "Canthidermis sufflamen",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ocean Triggerfish"
+    },
+    {
+      "binomial": "Acanthurus coeruleus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blue Tang"
+    },
+    {
+      "binomial": "Haemulon plumieri",
+      "type": "misspelled",
+      "suggestion": "Haemulon plumierii",
+      "commonName": null
+    },
+    {
+      "binomial": "Aluterus schoepfii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Orange Filefish"
+    },
+    {
+      "binomial": "Scarus coelestinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Midnight Parrotfish"
+    },
+    {
+      "binomial": "Canthidermis rostrata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Holacanthus tricolor",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rock Beauty"
+    },
+    {
+      "binomial": "Lepomis macrohirus",
+      "type": "misspelled",
+      "suggestion": "Lepomis macrochirus",
+      "commonName": null
+    },
+    {
+      "binomial": "Pomoxis anularis",
+      "type": "misspelled",
+      "suggestion": "Pomoxis annularis",
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Canthigaster bennetti",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "5cf95204d9b355b9.txt"
+}

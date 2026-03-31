@@ -1,0 +1,41 @@
+{
+  "candidates_found": 254,
+  "unique_binomials": 5,
+  "classifications": {
+    "common": 1,
+    "valid": 4
+  },
+  "details": [
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus kisutch",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Coho Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    }
+  ],
+  "source_file": "e2be8bc12ea31346.txt"
+}

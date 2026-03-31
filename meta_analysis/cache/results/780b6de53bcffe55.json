@@ -1,0 +1,30 @@
+{
+  "candidates_found": 146,
+  "unique_binomials": 3,
+  "classifications": {
+    "common": 1,
+    "valid": 1,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Nile tilapia",
+      "type": "common",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Epinephelus fuscoguttatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "780b6de53bcffe55.txt"
+}

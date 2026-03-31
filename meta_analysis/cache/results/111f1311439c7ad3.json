@@ -1,0 +1,102 @@
+{
+  "candidates_found": 399,
+  "unique_binomials": 15,
+  "classifications": {
+    "valid": 13,
+    "outdated": 1,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Sebastes hopkinsi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Squarespot Rockfish"
+    },
+    {
+      "binomial": "Sebastes miniatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Vermilion Rockfish"
+    },
+    {
+      "binomial": "Sebastes wilsoni",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pygmy Rockfish"
+    },
+    {
+      "binomial": "Sebastes paucispinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bocaccio"
+    },
+    {
+      "binomial": "Ophiodon elongatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lingcod"
+    },
+    {
+      "binomial": "Sebastes rosaceus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rosy Rockfish"
+    },
+    {
+      "binomial": "Sebastes pinniger",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Canary Rockfish"
+    },
+    {
+      "binomial": "Sebastes semicinctus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Halfbanded Rockfish"
+    },
+    {
+      "binomial": "Caulolatilus princeps",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ocean Whitefish"
+    },
+    {
+      "binomial": "Chromis punctipinnis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacksmith"
+    },
+    {
+      "binomial": "Sebastes chlorostictus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Greenspotted Rockfish"
+    },
+    {
+      "binomial": "Semicossyphus pulcher",
+      "type": "outdated",
+      "suggestion": "Bodianus pulcher",
+      "commonName": null
+    },
+    {
+      "binomial": "Rhinogobiops nicholsii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackeye Goby"
+    },
+    {
+      "binomial": "Sebastes mystinus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Blue Rockfish"
+    },
+    {
+      "binomial": "Sebastes levis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cowcod"
+    }
+  ],
+  "source_file": "111f1311439c7ad3.txt"
+}

@@ -1,0 +1,668 @@
+{
+  "candidates_found": 664,
+  "unique_binomials": 109,
+  "classifications": {
+    "valid": 58,
+    "changed": 5,
+    "unknown": 5,
+    "common": 40,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Anchoa mitchilli",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bay Anchovy"
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Lagodon rhomboides",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pinfish"
+    },
+    {
+      "binomial": "Cynoscion nebulosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Seatrout"
+    },
+    {
+      "binomial": "Pogonias cromis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Drum"
+    },
+    {
+      "binomial": "Menticirrhus lit",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Paralichthys lethostigma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Southern Flounder"
+    },
+    {
+      "binomial": "Menticirrhus americanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Southern Kingfish"
+    },
+    {
+      "binomial": "Pogonias cro",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Syngnathus louisianae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chain Pipefish"
+    },
+    {
+      "binomial": "Elops smithi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Malacho"
+    },
+    {
+      "binomial": "Brevoortia tyrannus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Menhaden"
+    },
+    {
+      "binomial": "Chasmodes bosquianus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Blenny"
+    },
+    {
+      "binomial": "Chilomycterus sch",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Notemigonus crysoleucas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Golden Shiner"
+    },
+    {
+      "binomial": "Anchoa hepsetus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Anchovy"
+    },
+    {
+      "binomial": "Bay anchovy",
+      "type": "common",
+      "suggestion": "Anchoa mitchilli",
+      "commonName": "Bay Anchovy"
+    },
+    {
+      "binomial": "Archosargus probatocephalus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sheepshead"
+    },
+    {
+      "binomial": "Ariopsis felis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Hardhead Catfish"
+    },
+    {
+      "binomial": "Atractosteus spatula",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Alligator Gar"
+    },
+    {
+      "binomial": "Alligator gar",
+      "type": "common",
+      "suggestion": "Atractosteus spatula",
+      "commonName": "Alligator Gar"
+    },
+    {
+      "binomial": "Bagre marinus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Gafftopsail Catfish"
+    },
+    {
+      "binomial": "Bairdiella chrysoura",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Perch"
+    },
+    {
+      "binomial": "Brevoortia patronus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Menhaden"
+    },
+    {
+      "binomial": "Gulf menhaden",
+      "type": "common",
+      "suggestion": "Brevoortia patronus",
+      "commonName": "Gulf Menhaden"
+    },
+    {
+      "binomial": "Atlantic menhaden",
+      "type": "common",
+      "suggestion": "Brevoortia tyrannus",
+      "commonName": "Atlantic Menhaden"
+    },
+    {
+      "binomial": "Caranx hippos",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Crevalle Jack"
+    },
+    {
+      "binomial": "Crevalle jack",
+      "type": "common",
+      "suggestion": "Caranx hippos",
+      "commonName": "Crevalle Jack"
+    },
+    {
+      "binomial": "Centropomus mexicanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Largescale Fat Snook"
+    },
+    {
+      "binomial": "Chaetodipterus faber",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Spadefish"
+    },
+    {
+      "binomial": "Atlantic spadefish",
+      "type": "common",
+      "suggestion": "Chaetodipterus faber",
+      "commonName": "Atlantic Spadefish"
+    },
+    {
+      "binomial": "Striped blenny",
+      "type": "common",
+      "suggestion": "Chasmodes bosquianus",
+      "commonName": "Striped Blenny"
+    },
+    {
+      "binomial": "Chilomycterus schoepfii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Burrfish"
+    },
+    {
+      "binomial": "Striped burrfish",
+      "type": "common",
+      "suggestion": "Chilomycterus schoepfii",
+      "commonName": "Striped Burrfish"
+    },
+    {
+      "binomial": "Chloroscombrus chrysurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Bumper"
+    },
+    {
+      "binomial": "Atlantic bumper",
+      "type": "common",
+      "suggestion": "Chloroscombrus chrysurus",
+      "commonName": "Atlantic Bumper"
+    },
+    {
+      "binomial": "Ctenogobius boleosoma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Darter Goby"
+    },
+    {
+      "binomial": "Darter goby",
+      "type": "common",
+      "suggestion": "Ctenogobius boleosoma",
+      "commonName": "Darter Goby"
+    },
+    {
+      "binomial": "Cynoscion arenarius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sand Seatrout"
+    },
+    {
+      "binomial": "Sand seatrout",
+      "type": "common",
+      "suggestion": "Cynoscion arenarius",
+      "commonName": "Sand Seatrout"
+    },
+    {
+      "binomial": "Cynoscion nothus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Seatrout"
+    },
+    {
+      "binomial": "Silver seatrout",
+      "type": "common",
+      "suggestion": "Cynoscion nothus",
+      "commonName": "Silver Seatrout"
+    },
+    {
+      "binomial": "Cyprinodon variegatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sheepshead Minnow"
+    },
+    {
+      "binomial": "Sheepshead minnow",
+      "type": "common",
+      "suggestion": "Cyprinodon variegatus",
+      "commonName": "Sheepshead Minnow"
+    },
+    {
+      "binomial": "Dorosoma cepedianum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gizzard Shad"
+    },
+    {
+      "binomial": "Gizzard shad",
+      "type": "common",
+      "suggestion": "Dorosoma cepedianum",
+      "commonName": "Gizzard Shad"
+    },
+    {
+      "binomial": "Elops saurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ladyfish"
+    },
+    {
+      "binomial": "Erotelis smaragdus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Emerald Sleeper"
+    },
+    {
+      "binomial": "Emerald sleeper",
+      "type": "common",
+      "suggestion": "Erotelis smaragdus",
+      "commonName": "Emerald Sleeper"
+    },
+    {
+      "binomial": "Etropus crossotus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fringed Flounder"
+    },
+    {
+      "binomial": "Fringed flounder",
+      "type": "common",
+      "suggestion": "Etropus crossotus",
+      "commonName": "Fringed Flounder"
+    },
+    {
+      "binomial": "Fundulus pulvereus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bayou Killifish"
+    },
+    {
+      "binomial": "Bayou killifish",
+      "type": "common",
+      "suggestion": "Fundulus pulvereus",
+      "commonName": "Bayou Killifish"
+    },
+    {
+      "binomial": "Fundulus similis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Killifish"
+    },
+    {
+      "binomial": "Longnose killifish",
+      "type": "common",
+      "suggestion": "Fundulus similis",
+      "commonName": "Longnose Killifish"
+    },
+    {
+      "binomial": "Gambusia affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Western mosquitofish",
+      "type": "common",
+      "suggestion": "Gambusia affinis",
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Gobiesox strumosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Skilletfish"
+    },
+    {
+      "binomial": "Gobiosoma bosc",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Naked Goby"
+    },
+    {
+      "binomial": "Naked goby",
+      "type": "common",
+      "suggestion": "Gobiosoma bosc",
+      "commonName": "Naked Goby"
+    },
+    {
+      "binomial": "Harengula jaguana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scaled Sardine"
+    },
+    {
+      "binomial": "Scaled sardine",
+      "type": "common",
+      "suggestion": "Harengula jaguana",
+      "commonName": "Scaled Sardine"
+    },
+    {
+      "binomial": "Hypleurochilus geminatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Crested Blenny"
+    },
+    {
+      "binomial": "Crested blenny",
+      "type": "common",
+      "suggestion": "Hypleurochilus geminatus",
+      "commonName": "Crested Blenny"
+    },
+    {
+      "binomial": "Hypsoblennius ionthas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Freckled Blenny"
+    },
+    {
+      "binomial": "Freckled blenny",
+      "type": "common",
+      "suggestion": "Hypsoblennius ionthas",
+      "commonName": "Freckled Blenny"
+    },
+    {
+      "binomial": "Leiostomus xanthurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spot"
+    },
+    {
+      "binomial": "Lepisosteus oculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Gar"
+    },
+    {
+      "binomial": "Spotted gar",
+      "type": "common",
+      "suggestion": "Lepisosteus oculatus",
+      "commonName": "Spotted Gar"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Membras martinica",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rough Silverside"
+    },
+    {
+      "binomial": "Rough silverside",
+      "type": "common",
+      "suggestion": "Membras martinica",
+      "commonName": "Rough Silverside"
+    },
+    {
+      "binomial": "Menidia peninsulae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tidewater Silverside"
+    },
+    {
+      "binomial": "Tidewater silverside",
+      "type": "common",
+      "suggestion": "Menidia peninsulae",
+      "commonName": "Tidewater Silverside"
+    },
+    {
+      "binomial": "Menticirrhus littoralis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Kingfish"
+    },
+    {
+      "binomial": "Gulf kingfish",
+      "type": "common",
+      "suggestion": "Menticirrhus littoralis",
+      "commonName": "Gulf Kingfish"
+    },
+    {
+      "binomial": "Micropogonias undulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Croaker"
+    },
+    {
+      "binomial": "Atlantic croaker",
+      "type": "common",
+      "suggestion": "Micropogonias undulatus",
+      "commonName": "Atlantic Croaker"
+    },
+    {
+      "binomial": "Mugil curema",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "White Mullet"
+    },
+    {
+      "binomial": "White mullet",
+      "type": "common",
+      "suggestion": "Mugil curema",
+      "commonName": "White Mullet"
+    },
+    {
+      "binomial": "Golden shiner",
+      "type": "common",
+      "suggestion": "Notemigonus crysoleucas",
+      "commonName": "Golden Shiner"
+    },
+    {
+      "binomial": "Opisthonema oglinum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Thread Herring"
+    },
+    {
+      "binomial": "Paralichthys albigutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Flounder"
+    },
+    {
+      "binomial": "Gulf flounder",
+      "type": "common",
+      "suggestion": "Paralichthys albigutta",
+      "commonName": "Gulf Flounder"
+    },
+    {
+      "binomial": "Southern flounder",
+      "type": "common",
+      "suggestion": "Paralichthys lethostigma",
+      "commonName": "Southern Flounder"
+    },
+    {
+      "binomial": "Peprilus paru",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Harvestfish"
+    },
+    {
+      "binomial": "Poecilia latipinna",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sailfin Molly"
+    },
+    {
+      "binomial": "Sailfin molly",
+      "type": "common",
+      "suggestion": "Poecilia latipinna",
+      "commonName": "Sailfin Molly"
+    },
+    {
+      "binomial": "Black drum",
+      "type": "common",
+      "suggestion": "Pogonias cromis",
+      "commonName": "Black Drum"
+    },
+    {
+      "binomial": "Ptereleotris zebra",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sardinella aurita",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spanish Sardine"
+    },
+    {
+      "binomial": "Scartella cristata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Molly Miller"
+    },
+    {
+      "binomial": "Molly miller",
+      "type": "common",
+      "suggestion": "Scartella cristata",
+      "commonName": "Molly Miller"
+    },
+    {
+      "binomial": "Sciaenops ocellatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Drum"
+    },
+    {
+      "binomial": "Red drum",
+      "type": "common",
+      "suggestion": "Sciaenops ocellatus",
+      "commonName": "Red Drum"
+    },
+    {
+      "binomial": "Scomberomorus maculatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Spanish Mackerel"
+    },
+    {
+      "binomial": "Spanish mackerel",
+      "type": "common",
+      "suggestion": "Scomberomorus maculatus",
+      "commonName": "Spanish Mackerel"
+    },
+    {
+      "binomial": "Symphurus plagiusa",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackcheek Tonguefish"
+    },
+    {
+      "binomial": "Blackcheek tonguefish",
+      "type": "common",
+      "suggestion": "Symphurus plagiusa",
+      "commonName": "Blackcheek Tonguefish"
+    },
+    {
+      "binomial": "Chain pipefish",
+      "type": "common",
+      "suggestion": "Syngnathus louisianae",
+      "commonName": "Chain Pipefish"
+    },
+    {
+      "binomial": "Syngnathus scovelli",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Pipefish"
+    },
+    {
+      "binomial": "Synodus foetens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Inshore Lizardfish"
+    },
+    {
+      "binomial": "Inshore lizardfish",
+      "type": "common",
+      "suggestion": "Synodus foetens",
+      "commonName": "Inshore Lizardfish"
+    },
+    {
+      "binomial": "Trachinotus falcatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Permit"
+    },
+    {
+      "binomial": "Brevootia patronus",
+      "type": "misspelled",
+      "suggestion": "Brevoortia patronus",
+      "commonName": null
+    },
+    {
+      "binomial": "Gobiomorus dormitor",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigmouth Sleeper"
+    },
+    {
+      "binomial": "Chasmodes bos",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaenopsis ocellata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluethroat Pikeblenny"
+    },
+    {
+      "binomial": "Carcharodon carcharias",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Shark"
+    }
+  ],
+  "source_file": "e0ff73d49201452e.txt"
+}

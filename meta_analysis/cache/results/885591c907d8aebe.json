@@ -1,0 +1,91 @@
+{
+  "candidates_found": 352,
+  "unique_binomials": 13,
+  "classifications": {
+    "valid": 9,
+    "common": 1,
+    "unknown": 1,
+    "changed": 2
+  },
+  "details": [
+    {
+      "binomial": "Perca flavescens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Sander vitreus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walleye"
+    },
+    {
+      "binomial": "Yellow perch",
+      "type": "common",
+      "suggestion": "Perca flavescens",
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sander lucioperca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Zander"
+    },
+    {
+      "binomial": "Sebastes melanops",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Rockfish"
+    },
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Rhinogobius brunneus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Amur Goby"
+    },
+    {
+      "binomial": "Coregonus artedi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cisco"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Oncorhynchus nerka",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sockeye Salmon"
+    },
+    {
+      "binomial": "Melanogrammus aeglefinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Haddock"
+    },
+    {
+      "binomial": "Oncorhynchus gorbuscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pink Salmon"
+    }
+  ],
+  "source_file": "885591c907d8aebe.txt"
+}

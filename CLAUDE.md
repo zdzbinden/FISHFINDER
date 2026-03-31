@@ -28,20 +28,21 @@ FISHFINDER/
 │   ├── Names-of-Fishes-8-Table1.pdf  ← AFS table-only PDF (source for parser)
 │   └── NAMES OF FISHES 8th.pdf       ← full book PDF (NOT used by parser)
 │   (both PDFs are gitignored — copyrighted)
-├── publication/                   ← FISHERIES companion paper & meta-analysis
-│   ├── appendix.md               ← Technical appendix source (Markdown)
+├── publication/                   ← FISHERIES companion paper (gitignored, local only)
+│   ├── manuscript.md             ← Feature article draft for Fisheries magazine
+│   ├── fishfinder_appendix1.md   ← Technical appendix source (Markdown)
+│   ├── meta_analysis_appendix2.md ← Meta-analysis methods appendix (Markdown)
 │   ├── generate_appendix.py      ← Reads appendix.md → styled .docx
-│   ├── drafts/                   ← Archived old files
-│   ├── meta_analysis_appendix.md  ← Meta-analysis methods appendix (Markdown)
-│   └── meta_analysis/            ← Automated literature analysis pipeline
-│       ├── config.py             ← Paths, API URLs, rate limits, filters, thresholds
-│       ├── 01_discover_papers.py ← OpenAlex API → papers.json (newest-first, title filter)
-│       ├── 02_download_pdfs.py   ← Publisher heuristics + Unpaywall → cache/pdfs/
-│       ├── 03_extract_text.py    ← PyMuPDF → cache/texts/
-│       ├── 04_analyze_names.js   ← Node.js engine wrapper → cache/results/
-│       ├── 05_summarize.py       ← Aggregate stats + NA ratio filter → summary.json + .md
-│       ├── 06_make_figures.py    ← Publication figures (PNG+PDF), CSV tables, captions
-│       └── run_pipeline.py       ← Orchestrator (runs steps 1-6)
+│   └── drafts/                   ← Archived old files
+├── meta_analysis/                 ← Automated literature analysis pipeline
+│   ├── config.py                 ← Paths, API URLs, rate limits, filters, thresholds
+│   ├── 01_discover_papers.py     ← OpenAlex API → papers.json (newest-first, title filter)
+│   ├── 02_download_pdfs.py       ← Publisher heuristics + Unpaywall → cache/pdfs/
+│   ├── 03_extract_text.py        ← PyMuPDF → cache/texts/
+│   ├── 04_analyze_names.js       ← Node.js engine wrapper → cache/results/
+│   ├── 05_summarize.py           ← Aggregate stats + NA ratio filter → summary.json + .md
+│   ├── 06_make_figures.py        ← Publication figures (PNG+PDF), CSV tables, captions
+│   └── run_pipeline.py           ← Orchestrator (runs steps 1-6)
 └── fishfinder/                   ← static web app (GitHub Pages target)
     ├── index.html
     ├── css/style.css             ← Lowrance-inspired retro fish finder UI

@@ -1,0 +1,36 @@
+{
+  "candidates_found": 290,
+  "unique_binomials": 4,
+  "classifications": {
+    "changed": 1,
+    "unknown": 2,
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Salvelinus fon",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salvelinus fonti",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salvelinus alpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Char"
+    }
+  ],
+  "source_file": "917250a71ecc7557.txt"
+}

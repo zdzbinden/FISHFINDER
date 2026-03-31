@@ -1,0 +1,60 @@
+{
+  "candidates_found": 222,
+  "unique_binomials": 8,
+  "classifications": {
+    "valid": 6,
+    "misspelled": 1,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Pimephales promelas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fathead Minnow"
+    },
+    {
+      "binomial": "Rhinichthys atratulus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacknose Dace"
+    },
+    {
+      "binomial": "Semotilus atromaculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Creek Chub"
+    },
+    {
+      "binomial": "Catostomus commersoni",
+      "type": "misspelled",
+      "suggestion": "Catostomus commersonii",
+      "commonName": null
+    },
+    {
+      "binomial": "Rhinichthys cataractae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Dace"
+    },
+    {
+      "binomial": "Etheostoma caeruleum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Darter"
+    },
+    {
+      "binomial": "Carmine shiner",
+      "type": "common",
+      "suggestion": "Notropis percobromus",
+      "commonName": "Carmine Shiner"
+    },
+    {
+      "binomial": "Notropis percobromus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Carmine Shiner"
+    }
+  ],
+  "source_file": "b40dc1a7525ace3f.txt"
+}

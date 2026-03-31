@@ -1,0 +1,123 @@
+{
+  "candidates_found": 422,
+  "unique_binomials": 18,
+  "classifications": {
+    "misspelled": 1,
+    "common": 1,
+    "unknown": 7,
+    "valid": 5,
+    "outdated": 3,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Oreochronis niloticus",
+      "type": "misspelled",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": null
+    },
+    {
+      "binomial": "Nile tilapia",
+      "type": "common",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Rhamdia quelen",
+      "type": "outdated",
+      "suggestion": "Rhamdia guatemalensis",
+      "commonName": null
+    },
+    {
+      "binomial": "Channa punctatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Micropterus sal",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Clarias anguillaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tilapia zillii",
+      "type": "outdated",
+      "suggestion": "Coptodon zillii",
+      "commonName": null
+    },
+    {
+      "binomial": "Geophagus brasiliensis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tilapia rendalli",
+      "type": "outdated",
+      "suggestion": "Coptodon rendalli",
+      "commonName": null
+    },
+    {
+      "binomial": "Mugil liza",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Liza"
+    },
+    {
+      "binomial": "Brycon cephalus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    },
+    {
+      "binomial": "Anguilla anguilla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ictalurus punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Channel Catfish"
+    }
+  ],
+  "source_file": "9a6fa03005029cbd.txt"
+}

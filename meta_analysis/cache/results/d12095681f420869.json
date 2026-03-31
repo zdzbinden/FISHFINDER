@@ -1,0 +1,157 @@
+{
+  "candidates_found": 391,
+  "unique_binomials": 24,
+  "classifications": {
+    "unknown": 15,
+    "valid": 6,
+    "common": 1,
+    "changed": 2
+  },
+  "details": [
+    {
+      "binomial": "Coregonus species",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salvelinus namaycush",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Trout"
+    },
+    {
+      "binomial": "Coregonus artedi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cisco"
+    },
+    {
+      "binomial": "Coregonus study",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus had",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus above",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus populations",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus clupeaformis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Whitefish"
+    },
+    {
+      "binomial": "Coregonus population",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus diversi",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus around",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus progenitors",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Salvelinus complexes",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Coregonus demographic",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus linkage",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus analysis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus data",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Poecilia reticulata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Guppy"
+    },
+    {
+      "binomial": "Myoxocephalus thompsonii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Deepwater Sculpin"
+    },
+    {
+      "binomial": "Thunnus albacares",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Yellowfin Tuna"
+    },
+    {
+      "binomial": "Coregonus ssp",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Coregonus hoyi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bloater"
+    }
+  ],
+  "source_file": "d12095681f420869.txt"
+}

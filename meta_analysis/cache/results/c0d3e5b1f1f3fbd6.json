@@ -1,0 +1,28 @@
+{
+  "candidates_found": 436,
+  "unique_binomials": 3,
+  "classifications": {
+    "unknown": 3
+  },
+  "details": [
+    {
+      "binomial": "Atherinomorus lacunosus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus argentima",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus argentimaculatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "c0d3e5b1f1f3fbd6.txt"
+}

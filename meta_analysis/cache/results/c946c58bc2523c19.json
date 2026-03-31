@@ -1,0 +1,79 @@
+{
+  "candidates_found": 292,
+  "unique_binomials": 11,
+  "classifications": {
+    "changed": 2,
+    "valid": 2,
+    "unknown": 6,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Anguilla japonica",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Rhinogobius giurinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Hyporhamphus sajori",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Conger myriaster",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Paralichthys olivaceus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pleuronichthys cornutus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    }
+  ],
+  "source_file": "c946c58bc2523c19.txt"
+}

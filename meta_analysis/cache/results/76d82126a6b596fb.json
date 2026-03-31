@@ -1,0 +1,16 @@
+{
+  "candidates_found": 162,
+  "unique_binomials": 1,
+  "classifications": {
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Lagocephalus sceleratus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "76d82126a6b596fb.txt"
+}

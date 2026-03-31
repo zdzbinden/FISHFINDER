@@ -1,0 +1,47 @@
+{
+  "candidates_found": 178,
+  "unique_binomials": 6,
+  "classifications": {
+    "unknown": 4,
+    "valid": 2
+  },
+  "details": [
+    {
+      "binomial": "Channa gachua",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Channa punctata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Channa striata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis mossambicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mozambique Tilapia"
+    },
+    {
+      "binomial": "Clarias batrachus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walking Catfish"
+    },
+    {
+      "binomial": "Macrognathus pancalus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "30b89b87d0dfaeaa.txt"
+}

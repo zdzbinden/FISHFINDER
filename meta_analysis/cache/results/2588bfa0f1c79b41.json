@@ -1,0 +1,102 @@
+{
+  "candidates_found": 357,
+  "unique_binomials": 15,
+  "classifications": {
+    "valid": 13,
+    "outdated": 1,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Cyprinella venusta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacktail Shiner"
+    },
+    {
+      "binomial": "Lepomis humilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Orangespotted Sunfish"
+    },
+    {
+      "binomial": "Pimephales vigilax",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bullhead Minnow"
+    },
+    {
+      "binomial": "Hypophthalmichthys molitrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Lepomis cyanellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Sunfish"
+    },
+    {
+      "binomial": "Pomoxis annularis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Crappie"
+    },
+    {
+      "binomial": "Hybognathus nuchalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mississippi Silvery Minnow"
+    },
+    {
+      "binomial": "Notropis volucellus",
+      "type": "outdated",
+      "suggestion": "Paranotropis volucellus",
+      "commonName": null
+    },
+    {
+      "binomial": "Cyprinella camura",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluntface Shiner"
+    },
+    {
+      "binomial": "Yazoo shiner",
+      "type": "common",
+      "suggestion": "Miniellus rafinesquei",
+      "commonName": "Yazoo Shiner"
+    },
+    {
+      "binomial": "Percina vigil",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Saddleback Darter"
+    },
+    {
+      "binomial": "Etheostoma gracile",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slough Darter"
+    },
+    {
+      "binomial": "Percina caprodes",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Logperch"
+    },
+    {
+      "binomial": "Micropterus punctulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Bass"
+    }
+  ],
+  "source_file": "2588bfa0f1c79b41.txt"
+}

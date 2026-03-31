@@ -1,0 +1,303 @@
+{
+  "candidates_found": 712,
+  "unique_binomials": 48,
+  "classifications": {
+    "valid": 18,
+    "common": 7,
+    "unknown": 12,
+    "outdated": 5,
+    "changed": 2,
+    "misspelled": 4
+  },
+  "details": [
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Common carp",
+      "type": "common",
+      "suggestion": "Cyprinus carpio",
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Esox lucius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Northern pike",
+      "type": "common",
+      "suggestion": "Esox lucius",
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Gambusia affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Gambusia holbrooki",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Eastern Mosquitofish"
+    },
+    {
+      "binomial": "Eastern mosquitofish",
+      "type": "common",
+      "suggestion": "Gambusia holbrooki",
+      "commonName": "Eastern Mosquitofish"
+    },
+    {
+      "binomial": "Gymnocephalus cernua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ruffe"
+    },
+    {
+      "binomial": "Lepomis gibbosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pumpkinseed"
+    },
+    {
+      "binomial": "Leuciscus leuciscus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Misgurnus fossilis",
+      "type": "outdated",
+      "suggestion": "Misgurnus anguillicaudatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Sander lucioperca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Zander"
+    },
+    {
+      "binomial": "Scardinius erythrophthalmus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rudd"
+    },
+    {
+      "binomial": "Tinca tinca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tench"
+    },
+    {
+      "binomial": "Acipenser sturio",
+      "type": "outdated",
+      "suggestion": "Acipenser oxyrinchus",
+      "commonName": null
+    },
+    {
+      "binomial": "Alosa alosa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Alosa fallax",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Gasterosteus aculeatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Threespine Stickleback"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Petromyzon marinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sea Lamprey"
+    },
+    {
+      "binomial": "Pungitius pungitius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Ninespine stickleback",
+      "type": "common",
+      "suggestion": "Pungitius pungitius",
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Anguilla anguilla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Platichthys flesus",
+      "type": "outdated",
+      "suggestion": "Platichthys stellatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Atherina boyeri",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ameiurus melas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Bullhead"
+    },
+    {
+      "binomial": "Black bullhead",
+      "type": "common",
+      "suggestion": "Ameiurus melas",
+      "commonName": "Black Bullhead"
+    },
+    {
+      "binomial": "Syngnathus abaster",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lepomis gibosus",
+      "type": "misspelled",
+      "suggestion": "Lepomis gibbosus",
+      "commonName": null
+    },
+    {
+      "binomial": "Atherina boiery",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Pleuronectes flesus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Fundulus heteroclitus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mummichog"
+    },
+    {
+      "binomial": "Pungitius vulgaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lucioperca lucioperca",
+      "type": "outdated",
+      "suggestion": "Sander lucioperca",
+      "commonName": null
+    },
+    {
+      "binomial": "Alosa falax",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Leuciscus cephalus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Culea inconstans",
+      "type": "misspelled",
+      "suggestion": "Culaea inconstans",
+      "commonName": null
+    },
+    {
+      "binomial": "Apeltes quadracus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fourspine Stickleback"
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    },
+    {
+      "binomial": "Gymnocephalus cernuus",
+      "type": "outdated",
+      "suggestion": "Gymnocephalus cernua",
+      "commonName": null
+    },
+    {
+      "binomial": "Poecilia reticulata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Guppy"
+    },
+    {
+      "binomial": "Poecilia reticulate",
+      "type": "misspelled",
+      "suggestion": "Poecilia reticulata",
+      "commonName": null
+    },
+    {
+      "binomial": "Scardinius erythropthalmus",
+      "type": "misspelled",
+      "suggestion": "Scardinius erythrophthalmus",
+      "commonName": null
+    },
+    {
+      "binomial": "Atlantic sturgeon",
+      "type": "common",
+      "suggestion": "Acipenser oxyrinchus",
+      "commonName": "Atlantic Sturgeon"
+    }
+  ],
+  "source_file": "ba718caee1ba0d3c.txt"
+}

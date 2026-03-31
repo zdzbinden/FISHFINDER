@@ -1,0 +1,85 @@
+{
+  "candidates_found": 385,
+  "unique_binomials": 12,
+  "classifications": {
+    "common": 2,
+    "valid": 3,
+    "unknown": 6,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Tiger shark",
+      "type": "common",
+      "suggestion": "Galeocerdo cuvier",
+      "commonName": "Tiger Shark"
+    },
+    {
+      "binomial": "Galeocerdo cuvier",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tiger Shark"
+    },
+    {
+      "binomial": "Albula glossodonta",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Synodus jaculum",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Aetobatus narinari",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Spotted Eagle Ray"
+    },
+    {
+      "binomial": "Triaenodon obesus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Whitetip Reef Shark"
+    },
+    {
+      "binomial": "Caranx ignobilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Longnose hawkfish",
+      "type": "common",
+      "suggestion": "Oxycirrhites typus",
+      "commonName": "Longnose Hawkfish"
+    },
+    {
+      "binomial": "Oxycirrhites typus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Hawkfish"
+    },
+    {
+      "binomial": "Epinephelus flavocaeruleus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Cephalopholis polleni",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaetodon trifasciatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "a0ecc5fe3892865f.txt"
+}

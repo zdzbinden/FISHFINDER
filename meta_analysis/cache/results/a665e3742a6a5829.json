@@ -1,0 +1,66 @@
+{
+  "candidates_found": 306,
+  "unique_binomials": 9,
+  "classifications": {
+    "valid": 2,
+    "unknown": 5,
+    "changed": 2
+  },
+  "details": [
+    {
+      "binomial": "Oreochromis mossambicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mozambique Tilapia"
+    },
+    {
+      "binomial": "Clarias batrachus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walking Catfish"
+    },
+    {
+      "binomial": "Channa striata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Gerres oyena",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Anguilla bicolor",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chanos chanos",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Milkfish"
+    },
+    {
+      "binomial": "Hyporhamphus xanthopterus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Gerres filamentosus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "a665e3742a6a5829.txt"
+}

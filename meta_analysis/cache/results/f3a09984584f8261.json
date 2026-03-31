@@ -1,0 +1,36 @@
+{
+  "candidates_found": 35,
+  "unique_binomials": 4,
+  "classifications": {
+    "outdated": 2,
+    "unknown": 1,
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Carassius carassius",
+      "type": "outdated",
+      "suggestion": "Carassius gibelio",
+      "commonName": null
+    },
+    {
+      "binomial": "Misgurnus fossilis",
+      "type": "outdated",
+      "suggestion": "Misgurnus anguillicaudatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Umbra krameri",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tinca tinca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tench"
+    }
+  ],
+  "source_file": "f3a09984584f8261.txt"
+}

@@ -1,0 +1,48 @@
+{
+  "candidates_found": 316,
+  "unique_binomials": 6,
+  "classifications": {
+    "valid": 1,
+    "unknown": 4,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Pristis pristis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Largetooth Sawfish"
+    },
+    {
+      "binomial": "Anguilla bicolor",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus argentimaculatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Carcharhinus leucas",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bull Shark"
+    },
+    {
+      "binomial": "Strongylura krefftii",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Megalops cyprinoides",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "4f80b695c54672f8.txt"
+}

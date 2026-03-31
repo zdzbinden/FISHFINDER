@@ -1,0 +1,30 @@
+{
+  "candidates_found": 396,
+  "unique_binomials": 3,
+  "classifications": {
+    "common": 1,
+    "valid": 1,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Atlantic cod",
+      "type": "common",
+      "suggestion": "Gadus morhua",
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Mallotus villosus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Capelin"
+    }
+  ],
+  "source_file": "fe217b24c441426d.txt"
+}

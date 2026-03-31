@@ -1,0 +1,53 @@
+{
+  "candidates_found": 499,
+  "unique_binomials": 7,
+  "classifications": {
+    "unknown": 3,
+    "valid": 4
+  },
+  "details": [
+    {
+      "binomial": "Vinciguerria genus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Vinciguerria species",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ceratoscopelus maderensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Horned Lanternfish"
+    },
+    {
+      "binomial": "Vinciguerria attenuata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slender Lightfish"
+    },
+    {
+      "binomial": "Sardinella aurita",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spanish Sardine"
+    },
+    {
+      "binomial": "Engraulis encrasicolus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Cyclothone braueri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pale Bristlemouth"
+    }
+  ],
+  "source_file": "ff5907ec0216e538.txt"
+}

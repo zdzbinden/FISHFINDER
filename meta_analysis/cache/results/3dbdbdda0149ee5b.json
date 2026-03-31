@@ -1,0 +1,16 @@
+{
+  "candidates_found": 29,
+  "unique_binomials": 1,
+  "classifications": {
+    "outdated": 1
+  },
+  "details": [
+    {
+      "binomial": "Misgurnus fossilis",
+      "type": "outdated",
+      "suggestion": "Misgurnus anguillicaudatus",
+      "commonName": null
+    }
+  ],
+  "source_file": "3dbdbdda0149ee5b.txt"
+}

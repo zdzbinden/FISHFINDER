@@ -1,0 +1,296 @@
+{
+  "candidates_found": 506,
+  "unique_binomials": 47,
+  "classifications": {
+    "unknown": 17,
+    "valid": 25,
+    "outdated": 1,
+    "changed": 2,
+    "common": 2
+  },
+  "details": [
+    {
+      "binomial": "Scomberomorus commerson",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Syacium papillosum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dusky Flounder"
+    },
+    {
+      "binomial": "Auxis thazard",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Frigate Mackerel"
+    },
+    {
+      "binomial": "Trichiurus lepturus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cutlassfish"
+    },
+    {
+      "binomial": "Prionotus punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluewing Searobin"
+    },
+    {
+      "binomial": "Gymnothorax vicinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Purplemouth Moray"
+    },
+    {
+      "binomial": "Sardinella brasiliensis",
+      "type": "outdated",
+      "suggestion": "Sardinella aurita",
+      "commonName": null
+    },
+    {
+      "binomial": "Harengula clupeola",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "False Pilchard"
+    },
+    {
+      "binomial": "Coryphaena hippurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dolphinfish"
+    },
+    {
+      "binomial": "Scomber scombrus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Mackerel"
+    },
+    {
+      "binomial": "Antimora microlepis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Flatnose"
+    },
+    {
+      "binomial": "Salvelinus leucomaenis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pleurogrammus monopterygius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atka Mackerel"
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Cataetyx laticeps",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lookup Brotula"
+    },
+    {
+      "binomial": "Mullus surmuletus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Mullus barbatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Scomber japonicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Chub Mackerel"
+    },
+    {
+      "binomial": "Scomber australasicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Chub Mackerel"
+    },
+    {
+      "binomial": "Trachinotus coppingeri",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Abudefduf sordidus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus campechanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Snapper"
+    },
+    {
+      "binomial": "Rhomboplites aurorubens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Vermilion Snapper"
+    },
+    {
+      "binomial": "Chloroscombrus chrysurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Bumper"
+    },
+    {
+      "binomial": "Pomatomus saltatrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluefish"
+    },
+    {
+      "binomial": "Peprilus burti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Butterfish"
+    },
+    {
+      "binomial": "Trachinotus rhodopus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gafftopsail Pompano"
+    },
+    {
+      "binomial": "Abudefduf whitleyi",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ostracion cubicus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Epigonus telescopus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Zaprora silenus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Prowfish"
+    },
+    {
+      "binomial": "Prionurus microlepidotus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Prionurus maculatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Abudefduf bengalensis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Melichthys vidua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pinktail Durgon"
+    },
+    {
+      "binomial": "Pseudobalistes fuscus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pomacanthus sexstriatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lagocephalus lunaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sphoeroides testudineus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Checkered Puffer"
+    },
+    {
+      "binomial": "Arothron hispidus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Stripebelly Puffer"
+    },
+    {
+      "binomial": "Chaetodon flavirostris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Echeneis naucrates",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sharksucker"
+    },
+    {
+      "binomial": "Balistes capriscus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Triggerfish"
+    },
+    {
+      "binomial": "Balistes polylepis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Finescale Triggerfish"
+    },
+    {
+      "binomial": "Epinephelus cyanopodus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Deepwater cardinalfish",
+      "type": "common",
+      "suggestion": "Apogon gouldi",
+      "commonName": "Deepwater Cardinalfish"
+    },
+    {
+      "binomial": "Gafftopsail pompano",
+      "type": "common",
+      "suggestion": "Trachinotus rhodopus",
+      "commonName": "Gafftopsail Pompano"
+    }
+  ],
+  "source_file": "dc393eab8b923ba5.txt"
+}

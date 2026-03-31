@@ -1,0 +1,86 @@
+{
+  "candidates_found": 299,
+  "unique_binomials": 12,
+  "classifications": {
+    "valid": 7,
+    "outdated": 1,
+    "changed": 1,
+    "common": 2,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Lepomis cyanellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Sunfish"
+    },
+    {
+      "binomial": "Chrosomus eos",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Northern Redbelly Dace"
+    },
+    {
+      "binomial": "Notropis hudsonius",
+      "type": "outdated",
+      "suggestion": "Hudsonius hudsonius",
+      "commonName": null
+    },
+    {
+      "binomial": "Culaea inconstans",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brook Stickleback"
+    },
+    {
+      "binomial": "Pimephales notatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluntnose Minnow"
+    },
+    {
+      "binomial": "Ameiurus nebulosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Bullhead"
+    },
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    },
+    {
+      "binomial": "Rhinichthys atratulus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacknose Dace"
+    },
+    {
+      "binomial": "Brook stickleback",
+      "type": "common",
+      "suggestion": "Culaea inconstans",
+      "commonName": "Brook Stickleback"
+    },
+    {
+      "binomial": "Modoc sucker",
+      "type": "common",
+      "suggestion": "Catostomus microps",
+      "commonName": "Modoc Sucker"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Percina copelandi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Channel Darter"
+    }
+  ],
+  "source_file": "5084e316ebcd28dc.txt"
+}

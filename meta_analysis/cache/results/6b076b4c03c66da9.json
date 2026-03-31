@@ -1,0 +1,61 @@
+{
+  "candidates_found": 241,
+  "unique_binomials": 8,
+  "classifications": {
+    "unknown": 4,
+    "valid": 1,
+    "misspelled": 2,
+    "outdated": 1
+  },
+  "details": [
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Clarias garepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Orechromis niloticus",
+      "type": "misspelled",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": null
+    },
+    {
+      "binomial": "Tilapia zilli",
+      "type": "outdated",
+      "suggestion": "Coptodon zillii",
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias anguillaris",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochronmis niloticus",
+      "type": "misspelled",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": null
+    },
+    {
+      "binomial": "Acipenser persicus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "6b076b4c03c66da9.txt"
+}

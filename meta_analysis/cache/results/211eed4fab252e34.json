@@ -1,0 +1,16 @@
+{
+  "candidates_found": 230,
+  "unique_binomials": 1,
+  "classifications": {
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Cirrhitus pinnulatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "211eed4fab252e34.txt"
+}

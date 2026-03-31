@@ -1,0 +1,16 @@
+{
+  "candidates_found": 277,
+  "unique_binomials": 1,
+  "classifications": {
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Pterois volitans",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Lionfish"
+    }
+  ],
+  "source_file": "bf0052468875593a.txt"
+}

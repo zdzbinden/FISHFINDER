@@ -1,0 +1,60 @@
+{
+  "candidates_found": 415,
+  "unique_binomials": 8,
+  "classifications": {
+    "common": 4,
+    "valid": 3,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Brook trout",
+      "type": "common",
+      "suggestion": "Salvelinus fontinalis",
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Northern pike",
+      "type": "common",
+      "suggestion": "Esox lucius",
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Salvelinus namaycush",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Trout"
+    },
+    {
+      "binomial": "Lake sturgeon",
+      "type": "common",
+      "suggestion": "Acipenser fulvescens",
+      "commonName": "Lake Sturgeon"
+    },
+    {
+      "binomial": "Lake trout",
+      "type": "common",
+      "suggestion": "Salvelinus namaycush",
+      "commonName": "Lake Trout"
+    },
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Sander vitreus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walleye"
+    },
+    {
+      "binomial": "Acipenser medirostris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Sturgeon"
+    }
+  ],
+  "source_file": "82a58f39f4512cfd.txt"
+}

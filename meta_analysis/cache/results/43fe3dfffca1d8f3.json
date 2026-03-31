@@ -1,0 +1,54 @@
+{
+  "candidates_found": 313,
+  "unique_binomials": 7,
+  "classifications": {
+    "valid": 4,
+    "common": 2,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Notropis photogenis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Shiner"
+    },
+    {
+      "binomial": "Blue sucker",
+      "type": "common",
+      "suggestion": "Cycleptus elongatus",
+      "commonName": "Blue Sucker"
+    },
+    {
+      "binomial": "Notropis rubellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rosyface Shiner"
+    },
+    {
+      "binomial": "Trachinotus falcatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Permit"
+    },
+    {
+      "binomial": "Silver shiner",
+      "type": "common",
+      "suggestion": "Notropis photogenis",
+      "commonName": "Silver Shiner"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    }
+  ],
+  "source_file": "43fe3dfffca1d8f3.txt"
+}

@@ -1,0 +1,128 @@
+{
+  "candidates_found": 180,
+  "unique_binomials": 19,
+  "classifications": {
+    "valid": 9,
+    "unknown": 5,
+    "common": 3,
+    "outdated": 1,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Perca fla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Yellow perch",
+      "type": "common",
+      "suggestion": "Perca flavescens",
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Arctic char",
+      "type": "common",
+      "suggestion": "Salvelinus alpinus",
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Salvelinus alpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus masou",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Perca flavescens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Hypophthalmichthys molitrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Carp"
+    },
+    {
+      "binomial": "Tilapia rendalli",
+      "type": "outdated",
+      "suggestion": "Coptodon rendalli",
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis shiranus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Diplodus puntazzo",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sparus aurata",
+      "type": "misspelled",
+      "suggestion": "Sparus auratus",
+      "commonName": null
+    },
+    {
+      "binomial": "Salmo trutta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Trout"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Lepomis macro",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "85255fdee01bfa8c.txt"
+}

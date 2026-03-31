@@ -1,0 +1,14 @@
+FIGURE AND TABLE CAPTIONS
+========================
+
+Figure 1. Classification of 1341 unique species names detected across 95 open-access papers analyzed by FISHFINDER. Valid names matched the AFS Names of Fishes 8th edition exactly; Changed names are valid in the 8th edition but were updated from the 7th edition; Common Names were matched to their scientific binomial; Outdated names are pre-8th-edition synonyms; Misspelled names had a Levenshtein edit distance of 1-2 from a valid name; Unknown names had a recognized fish genus but an unrecognized species epithet (typically non-North-American species).
+
+Figure 2. Distribution of naming errors (outdated synonyms + misspellings) per paper across 95 analyzed papers. Papers with zero errors used only current, correctly spelled AFS names.
+
+Figure 3. The 20 most frequently detected fish species across all analyzed papers, color-coded by classification type. Species are shown by their current valid name in the AFS 8th edition.
+
+Figure 4. Most common naming issues detected across the analyzed literature. Orange bars indicate outdated synonyms (pre-8th-edition names); red bars indicate misspellings. Arrows show the correction suggested by FISHFINDER.
+
+Table 1. Summary statistics from the FISHFINDER meta-analysis of 95 recent open-access papers on North American fish communities.
+
+Table 2. Detailed listing of all outdated synonyms and misspellings detected, with the corrected name suggested by FISHFINDER and the number of papers in which each error appeared.

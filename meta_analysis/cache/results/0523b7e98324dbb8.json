@@ -1,0 +1,35 @@
+{
+  "candidates_found": 64,
+  "unique_binomials": 4,
+  "classifications": {
+    "common": 2,
+    "valid": 2
+  },
+  "details": [
+    {
+      "binomial": "American shad",
+      "type": "common",
+      "suggestion": "Alosa sapidissima",
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Alosa sapidissima",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Atlantic salmon",
+      "type": "common",
+      "suggestion": "Salmo salar",
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    }
+  ],
+  "source_file": "0523b7e98324dbb8.txt"
+}

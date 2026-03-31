@@ -1,0 +1,181 @@
+{
+  "candidates_found": 198,
+  "unique_binomials": 28,
+  "classifications": {
+    "valid": 13,
+    "changed": 2,
+    "common": 11,
+    "unknown": 2
+  },
+  "details": [
+    {
+      "binomial": "Myoxocephalus scorpioides",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Sculpin"
+    },
+    {
+      "binomial": "Myoxocephalus quadricornis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Myoxocephalus scorpius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shorthorn Sculpin"
+    },
+    {
+      "binomial": "Gymnocanthus tricuspis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Staghorn Sculpin"
+    },
+    {
+      "binomial": "Lumpenus fabricii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slender Eelblenny"
+    },
+    {
+      "binomial": "Lumpenus sagitta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Snake Prickleback"
+    },
+    {
+      "binomial": "Osmerus dentex",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Rainbow Smelt"
+    },
+    {
+      "binomial": "Hypomesus olidus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pond Smelt"
+    },
+    {
+      "binomial": "Mallotus villosus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Capelin"
+    },
+    {
+      "binomial": "Liopsetta glacialis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Arctic Flounder"
+    },
+    {
+      "binomial": "Pungitius pungitius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Diaphus theta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "California Headlightfish"
+    },
+    {
+      "binomial": "Arctic sculpin",
+      "type": "common",
+      "suggestion": "Myoxocephalus scorpioides",
+      "commonName": "Arctic Sculpin"
+    },
+    {
+      "binomial": "Mallotus villo",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Fourhorn sculpin",
+      "type": "common",
+      "suggestion": "Myoxocephalus quadricornis",
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Shorthorn sculpin",
+      "type": "common",
+      "suggestion": "Myoxocephalus scorpius",
+      "commonName": "Shorthorn Sculpin"
+    },
+    {
+      "binomial": "Slender eelblenny",
+      "type": "common",
+      "suggestion": "Lumpenus fabricii",
+      "commonName": "Slender Eelblenny"
+    },
+    {
+      "binomial": "Ninespine stickleback",
+      "type": "common",
+      "suggestion": "Pungitius pungitius",
+      "commonName": "Ninespine Stickleback"
+    },
+    {
+      "binomial": "Rainbow smelt",
+      "type": "common",
+      "suggestion": "Osmerus mordax",
+      "commonName": "Rainbow Smelt"
+    },
+    {
+      "binomial": "Pond smelt",
+      "type": "common",
+      "suggestion": "Hypomesus olidus",
+      "commonName": "Pond Smelt"
+    },
+    {
+      "binomial": "Arctic flounder",
+      "type": "common",
+      "suggestion": "Liopsetta glacialis",
+      "commonName": "Arctic Flounder"
+    },
+    {
+      "binomial": "California headlightfish",
+      "type": "common",
+      "suggestion": "Diaphus theta",
+      "commonName": "California Headlightfish"
+    },
+    {
+      "binomial": "Arctic char",
+      "type": "common",
+      "suggestion": "Salvelinus alpinus",
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Salvelinus alpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Oncorhynchus gorbuscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pink Salmon"
+    },
+    {
+      "binomial": "Arctic cod",
+      "type": "common",
+      "suggestion": "Boreogadus saida",
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Boreogadus saida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Perca fluviatilis",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "0aabd33615204cae.txt"
+}

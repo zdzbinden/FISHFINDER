@@ -1,0 +1,71 @@
+{
+  "candidates_found": 365,
+  "unique_binomials": 10,
+  "classifications": {
+    "valid": 8,
+    "common": 2
+  },
+  "details": [
+    {
+      "binomial": "Oncorhynchus tshawytscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Salvelinus alpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Thymallus arcticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Grayling"
+    },
+    {
+      "binomial": "Chinook salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus tshawytscha",
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Coregonus nasus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Broad Whitefish"
+    },
+    {
+      "binomial": "Coho salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus kisutch",
+      "commonName": "Coho Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus kisutch",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Coho Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus keta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chum Salmon"
+    },
+    {
+      "binomial": "Salvelinus confluentus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bull Trout"
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    }
+  ],
+  "source_file": "189e6558340a816a.txt"
+}

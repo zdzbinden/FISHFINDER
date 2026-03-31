@@ -1,0 +1,23 @@
+{
+  "candidates_found": 265,
+  "unique_binomials": 2,
+  "classifications": {
+    "valid": 1,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Thunnus obesus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigeye Tuna"
+    },
+    {
+      "binomial": "Thunnus albacares",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Yellowfin Tuna"
+    }
+  ],
+  "source_file": "13ddc6e9884a777f.txt"
+}

@@ -1,0 +1,16 @@
+{
+  "candidates_found": 307,
+  "unique_binomials": 1,
+  "classifications": {
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Hypoplectrus coral",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "d555744340d64d2f.txt"
+}

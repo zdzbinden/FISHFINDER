@@ -1,0 +1,135 @@
+{
+  "candidates_found": 304,
+  "unique_binomials": 20,
+  "classifications": {
+    "valid": 8,
+    "changed": 5,
+    "outdated": 2,
+    "misspelled": 1,
+    "unknown": 1,
+    "common": 3
+  },
+  "details": [
+    {
+      "binomial": "Atherinella alvarezi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gulf Silverside"
+    },
+    {
+      "binomial": "Rocio octofasciata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Jack Dempsey"
+    },
+    {
+      "binomial": "Vieja fenestrata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Blackstripe Cichlid"
+    },
+    {
+      "binomial": "Astyanax aeneus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Banded Tetra"
+    },
+    {
+      "binomial": "Astyanax finitimus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Veracruz Tetra"
+    },
+    {
+      "binomial": "Belonesox belizanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pike Killifish"
+    },
+    {
+      "binomial": "Gambusia sexradiata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Stippled Gambusia"
+    },
+    {
+      "binomial": "Heterandria bimaculata",
+      "type": "outdated",
+      "suggestion": "Pseudoxiphophorus bimaculatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Poecilia mexicana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortfin Molly"
+    },
+    {
+      "binomial": "Xiphophorus helleri",
+      "type": "misspelled",
+      "suggestion": "Xiphophorus hellerii",
+      "commonName": null
+    },
+    {
+      "binomial": "Dajaus monticola",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Mountain Mullet"
+    },
+    {
+      "binomial": "Cathorops aguadulce",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Estuarine Sea Catfish"
+    },
+    {
+      "binomial": "Poecilia gilli",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ocellated killifish",
+      "type": "common",
+      "suggestion": "Floridichthys polyommus",
+      "commonName": "Ocellated Killifish"
+    },
+    {
+      "binomial": "Floridichthys polyommus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ocellated Killifish"
+    },
+    {
+      "binomial": "Astyanax fasciatus",
+      "type": "outdated",
+      "suggestion": "Astyanax finitimus",
+      "commonName": null
+    },
+    {
+      "binomial": "Oaxaca killifish",
+      "type": "common",
+      "suggestion": "Profundulus oaxacae",
+      "commonName": "Oaxaca Killifish"
+    },
+    {
+      "binomial": "Profundulus balsanus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Balsas Killifish"
+    },
+    {
+      "binomial": "Mexican tetra",
+      "type": "common",
+      "suggestion": "Astyanax mexicanus",
+      "commonName": "Mexican Tetra"
+    },
+    {
+      "binomial": "Astyanax mexicanus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Mexican Tetra"
+    }
+  ],
+  "source_file": "04e5333ede79f6a1.txt"
+}

@@ -1,0 +1,72 @@
+{
+  "candidates_found": 183,
+  "unique_binomials": 10,
+  "classifications": {
+    "valid": 6,
+    "misspelled": 3,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Percina caprodes",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Logperch"
+    },
+    {
+      "binomial": "Percina aurantiaca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tangerine Darter"
+    },
+    {
+      "binomial": "Lepomis cynellis",
+      "type": "misspelled",
+      "suggestion": "Lepomis cyanellus",
+      "commonName": null
+    },
+    {
+      "binomial": "Ambloplites rupestris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rock Bass"
+    },
+    {
+      "binomial": "Micropterus dolomieu",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smallmouth Bass"
+    },
+    {
+      "binomial": "Nacomis micropogon",
+      "type": "misspelled",
+      "suggestion": "Nocomis micropogon",
+      "commonName": null
+    },
+    {
+      "binomial": "Moxostoma macrolepidotum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shorthead Redhorse"
+    },
+    {
+      "binomial": "Lepomis cyanellis",
+      "type": "misspelled",
+      "suggestion": "Lepomis cyanellus",
+      "commonName": null
+    },
+    {
+      "binomial": "Lepomis megalotis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longear Sunfish"
+    },
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    }
+  ],
+  "source_file": "647e97ddc0bec2f6.txt"
+}

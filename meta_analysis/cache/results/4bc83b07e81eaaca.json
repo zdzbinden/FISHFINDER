@@ -1,0 +1,42 @@
+{
+  "candidates_found": 182,
+  "unique_binomials": 5,
+  "classifications": {
+    "unknown": 1,
+    "valid": 3,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Rhizoprionodon terraeno",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Mustelus canis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smooth Dogfish"
+    },
+    {
+      "binomial": "Carcharhinus plumbeus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sandbar Shark"
+    },
+    {
+      "binomial": "Greenland halibut",
+      "type": "common",
+      "suggestion": "Reinhardtius hippoglossoides",
+      "commonName": "Greenland Halibut"
+    },
+    {
+      "binomial": "Alopias superciliosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigeye Thresher"
+    }
+  ],
+  "source_file": "4bc83b07e81eaaca.txt"
+}

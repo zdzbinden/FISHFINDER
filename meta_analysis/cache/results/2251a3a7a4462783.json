@@ -1,0 +1,42 @@
+{
+  "candidates_found": 515,
+  "unique_binomials": 5,
+  "classifications": {
+    "unknown": 3,
+    "valid": 1,
+    "common": 1
+  },
+  "details": [
+    {
+      "binomial": "Neopomacentrus aktites",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaetodon aureofasciatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Stethojulis interrupta",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus griseus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gray Snapper"
+    },
+    {
+      "binomial": "Atlantic herring",
+      "type": "common",
+      "suggestion": "Clupea harengus",
+      "commonName": "Atlantic Herring"
+    }
+  ],
+  "source_file": "2251a3a7a4462783.txt"
+}

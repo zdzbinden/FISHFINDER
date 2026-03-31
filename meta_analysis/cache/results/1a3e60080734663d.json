@@ -1,0 +1,34 @@
+{
+  "candidates_found": 295,
+  "unique_binomials": 4,
+  "classifications": {
+    "valid": 4
+  },
+  "details": [
+    {
+      "binomial": "Polyodon spathula",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Paddlefish"
+    },
+    {
+      "binomial": "Hypophthalmichthys nobilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bighead Carp"
+    },
+    {
+      "binomial": "Oncorhynchus tshawytscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Hypophthalmichthys molitrix",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Silver Carp"
+    }
+  ],
+  "source_file": "1a3e60080734663d.txt"
+}

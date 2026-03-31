@@ -1,0 +1,122 @@
+{
+  "candidates_found": 346,
+  "unique_binomials": 18,
+  "classifications": {
+    "valid": 9,
+    "outdated": 4,
+    "common": 2,
+    "unknown": 2,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Cyprinella lutrensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Shiner"
+    },
+    {
+      "binomial": "Notropis stramineus",
+      "type": "outdated",
+      "suggestion": "Miniellus stramineus",
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Salmo salar",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Salmon"
+    },
+    {
+      "binomial": "Ctenopharyngodon idella",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Grass Carp"
+    },
+    {
+      "binomial": "Red shiner",
+      "type": "common",
+      "suggestion": "Cyprinella lutrensis",
+      "commonName": "Red Shiner"
+    },
+    {
+      "binomial": "Sand shiner",
+      "type": "common",
+      "suggestion": "Miniellus stramineus",
+      "commonName": "Sand Shiner"
+    },
+    {
+      "binomial": "Chrosomus neogaeus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Finescale Dace"
+    },
+    {
+      "binomial": "Cyprinella lutren",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tinca tinca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tench"
+    },
+    {
+      "binomial": "Phoxinus neogaeus",
+      "type": "outdated",
+      "suggestion": "Chrosomus neogaeus",
+      "commonName": null
+    },
+    {
+      "binomial": "Scophthalmus maximus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Polyodon spathala",
+      "type": "misspelled",
+      "suggestion": "Polyodon spathula",
+      "commonName": null
+    },
+    {
+      "binomial": "Aristichthys nobilis",
+      "type": "outdated",
+      "suggestion": "Hypophthalmichthys nobilis",
+      "commonName": null
+    },
+    {
+      "binomial": "Notropis topeka",
+      "type": "outdated",
+      "suggestion": "Miniellus topeka",
+      "commonName": null
+    },
+    {
+      "binomial": "Hypomesus nipponensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Wakasagi"
+    }
+  ],
+  "source_file": "79c2b7bada84c6cb.txt"
+}

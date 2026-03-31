@@ -1,0 +1,68 @@
+{
+  "candidates_found": 299,
+  "unique_binomials": 9,
+  "classifications": {
+    "valid": 5,
+    "outdated": 1,
+    "changed": 1,
+    "common": 1,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Anchoa walkeri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Persistent Anchovy"
+    },
+    {
+      "binomial": "Cynoscion xanthulus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Orangemouth Corvina"
+    },
+    {
+      "binomial": "Ariopsis seemanni",
+      "type": "outdated",
+      "suggestion": "Ariopsis guatemalensis",
+      "commonName": null
+    },
+    {
+      "binomial": "Centropomus robalito",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowfin Snook"
+    },
+    {
+      "binomial": "Mugil curema",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "White Mullet"
+    },
+    {
+      "binomial": "Chinook salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus tshawytscha",
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Cynoscion acoupa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Sphyrna lewini",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scalloped Hammerhead"
+    },
+    {
+      "binomial": "Urobatis halleri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Round Stingray"
+    }
+  ],
+  "source_file": "e61ae09131b99c97.txt"
+}

@@ -1,0 +1,16 @@
+{
+  "candidates_found": 302,
+  "unique_binomials": 1,
+  "classifications": {
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Catostomus commersonii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Sucker"
+    }
+  ],
+  "source_file": "85bd5512f2086979.txt"
+}

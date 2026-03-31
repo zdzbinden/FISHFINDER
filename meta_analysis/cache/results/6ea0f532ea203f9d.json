@@ -1,0 +1,151 @@
+{
+  "candidates_found": 377,
+  "unique_binomials": 23,
+  "classifications": {
+    "changed": 3,
+    "valid": 16,
+    "unknown": 1,
+    "common": 3
+  },
+  "details": [
+    {
+      "binomial": "Morone saxatilis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Bass"
+    },
+    {
+      "binomial": "Archoplites interruptus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sacramento Perch"
+    },
+    {
+      "binomial": "Gila crassicauda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Thicktail Chub"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Catostomus occidentalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sacramento Sucker"
+    },
+    {
+      "binomial": "Pogonichthys macrolepidotus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Splittail"
+    },
+    {
+      "binomial": "Acipenser medirostris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Sturgeon"
+    },
+    {
+      "binomial": "Ptychocheilus grandis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sacramento Pikeminnow"
+    },
+    {
+      "binomial": "Lavinia exilicauda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Hitch"
+    },
+    {
+      "binomial": "Hypomesus transpaci",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Spirinchus thaleichthys",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longfin Smelt"
+    },
+    {
+      "binomial": "Alosa sapidissima",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Ameiurus catus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "White Catfish"
+    },
+    {
+      "binomial": "Lepomis microlophus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Redear Sunfish"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Notemigonus crysoleucas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Golden Shiner"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Ictalurus punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Channel Catfish"
+    },
+    {
+      "binomial": "Acipenser transmontanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Sturgeon"
+    },
+    {
+      "binomial": "Pomoxis nigromaculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Crappie"
+    },
+    {
+      "binomial": "Sacramento perch",
+      "type": "common",
+      "suggestion": "Archoplites interruptus",
+      "commonName": "Sacramento Perch"
+    },
+    {
+      "binomial": "Striped bass",
+      "type": "common",
+      "suggestion": "Morone saxatilis",
+      "commonName": "Striped Bass"
+    },
+    {
+      "binomial": "Chinook salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus tshawytscha",
+      "commonName": "Chinook Salmon"
+    }
+  ],
+  "source_file": "6ea0f532ea203f9d.txt"
+}

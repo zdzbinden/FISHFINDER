@@ -1,0 +1,78 @@
+{
+  "candidates_found": 216,
+  "unique_binomials": 11,
+  "classifications": {
+    "valid": 5,
+    "changed": 3,
+    "common": 3
+  },
+  "details": [
+    {
+      "binomial": "Herichthys cyanoguttatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rio Grande Cichlid"
+    },
+    {
+      "binomial": "Channa aurolineata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Cobra Snakehead"
+    },
+    {
+      "binomial": "Belonesox belizanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pike Killifish"
+    },
+    {
+      "binomial": "African jewelfish",
+      "type": "common",
+      "suggestion": "Hemichromis letourneuxi",
+      "commonName": "African Jewelfish"
+    },
+    {
+      "binomial": "Carassius auratus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Goldfish"
+    },
+    {
+      "binomial": "Poecilia reticulata",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Guppy"
+    },
+    {
+      "binomial": "Nile tilapia",
+      "type": "common",
+      "suggestion": "Oreochromis niloticus",
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Hemichromis letourneuxi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "African Jewelfish"
+    },
+    {
+      "binomial": "Centropomus undecimalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Snook"
+    },
+    {
+      "binomial": "Eastern mosquitofish",
+      "type": "common",
+      "suggestion": "Gambusia holbrooki",
+      "commonName": "Eastern Mosquitofish"
+    },
+    {
+      "binomial": "Xiphophorus hellerii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Swordtail"
+    }
+  ],
+  "source_file": "fa22d7094130a39a.txt"
+}

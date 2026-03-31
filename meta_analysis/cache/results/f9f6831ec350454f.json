@@ -1,0 +1,266 @@
+{
+  "candidates_found": 557,
+  "unique_binomials": 42,
+  "classifications": {
+    "valid": 25,
+    "common": 11,
+    "unknown": 2,
+    "changed": 3,
+    "misspelled": 1
+  },
+  "details": [
+    {
+      "binomial": "Hypomesus transpacificus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Delta Smelt"
+    },
+    {
+      "binomial": "Delta smelt",
+      "type": "common",
+      "suggestion": "Hypomesus transpacificus",
+      "commonName": "Delta Smelt"
+    },
+    {
+      "binomial": "Spirinchus thaleichthys",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longfin Smelt"
+    },
+    {
+      "binomial": "Dorosoma peten",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lavinia exilicauda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Hitch"
+    },
+    {
+      "binomial": "Morone saxatilis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Bass"
+    },
+    {
+      "binomial": "Lepomis microlophus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Redear Sunfish"
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Pomoxis nigromaculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Crappie"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Hysterocarpus traski",
+      "type": "misspelled",
+      "suggestion": "Hysterocarpus traskii",
+      "commonName": null
+    },
+    {
+      "binomial": "Ameiurus catus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "White Catfish"
+    },
+    {
+      "binomial": "Cottus asper",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Prickly Sculpin"
+    },
+    {
+      "binomial": "Alosa sapidissima",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Hypomesus nipponensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Wakasagi"
+    },
+    {
+      "binomial": "Sacramento pikeminnow",
+      "type": "common",
+      "suggestion": "Ptychocheilus grandis",
+      "commonName": "Sacramento Pikeminnow"
+    },
+    {
+      "binomial": "Ptychocheilus grandis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sacramento Pikeminnow"
+    },
+    {
+      "binomial": "Chinook salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus tshawytscha",
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus tshawytscha",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chinook Salmon"
+    },
+    {
+      "binomial": "Pomoxis annularis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Crappie"
+    },
+    {
+      "binomial": "Gasterosteus aculeatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Threespine Stickleback"
+    },
+    {
+      "binomial": "Notemigonus crysoleucas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Golden Shiner"
+    },
+    {
+      "binomial": "Mississippi silverside",
+      "type": "common",
+      "suggestion": "Menidia audens",
+      "commonName": "Mississippi Silverside"
+    },
+    {
+      "binomial": "Menidia audens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mississippi Silverside"
+    },
+    {
+      "binomial": "Gambusia affinis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Western Mosquitofish"
+    },
+    {
+      "binomial": "Pogonichthys macrolepidotus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Splittail"
+    },
+    {
+      "binomial": "Sacramento sucker",
+      "type": "common",
+      "suggestion": "Catostomus occidentalis",
+      "commonName": "Sacramento Sucker"
+    },
+    {
+      "binomial": "Catostomus occidentalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sacramento Sucker"
+    },
+    {
+      "binomial": "Percina macrolep",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ictalurus punctatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Channel Catfish"
+    },
+    {
+      "binomial": "Ameiurus nebulosus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Brown Bullhead"
+    },
+    {
+      "binomial": "Ameiurus melas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Bullhead"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Acanthogobius flavimanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowfin Goby"
+    },
+    {
+      "binomial": "Tridentiger bifasciatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shimofuri Goby"
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Tule perch",
+      "type": "common",
+      "suggestion": "Hysterocarpus traskii",
+      "commonName": "Tule Perch"
+    },
+    {
+      "binomial": "Threadfin shad",
+      "type": "common",
+      "suggestion": "Dorosoma petenense",
+      "commonName": "Threadfin Shad"
+    },
+    {
+      "binomial": "Striped bass",
+      "type": "common",
+      "suggestion": "Morone saxatilis",
+      "commonName": "Striped Bass"
+    },
+    {
+      "binomial": "Black crappie",
+      "type": "common",
+      "suggestion": "Pomoxis nigromaculatus",
+      "commonName": "Black Crappie"
+    },
+    {
+      "binomial": "White catfish",
+      "type": "common",
+      "suggestion": "Ameiurus catus",
+      "commonName": "White Catfish"
+    },
+    {
+      "binomial": "Salvelinus namaycush",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Trout"
+    }
+  ],
+  "source_file": "f9f6831ec350454f.txt"
+}

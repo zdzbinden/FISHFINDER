@@ -1,0 +1,23 @@
+{
+  "candidates_found": 311,
+  "unique_binomials": 2,
+  "classifications": {
+    "misspelled": 1,
+    "valid": 1
+  },
+  "details": [
+    {
+      "binomial": "Sparus aurata",
+      "type": "misspelled",
+      "suggestion": "Sparus auratus",
+      "commonName": null
+    },
+    {
+      "binomial": "Sander lucioperca",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Zander"
+    }
+  ],
+  "source_file": "717b239763e93a2c.txt"
+}

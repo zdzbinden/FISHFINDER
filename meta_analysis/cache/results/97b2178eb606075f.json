@@ -1,0 +1,122 @@
+{
+  "candidates_found": 571,
+  "unique_binomials": 18,
+  "classifications": {
+    "valid": 8,
+    "changed": 2,
+    "common": 6,
+    "misspelled": 1,
+    "outdated": 1
+  },
+  "details": [
+    {
+      "binomial": "Esox lucius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Sander vitreus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walleye"
+    },
+    {
+      "binomial": "Salvelinus namaycush",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Trout"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Coregonus clupeaformis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Whitefish"
+    },
+    {
+      "binomial": "Micropterus dolomieu",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smallmouth Bass"
+    },
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Brook trout",
+      "type": "common",
+      "suggestion": "Salvelinus fontinalis",
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Lake trout",
+      "type": "common",
+      "suggestion": "Salvelinus namaycush",
+      "commonName": "Lake Trout"
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Northern pike",
+      "type": "common",
+      "suggestion": "Esox lucius",
+      "commonName": "Northern Pike"
+    },
+    {
+      "binomial": "Smallmouth bass",
+      "type": "common",
+      "suggestion": "Micropterus dolomieu",
+      "commonName": "Smallmouth Bass"
+    },
+    {
+      "binomial": "Yellow perch",
+      "type": "common",
+      "suggestion": "Perca flavescens",
+      "commonName": "Yellow Perch"
+    },
+    {
+      "binomial": "Xiphophorus helleri",
+      "type": "misspelled",
+      "suggestion": "Xiphophorus hellerii",
+      "commonName": null
+    },
+    {
+      "binomial": "Lepomis macrochirus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bluegill"
+    },
+    {
+      "binomial": "Esox masquinongy",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Muskellunge"
+    },
+    {
+      "binomial": "Stizostedion vitreum",
+      "type": "outdated",
+      "suggestion": "Sander vitreus",
+      "commonName": null
+    },
+    {
+      "binomial": "Rhinichthys atratulus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blacknose Dace"
+    }
+  ],
+  "source_file": "97b2178eb606075f.txt"
+}

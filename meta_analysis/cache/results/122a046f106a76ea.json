@@ -1,0 +1,67 @@
+{
+  "candidates_found": 230,
+  "unique_binomials": 9,
+  "classifications": {
+    "common": 1,
+    "valid": 2,
+    "outdated": 1,
+    "unknown": 5
+  },
+  "details": [
+    {
+      "binomial": "French grunt",
+      "type": "common",
+      "suggestion": "Haemulon flavolineatum",
+      "commonName": "French Grunt"
+    },
+    {
+      "binomial": "Haemulon flavolineatum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "French Grunt"
+    },
+    {
+      "binomial": "Acanthurus bahianus",
+      "type": "outdated",
+      "suggestion": "Acanthurus tractus",
+      "commonName": null
+    },
+    {
+      "binomial": "Limanda limanda",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Ctenochaetus strigosus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Chaetodon multicinctus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Micropterus dolo",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pterois vol",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Pterois volitans",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Lionfish"
+    }
+  ],
+  "source_file": "122a046f106a76ea.txt"
+}

@@ -1,0 +1,61 @@
+{
+  "candidates_found": 721,
+  "unique_binomials": 8,
+  "classifications": {
+    "common": 1,
+    "valid": 4,
+    "unknown": 2,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Atlantic cod",
+      "type": "common",
+      "suggestion": "Gadus morhua",
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Melanogrammus aeglefinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Haddock"
+    },
+    {
+      "binomial": "Pollachius virens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pollock"
+    },
+    {
+      "binomial": "Pleuronectes platessa",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Scophthalmus maximus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus nerka",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sockeye Salmon"
+    },
+    {
+      "binomial": "Scomber colias",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Atlantic Chub Mackerel"
+    }
+  ],
+  "source_file": "7460b4876ebbf039.txt"
+}

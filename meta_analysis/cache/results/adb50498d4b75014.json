@@ -1,0 +1,108 @@
+{
+  "candidates_found": 204,
+  "unique_binomials": 16,
+  "classifications": {
+    "changed": 4,
+    "valid": 4,
+    "unknown": 8
+  },
+  "details": [
+    {
+      "binomial": "Thunnus albacares",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Yellowfin Tuna"
+    },
+    {
+      "binomial": "Thunnus obesus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigeye Tuna"
+    },
+    {
+      "binomial": "Coryphaena hippurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dolphinfish"
+    },
+    {
+      "binomial": "Scomberomorus guttatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Istiophorus platypterus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sailfish"
+    },
+    {
+      "binomial": "Carcharhinus sorrah",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus erythropterus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Epinephelus areolatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Katsuwonus pelamis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Skipjack Tuna"
+    },
+    {
+      "binomial": "Acanthocybium solandri",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Wahoo"
+    },
+    {
+      "binomial": "Scomberomorus com",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Istiophorus pla",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Thunnus alba",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Scomberomorus commerson",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Thunnus thynnus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bluefin Tuna"
+    },
+    {
+      "binomial": "Carcharhinus falciformis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Silky Shark"
+    }
+  ],
+  "source_file": "adb50498d4b75014.txt"
+}

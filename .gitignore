@@ -19,6 +19,10 @@ __pycache__/
 # Publication drafts (local only)
 publication/
 
+# Meta-analysis cache — large downloaded/extracted files
+meta_analysis/cache/pdfs/
+meta_analysis/cache/texts/
+
 # Node
 node_modules/
 

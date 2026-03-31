@@ -1,0 +1,54 @@
+{
+  "candidates_found": 238,
+  "unique_binomials": 7,
+  "classifications": {
+    "unknown": 3,
+    "valid": 3,
+    "changed": 1
+  },
+  "details": [
+    {
+      "binomial": "Channa punctatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias batrachus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walking Catfish"
+    },
+    {
+      "binomial": "Cyprinus carpio",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Common Carp"
+    },
+    {
+      "binomial": "Chanos chanos",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Milkfish"
+    },
+    {
+      "binomial": "Oreochromis alcalicus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Oncorhynchus mykiss",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rainbow Trout"
+    }
+  ],
+  "source_file": "bc0b2c8e569c6d72.txt"
+}

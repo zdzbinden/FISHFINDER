@@ -1,0 +1,66 @@
+{
+  "candidates_found": 281,
+  "unique_binomials": 9,
+  "classifications": {
+    "common": 3,
+    "misspelled": 1,
+    "valid": 5
+  },
+  "details": [
+    {
+      "binomial": "Alligator gar",
+      "type": "common",
+      "suggestion": "Atractosteus spatula",
+      "commonName": "Alligator Gar"
+    },
+    {
+      "binomial": "Atractoseus spatula",
+      "type": "misspelled",
+      "suggestion": "Atractosteus spatula",
+      "commonName": null
+    },
+    {
+      "binomial": "Ictiobus cyprinellus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigmouth Buffalo"
+    },
+    {
+      "binomial": "Lepisosteus oculatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Gar"
+    },
+    {
+      "binomial": "Longnose gar",
+      "type": "common",
+      "suggestion": "Lepisosteus osseus",
+      "commonName": "Longnose Gar"
+    },
+    {
+      "binomial": "Lepisosteus osseus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Gar"
+    },
+    {
+      "binomial": "American shad",
+      "type": "common",
+      "suggestion": "Alosa sapidissima",
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Alosa sapidissima",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "American Shad"
+    },
+    {
+      "binomial": "Mylopharyngodon piceus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Carp"
+    }
+  ],
+  "source_file": "22d502283d739481.txt"
+}

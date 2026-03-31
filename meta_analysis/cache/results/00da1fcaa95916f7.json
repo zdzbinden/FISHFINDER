@@ -1,0 +1,470 @@
+{
+  "candidates_found": 630,
+  "unique_binomials": 76,
+  "classifications": {
+    "valid": 61,
+    "misspelled": 6,
+    "changed": 4,
+    "unknown": 4,
+    "outdated": 1
+  },
+  "details": [
+    {
+      "binomial": "Sigmops elongatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Elongate Lightfish"
+    },
+    {
+      "binomial": "Chlorophthalmus agassizi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortnose Greeneye"
+    },
+    {
+      "binomial": "Omosudis lowii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Hammerjaw"
+    },
+    {
+      "binomial": "Lestidiops afnis",
+      "type": "misspelled",
+      "suggestion": "Lestidiops affinis",
+      "commonName": null
+    },
+    {
+      "binomial": "Melamphaes simus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Ridgehead"
+    },
+    {
+      "binomial": "Scopeloberyx opisthopterus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Wing Bigscale"
+    },
+    {
+      "binomial": "Scopeloberyx robustus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longjaw Bigscale"
+    },
+    {
+      "binomial": "Melanonus zugmayeri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arrowtail"
+    },
+    {
+      "binomial": "Benthosema suborbitale",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dimple Lanternfish"
+    },
+    {
+      "binomial": "Bolinichthys photothorax",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spurcheek Lanternfish"
+    },
+    {
+      "binomial": "Bolinichthys supralateralis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Stubby Lanternfish"
+    },
+    {
+      "binomial": "Ceratoscopelus warmingii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Grand Lampfish"
+    },
+    {
+      "binomial": "Dasyscopelus asper",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Curveline Lampfish"
+    },
+    {
+      "binomial": "Diaphus dumerilii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Disjunctlight Lampfish"
+    },
+    {
+      "binomial": "Diaphus lucidus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotlight Headlightfish"
+    },
+    {
+      "binomial": "Diaphus mollis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Soft Lanternfish"
+    },
+    {
+      "binomial": "Diaphus perspicillatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Flatface Lanternfish"
+    },
+    {
+      "binomial": "Diaphus problematicus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Problematic Headlightfish"
+    },
+    {
+      "binomial": "Diaphus rafnesquii",
+      "type": "misspelled",
+      "suggestion": "Diaphus rafinesquii",
+      "commonName": null
+    },
+    {
+      "binomial": "Diaphus splendidus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Splendid Lanternfish"
+    },
+    {
+      "binomial": "Diaphus taaningi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slopewater Headlightfish"
+    },
+    {
+      "binomial": "Diaphus termophilus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Warmwater Headlightfish"
+    },
+    {
+      "binomial": "Diogenichthys atlanticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longfin Lanternfish"
+    },
+    {
+      "binomial": "Gonichthys cocco",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Linestop Lanternfish"
+    },
+    {
+      "binomial": "Hygophum benoiti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nonlinear Lanternfish"
+    },
+    {
+      "binomial": "Hygophum hygomii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bermuda Lanternfish"
+    },
+    {
+      "binomial": "Hygophum macrochir",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Largefin Lanternfish"
+    },
+    {
+      "binomial": "Hygophum reinhardtii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slender Lanternfish"
+    },
+    {
+      "binomial": "Hygophum taaningi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scalelesslight Lampfish"
+    },
+    {
+      "binomial": "Lampadena luminosa",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Luminous Lanternfish"
+    },
+    {
+      "binomial": "Lampanyctus alatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Winged Lanternfish"
+    },
+    {
+      "binomial": "Lampanyctus cuprarius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Blackcap Lanternfish"
+    },
+    {
+      "binomial": "Lampanyctus lineatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longtail Blackcap Lanternfish. linternilla rayada"
+    },
+    {
+      "binomial": "Lepidophanes guentheri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Largemouth Lampfish"
+    },
+    {
+      "binomial": "Lobianchia gemellarii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cosmopolitan Lanternfish"
+    },
+    {
+      "binomial": "Myctophum afne",
+      "type": "misspelled",
+      "suggestion": "Myctophum affine",
+      "commonName": null
+    },
+    {
+      "binomial": "Myctophum nitidulum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pearlyspotted Lanternfish"
+    },
+    {
+      "binomial": "Notolychnus valdiviae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Topside Lanternfish"
+    },
+    {
+      "binomial": "Notoscopelus resplendens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Patchwork Lampfish"
+    },
+    {
+      "binomial": "Dolicholagus longirostris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longsnout Blacksmelt"
+    },
+    {
+      "binomial": "Cyclothone acclinidens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Benttooth Bristlemouth"
+    },
+    {
+      "binomial": "Cyclothone alba",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "White Bristlemouth"
+    },
+    {
+      "binomial": "Cyclothone braueri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pale Bristlemouth"
+    },
+    {
+      "binomial": "Cyclothone obscura",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Obscure Bristlemouth"
+    },
+    {
+      "binomial": "Cyclothone pallida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Tan Bristlemouth"
+    },
+    {
+      "binomial": "Cyclothone pseudopallida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slender Bristlemouth"
+    },
+    {
+      "binomial": "Gonostoma atlanticum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cosmopolitan Bristlemouth"
+    },
+    {
+      "binomial": "Margrethia obtusirostra",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bighead Lightfish"
+    },
+    {
+      "binomial": "Zaphotias pedaliotus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longray Lightfish"
+    },
+    {
+      "binomial": "Pollichthys mauli",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Stareye Lightfish"
+    },
+    {
+      "binomial": "Vinciguerria attenuata",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Slender Lightfish"
+    },
+    {
+      "binomial": "Vinciguerria nimbaria",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Oceanic Lightfish"
+    },
+    {
+      "binomial": "Vinciguerria poweriae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Highseas Lightfish"
+    },
+    {
+      "binomial": "Argyropelecus aculeatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lovely Hatchetfish"
+    },
+    {
+      "binomial": "Argyropelecus gigas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Greater Hatchetfish"
+    },
+    {
+      "binomial": "Argyropelecus hemigymnus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spurred Hatchetfish"
+    },
+    {
+      "binomial": "Maurolicus weitzmani",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Atlantic Pearlside"
+    },
+    {
+      "binomial": "Polyipnus clarus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Slope Hatchetfish"
+    },
+    {
+      "binomial": "Sternoptyx diaphana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longspine Hatchetfish"
+    },
+    {
+      "binomial": "Sternoptyx pseudobscura",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Highlight Hatchetfish"
+    },
+    {
+      "binomial": "Valenciennellus tripunctulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Constellationfish"
+    },
+    {
+      "binomial": "Astronesthes macropogon",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Largebarbel Snaggletooth"
+    },
+    {
+      "binomial": "Astronesthes nigra",
+      "type": "misspelled",
+      "suggestion": "Astronesthes niger",
+      "commonName": null
+    },
+    {
+      "binomial": "Bathophilus pawneei",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pawnee Dragonfish"
+    },
+    {
+      "binomial": "Chauliodus sloani",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Manylight Viperfish"
+    },
+    {
+      "binomial": "Eustomias schmidti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Threebranch Dragonfish"
+    },
+    {
+      "binomial": "Photostomias guernei",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nofin Loosejaw"
+    },
+    {
+      "binomial": "Stomias afnis",
+      "type": "misspelled",
+      "suggestion": "Stomias affinis",
+      "commonName": null
+    },
+    {
+      "binomial": "Vinciguerria attenuate",
+      "type": "misspelled",
+      "suggestion": "Vinciguerria attenuata",
+      "commonName": null
+    },
+    {
+      "binomial": "Astronesthes niger",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Black Snaggletooth"
+    },
+    {
+      "binomial": "Cyclothone possess",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Cyclothone species",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Maurolicus muelleri",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Gonostoma elongatum",
+      "type": "outdated",
+      "suggestion": "Sigmops elongatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Lutjanus malabaricus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Benthosema glaciale",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Glacier Lanternfish"
+    }
+  ],
+  "source_file": "00da1fcaa95916f7.txt"
+}

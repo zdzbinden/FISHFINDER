@@ -1,0 +1,54 @@
+{
+  "candidates_found": 252,
+  "unique_binomials": 7,
+  "classifications": {
+    "outdated": 2,
+    "valid": 2,
+    "unknown": 3
+  },
+  "details": [
+    {
+      "binomial": "Tilapia zillii",
+      "type": "outdated",
+      "suggestion": "Coptodon zillii",
+      "commonName": null
+    },
+    {
+      "binomial": "Oreochromis aureus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blue Tilapia"
+    },
+    {
+      "binomial": "Oreochromis niloticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Nile Tilapia"
+    },
+    {
+      "binomial": "Hemichromis fasciatus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Tilapia mariae",
+      "type": "outdated",
+      "suggestion": "Pelmatolapia mariae",
+      "commonName": null
+    },
+    {
+      "binomial": "Clarias gariepinus",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Channa punctata",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "cbfff0f35ba41254.txt"
+}

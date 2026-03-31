@@ -1,0 +1,587 @@
+{
+  "total_papers_analyzed": 95,
+  "papers_excluded_non_na": 0,
+  "papers_with_naming_errors": 38,
+  "papers_with_outdated_names": 29,
+  "papers_with_misspelled_names": 22,
+  "papers_with_changed_names": 48,
+  "papers_with_unknown_names": 61,
+  "pct_with_errors": 40.0,
+  "pct_with_outdated": 30.5,
+  "pct_with_misspelled": 23.2,
+  "pct_with_changed": 50.5,
+  "pct_with_unknown": 64.2,
+  "total_species_mentions": 1341,
+  "classification_totals": {
+    "valid": 717,
+    "unknown": 225,
+    "common": 198,
+    "changed": 112,
+    "misspelled": 39,
+    "outdated": 50
+  },
+  "top_outdated_names": [
+    [
+      "Misgurnus fossilis",
+      4
+    ],
+    [
+      "Tilapia zilli",
+      2
+    ],
+    [
+      "Notropis volucellus",
+      2
+    ],
+    [
+      "Stizostedion vitreum",
+      2
+    ],
+    [
+      "Tilapia rendalli",
+      2
+    ],
+    [
+      "Tilapia zillii",
+      2
+    ],
+    [
+      "Ariopsis seemanni",
+      2
+    ],
+    [
+      "Gonostoma elongatum",
+      1
+    ],
+    [
+      "Heterandria bimaculata",
+      1
+    ],
+    [
+      "Astyanax fasciatus",
+      1
+    ],
+    [
+      "Semicossyphus pulcher",
+      1
+    ],
+    [
+      "Clupea pallasi",
+      1
+    ],
+    [
+      "Acanthurus bahianus",
+      1
+    ],
+    [
+      "Notropis anogenus",
+      1
+    ],
+    [
+      "Notropis hudsonius",
+      1
+    ],
+    [
+      "Notropis stramineus",
+      1
+    ],
+    [
+      "Phoxinus neogaeus",
+      1
+    ],
+    [
+      "Aristichthys nobilis",
+      1
+    ],
+    [
+      "Notropis topeka",
+      1
+    ],
+    [
+      "Clepticus parrae",
+      1
+    ]
+  ],
+  "top_misspelled_names": [
+    [
+      "Xiphophorus helleri",
+      2
+    ],
+    [
+      "Sparus aurata",
+      2
+    ],
+    [
+      "Cyrpinus carpio",
+      1
+    ],
+    [
+      "Lestidiops afnis",
+      1
+    ],
+    [
+      "Diaphus rafnesquii",
+      1
+    ],
+    [
+      "Myctophum afne",
+      1
+    ],
+    [
+      "Astronesthes nigra",
+      1
+    ],
+    [
+      "Stomias afnis",
+      1
+    ],
+    [
+      "Vinciguerria attenuate",
+      1
+    ],
+    [
+      "Clarias batradrus",
+      1
+    ],
+    [
+      "Atractoseus spatula",
+      1
+    ],
+    [
+      "Haemulon plumieri",
+      1
+    ],
+    [
+      "Lepomis macrohirus",
+      1
+    ],
+    [
+      "Pomoxis anularis",
+      1
+    ],
+    [
+      "Lepomis cynellis",
+      1
+    ],
+    [
+      "Nacomis micropogon",
+      1
+    ],
+    [
+      "Lepomis cyanellis",
+      1
+    ],
+    [
+      "Orechromis niloticus",
+      1
+    ],
+    [
+      "Oreochronmis niloticus",
+      1
+    ],
+    [
+      "Polyodon spathala",
+      1
+    ]
+  ],
+  "top_changed_names": [
+    [
+      "Micropterus salmoides",
+      10
+    ],
+    [
+      "Mugil cephalus",
+      7
+    ],
+    [
+      "Salvelinus fontinalis",
+      7
+    ],
+    [
+      "Carassius auratus",
+      6
+    ],
+    [
+      "Thunnus albacares",
+      4
+    ],
+    [
+      "Poecilia reticulata",
+      4
+    ],
+    [
+      "Mallotus villosus",
+      3
+    ],
+    [
+      "Thunnus thynnus",
+      3
+    ],
+    [
+      "Chanos chanos",
+      3
+    ],
+    [
+      "Balistes polylepis",
+      3
+    ],
+    [
+      "Mugil curema",
+      3
+    ],
+    [
+      "Micropterus nigricans",
+      2
+    ],
+    [
+      "Carassius gibelio",
+      2
+    ],
+    [
+      "Liopsetta glacialis",
+      2
+    ],
+    [
+      "Morone saxatilis",
+      2
+    ],
+    [
+      "Ameiurus catus",
+      2
+    ],
+    [
+      "Gonichthys cocco",
+      1
+    ],
+    [
+      "Pollichthys mauli",
+      1
+    ],
+    [
+      "Maurolicus weitzmani",
+      1
+    ],
+    [
+      "Polyipnus clarus",
+      1
+    ]
+  ],
+  "top_species": [
+    [
+      "Cyprinus carpio",
+      13
+    ],
+    [
+      "Oncorhynchus mykiss",
+      13
+    ],
+    [
+      "Salmo salar",
+      12
+    ],
+    [
+      "Lepomis macrochirus",
+      12
+    ],
+    [
+      "Micropterus salmoides",
+      10
+    ],
+    [
+      "Oreochromis niloticus",
+      10
+    ],
+    [
+      "Gadus morhua",
+      8
+    ],
+    [
+      "Salmo trutta",
+      7
+    ],
+    [
+      "Carassius auratus",
+      7
+    ],
+    [
+      "Mugil cephalus",
+      7
+    ],
+    [
+      "Salvelinus fontinalis",
+      7
+    ],
+    [
+      "Sander vitreus",
+      6
+    ],
+    [
+      "Sander lucioperca",
+      5
+    ],
+    [
+      "Hypophthalmichthys molitrix",
+      5
+    ],
+    [
+      "Gambusia affinis",
+      5
+    ],
+    [
+      "Salvelinus alpinus",
+      5
+    ],
+    [
+      "Oncorhynchus tshawytscha",
+      5
+    ],
+    [
+      "Coptodon zillii",
+      5
+    ],
+    [
+      "Lepomis cyanellus",
+      5
+    ],
+    [
+      "Poecilia reticulata",
+      5
+    ],
+    [
+      "Esox lucius",
+      4
+    ],
+    [
+      "Tinca tinca",
+      4
+    ],
+    [
+      "Alosa sapidissima",
+      4
+    ],
+    [
+      "Pimephales promelas",
+      4
+    ],
+    [
+      "Oncorhynchus gorbuscha",
+      4
+    ],
+    [
+      "Thunnus albacares",
+      4
+    ],
+    [
+      "Clarias batrachus",
+      4
+    ],
+    [
+      "Polyodon spathula",
+      4
+    ],
+    [
+      "Hypophthalmichthys nobilis",
+      4
+    ],
+    [
+      "Pomoxis annularis",
+      4
+    ]
+  ],
+  "journals_represented": 68,
+  "top_journals": [
+    [
+      "Frontiers in Marine Science",
+      6
+    ],
+    [
+      "Scientific Reports",
+      6
+    ],
+    [
+      "ARPHA Conference Abstracts",
+      3
+    ],
+    [
+      "PLoS ONE",
+      3
+    ],
+    [
+      "Coral Reefs",
+      3
+    ],
+    [
+      "Journal of Helminthology",
+      2
+    ],
+    [
+      "Theoretical Ecology",
+      2
+    ],
+    [
+      "Discover Oceans",
+      2
+    ],
+    [
+      "Latin American Journal of Aquatic Research",
+      2
+    ],
+    [
+      "Scientific Data",
+      2
+    ],
+    [
+      "Frontiers in Veterinary Science",
+      2
+    ],
+    [
+      "California Fish and Wildlife Journal",
+      2
+    ],
+    [
+      "Environmental Management",
+      2
+    ],
+    [
+      "Canadian Journal of Fisheries and Aquatic Sciences",
+      2
+    ],
+    [
+      "Aquatic Invasions",
+      2
+    ]
+  ],
+  "top_issue_papers": [
+    {
+      "file_hash": "ba718caee1ba0d3c",
+      "doi": "10.2478/trser-2025-0020",
+      "title": "Fish Habitat and Environmental Effects of Tidal Variation in the Lower Rhône River, Rhône River Delta, and Mediterranean Sea under Eustatic Climate Change Scenario",
+      "year": 2025,
+      "journal": "Transylvanian Review of Systematical and Ecological Research",
+      "species_found": 48,
+      "outdated": 5,
+      "misspelled": 4,
+      "changed": 2,
+      "unknown": 12,
+      "has_issues": true
+    },
+    {
+      "file_hash": "00da1fcaa95916f7",
+      "doi": "10.1155/jai/4473256",
+      "title": "Length–Weight Relationships of 68 Mesopelagic Fish Species From a Subtropical Ocean Basin",
+      "year": 2025,
+      "journal": "Journal of Applied Ichthyology",
+      "species_found": 76,
+      "outdated": 1,
+      "misspelled": 6,
+      "changed": 4,
+      "unknown": 4,
+      "has_issues": true
+    },
+    {
+      "file_hash": "ba75c9c4a1ee0367",
+      "doi": "10.3856/vol52-issue1-fulltext-3108",
+      "title": "Fish community, seasonal movement and habitat use in a subtropical coastal lagoon",
+      "year": 2024,
+      "journal": "Latin American Journal of Aquatic Research",
+      "species_found": 101,
+      "outdated": 5,
+      "misspelled": 2,
+      "changed": 10,
+      "unknown": 5,
+      "has_issues": true
+    },
+    {
+      "file_hash": "79c2b7bada84c6cb",
+      "doi": "10.1007/s00248-024-02386-z",
+      "title": "Gut Microbial Composition of Cyprinella lutrensis (Red Shiner) and Notropis stramineus (Sand Shiner): Insights from Wild Fish Populations",
+      "year": 2024,
+      "journal": "Microbial Ecology",
+      "species_found": 18,
+      "outdated": 4,
+      "misspelled": 1,
+      "changed": 0,
+      "unknown": 2,
+      "has_issues": true
+    },
+    {
+      "file_hash": "fdc94138b2d5be6f",
+      "doi": "10.1186/s13717-024-00494-9",
+      "title": "Comparisons of oxbow lake fish assemblages in relation to bigheaded carp establishment in the lower White River, Arkansas",
+      "year": 2024,
+      "journal": "Ecological Processes",
+      "species_found": 85,
+      "outdated": 2,
+      "misspelled": 3,
+      "changed": 2,
+      "unknown": 2,
+      "has_issues": true
+    },
+    {
+      "file_hash": "9a6fa03005029cbd",
+      "doi": "10.1007/s10653-024-02226-6",
+      "title": "Assessment of biochemical biomarkers and environmental stress indicators in some freshwater fish",
+      "year": 2024,
+      "journal": "Environmental Geochemistry and Health",
+      "species_found": 18,
+      "outdated": 3,
+      "misspelled": 1,
+      "changed": 1,
+      "unknown": 7,
+      "has_issues": true
+    },
+    {
+      "file_hash": "04e5333ede79f6a1",
+      "doi": "10.1017/s0022149x2400049x",
+      "title": "Assessing the diversity of freshwater fish trematodes from Laguna Escondida, Los Tuxtlas tropical rainforest, Mexico, using morphology and 28S rDNA sequences as barcodes",
+      "year": 2024,
+      "journal": "Journal of Helminthology",
+      "species_found": 20,
+      "outdated": 2,
+      "misspelled": 1,
+      "changed": 5,
+      "unknown": 1,
+      "has_issues": true
+    },
+    {
+      "file_hash": "5cf95204d9b355b9",
+      "doi": "10.3856/vol53-issue1-fulltext-3265",
+      "title": "Reef fish mortalities in the Mexican Caribbean: report of two cases",
+      "year": 2025,
+      "journal": "Latin American Journal of Aquatic Research",
+      "species_found": 15,
+      "outdated": 0,
+      "misspelled": 3,
+      "changed": 0,
+      "unknown": 2,
+      "has_issues": true
+    },
+    {
+      "file_hash": "647e97ddc0bec2f6",
+      "doi": "10.3389/fvets.2025.1663896",
+      "title": "Detection of leptospiral antibodies and DNA in freshwater fish",
+      "year": 2025,
+      "journal": "Frontiers in Veterinary Science",
+      "species_found": 10,
+      "outdated": 0,
+      "misspelled": 3,
+      "changed": 1,
+      "unknown": 0,
+      "has_issues": true
+    },
+    {
+      "file_hash": "6b076b4c03c66da9",
+      "doi": "10.46488/nept.2024.v23i02.052",
+      "title": "Heavy Metal Concentration in Fish Species Clarias gariepinus (Catfish) and Oreochromis niloticus (Nile Tilapia) from Anambra River, Nigeria",
+      "year": 2024,
+      "journal": "Nature Environment and Pollution Technology",
+      "species_found": 8,
+      "outdated": 1,
+      "misspelled": 2,
+      "changed": 0,
+      "unknown": 4,
+      "has_issues": true
+    }
+  ],
+  "excluded_papers": []
+}

@@ -1,0 +1,234 @@
+{
+  "candidates_found": 561,
+  "unique_binomials": 37,
+  "classifications": {
+    "valid": 16,
+    "common": 16,
+    "changed": 5
+  },
+  "details": [
+    {
+      "binomial": "Ammodytes hexapterus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Sand Lance"
+    },
+    {
+      "binomial": "Fourhorn sculpin",
+      "type": "common",
+      "suggestion": "Myoxocephalus quadricornis",
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Myoxocephalus quadricornis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fourhorn Sculpin"
+    },
+    {
+      "binomial": "Bigeye sculpin",
+      "type": "common",
+      "suggestion": "Triglops nybelini",
+      "commonName": "Bigeye Sculpin"
+    },
+    {
+      "binomial": "Triglops nybelini",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Bigeye Sculpin"
+    },
+    {
+      "binomial": "Polar cod",
+      "type": "common",
+      "suggestion": "Arctogadus glacialis",
+      "commonName": "Polar Cod"
+    },
+    {
+      "binomial": "Arctogadus glacialis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Polar Cod"
+    },
+    {
+      "binomial": "Arctic cod",
+      "type": "common",
+      "suggestion": "Boreogadus saida",
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Boreogadus saida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Cod"
+    },
+    {
+      "binomial": "Coregonus artedi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cisco"
+    },
+    {
+      "binomial": "Saffron cod",
+      "type": "common",
+      "suggestion": "Eleginus gracilis",
+      "commonName": "Saffron Cod"
+    },
+    {
+      "binomial": "Eleginus gracilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Saffron Cod"
+    },
+    {
+      "binomial": "Walleye pollock",
+      "type": "common",
+      "suggestion": "Gadus chalcogrammus",
+      "commonName": "Walleye Pollock"
+    },
+    {
+      "binomial": "Gadus chalcogrammus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walleye Pollock"
+    },
+    {
+      "binomial": "Liparis fabricii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Gelatinous Seasnail"
+    },
+    {
+      "binomial": "Mallotus villosus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Capelin"
+    },
+    {
+      "binomial": "Rainbow smelt",
+      "type": "common",
+      "suggestion": "Osmerus mordax",
+      "commonName": "Rainbow Smelt"
+    },
+    {
+      "binomial": "Osmerus dentex",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Rainbow Smelt"
+    },
+    {
+      "binomial": "Yellowfin sole",
+      "type": "common",
+      "suggestion": "Limanda aspera",
+      "commonName": "Yellowfin Sole"
+    },
+    {
+      "binomial": "Limanda aspera",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowfin Sole"
+    },
+    {
+      "binomial": "Longhead dab",
+      "type": "common",
+      "suggestion": "Myzopsetta proboscidea",
+      "commonName": "Longhead Dab"
+    },
+    {
+      "binomial": "Myzopsetta proboscidea",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Longhead Dab"
+    },
+    {
+      "binomial": "Starry flounder",
+      "type": "common",
+      "suggestion": "Platichthys stellatus",
+      "commonName": "Starry Flounder"
+    },
+    {
+      "binomial": "Platichthys stellatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Starry Flounder"
+    },
+    {
+      "binomial": "Arctic cisco",
+      "type": "common",
+      "suggestion": "Coregonus autumnalis",
+      "commonName": "Arctic Cisco"
+    },
+    {
+      "binomial": "Coregonus autumnalis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Cisco"
+    },
+    {
+      "binomial": "Lake whitefish",
+      "type": "common",
+      "suggestion": "Coregonus clupeaformis",
+      "commonName": "Lake Whitefish"
+    },
+    {
+      "binomial": "Coregonus clupeaformis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lake Whitefish"
+    },
+    {
+      "binomial": "Least cisco",
+      "type": "common",
+      "suggestion": "Coregonus sardinella",
+      "commonName": "Least Cisco"
+    },
+    {
+      "binomial": "Coregonus sardinella",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Least Cisco"
+    },
+    {
+      "binomial": "Chum salmon",
+      "type": "common",
+      "suggestion": "Oncorhynchus keta",
+      "commonName": "Chum Salmon"
+    },
+    {
+      "binomial": "Oncorhynchus keta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chum Salmon"
+    },
+    {
+      "binomial": "Arctic char",
+      "type": "common",
+      "suggestion": "Salvelinus alpinus",
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Salvelinus alpinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Arctic Char"
+    },
+    {
+      "binomial": "Salvelinus malma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dolly Varden"
+    },
+    {
+      "binomial": "Stenodus leucichthys",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Inconnu"
+    },
+    {
+      "binomial": "Dolly varden",
+      "type": "common",
+      "suggestion": "Salvelinus malma",
+      "commonName": "Dolly Varden"
+    }
+  ],
+  "source_file": "5b09160f36463ba8.txt"
+}

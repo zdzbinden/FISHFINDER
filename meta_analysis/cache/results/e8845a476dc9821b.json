@@ -1,0 +1,30 @@
+{
+  "candidates_found": 99,
+  "unique_binomials": 3,
+  "classifications": {
+    "changed": 1,
+    "valid": 1,
+    "unknown": 1
+  },
+  "details": [
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Oncorhynchus aguabonita",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Golden Trout"
+    },
+    {
+      "binomial": "Salmo aqua",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "e8845a476dc9821b.txt"
+}

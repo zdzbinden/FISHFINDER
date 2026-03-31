@@ -1,0 +1,91 @@
+{
+  "candidates_found": 293,
+  "unique_binomials": 13,
+  "classifications": {
+    "valid": 7,
+    "unknown": 2,
+    "common": 2,
+    "outdated": 2
+  },
+  "details": [
+    {
+      "binomial": "Hyporthodus niveatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Snowy Grouper"
+    },
+    {
+      "binomial": "Caulolatilus microps",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blueline Tilefish"
+    },
+    {
+      "binomial": "Hyporthodus nivea",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Seriola dumerili",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Greater Amberjack"
+    },
+    {
+      "binomial": "Snowy grouper",
+      "type": "common",
+      "suggestion": "Hyporthodus niveatus",
+      "commonName": "Snowy Grouper"
+    },
+    {
+      "binomial": "Lutjanus campechanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Red Snapper"
+    },
+    {
+      "binomial": "Atlantic cod",
+      "type": "common",
+      "suggestion": "Gadus morhua",
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Gadus morhua",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Atlantic Cod"
+    },
+    {
+      "binomial": "Caulolatilus construct",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Epinephelus niveatus",
+      "type": "outdated",
+      "suggestion": "Hyporthodus niveatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Hoplostethus atlanticus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Orange Roughy"
+    },
+    {
+      "binomial": "Epinephelus flavolimbatus",
+      "type": "outdated",
+      "suggestion": "Hyporthodus flavolimbatus",
+      "commonName": null
+    },
+    {
+      "binomial": "Melanogrammus aeglefinus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Haddock"
+    }
+  ],
+  "source_file": "f22d65baa8870d65.txt"
+}

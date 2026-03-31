@@ -1,0 +1,79 @@
+{
+  "candidates_found": 335,
+  "unique_binomials": 11,
+  "classifications": {
+    "valid": 4,
+    "changed": 3,
+    "common": 2,
+    "outdated": 2
+  },
+  "details": [
+    {
+      "binomial": "Sander vitreus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Walleye"
+    },
+    {
+      "binomial": "Micropterus salmoides",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Florida Bass"
+    },
+    {
+      "binomial": "Largemouth bass",
+      "type": "common",
+      "suggestion": "Micropterus nigricans",
+      "commonName": "Largemouth Bass"
+    },
+    {
+      "binomial": "Pimephales promelas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fathead Minnow"
+    },
+    {
+      "binomial": "Micropterus dolomieu",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Smallmouth Bass"
+    },
+    {
+      "binomial": "Fathead minnow",
+      "type": "common",
+      "suggestion": "Pimephales promelas",
+      "commonName": "Fathead Minnow"
+    },
+    {
+      "binomial": "Salvelinus fontinalis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Brook Trout"
+    },
+    {
+      "binomial": "Chanos chanos",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Milkfish"
+    },
+    {
+      "binomial": "Notropis anogenus",
+      "type": "outdated",
+      "suggestion": "Miniellus anogenus",
+      "commonName": null
+    },
+    {
+      "binomial": "Hybopsis amblops",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigeye Chub"
+    },
+    {
+      "binomial": "Stizostedion vitreum",
+      "type": "outdated",
+      "suggestion": "Sander vitreus",
+      "commonName": null
+    }
+  ],
+  "source_file": "40f7774614049d27.txt"
+}

@@ -1,0 +1,620 @@
+{
+  "candidates_found": 364,
+  "unique_binomials": 101,
+  "classifications": {
+    "misspelled": 2,
+    "valid": 79,
+    "unknown": 5,
+    "outdated": 5,
+    "changed": 10
+  },
+  "details": [
+    {
+      "binomial": "Haemulopsis nitidus",
+      "type": "misspelled",
+      "suggestion": "Haemulopsis nitida",
+      "commonName": null
+    },
+    {
+      "binomial": "Eucinostomus dowii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Spotfin Mojarra"
+    },
+    {
+      "binomial": "Diapterus brevirostris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortnose Mojarra"
+    },
+    {
+      "binomial": "Pseudupeneus grandisquamis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigscale Goatfish"
+    },
+    {
+      "binomial": "Eucinostomus entomelas",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Darkspot Mojarra"
+    },
+    {
+      "binomial": "Paralabrax maculato",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Achirus mazatlanus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Lined Sole"
+    },
+    {
+      "binomial": "Urolophus halleri",
+      "type": "outdated",
+      "suggestion": "Urobatis halleri",
+      "commonName": null
+    },
+    {
+      "binomial": "Sphyrna lewini",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Scalloped Hammerhead"
+    },
+    {
+      "binomial": "Pseudobatos glaucostigma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Speckled Guitarfish"
+    },
+    {
+      "binomial": "Urotrygon chilensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blotched Stingray"
+    },
+    {
+      "binomial": "Albula gilberti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cortez Bonefish"
+    },
+    {
+      "binomial": "Albula pacifica",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Shafted Bonefish"
+    },
+    {
+      "binomial": "Albula esuncula",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Eastern Pacific Bonefish"
+    },
+    {
+      "binomial": "Gymnothorax equatorialis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spottail Moray"
+    },
+    {
+      "binomial": "Ophichthus zophochir",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Snake Eel"
+    },
+    {
+      "binomial": "Cynoponticus coniceps",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Conehead Eel"
+    },
+    {
+      "binomial": "Anchoa ischana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sharpnose Anchovy"
+    },
+    {
+      "binomial": "Anchoa lucida",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bright Anchovy"
+    },
+    {
+      "binomial": "Anchovia macrolepidota",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigscale Anchovy"
+    },
+    {
+      "binomial": "Cetengraulis mysticetus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Anchoveta"
+    },
+    {
+      "binomial": "Lile stolifera",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Herring"
+    },
+    {
+      "binomial": "Opisthonema libertate",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Deepbody Thread Herring"
+    },
+    {
+      "binomial": "Ariopsis guatemalensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Widehead Sea Catfish"
+    },
+    {
+      "binomial": "Ariopsis seemanni",
+      "type": "outdated",
+      "suggestion": "Ariopsis guatemalensis",
+      "commonName": null
+    },
+    {
+      "binomial": "Bagre panamensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Chihuil"
+    },
+    {
+      "binomial": "Bagre pinnimaculatus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Long-barbeled Sea Catfish"
+    },
+    {
+      "binomial": "Occidentarius platypogon",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cominate Sea Catfish"
+    },
+    {
+      "binomial": "Synodus scituliceps",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Lance Lizardfish"
+    },
+    {
+      "binomial": "Mugil cephalus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Striped Mullet"
+    },
+    {
+      "binomial": "Colpichthys regis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "False Grunion"
+    },
+    {
+      "binomial": "Nematistius pectoralis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Roosterfish"
+    },
+    {
+      "binomial": "Caranx caballus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Green Jack"
+    },
+    {
+      "binomial": "Caranx caninus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Crevalle Jack"
+    },
+    {
+      "binomial": "Caranx vinctus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cocinero"
+    },
+    {
+      "binomial": "Chloroscombrus orqueta",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Bumper"
+    },
+    {
+      "binomial": "Hemicaranx leucurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowfin Jack"
+    },
+    {
+      "binomial": "Hemicaranx zelotes",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Blackfin Jack"
+    },
+    {
+      "binomial": "Oligoplites altus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longjaw Leatherjack"
+    },
+    {
+      "binomial": "Oligoplites refulgens",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Shortjaw Leatherjack"
+    },
+    {
+      "binomial": "Oligoplites saurus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Leatherjack"
+    },
+    {
+      "binomial": "Selene brevoortii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mexican Lookdown"
+    },
+    {
+      "binomial": "Selene peruviana",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Moonfish"
+    },
+    {
+      "binomial": "Trachinotus kennedyi",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Blackblotch Pompano"
+    },
+    {
+      "binomial": "Trachinotus paitensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Paloma Pompano"
+    },
+    {
+      "binomial": "Sphyraena ensis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mexican Barracuda"
+    },
+    {
+      "binomial": "Citharichthys gilberti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bigmouth Sanddab"
+    },
+    {
+      "binomial": "Citharichthys platophrys",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Small Sanddab"
+    },
+    {
+      "binomial": "Cyclopsetta panamensis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Panamic Flounder"
+    },
+    {
+      "binomial": "Cyclopsetta querna",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Toothed Flounder"
+    },
+    {
+      "binomial": "Etropus crossotus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Fringed Flounder"
+    },
+    {
+      "binomial": "Paralichthys aestuarius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Cortez Halibut"
+    },
+    {
+      "binomial": "Syacium maculiferum",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Syacium ovale",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Oval Flounder"
+    },
+    {
+      "binomial": "Achirus scutum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Network Sole"
+    },
+    {
+      "binomial": "Symphurus chabanaudi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Darkcheek Tonguefish"
+    },
+    {
+      "binomial": "Scomberomorus sierra",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Sierra"
+    },
+    {
+      "binomial": "Peprilus medius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Harvestfish"
+    },
+    {
+      "binomial": "Centropomus robalito",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowfin Snook"
+    },
+    {
+      "binomial": "Eucinostomus currani",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Pacific Flagfin Mojarra"
+    },
+    {
+      "binomial": "Eucinostomus gracilis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Graceful Mojarra"
+    },
+    {
+      "binomial": "Eugerres lineatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Streaked Mojarra"
+    },
+    {
+      "binomial": "Gerres simillimus",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Pacific Yellowfin Mojarra"
+    },
+    {
+      "binomial": "Diplectrum macropoma",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mexican Sand Perch"
+    },
+    {
+      "binomial": "Diplectrum pacificum",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Sand Perch"
+    },
+    {
+      "binomial": "Paralabrax maculatofasciatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Sand Bass"
+    },
+    {
+      "binomial": "Haemulon maculicauda",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spottail Grunt"
+    },
+    {
+      "binomial": "Haemulon scudderii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Mojarra Grunt"
+    },
+    {
+      "binomial": "Haemulon steindachneri",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Latin Grunt"
+    },
+    {
+      "binomial": "Haemulopsis elongatus",
+      "type": "misspelled",
+      "suggestion": "Haemulopsis elongata",
+      "commonName": null
+    },
+    {
+      "binomial": "Haemulopsis leuciscus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Raucous Grunt"
+    },
+    {
+      "binomial": "Orthopristis reddingi",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bronzestriped Grunt"
+    },
+    {
+      "binomial": "Pomadasys macracanthus",
+      "type": "outdated",
+      "suggestion": "Rhencus macracanthus",
+      "commonName": null
+    },
+    {
+      "binomial": "Pomadasys panamensis",
+      "type": "outdated",
+      "suggestion": "Rhencus panamensis",
+      "commonName": null
+    },
+    {
+      "binomial": "Hoplopagrus guentherii",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Barred Pargo"
+    },
+    {
+      "binomial": "Lutjanus argentiventris",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Amarillo Snapper"
+    },
+    {
+      "binomial": "Lutjanus guttatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Spotted Rose Snapper"
+    },
+    {
+      "binomial": "Polydactylus opercularis",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellow Bobo"
+    },
+    {
+      "binomial": "Scorpaena sonorae",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Sonora Scorpionfish"
+    },
+    {
+      "binomial": "Prionotus birostratus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Twobeak Searobin"
+    },
+    {
+      "binomial": "Prionotus ruscarius",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Rough Searobin"
+    },
+    {
+      "binomial": "Chaetodipterus zonatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Pacific Spadefish"
+    },
+    {
+      "binomial": "Bairdiella icistia",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bairdiella"
+    },
+    {
+      "binomial": "Cynoscion nannus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Dwarf Corvina"
+    },
+    {
+      "binomial": "Cynoscion reticulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Striped Corvina"
+    },
+    {
+      "binomial": "Cynoscion stolzmanni",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Yellowtail Corvina"
+    },
+    {
+      "binomial": "Larimus acclivis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Steeplined Drum"
+    },
+    {
+      "binomial": "Menticirrhus panamensis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Panama Kingfish"
+    },
+    {
+      "binomial": "Menticirrhus nasus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Highfin Kingfish"
+    },
+    {
+      "binomial": "Micropogonias ectenes",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Paralonchurus rathbuni",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bearded Banded Croaker"
+    },
+    {
+      "binomial": "Umbrina xanti",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Surf Croaker"
+    },
+    {
+      "binomial": "Balistes polylepis",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "Finescale Triggerfish"
+    },
+    {
+      "binomial": "Sphoeroides annulatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Bullseye Puffer"
+    },
+    {
+      "binomial": "Sphoeroides lispus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Naked Puffer"
+    },
+    {
+      "binomial": "Sphoeroides lobatus",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Longnose Puffer"
+    },
+    {
+      "binomial": "Etropus crossovers",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    },
+    {
+      "binomial": "Mugil curema",
+      "type": "changed",
+      "suggestion": null,
+      "commonName": "White Mullet"
+    },
+    {
+      "binomial": "Paranthias colonus",
+      "type": "outdated",
+      "suggestion": "Cephalopholis colonus",
+      "commonName": null
+    },
+    {
+      "binomial": "Opisthonema medirastre",
+      "type": "valid",
+      "suggestion": null,
+      "commonName": "Middling Thread Herring"
+    },
+    {
+      "binomial": "Cichlasoma orientale",
+      "type": "unknown",
+      "suggestion": null,
+      "commonName": null
+    }
+  ],
+  "source_file": "ba75c9c4a1ee0367.txt"
+}
