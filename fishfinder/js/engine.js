@@ -145,19 +145,43 @@
 
   // ── Extract candidate names from text ─────────────────────────────────────
   const CANDIDATE_RE = /\b([A-Z][a-z]{2,})\s+([a-z]{3,})\b/g;
+  const HYPHEN_SP_RE = /\b([A-Z][a-z]{2,})\s+([a-z]-[a-z]{2,})\b/g;
+  const SHORT_GENUS_RE = /\b([A-Z][a-z])\s+([a-z]{3,})\b/g;
 
-  function extractCandidates(text) {
+  function extractCandidates(text, lookups) {
     const hits = [];
+    const seen = new Set();
     let m;
+
+    // Primary pass: standard binomials (Genus species)
     CANDIDATE_RE.lastIndex = 0;
     while ((m = CANDIDATE_RE.exec(text)) !== null) {
-      hits.push({
-        genus:   m[1],
-        species: m[2],
-        text:    m[0],
-        index:   m.index,
-      });
+      seen.add(m.index);
+      hits.push({ genus: m[1], species: m[2], text: m[0], index: m.index });
     }
+
+    // Secondary pass: hyphenated species (e.g., Erimystax x-punctatus)
+    HYPHEN_SP_RE.lastIndex = 0;
+    while ((m = HYPHEN_SP_RE.exec(text)) !== null) {
+      if (!seen.has(m.index)) {
+        seen.add(m.index);
+        hits.push({ genus: m[1], species: m[2], text: m[0], index: m.index });
+      }
+    }
+
+    // Secondary pass: short genera (2 chars, e.g., Zu cristatus)
+    // Only match if the genus exists in the database to avoid false positives
+    if (lookups) {
+      SHORT_GENUS_RE.lastIndex = 0;
+      while ((m = SHORT_GENUS_RE.exec(text)) !== null) {
+        if (!seen.has(m.index) && lookups.generaSet.has(m[1].toLowerCase())) {
+          seen.add(m.index);
+          hits.push({ genus: m[1], species: m[2], text: m[0], index: m.index });
+        }
+      }
+    }
+
+    hits.sort((a, b) => a.index - b.index);
     return hits;
   }
 

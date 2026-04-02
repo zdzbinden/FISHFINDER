@@ -150,6 +150,35 @@ describe('fuzzy matching edge cases', () => {
     });
   });
 
+  describe('round-trip: all database species through engine', () => {
+    it('classifies every valid species as valid or changed', () => {
+      const missed = [];
+      for (const [binomial, info] of Object.entries(lookups.db.valid_names)) {
+        const parts = binomial.split(' ');
+        if (parts.length < 2) continue;
+        const genus = parts[0];
+        const species = parts.slice(1).join(' ');
+        const result = engine.classifyName(lookups, genus, species);
+        if (!result || (result.type !== 'valid' && result.type !== 'changed')) {
+          missed.push(binomial);
+        }
+      }
+      assert.equal(missed.length, 0,
+        `${missed.length} species not classified as valid/changed: ${missed.slice(0, 10).join(', ')}`);
+    });
+
+    it('extracts every valid species from synthetic text', () => {
+      // Build text with every species as "Genus species" on its own line
+      const allNames = Object.keys(lookups.db.valid_names);
+      const text = allNames.join('\n');
+      const candidates = engine.extractCandidates(text, lookups);
+      const found = new Set(candidates.map(c => `${c.genus} ${c.species}`));
+      const missed = allNames.filter(n => !found.has(n));
+      assert.equal(missed.length, 0,
+        `${missed.length} species not extracted: ${missed.slice(0, 10).join(', ')}`);
+    });
+  });
+
   describe('database integrity', () => {
     it('has a reasonable number of valid names', () => {
       assert.ok(lookups.validSet.size > 5000, `expected >5000 valid names, got ${lookups.validSet.size}`);

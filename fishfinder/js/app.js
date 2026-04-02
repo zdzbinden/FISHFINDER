@@ -105,7 +105,7 @@
 
     // Yield to browser to update button state, then process
     setTimeout(() => {
-      const candidates = FishEngine.extractCandidates(text);
+      const candidates = FishEngine.extractCandidates(text, lookups);
       const findings   = [];
 
       for (const cand of candidates) {
@@ -487,7 +487,7 @@
     const findings = (lastFindings && lastScanText === text)
       ? lastFindings
       : (() => {
-          const cands = FishEngine.extractCandidates(text);
+          const cands = FishEngine.extractCandidates(text, lookups);
           const results = [];
           for (const cand of cands) {
             const result = FishEngine.classifyName(lookups, cand.genus, cand.species);

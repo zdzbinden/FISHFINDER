@@ -45,6 +45,24 @@ describe('extractCandidates', () => {
     const hits = engine.extractCandidates(text);
     assert.equal(hits[0].index, text.indexOf('Salmo'));
   });
+  it('extracts hyphenated species epithets (e.g., x-punctatus)', () => {
+    const text = 'The Erimystax x-punctatus and Astroscopus y-graecum were found.';
+    const hits = engine.extractCandidates(text);
+    assert.ok(hits.some(h => h.species === 'x-punctatus'), 'should extract x-punctatus');
+    assert.ok(hits.some(h => h.species === 'y-graecum'), 'should extract y-graecum');
+  });
+
+  it('extracts short genera when lookups are provided (e.g., Zu)', () => {
+    const text = 'The species Zu cristatus was observed.';
+    const hits = engine.extractCandidates(text, lookups);
+    assert.ok(hits.some(h => h.genus === 'Zu' && h.species === 'cristatus'), 'should extract Zu cristatus');
+  });
+
+  it('does not extract short genera without lookups (avoids false positives)', () => {
+    const text = 'To understand the ecology we studied So many species.';
+    const hits = engine.extractCandidates(text);
+    assert.equal(hits.length, 0, 'should not match "To understand" or "So many" without lookups');
+  });
 });
 
 describe('extractCommonNames', () => {
