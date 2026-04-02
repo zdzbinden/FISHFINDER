@@ -111,7 +111,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (50 tests across 4 files):
+against the real dataset (55 tests across 4 files):
 
 | File | Coverage |
 |------|----------|
