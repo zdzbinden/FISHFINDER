@@ -111,12 +111,12 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (55 tests across 4 files):
+against the real dataset (62 tests across 4 files):
 
 | File | Coverage |
 |------|----------|
-| `levenshtein.test.js` | Edit-distance algorithm (identical, substitution, insertion, deletion, early-exit, pruning) |
-| `classify.test.js` | Classification decision tree (valid, changed, outdated, misspelled, unknown, common name, abbreviation filtering) |
+| `levenshtein.test.js` | Edit-distance algorithm (identical, substitution, insertion, deletion, transposition, early-exit, pruning) |
+| `classify.test.js` | Classification decision tree (valid, changed, outdated, misspelled, unknown, common name, abbreviation filtering, confidence scoring) |
 | `extract.test.js` | Binomial regex extraction + common name matching (exact and fuzzy) |
 | `edge-cases.test.js` | Fuzzy matching boundaries, genus first-letter filter, charCode proximity, database integrity |
 

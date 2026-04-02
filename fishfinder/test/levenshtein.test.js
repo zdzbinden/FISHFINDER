@@ -46,4 +46,25 @@ describe('levenshtein', () => {
     // Micropterus vs Micropteris
     assert.equal(lev('micropterus', 'micropteris', 2), 1);
   });
+
+  it('counts adjacent transposition as 1 edit (Damerau-Levenshtein)', () => {
+    // Simple transposition
+    assert.equal(lev('ab', 'ba', 2), 1);
+    assert.equal(lev('abc', 'bac', 2), 1);
+    assert.equal(lev('abc', 'acb', 2), 1);
+  });
+
+  it('handles transpositions in real taxonomic names', () => {
+    // Cyrpinus → Cyprinus (r,p transposed)
+    assert.equal(lev('cyrpinus', 'cyprinus', 2), 1);
+    // salmoides → salmiodes (o,i transposed)
+    assert.equal(lev('salmoides', 'salmiodes', 2), 1);
+    // oncorhynchus → oncorhyncuhs (u,h transposed)
+    assert.equal(lev('oncorhynchus', 'oncorhyncuhs', 2), 1);
+  });
+
+  it('still counts non-adjacent swaps as 2 edits', () => {
+    // 'abc' → 'cba' is NOT a single transposition
+    assert.equal(lev('abc', 'cba', 3), 2);
+  });
 });

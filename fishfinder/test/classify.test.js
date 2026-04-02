@@ -66,6 +66,33 @@ describe('classifyName', () => {
     });
   });
 
+  // ── Confidence and edit distance ────────────────────────────────────
+  describe('confidence and editDistance fields', () => {
+    it('returns confidence 1.0 and editDistance 0 for valid names', () => {
+      const r = classify('Oncorhynchus', 'mykiss');
+      assert.equal(r.confidence, 1.0);
+      assert.equal(r.editDistance, 0);
+    });
+
+    it('returns confidence 0.95 for exact synonym matches', () => {
+      const r = classify('Stizostedion', 'vitreum');
+      assert.equal(r.confidence, 0.95);
+      assert.equal(r.editDistance, 0);
+    });
+
+    it('returns lower confidence for misspelled names', () => {
+      const r = classify('Micropterus', 'salmodes');
+      assert.ok(r.confidence <= 0.70);
+      assert.ok(r.editDistance >= 1);
+    });
+
+    it('returns confidence 0.30 for unknown names', () => {
+      const r = classify('Micropterus', 'fantasius');
+      assert.equal(r.confidence, 0.30);
+      assert.equal(r.editDistance, null);
+    });
+  });
+
   // ── Non-fish names ────────────────────────────────────────────────────
   describe('non-fish names', () => {
     it('returns null for a non-fish organism', () => {

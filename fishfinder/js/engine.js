@@ -6,10 +6,13 @@
 (function (exports) {
   'use strict';
 
-  // ── Levenshtein distance (Wagner-Fischer, with early-exit) ────────────────
+  // ── Damerau-Levenshtein distance (Optimal String Alignment, with early-exit)
+  // Handles transpositions (ab→ba) as a single edit, which standard Levenshtein
+  // counts as 2. Important for common taxonomic typos like "Cyrpinus" → "Cyprinus".
   function levenshtein(a, b, maxDist) {
     if (Math.abs(a.length - b.length) > maxDist) return maxDist + 1;
     const m = a.length, n = b.length;
+    let prevprev = new Uint16Array(n + 1);
     let prev = new Uint16Array(n + 1);
     let curr = new Uint16Array(n + 1);
     for (let j = 0; j <= n; j++) prev[j] = j;
@@ -20,10 +23,14 @@
       for (let j = 1; j <= n; j++) {
         const cost = a[i - 1] === b[j - 1] ? 0 : 1;
         curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+        // Transposition: adjacent characters swapped
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+          curr[j] = Math.min(curr[j], prevprev[j - 2] + 1);
+        }
         if (curr[j] < rowMin) rowMin = curr[j];
       }
       if (rowMin > maxDist) return maxDist + 1; // prune
-      [prev, curr] = [curr, prev];
+      [prevprev, prev, curr] = [prev, curr, prevprev];
     }
     return prev[n];
   }
@@ -99,12 +106,14 @@
       const info       = lookups.db.valid_names[canonical];
       const commonName = info ? (info.common_name_en || '') : '';
       const changed    = info && info.flags && info.flags.includes('*');
-      return { type: changed ? 'changed' : 'valid', canonical, suggestion: null, commonName };
+      return { type: changed ? 'changed' : 'valid', canonical, suggestion: null, commonName,
+               confidence: 1.0, editDistance: 0 };
     }
 
     // 2. Known synonym / outdated name
     if (lookups.synonymMap.has(lower)) {
-      return { type: 'outdated', canonical: binomial, suggestion: lookups.synonymMap.get(lower) };
+      return { type: 'outdated', canonical: binomial, suggestion: lookups.synonymMap.get(lower),
+               confidence: 0.95, editDistance: 0 };
     }
 
     // 2b. Fuzzy synonym match (catches misspelled synonyms like Leucisus → Leuciscus)
@@ -112,7 +121,8 @@
     //     (e.g., Platichthys flesus should NOT fuzzy-match Platichthys stellatus)
     const closestSyn = findClosestSynonym(lookups, genus, species, 2);
     if (closestSyn && closestSyn.genusDist === 0 && closestSyn.dist > 0 && closestSyn.dist <= 2) {
-      return { type: 'outdated', canonical: binomial, suggestion: closestSyn.newName };
+      return { type: 'outdated', canonical: binomial, suggestion: closestSyn.newName,
+               confidence: closestSyn.dist === 1 ? 0.80 : 0.60, editDistance: closestSyn.dist };
     }
 
     // 3. Common name match
@@ -121,6 +131,7 @@
       return {
         type: 'common', canonical: binomial,
         suggestion: commonMatch.binomial, commonName: commonMatch.commonName,
+        confidence: 1.0, editDistance: 0,
       };
     }
 
@@ -128,15 +139,18 @@
     if (lookups.generaSet.has(genus.toLowerCase())) {
       const closest = findClosestMatch(lookups, genus, species, 2);
       if (closest && closest.dist <= 2) {
-        return { type: 'misspelled', canonical: binomial, suggestion: closest.name };
+        return { type: 'misspelled', canonical: binomial, suggestion: closest.name,
+                 confidence: closest.dist === 1 ? 0.70 : 0.50, editDistance: closest.dist };
       }
-      return { type: 'unknown', canonical: binomial, suggestion: null };
+      return { type: 'unknown', canonical: binomial, suggestion: null,
+               confidence: 0.30, editDistance: null };
     }
 
     // 5. Fuzzy full binomial (catches misspelled genera like Micropteris → Micropterus)
     const closest = findClosestMatch(lookups, genus, species, 2);
     if (closest && closest.dist <= 2) {
-      return { type: 'misspelled', canonical: binomial, suggestion: closest.name };
+      return { type: 'misspelled', canonical: binomial, suggestion: closest.name,
+               confidence: closest.dist === 1 ? 0.60 : 0.40, editDistance: closest.dist };
     }
 
     // 6. Not a fish name
