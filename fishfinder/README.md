@@ -53,7 +53,7 @@ Extracts ~5,086 species with full metadata per entry:
 uv run --with requests --with beautifulsoup4 python ../scrape_eschmeyer.py
 ```
 
-Queries https://researcharchive.calacademy.org/research/ichthyology/catalog/ for
+Queries [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) for
 each species and adds older/synonymized names to `fish_names.json`. Handles both
 strict synonyms and genus transfers (reclassifications).
 

@@ -767,11 +767,11 @@
       document.getElementById('stat-species').textContent =
         (stats.species_total || 0).toLocaleString();
 
-      // Visits for map + country count
+      // Visits for map + unique location count
       const visitsSnap = await fbDb.ref('fishfinder/visits').limitToLast(500).get();
       const visits = visitsSnap.val() ? Object.values(visitsSnap.val()) : [];
-      const countries = new Set(visits.map(v => v.country).filter(Boolean));
-      document.getElementById('stat-countries').textContent = countries.size.toLocaleString();
+      const locations = new Set(visits.map(v => [v.city, v.country].filter(Boolean).join(', ')).filter(Boolean));
+      document.getElementById('stat-locations').textContent = locations.size.toLocaleString();
 
       // Map
       loadStyle(CDN.leafletCss.src, CDN.leafletCss.integrity);

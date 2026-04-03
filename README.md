@@ -49,7 +49,7 @@ python -m http.server 8080
 The name database is assembled in two stages:
 
 1. **Parse** the AFS table PDF (~5,086 species with full metadata)
-2. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/) (genus transfers, strict synonyms, and historical synonym chains)
+2. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains)
 
 See [`fishfinder/README.md`](fishfinder/README.md) for full pipeline documentation.
 
