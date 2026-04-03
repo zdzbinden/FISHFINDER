@@ -779,8 +779,9 @@
 
       const map = window.L.map('usage-map', {
         center: [45, -98], zoom: 2,
-        zoomControl: true, attributionControl: true,
+        zoomControl: true, attributionControl: false,
       });
+      window.L.control.attribution({ prefix: false, compact: true }).addTo(map);
       window.L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
         subdomains: 'abcd',

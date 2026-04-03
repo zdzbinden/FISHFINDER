@@ -917,6 +917,33 @@ td.name-cell { font-style: italic; }
 }
 .privacy-link:hover { color: #a0c8e8; }
 
+/* Leaflet attribution: subtle, expand on hover */
+.usage-map .leaflet-control-attribution {
+  max-width: 20px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  background: rgba(0,0,0,0.5) !important;
+  color: #8c9096 !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  transition: max-width 0.3s ease !important;
+}
+.usage-map .leaflet-control-attribution:hover {
+  max-width: 400px !important;
+}
+.usage-map .leaflet-control-attribution a {
+  color: #8c9096 !important;
+}
+.usage-map .leaflet-control-zoom a {
+  background-color: rgba(0,0,0,0.5) !important;
+  color: #8c9096 !important;
+  border-color: #444 !important;
+}
+.usage-map .leaflet-control-zoom a:hover {
+  background-color: rgba(0,0,0,0.7) !important;
+  color: #c0c8d0 !important;
+}
+
 /* ══════════════════════════════════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════════════════════════════════ */
