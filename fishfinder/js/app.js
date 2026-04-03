@@ -229,7 +229,7 @@
     const pingInterval = SONAR_END / (pingCount + 1);
 
     // Build fish objects (max 15)
-    const fishCount = Math.min(findings.length, 15);
+    const fishCount = Math.min(findings.length, 50);
     const fishes = [];
     for (let i = 0; i < fishCount; i++) {
       const sprite = FISH_SPRITES[i % FISH_SPRITES.length];
