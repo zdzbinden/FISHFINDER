@@ -23,7 +23,7 @@
           "type":    { ".validate": "newData.isString() && newData.val().length <= 50" },
           "title":   { ".validate": "newData.isString() && newData.val().length <= 200" },
           "body":    { ".validate": "newData.isString() && newData.val().length <= 2000" },
-          "email":   { ".validate": "newData.isString() && newData.val().length <= 200" },
+          "email":   { ".validate": "!newData.exists() || (newData.isString() && newData.val().length <= 200)" },
           "ts":      { ".validate": "newData.isNumber() && newData.val() <= now" },
           "ua":      { ".validate": "newData.isString() && newData.val().length <= 500" },
           "$other":  { ".validate": false }
