@@ -944,9 +944,12 @@
   if (onboardingEl && !storageGet(ONBOARDING_KEY)) {
     onboardingEl.hidden = false;
   }
-  if (onboardingDismiss) {
-    onboardingDismiss.addEventListener('click', dismissOnboarding);
+  // Click anywhere on the banner (including the × button via bubbling) dismisses it
+  if (onboardingEl) {
+    onboardingEl.addEventListener('click', dismissOnboarding);
   }
+  // Also dismiss as soon as the user focuses the textarea (clear intent to type)
+  textarea.addEventListener('focus', dismissOnboarding);
   // Auto-dismiss on first SCAN
   checkBtn.addEventListener('click', dismissOnboarding);
 
