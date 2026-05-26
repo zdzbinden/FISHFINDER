@@ -60,15 +60,16 @@
       <div id="info-panel" class="info-panel" hidden>
         <h2 class="info-panel-header">FISHFINDER — HOW TO USE</h2>
         <div class="modal-body">
-          <p><strong>FISHFINDER</strong> validates scientific fish names in manuscript text against the <em>Common and Scientific Names of Fishes from the United States, Canada, and Mexico</em>, 8th edition (Page et al., 2023), supplemented by synonym data from Eschmeyer's Catalog of Fishes.</p>
-
-          <h3>Getting started</h3>
-          <ol>
-            <li>Paste your manuscript text into the <strong>TEXT INPUT</strong> area, or press <strong>LOAD</strong> to upload a .txt, .csv, .docx, .xlsx, .xls, or .pdf file.</li>
+          <h3>Quick start</h3>
+          <ol class="quick-start">
+            <li>Paste manuscript text into the input area, or press <strong>LOAD</strong> (or drop a file onto the screen) to upload a .txt, .csv, .docx, .xlsx, .xls, or .pdf file.</li>
             <li>Press <strong>SCAN</strong> (or Ctrl+Enter) to analyze the text.</li>
-            <li>Review detected species names in the <strong>SPECIES DETECTED</strong> panel and any flagged issues in the <strong>ISSUES DETECTED</strong> panel.</li>
-            <li>Press <strong>COPY</strong> to copy corrected text to the clipboard — outdated synonyms and misspellings are automatically updated.</li>
+            <li>Review color-coded results in the <strong>SPECIES DETECTED</strong> and <strong>ISSUES DETECTED</strong> panels.</li>
+            <li>Press <strong>COPY</strong> to copy auto-corrected text to your clipboard — outdated synonyms and misspellings are replaced automatically.</li>
           </ol>
+          <p class="info-tip">Tip: press <strong>HI-CON</strong> to switch between the default retro LCD palette and a high-contrast display mode (white background, dark text).</p>
+
+          <p><strong>FISHFINDER</strong> validates scientific fish names in manuscript text against the <em>Common and Scientific Names of Fishes from the United States, Canada, and Mexico</em>, 8th edition (Page et al., 2023), supplemented by synonym data from Eschmeyer's Catalog of Fishes. The underlying species list covers <strong>freshwater, brackish, and marine fishes</strong> of the United States, Canada, and Mexico — no separate mode is needed for any habitat category.</p>
 
           <h3>Classification codes</h3>
           <ul>
@@ -81,7 +82,7 @@
           </ul>
 
           <h3>Coverage</h3>
-          <p>Covers ~5,086 species from U.S., Canadian, and Mexican waters (<em>Names of Fishes</em>, 8th edition) with synonyms from Eschmeyer's Catalog of Fishes. Both freshwater and marine species are included. Scientific names only are validated.</p>
+          <p>Covers ~5,086 species from U.S., Canadian, and Mexican waters (<em>Names of Fishes</em>, 8th edition) with synonyms from Eschmeyer's Catalog of Fishes. Freshwater, brackish, and marine species are all included.</p>
 
           <h3>Key changes in the 8th edition</h3>
           <p>Several well-known names were revised. Notably, Largemouth Bass changed from <em>Micropterus salmoides</em> to <em>Micropterus nigricans</em>; <em>Micropterus salmoides</em> now refers exclusively to Florida Bass. Names flagged <span class="hl changed">CHANGED</span> warrant careful review.</p>
@@ -147,12 +148,25 @@
 
         <!-- Input area -->
         <label for="manuscript-text" class="screen-label">TEXT INPUT</label>
-        <textarea
-          id="manuscript-text"
-          rows="14"
-          placeholder="Scan text for fish&hellip;"
-          spellcheck="false"
-        ></textarea>
+        <div class="text-input-wrap">
+          <textarea
+            id="manuscript-text"
+            rows="14"
+            placeholder=" "
+            spellcheck="false"
+          ></textarea>
+          <div class="placeholder-overlay" aria-hidden="true">
+            <span class="placeholder-text">Scan text for fish&hellip;</span><span class="blinking-cursor">|</span>
+          </div>
+
+          <!-- One-time onboarding hint (overlayed at bottom of input) -->
+          <div id="onboarding-hint" class="onboarding-hint" hidden>
+            <span class="onboarding-text">
+              <strong>NEW HERE?</strong> Paste or type text containing fish names directly in the text box above — or press <strong>LOAD</strong> to choose a file from your computer — then press <strong>SCAN</strong>. Press <strong>INFO</strong> for the full guide.
+            </span>
+            <button type="button" id="onboarding-dismiss" class="onboarding-dismiss" aria-label="Dismiss onboarding hint">&times;</button>
+          </div>
+        </div>
         <div class="input-meta">
           <span class="input-hint">Ctrl+Enter to scan</span>
           <span id="file-name" class="file-name"></span>
@@ -220,6 +234,7 @@
     <button id="copy-btn" class="device-btn">COPY</button>
     <button id="info-btn" class="device-btn">INFO</button>
     <button id="report-btn" class="device-btn">REPORT</button>
+    <button id="hicon-btn" class="device-btn" aria-pressed="false" title="Toggle high-contrast display mode">HI-CON</button>
   </div>
 
   <!-- Footer / brief credit -->

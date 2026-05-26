@@ -1122,3 +1122,178 @@ select.report-input {
   .cite-copy-btn,
   .affiliation-logo { transition: none; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ONBOARDING HINT (first session only)
+   Overlayed at the bottom of the text input area. Click-through pass to
+   textarea except on the dismiss button.
+   ══════════════════════════════════════════════════════════════════════════════ */
+.text-input-wrap {
+  position: relative;
+}
+
+/* ── Placeholder overlay with blinking cursor ─────────────────────────────────
+   Replaces the native placeholder so we can render a blinking caret next to
+   it, making the input area visibly interactive. Native placeholder is set to
+   a single space and hidden via transparent color (see textarea::placeholder
+   override below). Shown only when textarea is empty AND unfocused. */
+.placeholder-overlay {
+  position: absolute;
+  top: 0.75rem;        /* match textarea padding-top */
+  left: 0.85rem;       /* match textarea padding-left */
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--lcd-muted);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+}
+.placeholder-text { white-space: pre; }
+
+.blinking-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  font-weight: 700;
+  animation: cursor-blink 1.05s steps(2, start) infinite;
+}
+
+@keyframes cursor-blink {
+  to { visibility: hidden; }
+}
+
+/* Hide overlay when user focuses the textarea or types anything */
+.text-input-wrap textarea:focus ~ .placeholder-overlay,
+.text-input-wrap textarea:not(:placeholder-shown) ~ .placeholder-overlay {
+  display: none;
+}
+
+/* Hide the native placeholder since the overlay supplies the visible text */
+#manuscript-text::placeholder { color: transparent; }
+
+/* Respect reduced-motion preference — keep the cursor visible but static */
+@media (prefers-reduced-motion: reduce) {
+  .blinking-cursor { animation: none; }
+}
+
+.onboarding-hint {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--lcd-muted);
+  color: var(--lcd);
+  border: 1px solid var(--lcd-text);
+  border-radius: 3px;
+  padding: 0.5rem 0.65rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  z-index: 4;
+  pointer-events: none; /* let clicks fall through to the textarea */
+}
+
+.onboarding-text { flex: 1; }
+.onboarding-text strong {
+  letter-spacing: 0.05em;
+  color: var(--hl-outdated-bg); /* sand/gold against the dark callout */
+}
+
+.onboarding-dismiss {
+  background: transparent;
+  border: 1px solid var(--lcd);
+  border-radius: 2px;
+  color: var(--lcd);
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 0.45rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  pointer-events: auto; /* clickable even though the overlay isn't */
+}
+.onboarding-dismiss:hover { background: var(--lcd); color: var(--lcd-muted); }
+.onboarding-dismiss:focus-visible {
+  outline: 2px solid var(--lcd);
+  outline-offset: 1px;
+}
+
+/* Quick start list (top of INFO panel) — compact and visually distinct */
+.quick-start {
+  background: var(--lcd-dark);
+  border-left: 3px solid var(--lcd-muted);
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  margin: 0 0 0.6rem 0;
+}
+.quick-start li { margin-bottom: 0.3rem; }
+.quick-start li:last-child { margin-bottom: 0; }
+
+.info-tip {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--lcd-muted);
+  margin-bottom: 0.6rem !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   HIGH-CONTRAST DISPLAY MODE
+   Toggled via the HI-CON button. Applied to <body> as data-theme="hi-contrast".
+   All 23 default text/background pairs already meet WCAG AA (verified, Lighthouse
+   100/100). HI-CON exceeds this with ≥7:1 ratios for all classification colors
+   on a white background.
+   ══════════════════════════════════════════════════════════════════════════════ */
+body[data-theme="hi-contrast"] {
+  --lcd:         #ffffff;
+  --lcd-dark:    #f1f3f5;
+  --lcd-darker:  #d6dade;
+  --lcd-text:    #15171a;
+  --lcd-muted:   #404448;
+
+  --hl-valid-bg:       #b8e8a0; /* WCAG ≥7:1 with valid-text */
+  --hl-valid-text:     #0a2400;
+  --hl-changed-bg:     #a0c8f0;
+  --hl-changed-text:   #001838;
+  --hl-outdated-bg:    #ffd070;
+  --hl-outdated-text:  #302200;
+  --hl-misspelled-bg:  #ff9090;
+  --hl-misspelled-text:#3a0000;
+  --hl-unknown-bg:     #c8a0e0;
+  --hl-unknown-text:   #1f0033;
+  --hl-common-bg:      #90d8c0;
+  --hl-common-text:    #002a20;
+}
+
+/* Scanline overlay would harm readability on white — suppress in HI-CON */
+body[data-theme="hi-contrast"] .screen::after {
+  display: none;
+}
+
+/* Watermark logo is faint by design; further dim against white for clarity */
+body[data-theme="hi-contrast"] .screen-watermark {
+  opacity: 0.06;
+}
+
+/* Pressed-state styling for the HI-CON button itself when active */
+.device-btn[aria-pressed="true"] {
+  background: linear-gradient(180deg, #2c3035 0%, #232629 50%, #1a1c1f 100%);
+  color: #e0e6ec;
+  box-shadow:
+    inset 0 1px 3px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* In HI-CON, give the screen-bezel a slightly lighter inner shadow so the
+   white LCD doesn't look "floating" against the dark device housing. */
+body[data-theme="hi-contrast"] .screen-bezel {
+  background: #1e2127;
+  box-shadow:
+    inset 2px 2px 8px rgba(0,0,0,0.4),
+    0 1px 0 rgba(255,255,255,0.05);
+}

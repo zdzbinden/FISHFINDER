@@ -35,10 +35,20 @@ plus aggregate statistics and publication-ready figures.
   export OPENALEX_EMAIL="your.email@example.com"
   ```
 
+### Setup (one-time)
+
+Dependencies are declared in `pyproject.toml` and pinned to exact versions
+(including transitive dependencies) in `uv.lock`, ensuring reproducible
+environments across machines and over time. From the `meta_analysis/` directory:
+
+```bash
+uv sync
+```
+
 ### Full run
 
 ```bash
-uv run --with requests --with pymupdf --with matplotlib python run_pipeline.py
+uv run run_pipeline.py
 ```
 
 This runs all six steps in sequence. Each step caches its output in `cache/`,
@@ -47,12 +57,12 @@ so interrupted runs resume automatically.
 ### Individual steps
 
 ```bash
-uv run --with requests python 01_discover_papers.py
-uv run --with requests python 02_download_pdfs.py
-uv run --with pymupdf python 03_extract_text.py
+uv run 01_discover_papers.py
+uv run 02_download_pdfs.py
+uv run 03_extract_text.py
 node 04_analyze_names.js
-uv run python 05_summarize.py
-uv run --with matplotlib python 06_make_figures.py
+uv run 05_summarize.py
+uv run 06_make_figures.py
 ```
 
 ## Configuration

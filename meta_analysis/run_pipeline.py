@@ -11,15 +11,19 @@ Runs all six pipeline steps in sequence:
   6. Generate publication figures and tables
 
 Usage:
-    uv run --with requests --with pymupdf --with matplotlib python meta_analysis/run_pipeline.py
+    cd meta_analysis
+    uv sync          # one-time: install dependencies from uv.lock
+    uv run run_pipeline.py
 
 Or run individual steps:
-    uv run --with requests python meta_analysis/01_discover_papers.py
-    uv run --with requests python meta_analysis/02_download_pdfs.py
-    uv run --with pymupdf  python meta_analysis/03_extract_text.py
-    node meta_analysis/04_analyze_names.js --batch cache/texts cache/results
-    python meta_analysis/05_summarize.py
-    uv run --with matplotlib python meta_analysis/06_make_figures.py
+    uv run 01_discover_papers.py
+    uv run 02_download_pdfs.py
+    uv run 03_extract_text.py
+    node 04_analyze_names.js --batch cache/texts cache/results
+    uv run 05_summarize.py
+    uv run 06_make_figures.py
+
+Dependencies are pinned in uv.lock for reproducibility (see pyproject.toml).
 """
 
 import subprocess

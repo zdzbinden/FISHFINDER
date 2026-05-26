@@ -25,6 +25,9 @@
   const reportPanel    = document.getElementById('report-panel');
   const reportForm     = document.getElementById('report-form');
   const reportStatus   = document.getElementById('report-status');
+  const hiconBtn       = document.getElementById('hicon-btn');
+  const onboardingEl   = document.getElementById('onboarding-hint');
+  const onboardingDismiss = document.getElementById('onboarding-dismiss');
   const screenEl       = document.querySelector('.screen');
   const fileInput      = document.getElementById('file-input');
   const fileNameEl     = document.getElementById('file-name');
@@ -911,6 +914,41 @@
   reportBtn.addEventListener('click', toggleReport);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllPanels(); });
   citeBtn.addEventListener('click', copyCitations);
+
+  // ── High-contrast theme toggle ─────────────────────────────────────────────
+  const THEME_KEY = 'ff_theme';
+  function applyTheme(theme) {
+    if (theme === 'hi-contrast') {
+      document.body.setAttribute('data-theme', 'hi-contrast');
+      hiconBtn.setAttribute('aria-pressed', 'true');
+    } else {
+      document.body.removeAttribute('data-theme');
+      hiconBtn.setAttribute('aria-pressed', 'false');
+    }
+  }
+  applyTheme(storageGet(THEME_KEY));
+  hiconBtn.addEventListener('click', () => {
+    const next = document.body.getAttribute('data-theme') === 'hi-contrast' ? 'default' : 'hi-contrast';
+    applyTheme(next);
+    if (next === 'hi-contrast') storageSet(THEME_KEY, 'hi-contrast');
+    else storageRemove(THEME_KEY);
+  });
+
+  // ── Onboarding hint (first session only) ──────────────────────────────────
+  const ONBOARDING_KEY = 'ff_onboarded';
+  function dismissOnboarding() {
+    if (!onboardingEl || onboardingEl.hidden) return;
+    onboardingEl.hidden = true;
+    storageSet(ONBOARDING_KEY, '1');
+  }
+  if (onboardingEl && !storageGet(ONBOARDING_KEY)) {
+    onboardingEl.hidden = false;
+  }
+  if (onboardingDismiss) {
+    onboardingDismiss.addEventListener('click', dismissOnboarding);
+  }
+  // Auto-dismiss on first SCAN
+  checkBtn.addEventListener('click', dismissOnboarding);
 
   // ── Consent banner ─────────────────────────────────────────────────────────
   const consentBanner  = document.getElementById('consent-banner');

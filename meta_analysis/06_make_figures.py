@@ -15,7 +15,8 @@ Output: cache/figures/
     - captions.txt
 
 Usage:
-    uv run --with matplotlib python meta_analysis/06_make_figures.py
+    cd meta_analysis
+    uv run 06_make_figures.py
 """
 
 import csv
