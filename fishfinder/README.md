@@ -156,6 +156,9 @@ FISHFINDER targets WCAG AA compliance (Lighthouse Accessibility score: 100):
 - Skip-to-content link for keyboard navigation
 - Semantic headings (`<h1>`/`<h2>`) and `<main>` landmark
 - All 23 text/background color pairs pass 4.5:1 contrast ratio
+- **HI-CON button** toggles a high-contrast display mode (white LCD,
+  dark text, ≥7:1 classification colors) for users who prefer it over
+  the default sage-green palette. State persists across sessions.
 
 ---
 

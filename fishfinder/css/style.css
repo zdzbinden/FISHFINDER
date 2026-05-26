@@ -1197,6 +1197,10 @@ select.report-input {
   z-index: 4;
   cursor: pointer; /* whole banner dismisses on click */
 }
+/* Critical: .onboarding-hint has display: flex, which overrides the browser's
+   default [hidden] { display: none }. Must restore display: none for the
+   hidden state, otherwise the banner stays visible even when dismissed. */
+.onboarding-hint[hidden] { display: none; }
 .onboarding-hint:hover { background: var(--lcd-text); }
 
 .onboarding-text { flex: 1; }
