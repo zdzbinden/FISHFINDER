@@ -903,7 +903,7 @@
 
       'Zbinden, Z.D. (2026). FISHFINDER: A web-based validator for scientific fish names in ' +
       'manuscript text. In review. ' +
-      'Available at: https://zdzbinden.github.io/FISHFINDER/',
+      'Available at: https://fishnames.net/',
     ].join('\n\n');
 
     copyToClipboard(text, citeBtn);
