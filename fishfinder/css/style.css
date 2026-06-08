@@ -917,6 +917,93 @@ select.report-input {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
+   SUPPORT MODULE
+   ══════════════════════════════════════════════════════════════════════════════ */
+.support-section {
+  max-width: 920px;
+  width: 100%;
+  background: #211f1b;
+  border: 1px solid #3a3630;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.support-header {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #8a8e86;
+  margin-bottom: 0.85rem;
+}
+
+.support-body {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.support-thumb {
+  width: 340px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #3a3630;
+}
+
+.support-pitch {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.support-text {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #9a9e94;
+  max-width: 540px;
+  margin: 0 0 1rem;
+}
+
+.support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #2e2c28 0%, #252320 100%);
+  border: 1px solid #3a3630;
+  border-radius: 4px;
+  color: #80847a;
+  padding: 0.4rem 1rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.support-btn:hover {
+  background: linear-gradient(180deg, #363430 0%, #2c2a26 100%);
+  color: #a0a498;
+  border-color: #504c48;
+}
+.support-btn:active {
+  transform: translateY(1px);
+}
+.support-btn:focus-visible {
+  outline: 2px solid #80847a;
+  outline-offset: 2px;
+}
+
+.support-methods {
+  margin-top: 0.6rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.58rem;
+  color: #8a8e86;
+  letter-spacing: 0.03em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
    USAGE DASHBOARD
    ══════════════════════════════════════════════════════════════════════════════ */
 .dashboard {
@@ -1107,12 +1194,13 @@ select.report-input {
   .results-grid { grid-template-columns: 1fr; }
   .brand { font-size: 1.8rem; }
   .stats-row { flex-direction: column; }
-  .citations-section, .affiliations-section, .dashboard { padding: 1rem; }
+  .citations-section, .affiliations-section, .support-section, .dashboard { padding: 1rem; }
   .affiliations-body { gap: 1.5rem; }
   .affiliation-logo { height: 190px; }
   .device-btn,
   .consent-btn,
-  .cite-copy-btn { min-height: 44px; }
+  .cite-copy-btn,
+  .support-btn { min-height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1120,6 +1208,7 @@ select.report-input {
   textarea,
   .device-btn,
   .cite-copy-btn,
+  .support-btn,
   .affiliation-logo { transition: none; }
 }
 
