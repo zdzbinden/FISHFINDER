@@ -34,7 +34,7 @@ Click **COPY** to get your text back with outdated names auto-replaced.
 
 ## Try it
 
-> **Live site:** [zdzbinden.github.io/FISHFINDER](https://zdzbinden.github.io/FISHFINDER/)
+> **Live site:** [fishnames.net](https://fishnames.net/)
 
 To run locally:
 
