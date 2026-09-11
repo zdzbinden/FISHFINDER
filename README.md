@@ -59,6 +59,7 @@ See [`fishfinder/README.md`](fishfinder/README.md) for full pipeline documentati
 FISHFINDER/
 ├── parse_pdf.py              # Step 1: AFS table PDF → fish_names.json
 ├── scrape_eschmeyer.py       # Step 2: synonym enrichment from Eschmeyer's
+├── make_basemap.py           # Regenerates the usage-map basemap (Natural Earth)
 ├── database.rules.json       # Firebase Realtime DB security rules
 ├── .github/workflows/        # GitHub Actions deploy workflow
 ├── fishfinder/               # Static web app (GitHub Pages)
@@ -67,6 +68,7 @@ FISHFINDER/
 │   ├── js/engine.js          # Classification engine (shared browser/Node.js)
 │   ├── js/app.js             # UI, Firebase analytics, event handling
 │   ├── data/fish_names.json  # Generated name database
+│   ├── data/world-110m.json  # Self-hosted vector basemap for the usage map
 │   ├── test/                 # Automated test suite (Node.js)
 │   ├── robots.txt            # Crawler directives
 │   └── sitemap.xml           # Sitemap for search engines

@@ -111,7 +111,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (62 tests across 4 files):
+against the real dataset (78 tests across 4 files):
 
 | File | Coverage |
 |------|----------|
@@ -126,7 +126,9 @@ against the real dataset (62 tests across 4 files):
 
 - **Content Security Policy (CSP):** Enforced via `<meta>` tag with exact
   versioned CDN URLs (no directory wildcards) and Firebase transport support.
-  `'unsafe-inline'` in `style-src` is required by Leaflet.
+  `'unsafe-inline'` in `style-src` is required by Leaflet. The usage map
+  serves its own vector basemap (`data/world-110m.json`) rather than calling a
+  tile service, so no tile-host domain appears in the CSP at all.
 - **Subresource Integrity (SRI):** All CDN-loaded scripts and stylesheets
   include `sha384` integrity hashes and `crossorigin="anonymous"` attributes.
   The `loadScript()` and `loadStyle()` helpers in `app.js` apply SRI

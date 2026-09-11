@@ -1062,12 +1062,17 @@ select.report-input {
   border-radius: 5px;
   border: 1px solid #2e2c28;
   overflow: hidden;
-  background: #1a1816;
+  background: #262626;
   margin-bottom: 0.6rem;
   /* Leaflet overrides for dark theme */
 }
-.usage-map .leaflet-container {
-  background: #1a2030;
+.usage-map.leaflet-container {
+  /* Ocean — sampled from the retired CARTO dark_nolabels basemap.
+     Compound selector (not descendant): Leaflet puts .leaflet-container on
+     the #usage-map element itself. It also injects its own stylesheet at
+     runtime, after this one, so the two-class specificity is what beats
+     Leaflet's default `.leaflet-container { background: #ddd }`. */
+  background: #262626;
 }
 
 .dashboard-note {

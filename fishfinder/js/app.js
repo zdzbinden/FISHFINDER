@@ -804,21 +804,50 @@
       await loadScript(CDN.leafletJs.src, CDN.leafletJs.integrity);
 
       const map = window.L.map('usage-map', {
-        center: [45, -98], zoom: 2,
+        center: [20, 0], zoom: 1,
+        // zoomSnap 0 allows the fractional zoom that fitWorld() needs to frame
+        // every continent exactly; minZoom 0 lets narrow phone widths fit too.
+        minZoom: 0, maxZoom: 8, zoomSnap: 0,
         zoomControl: true, attributionControl: false,
       });
       window.L.control.attribution({ prefix: false, compact: true }).addTo(map);
-      window.L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19,
+
+      // Self-hosted vector basemap — no tile service, no API key. Natural Earth
+      // 110m admin-0 countries (public domain), properties stripped and
+      // coordinates rounded to 2 decimals. Drawn in the LCD palette.
+      const worldRes = await fetch('data/world-110m.json');
+      window.L.geoJSON(await worldRes.json(), {
+        attribution: 'Basemap: <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain)',
+        interactive: false,
+        style: {
+          // Matches the retired CARTO dark_nolabels palette: black land,
+          // faint borders, dark grey ocean (.leaflet-container background).
+          fillColor: '#090909', color: '#2e2e2e',
+          weight: 0.6, fillOpacity: 1, opacity: 1,
+        },
       }).addTo(map);
+
+      // Frame every continent. Antarctica is deliberately left out of the
+      // bounds — Mercator stretches it so badly that including it would shrink
+      // the inhabited world to about half this size. Re-fit on resize so the
+      // framing survives phone widths and orientation changes.
+      const WORLD_BOUNDS = window.L.latLngBounds([[-57, -179], [79, 179]]);
+      const mapEl = document.getElementById('usage-map');
+      const fitWorld = () => {
+        map.invalidateSize(false);
+        map.fitBounds(WORLD_BOUNDS, { padding: [4, 4], animate: false });
+      };
+      fitWorld();
+      if (window.ResizeObserver) new window.ResizeObserver(fitWorld).observe(mapEl);
 
       for (const v of visits) {
         if (v.lat && v.lng) {
           window.L.circleMarker([v.lat, v.lng], {
-            radius: 2, fillColor: '#a8c080',
-            color: '#4a6030', weight: 1, fillOpacity: 0.75,
+            // Bright LCD phosphor green. At this radius a dark outline eats
+            // most of the dot, so the stroke stays in the same bright family
+            // and the fill is fully opaque.
+            radius: 1.0, fillColor: '#c8f57a',
+            color: '#8fbf4a', weight: 0.4, fillOpacity: 1,
           }).bindPopup(`${v.city ? v.city + ', ' : ''}${v.country}`).addTo(map);
         }
       }
