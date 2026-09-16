@@ -825,14 +825,6 @@ select.report-input {
 }
 .citation-entry em { font-style: italic; }
 
-.citation-placeholder {
-  color: #8a8e86;
-  font-style: italic;
-  border-left: 2px solid #3a3630;
-  padding-left: 0.75rem;
-  text-indent: 0;
-}
-
 .cite-copy-btn {
   margin-top: 1rem;
   background: linear-gradient(180deg, #2e2c28 0%, #252320 100%);

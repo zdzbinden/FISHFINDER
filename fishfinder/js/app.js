@@ -930,9 +930,8 @@
       'Eschmeyer\'s Catalog of Fishes: Genera, Species, References. ' +
       'California Academy of Sciences. Electronic version accessed ' + year + '.',
 
-      'Zbinden, Z.D. (2026). FISHFINDER: A web-based validator for scientific fish names in ' +
-      'manuscript text. In review. ' +
-      'Available at: https://fishnames.net/',
+      'Zbinden, Z.D. (2026). FISHFINDER: Catching Fish Name Mistakes in Text. ' +
+      'Fisheries. In press.',
     ].join('\n\n');
 
     copyToClipboard(text, citeBtn);
