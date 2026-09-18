@@ -921,17 +921,18 @@
   function copyCitations() {
     const year = new Date().getFullYear();
     const text = [
-      'Page, L.M., Espinosa-Pérez, H., Findley, L.T., Gilbert, C.R., Lea, R.N., Mandrak, N.E., ' +
-      'Mayden, R.L., and Nelson, J.S. (2023). Common and Scientific Names of Fishes from the ' +
+      'Page, L.M., Bemis, K.E., Dowling, T.E., Espinosa-Pérez, H., Findley, L.T., Gilbert, C.R., ' +
+      'Hartel, K.E., Lea, R.N., Mandrak, N.E., Neighbors, M.A., Schmitter-Soto, J.J., and ' +
+      'Walker, H.J., Jr. (2023). Common and Scientific Names of Fishes from the ' +
       'United States, Canada, and Mexico, 8th edition. American Fisheries Society Special ' +
-      'Publication 36. American Fisheries Society, Bethesda, Maryland.',
+      'Publication 37. American Fisheries Society, Bethesda, Maryland.',
 
       `Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (${year}). ` +
       'Eschmeyer\'s Catalog of Fishes: Genera, Species, References. ' +
       'California Academy of Sciences. Electronic version accessed ' + year + '.',
 
       'Zbinden, Z.D. (2026). FISHFINDER: Catching Fish Name Mistakes in Text. ' +
-      'Fisheries. In press.',
+      'Fisheries. Advance online publication. https://doi.org/10.1093/fshmag/vuag058',
     ].join('\n\n');
 
     copyToClipboard(text, citeBtn);

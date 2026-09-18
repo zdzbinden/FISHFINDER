@@ -79,10 +79,11 @@ FISHFINDER/
 
 ## Citation
 
-Page, L. M., H. Espinosa-Perez, L. T. Findley, C. R. Gilbert, R. N. Lea,
-N. E. Mandrak, R. L. Mayden, and J. S. Nelson. 2023.
+Page, L. M., K. E. Bemis, T. E. Dowling, H. Espinosa-Pérez, L. T. Findley,
+C. R. Gilbert, K. E. Hartel, R. N. Lea, N. E. Mandrak, M. A. Neighbors,
+J. J. Schmitter-Soto, and H. J. Walker, Jr. 2023.
 *Common and Scientific Names of Fishes from the United States, Canada, and
-Mexico*, 8th edition. American Fisheries Society, Special Publication 36,
+Mexico*, 8th edition. American Fisheries Society, Special Publication 37,
 Bethesda, Maryland.
 
 ## License
