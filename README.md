@@ -23,11 +23,14 @@ Paste your text, hit **SCAN**, and every binomial is color-coded:
 
 | Color | Meaning |
 |-------|---------|
-| **Green** | Valid in the 8th edition |
+| **Green** | Valid in the 8th edition or its published addenda |
 | **Blue** | Valid but changed since the 7th edition -- confirm the intended species |
 | **Orange** | Outdated synonym -- suggested replacement shown |
 | **Red** | Likely misspelling -- closest match shown |
-| **Purple** | Genus looks fish-like but no species match found |
+| **Purple** | Genus looks fish-like but no species match found, or the name has been withdrawn from the List by a published addendum |
+
+Names recognized by the Committee's published addenda rather than the printed book
+carry an `addenda` marker, so book authority and addenda authority stay distinguishable.
 
 Hover any highlighted name to see its common name or correction.
 Click **COPY** to get your text back with outdated names auto-replaced.
@@ -49,7 +52,9 @@ python -m http.server 8080
 The name database is assembled in two stages:
 
 1. **Parse** the AFS table PDF (~5,086 species with full metadata)
-2. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains)
+2. **Apply** the Committee's published addenda (`apply_addenda.py`) — +116 species,
+   22 renames, 1 withdrawal, yielding ~5,200 species (data version FF-8.1)
+3. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains)
 
 See [`fishfinder/README.md`](fishfinder/README.md) for full pipeline documentation.
 

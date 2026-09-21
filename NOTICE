@@ -28,11 +28,21 @@ Fish name database (data)
 
 The file `fishfinder/data/fish_names.json` is a derived dataset built from:
 
-  Page, L. M., H. Espinosa-Perez, L. T. Findley, C. R. Gilbert, R. N. Lea,
-  N. E. Mandrak, R. L. Mayden, and J. S. Nelson. 2023. Common and
-  Scientific Names of Fishes from the United States, Canada, and Mexico,
-  8th edition. American Fisheries Society, Special Publication 36,
-  Bethesda, Maryland.
+  Page, L. M., K. E. Bemis, T. E. Dowling, H. S. Espinosa-Perez,
+  L. T. Findley, C. R. Gilbert, K. E. Hartel, R. N. Lea, N. E. Mandrak,
+  M. A. Neighbors, J. J. Schmitter-Soto, and H. J. Walker, Jr. 2023.
+  Common and Scientific Names of Fishes from the United States, Canada,
+  and Mexico, 8th edition. American Fisheries Society, Special
+  Publication 37, Bethesda, Maryland.
+
+and, for changes published since that edition:
+
+  Schmitter-Soto, J. J., K. E. Bemis, T. E. Dowling, L. T. Findley,
+  M. G. Girard, D. A. Hendrickson, K. L. Ilves, K. P. Maslenikov,
+  G. Ruiz-Campos, C. Scharpf, and H. J. Walker. 2026. Addenda,
+  corrigenda, et explanenda to Common and Scientific Names of Fishes,
+  Eighth Edition. Fisheries 51(5):225-227.
+  https://doi.org/10.1093/fshmag/vuaf083
 
 The taxonomic content (species names, authorities, common names,
 classifications) is the intellectual property of the American Fisheries
