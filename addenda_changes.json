@@ -1,0 +1,3683 @@
+{
+  "schema_version": 1,
+  "data_version": "FF-8.1",
+  "source": {
+    "citation": "Schmitter-Soto, J.J., K.E. Bemis, T.E. Dowling, L.T. Findley, M.G. Girard, D.A. Hendrickson, K.L. Ilves, K.P. Maslenikov, G. Ruiz-Campos, C. Scharpf, and H.J. Walker. 2026. Addenda, corrigenda, et explanenda to Common and Scientific Names of Fishes, Eighth Edition. Fisheries 51(5):225-227.",
+    "doi": "10.1093/fshmag/vuaf083",
+    "supplement": "vuaf083_supplementary_data.docx",
+    "note": "Year confirmed as 2026 from the AFS/OUP record (Volume 51, Issue 5, May 2026). The PDF itself is inconsistent - a 2025 copyright line, a 2025 running head, and an advance-access date of 2025-09-16."
+  },
+  "generated": "2026-09-21",
+  "parser": "parse_addenda.py 1.0",
+  "expected": {
+    "data_rows": 244,
+    "additions": 115,
+    "renames": 22,
+    "removals": 1,
+    "updates": 103,
+    "genus_rows": 5,
+    "new_families": 5,
+    "misspellings_corrected": 5,
+    "species_before": 5086,
+    "species_after": 5200,
+    "genera_before": 1493,
+    "genera_after": 1507,
+    "genera_added": [
+      "Agamyxis",
+      "Allinectes",
+      "Andinoacara",
+      "Anoptoplacus",
+      "Caliraja",
+      "Congriscus",
+      "Guentheridia",
+      "Gurgesiella",
+      "Ioichthys",
+      "Lepidonectes",
+      "Leptenchelys",
+      "Ogilbichthys",
+      "Platax",
+      "Radiicephalus",
+      "Rubricatochromis",
+      "Vexillichthys"
+    ],
+    "genera_removed": [
+      "Hemichromis",
+      "Temnocora"
+    ]
+  },
+  "new_families": [
+    {
+      "family": "Galeocerdonidae",
+      "class": "Elasmobranchii",
+      "order": "Carcharhiniformes",
+      "common_name_en": "tiger sharks",
+      "common_name_es": "tintoreras",
+      "common_name_fr": "requins tigre",
+      "derived_from": "Galeocerdo cuvier"
+    },
+    {
+      "family": "Radiicephalidae",
+      "class": "Actinopteri",
+      "order": "Lampriformes",
+      "common_name_en": "tapertails",
+      "common_name_es": "colas cónicas",
+      "common_name_fr": "queues effilées",
+      "derived_from": "family:Trachipteridae"
+    },
+    {
+      "family": "Doradidae",
+      "class": "Actinopteri",
+      "order": "Gymnotiformes",
+      "common_name_en": "thorny catfishes",
+      "common_name_es": "bagres espinosos",
+      "common_name_fr": "poissons-chats épineux",
+      "derived_from": "family:Loricariidae"
+    },
+    {
+      "family": "Cebidichthyidae",
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes",
+      "common_name_en": "monkeyfaces",
+      "common_name_es": "peces cara de mono",
+      "common_name_fr": "poissons visage de singe",
+      "derived_from": "Cebidichthys"
+    },
+    {
+      "family": "Opisthocentridae",
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes",
+      "common_name_en": "spined fin pricklebacks",
+      "common_name_es": "abrojos espinosos",
+      "common_name_fr": "stichées épineux",
+      "derived_from": "Kasatkia"
+    }
+  ],
+  "additions": [
+    {
+      "name": "Acanthemblemaria maria",
+      "family": "Chaenopsidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Maria Barnacle Blenny",
+      "common_name_es": "tubícola de María",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Schmitter-Soto et al. (2000). Anales del Instituto de Biología-UNAM serie Zoología 71(2):143-177.",
+      "row": 169,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Agamyxis pectinifrons",
+      "family": "Doradidae",
+      "occurrence": "F[I]:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Whitebarred Catfish",
+      "common_name_es": "bagre hueso",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List (also the family)",
+      "source_ref": "Álvarez-Pliego et al. (2021). BioInvasions Records 10(3):691-700. DOI: 10.3391/BIR.2021.10.3.19.",
+      "row": 53,
+      "class": "Actinopteri",
+      "order": "Gymnotiformes"
+    },
+    {
+      "name": "Allinectes busbyi",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Ardent Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Orr (2025). Zootaxa 5609(3): 301–334. DOI: 10.11646/zootaxa.5609.3.1.",
+      "row": 211,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Allinectes curilanus",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Kuril Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Orr (2025). Zootaxa 5609(3): 301–334. DOI: 10.11646/zootaxa.5609.3.1.",
+      "row": 212,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Allinectes istiophorus",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Sailfin Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Orr (2025). Zootaxa 5609(3): 301–334. DOI: 10.11646/zootaxa.5609.3.1.",
+      "row": 213,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Allinectes nanstanorum",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Burnt Red Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Orr (2025). Zootaxa 5609(3): 301–334. DOI: 10.11646/zootaxa.5609.3.1.",
+      "row": 214,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Anchoa eigenmannia",
+      "family": "Engraulidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Pearl Anchovy",
+      "common_name_es": "anchoa perla",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Di Dario (2020). The IUCN Red List of Threatened Species e.T183635 A102900574:1-7.",
+      "row": 33,
+      "class": "Actinopteri",
+      "order": "Clupeiformes"
+    },
+    {
+      "name": "Andinoacara rivulatus",
+      "family": "Cichlidae",
+      "occurrence": "F[I]:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Ecuadorian River Cichlid",
+      "common_name_es": "mojarra ecuatoriana",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Contreras-MacBeath et al. (2014). Pp. 413-424 in: Mendoza & Koleff (Eds.). Especies acuáticas y invasoras en México: antecedentes, estado actual, impactos y perspectivas. CONABIO, Mexico City.",
+      "row": 146,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Anoptoplacus pygmaeus",
+      "family": "Opistognathidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Pygmy Jawfish",
+      "common_name_es": "bocón pigmeo",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Smith-Vaniz (2017). Journal of the Ocean Science Foundation 26:46-58. DOI: 10.5962/bhl.part.18649.",
+      "row": 174,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Aphredoderus gibbosus",
+      "family": "Aphredoderidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Western Pirate Perch",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Muller & Simons (2024). Zootaxa 5415(1): 77-105. DOI: /10.11646/zootaxa. 5415.1.3.",
+      "row": 87,
+      "class": "Actinopteri",
+      "order": "Percopsiformes"
+    },
+    {
+      "name": "Aphredoderus mesotrema",
+      "family": "Aphredoderidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Shorthead Pirate Perch",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Muller & Simons (2024). Zootaxa 5415(1): 77-105. DOI: /10.11646/zootaxa. 5415.1.3.",
+      "row": 88,
+      "class": "Actinopteri",
+      "order": "Percopsiformes"
+    },
+    {
+      "name": "Aphredoderus ornatus",
+      "family": "Aphredoderidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Blackstripe Pirate Perch",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Muller & Simons (2024). Zootaxa 5415(1): 77-105. DOI: /10.11646/zootaxa. 5415.1.3.",
+      "row": 89,
+      "class": "Actinopteri",
+      "order": "Percopsiformes"
+    },
+    {
+      "name": "Aphredoderus retrodorsalis",
+      "family": "Aphredoderidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Lowland Pirate Perch",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Muller & Simons (2024). Zootaxa 5415(1): 77-105. DOI: /10.11646/zootaxa. 5415.1.3.",
+      "row": 90,
+      "class": "Actinopteri",
+      "order": "Percopsiformes"
+    },
+    {
+      "name": "Apogon robinsi",
+      "family": "Apogonidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Roughlip Cardinal",
+      "common_name_es": "cardenal labio rugoso",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Schmitter-Soto et al. (2000). Anales del Instituto de Biología-UNAM serie Zoología 71(2):143-177.",
+      "row": 135,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Apterichtus ansp",
+      "family": "Ophichthidae",
+      "occurrence": "A:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Academy Eel",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "McCosker & Hibino (2015). Zootaxa 3941(1):49-78. DOI: 10.11646/zootaxa.3941.1.2.",
+      "row": 16,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Apterichtus equatorialis",
+      "family": "Ophichthidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Equatorial Eel",
+      "common_name_es": "tieso ecuatorial",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 120).",
+      "row": 17,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Atherinella argentea",
+      "family": "Atherinopsidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Moon Silverside",
+      "common_name_es": "plateadito lunar",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Espinosa-Pérez et al. (2010). The IUCN Red List of Threatened Species e.T184045A 8227569:1-7.",
+      "row": 154,
+      "class": "Actinopteri",
+      "order": "Atheriniformes"
+    },
+    {
+      "name": "Bairdiella veraecrucis",
+      "family": "Sciaenidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Veracruz Croaker",
+      "common_name_es": "ronco de Veracruz",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Chávez-López et al. (2024). Acta Biológica Colombiana 29(1):49-56. DOI: 10.15446/abc.v29n1.98492.",
+      "row": 236,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Bathygobius andrei",
+      "family": "Gobiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Chalaco",
+      "common_name_es": "chalaco",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "López-Vila et al. (2022). Ciencia Pesquera 30(1-2):24-34.",
+      "row": 123,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Bathylychnops brachyrhynchus",
+      "family": "Opisthoproctidae",
+      "occurrence": "A:CMU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Short-snout Spookfish",
+      "common_name_es": "duende hocico corto",
+      "common_name_fr": "revenant à museau court",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Parin et al. (2009). Journal of Ichthyology 49(10):839-851. DOI: 10.1134/S0032945209100014.",
+      "row": 55,
+      "class": "Actinopteri",
+      "order": "Argentiniformes"
+    },
+    {
+      "name": "Bollmannia gomezi",
+      "family": "Gobiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Colombian Goby",
+      "common_name_es": "gobio colombiano",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 308).",
+      "row": 124,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Bregmaceros moseri",
+      "family": "Bregmacerotidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Gyre Codlet",
+      "common_name_es": "bacalete del giro",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Harold & Baltzegar (2023). Zootaxa 5352(2):266-278. DOI: 10.11646/zootaxa.5352.2.7.",
+      "row": 92,
+      "class": "Actinopteri",
+      "order": "Gadiformes"
+    },
+    {
+      "name": "Carapus mourlani",
+      "family": "Carapidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Star Pearlfish",
+      "common_name_es": "perlero estrellado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 265).",
+      "row": 109,
+      "class": "Actinopteri",
+      "order": "Ophidiiformes"
+    },
+    {
+      "name": "Careproctus bromius",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Boisterous Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Gardner et al. (2023). Ichthyology & Herpetology 111(1): 54-71. DOI: 10.1643/i2022009.",
+      "row": 215,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Careproctus klisi",
+      "family": "Liparidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Ramped Snailfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Gardner et al. (2023). Ichthyology & Herpetology 111(1): 54-71. DOI: 10.1643/i2022009.",
+      "row": 218,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Cathorops taylori",
+      "family": "Ariidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Salvadoran Catfish",
+      "common_name_es": "bagre salvadoreño",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Romero-Berny et al. (2018). Revista Mexicana de Biodiversidad 89:84-98. DOI: 10.22201/ib.20078706e.2018.1. 1927.",
+      "row": 50,
+      "class": "Actinopteri",
+      "order": "Gymnotiformes"
+    },
+    {
+      "name": "Chaetodon meyeri",
+      "family": "Chaetodontidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Scrawled Butterflyfish",
+      "common_name_es": "mariposa garabato",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2016). Biología, Ciencia y Tecnología 9(34):596-619.",
+      "row": 179,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Chlorophthalmus mento",
+      "family": "Chlorophthalmidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Eastern Pacific Greeneye",
+      "common_name_es": "ojiverde del Pacífico oriental",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "González-Acosta et al. (2018). Revista Mexicana de Biodiversidad 89:705-740. DOI: /10.22201/ib.20078706e.2018. 3.2145.",
+      "row": 72,
+      "class": "Actinopteri",
+      "order": "Aulopiformes"
+    },
+    {
+      "name": "Coccorella atrata",
+      "family": "Evermannellidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Black Saberfish",
+      "common_name_es": "dientes de sable negro",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 226).",
+      "row": 79,
+      "class": "Actinopteri",
+      "order": "Aulopiformes"
+    },
+    {
+      "name": "Congriscus megastoma",
+      "family": "Congridae",
+      "occurrence": "P:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Largemouth Conger",
+      "common_name_es": "congrio boca grande",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Shimokawa et al. (1995). Japanese Journal of Ichthyology 42 (1): 89-92.",
+      "row": 30,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Coryphaenoides oreinos",
+      "family": "Macrouridae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Seamount Grenadier",
+      "common_name_es": "granadero de montaña submarina",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Iwamoto & Sazonov (1988). Proceedings of the California Academy of Sciences (Series 4) 45(3):35-82.",
+      "row": 94,
+      "class": "Actinopteri",
+      "order": "Gadiformes"
+    },
+    {
+      "name": "Cosmocampus coccineus",
+      "family": "Syngnathidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Crimson Pipefish",
+      "common_name_es": "pez pipa escarlata",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Dawson (1985). Indo-Pacific Pipefishes (Red Sea to the Americas). Gulf Coast Research Laboratory, Ocean Springs, Mississippi.",
+      "row": 120,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Cynoponticus savanna",
+      "family": "Muraenesocidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Guayana Pikeconger",
+      "common_name_es": "congrio guayanés",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Chávez-López & Morán-Silva (2019). Ciencia Pesquera 27(1):65-82.",
+      "row": 29,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Dionda flavipinnis",
+      "family": "Leuciscidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Guadalupe Roundnose Minnow",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Schönhuth et al. (2011). Molecular Phylogenetics and Evolution 62: 427-446.",
+      "row": 39,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Dionda texensis",
+      "family": "Leuciscidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Nueces Roundnose Minnow",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Schönhuth et al. (2011). Molecular Phylogenetics and Evolution 62: 427-446.",
+      "row": 42,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Doryrhamphus paulus",
+      "family": "Syngnathidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Revillagigedo Fantail Pipefish",
+      "common_name_es": "pez pipa chico de las Revillagigedo",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Stiller et al. (2022). BMC Biology 20 (75):1-22.",
+      "row": 122,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Elacatinus horsti",
+      "family": "Gobiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Yellowline Goby",
+      "common_name_es": "gobio de línea amarilla",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "Reinstated in the List",
+      "source_ref": "González-Gándara & Arias-González (2001). Revista de Biología Tropical 49(2):770-771.",
+      "row": 126,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Emblemariopsis bahamensis",
+      "family": "Chaenopsidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Bahamas Blenny",
+      "common_name_es": "tubícola de las Bahamas",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Loreto et al.(2003). Bulletin of Marine Science 73(1):153-170.",
+      "row": 170,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Epigonus telescopus",
+      "family": "Epigonidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "",
+      "common_name_es": "cardenal negro",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fraser & Fourmanoir (1971). The J.L.B. Smith Institute of Ichthyology Special Publication 8:1-7.",
+      "row": 198,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma birminghamense",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Birmingham Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Brownstein et al. (2025). Biology Letters 21(4): 20240652. DOI: 10.1098/rsbl.2024.0652.",
+      "row": 226,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma cumberlandicum",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Moonbow Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Near et al. (2023). Ichthyology and Herpetology 111(2):204-221. DOI: 10.1643/i2021053.",
+      "row": 227,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma gurleyense",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Gurley Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Brownstein et al. (2025). Biology Letters 21(4): 20240652. DOI: 10.1098/rsbl.2024.0652.",
+      "row": 228,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma kimberlae",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Locust Fork Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Mayden & Kuhajda (2025). Zootaxa 5618 (3): 351–371. DOI: 10.11646/zootaxa.5618.3.3",
+      "row": 229,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma maculaticeps",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Southern Tesselated Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "MacGuigan et al. (2023). Molecular Phylogenetics and Evolution 178:107645.",
+      "row": 230,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma michellae",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Sipsey Fork Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Mayden & Kuhajda (2025). Zootaxa 5618 (3): 351–371. DOI: 10.11646/zootaxa.5618.3.3",
+      "row": 231,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma vexillare",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Rappahanock Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "MacGuigan et al. (2023). Molecular Phylogenetics and Evolution 178:107645. DOI: 10.1016/j.ympev.2022.107645.",
+      "row": 232,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Etheostoma xanthovum",
+      "family": "Percidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Clarks Darter",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Wood et al. (2023). Bulletin of the Peabody Museum of Natural History 64 (1):11-37. DOI: 10.3374/014.064.0102.",
+      "row": 233,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Eustomias quadrifilis",
+      "family": "Stomiidae",
+      "occurrence": "A:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Four-threaded Dragonfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Gomon & Gibbs (1985). Smithsonian Contributions to Zoology 409:1-58.",
+      "row": 65,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Fundulus caddo",
+      "family": "Fundulidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Ouachita Studfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fast et al. (2025). Zootaxa 5604(3):309-328. DOI: 10.11646/zootaxa.5604.3.5.",
+      "row": 157,
+      "class": "Actinopteri",
+      "order": "Cyprinodontiformes"
+    },
+    {
+      "name": "Fundulus cryptocatenatus",
+      "family": "Fundulidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Disjunct Studfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fast et al. (2025). Zootaxa 5604(3):309-328. DOI: 10.11646/zootaxa.5604.3.5.",
+      "row": 158,
+      "class": "Actinopteri",
+      "order": "Cyprinodontiformes"
+    },
+    {
+      "name": "Gibbonsia erroli",
+      "family": "Clinidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Guadalupe Kelpfish",
+      "common_name_es": "sargacero de Guadalupe",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Wright & Bernardi (2024). Ichthyology & Herpetology 112(4):544-551. DOI: 10.1643/i2023043",
+      "row": 168,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Gobioides peruanus",
+      "family": "Gobiidae",
+      "occurrence": "P-F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Peruvian Goby",
+      "common_name_es": "burrulango",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "López-Vila et al. (2022). Ciencia Pesquera 30(1-2):24-34.",
+      "row": 127,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Gordiichthys randalli",
+      "family": "Ophichthidae",
+      "occurrence": "A:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Puerto Rican Eel",
+      "common_name_es": "tieso puertorriqueño",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 21,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Guentheridia formosa",
+      "family": "Tetraodontidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Spotted Puffer",
+      "common_name_es": "tamborín manchado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2013). Revista Mexicana de Biodiversidad 84:184-214. DOI: 10.7550/rmb.27335.",
+      "row": 191,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Gurgesiella atlantica",
+      "family": "Gurgesiellidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Atlantic Pygmy Skate",
+      "common_name_es": "raya del Atlántico",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2016). Arxius de Miscel-lània Zoològica 13:47-163. DOI: 10.32800/amz.2015.13.0047.",
+      "row": 8,
+      "class": "Elasmobranchii",
+      "order": "Rajiformes"
+    },
+    {
+      "name": "Halichoeres sanchezi",
+      "family": "Labridae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Tailspot Wrasse",
+      "common_name_es": "señorita colimanchada",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Victor et al. (2024). PeerJ 12: e16828. DOI: 10.7717/peerj.16828.",
+      "row": 196,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Halosaurus radiatus",
+      "family": "Halosauridae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Striped Halosaur",
+      "common_name_es": "anguila espinosa rayada",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 111).",
+      "row": 13,
+      "class": "Actinopteri",
+      "order": "Albuliformes"
+    },
+    {
+      "name": "Herichthys tepehua",
+      "family": "Cichlidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Tepehua Cichlid",
+      "common_name_es": "mojarra tepehuana",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "De la Maza-Benignos et al. (2015). Hydrobiologia 748:201-233. DOI: 10.1007/s10750-014-1891-8.",
+      "row": 147,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Hydrolagus macrophthalmus",
+      "family": "Chimaeridae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Big-eye Chimaera",
+      "common_name_es": "quimera de ojos grandes",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Angulo (2014). Zootaxa 3861(6): 554-574. DOI: 10.11646/zootaxa.3861.6.3.",
+      "row": 11,
+      "class": "Holocephali",
+      "order": "Chimaeriformes"
+    },
+    {
+      "name": "Hypoplectrus maculiferus",
+      "family": "Serranidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Cuban Yellowbelly Hamlet",
+      "common_name_es": "mero panza cubano",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores (2012). Revista de Zoología, Universidad Nacional Autónoma de Mexico 22:1-10.",
+      "row": 223,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Ioichthys kashkini",
+      "family": "Opisthoproctidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Arab Spookfish",
+      "common_name_es": "duende árabe",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Parin et al. (2009). Journal of Ichthyology 49(10):839-851. DOI: 10.1134/S0032945209100014.",
+      "row": 58,
+      "class": "Actinopteri",
+      "order": "Argentiniformes"
+    },
+    {
+      "name": "Ipnops agassizii",
+      "family": "Ipnopidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Galápagos Grideye Fish",
+      "common_name_es": "tripié de Galápagos",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 74,
+      "class": "Actinopteri",
+      "order": "Aulopiformes"
+    },
+    {
+      "name": "Ipnops meadi",
+      "family": "Ipnopidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Pacific Grideye Fish",
+      "common_name_es": "tripié del Pacífico",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Thiel et al. (2022). Marine Biodiversity 52(68):1-11.",
+      "row": 75,
+      "class": "Actinopteri",
+      "order": "Aulopiformes"
+    },
+    {
+      "name": "Lasiognathus dinema",
+      "family": "Thaumatichthyidae",
+      "occurrence": "A:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Two-thread Snaggletooth Devilfish",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Pietsch & Sutton (2015). Copeia 103(2):429-432.",
+      "row": 186,
+      "class": "Actinopteri",
+      "order": "Lophiiformes"
+    },
+    {
+      "name": "Lepidonectes clarkhubbsi",
+      "family": "Tripterygiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Signal Triplefin",
+      "common_name_es": "tres aletas de señal",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2013). Revista Mexicana de Biodiversidad 84:184-214. DOI: 10.7550/rmb.27335.",
+      "row": 162,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Leptenchelys vermiformis",
+      "family": "Ophichthidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Worm Eel",
+      "common_name_es": "tieso vermiforme",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 123).",
+      "row": 22,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Lythrypnus heterochroma",
+      "family": "Gobiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Diphasic Goby",
+      "common_name_es": "gobio barreado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Parenti (2021). Iranian Journal of Ichthyology 8(Suppl. 1):1-480. DOI: 10.22034/iji.v8i0.556.",
+      "row": 130,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Lythrypnus minimus",
+      "family": "Gobiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Atlantic Pygmy Goby",
+      "common_name_es": "gobio pigmeo del Atlántico",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 131,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Melamphaes pachystomus",
+      "family": "Melamphaidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Peruvian Biscale",
+      "common_name_es": "escamón peruano",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Kotlyar (2016). Voprosy Ikhtiologii 56(2):238-239. DOI: 10.1134/ S0032945216020077.",
+      "row": 97,
+      "class": "Actinopteri",
+      "order": "Beryciformes"
+    },
+    {
+      "name": "Melamphaes succedaneus",
+      "family": "Melamphaidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Equatorial Bigscale",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Kotlyar (2015). Voprosy Ikhtiologii 55(5):509-520. DOI: 10.1134/ S0032945215050082.",
+      "row": 98,
+      "class": "Actinopteri",
+      "order": "Beryciformes"
+    },
+    {
+      "name": "Moxostoma ugidatli",
+      "family": "Catostomidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Sicklefin Redhorse",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Jenkins et al. (2025). Ichthyology & Herpetology 113(1):27-73. DOI: 10.1643/i2024049.",
+      "row": 36,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Neonesthes microcephalus",
+      "family": "Stomiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Smallhead Snaggletooth",
+      "common_name_es": "dragón cabezón",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 215).",
+      "row": 67,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Ogilbichthys kakuki",
+      "family": "Dinematichthyidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Coralbrotula",
+      "common_name_es": "coralbrótula",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Carpenter (2015). The IUCN Red List of Threatened Species e.T190192A 16510552:1-11.",
+      "row": 111,
+      "class": "Actinopteri",
+      "order": "Ophidiiformes"
+    },
+    {
+      "name": "Oneirodes luetkeni",
+      "family": "Oneirodidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Panamanian Dreamer",
+      "common_name_es": "soñador panameño",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 183,
+      "class": "Actinopteri",
+      "order": "Lophiiformes"
+    },
+    {
+      "name": "Oneirodes parapietschi",
+      "family": "Oneirodidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Similar Dreamer",
+      "common_name_es": "soñador semejante",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Prokofiev (2014). Voprosy Ikhtiologii 54(5):611-616. DOI: 10.1134/S0032945214050075.",
+      "row": 184,
+      "class": "Actinopteri",
+      "order": "Lophiiformes"
+    },
+    {
+      "name": "Oneirodes sipharum",
+      "family": "Oneirodidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Guerrero Dreamer",
+      "common_name_es": "soñador de Guerrero",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Prokofiev (2014). Voprosy Ikhtiologii 54(5):611-616. DOI: 10.1134/S0032945214050075.",
+      "row": 185,
+      "class": "Actinopteri",
+      "order": "Lophiiformes"
+    },
+    {
+      "name": "Ophidion puck",
+      "family": "Ophidiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Pallid Cusk-eel",
+      "common_name_es": "congriperla pálida",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Lea & Robins (2003). University of Kansas Museum of Natural History, Scientific Papers 31:1-9.",
+      "row": 107,
+      "class": "Actinopteri",
+      "order": "Ophidiiformes"
+    },
+    {
+      "name": "Opistognathus panamaensis",
+      "family": "Opistognathidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Panamic Jawfish",
+      "common_name_es": "bocón panámico",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Zepeda-Vilchis et al. (2013). Marine Biodiversity Records 6 (e132):1-3.",
+      "row": 175,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Paraclinus monophthalmus",
+      "family": "Labrisomidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "One-eye Blenny",
+      "common_name_es": "trambollito uniojo",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Vaillant (1894). Bulletin de la Société philomathique de Paris (8ème Série) 6:69-75.",
+      "row": 163,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Paraliparis mexicanus",
+      "family": "Liparidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Michoacán Snailfish",
+      "common_name_es": "baboso de Michoacán",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Chernova (2006). Journal of Ichthyology 46(Suppl. 1):S1-S14. DOI: 10.1134/S0032945206100018",
+      "row": 222,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Paraneetroplus omonti",
+      "family": "Cichlidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Grijalva Cichlid",
+      "common_name_es": "mojarra del Grijalva",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Říčan et al. (2016). Vertebrate Zoology 66 (1):1-102. DOI: 10.3897/vz.66.e31534.",
+      "row": 149,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Photonectes albipennis",
+      "family": "Stomiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Whitefin Dragonfish",
+      "common_name_es": "dragón de aleta blanca",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Williams (2020). The IUCN Red List of Threatened Species e.T141374447A 141564546:1-8.",
+      "row": 68,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Photonectes filipendulus",
+      "family": "Stomiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Weakray Dragonfish",
+      "common_name_es": "dragón aleta débil",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Prokofiev & Frable (2023). Zootaxa 5228(4):489-500. DOI: 10.11646/zootaxa.5228.4.7.",
+      "row": 69,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Platax teira",
+      "family": "Ephippidae",
+      "occurrence": "P:M[I]",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Longfin Spadefish",
+      "common_name_es": "peluquero aletón",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Medina-Rosas & Moreno-López (2025). Check List 21 (2): 427–432. DOI: 10.15560/21.2.427.",
+      "row": 180,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Platyberyx pietschi",
+      "family": "Caristiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Exuma Manefish",
+      "common_name_es": "crin de Exuma",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 282).",
+      "row": 119,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Polyipnus laternatus",
+      "family": "Sternoptychidae",
+      "occurrence": "A:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Lantern Hatchetfish",
+      "common_name_es": "pez hacha linterna",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Harold (1994). Bulletin of Marine Science 54(2):428-534.",
+      "row": 59,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Polymetme corythaeola",
+      "family": "Stomiidae",
+      "occurrence": "A:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Encounter Lightfish",
+      "common_name_es": "luciérnaga encuentro",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Springer & Bullis (1956). Special Scientific Report - Fisheries 196:1-134.",
+      "row": 70,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Pseudomyrophis frio",
+      "family": "Ophichthidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Frio Sand Eel",
+      "common_name_es": "tieso frío",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Ramírez et al. (2019). ZooKeys 846:117-132. DOI: 10.3897/zookeys.846.31944.",
+      "row": 26,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Pseudoscopelus scriptus",
+      "family": "Chiasmodontidae",
+      "occurrence": "A:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Scribbled Swallower",
+      "common_name_es": "tragón garabateado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Melo (2010). Zootaxa 2710:1-78.",
+      "row": 117,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Pterygoplichthys gibbiceps",
+      "family": "Loricariidae",
+      "occurrence": "F[I]:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Leopard Pleco",
+      "common_name_es": "plecos leopardo",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 186).",
+      "row": 52,
+      "class": "Actinopteri",
+      "order": "Gymnotiformes"
+    },
+    {
+      "name": "Quassiremus evionthas",
+      "family": "Ophichthidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Galápagos Worm Eel",
+      "common_name_es": "tieso de Galápagos",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Velasco-Lozano et al. (2020). Ciencias Marinas 46(4):321-342. DOI: 10.7773/cm.v46i4.3112.",
+      "row": 28,
+      "class": "Actinopteri",
+      "order": "Anguilliformes"
+    },
+    {
+      "name": "Radiicephalus elongatus",
+      "family": "Radiicephalidae",
+      "occurrence": "A:MU",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Tapertail",
+      "common_name_es": "cola cónica",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List, also the family",
+      "source_ref": "Smith-Vaniz (2015). The IUCN Red List of Threatened Species e.T21112632A 21911475:1-8.",
+      "row": 86,
+      "class": "Actinopteri",
+      "order": "Lampriformes"
+    },
+    {
+      "name": "Rhinichthys gabrielino",
+      "family": "Leuciscidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Santa Ana Speckled Dace",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Moyle et al. (2023). Zootaxa 5249(5):501-539. DOI: 10.11646/zootaxa.5249.5.1.",
+      "row": 46,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Rhinichthys klamathensis",
+      "family": "Leuciscidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Western Speckled Dace",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Moyle et al. (2023). Zootaxa 5249(5):501-539. DOI: 10.11646/zootaxa.5249.5.1.",
+      "row": 47,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Rhinichthys nevadensis",
+      "family": "Leuciscidae",
+      "occurrence": "F:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Desert Speckled Dace",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Moyle et al. (2023). Zootaxa 5249(5):501-539. DOI: 10.11646/zootaxa.5249.5.1.",
+      "row": 48,
+      "class": "Actinopteri",
+      "order": "Cypriniformes"
+    },
+    {
+      "name": "Scopeloberyx microlepis",
+      "family": "Melamphaidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Southern Bigscale",
+      "common_name_es": "escamón austral",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Reyes-Bonilla et al. (2010). CalCOFI Reports 51:1-15.",
+      "row": 99,
+      "class": "Actinopteri",
+      "order": "Beryciformes"
+    },
+    {
+      "name": "Sicydium fayae",
+      "family": "Gobiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Tres Marías Goby",
+      "common_name_es": "gobio de Tres Marías",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Brock (1942). Stanford Ichthyological Bulletin 2(4):122-125.",
+      "row": 132,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Spectrunculus radcliffei",
+      "family": "Ophidiidae",
+      "occurrence": "P:U",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Japanese Cusk-eel",
+      "common_name_es": "",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Uiblein et al. (2023). Ichthyology & Herpetology 111(3): 467-485. DOI: 10.1643/i2023005.",
+      "row": 108,
+      "class": "Actinopteri",
+      "order": "Ophidiiformes"
+    },
+    {
+      "name": "Sphoeroides kendalli",
+      "family": "Tetraodontidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Slick Puffer",
+      "common_name_es": "botete anillado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 684).",
+      "row": 192,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Sphoeroides rosenblatti",
+      "family": "Tetraodontidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Costa Rican Puffer",
+      "common_name_es": "botete costarricense",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Gómez-González et al. (2012). Revista Mexicana de Biodiversidad 83:674-686. DOI: 10.7550/rmb.24468.",
+      "row": 193,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Starksia atlantica",
+      "family": "Labrisomidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Smooth-eye Blenny",
+      "common_name_es": "trambollito ojiliso",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Birdsong & Emery (1968). Quarterly Journal of the Florida Academy of Sciences 30(3):187-196.",
+      "row": 164,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Starksia lepicoelia",
+      "family": "Labrisomidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Blackcheek Blenny",
+      "common_name_es": "trambollito carinegro",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Birdsong & Emery (1968). Quarterly Journal of the Florida Academy of Sciences 30(3):187-196.",
+      "row": 165,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Starksia sluiteri",
+      "family": "Labrisomidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Chessboard Blenny",
+      "common_name_es": "trambollito manchado",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Birdsong & Emery (1968). Quarterly Journal of the Florida Academy of Sciences 30(3):187-196.",
+      "row": 166,
+      "class": "Actinopteri",
+      "order": "Beloniformes"
+    },
+    {
+      "name": "Stellifer fuerthii",
+      "family": "Sciaenidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "White Stardrum",
+      "common_name_es": "corvinilla blanca",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2017). Acta Universitaria 27(1):3-25. DOI: 10.15174/au.2016.1069.",
+      "row": 237,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Stomias danae",
+      "family": "Stomiidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Dana Scalyfish",
+      "common_name_es": "dragón del Dana",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 217).",
+      "row": 71,
+      "class": "Actinopteri",
+      "order": "Stomiiformes"
+    },
+    {
+      "name": "Symphurus microlepis",
+      "family": "Cynoglossidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Smalfin Tonguefish",
+      "common_name_es": "lengua aleta pequeña",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 357).",
+      "row": 142,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Symphurus ocellaris",
+      "family": "Cynoglossidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Ring-tail Tonguefish",
+      "common_name_es": "lengua cola anillada",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Van der Heiden et al. (2011). Revista Mexicana de Biodiversidad 82:305-310.",
+      "row": 144,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Symphurus oculellus",
+      "family": "Cynoglossidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Smalleye Tonguefish",
+      "common_name_es": "lengua ojito",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 145,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Thalassoma lutescens",
+      "family": "Labridae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Yellow-brown Wrasse",
+      "common_name_es": "señorita amarilla-marrón",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fourrière et al. (2016). Zootaxa 4150(4):436-466. DOI: 10.11646/zootaxa.4150.4.4.",
+      "row": 197,
+      "class": "Actinopteri",
+      "order": "Tetraodontiformes"
+    },
+    {
+      "name": "Thorichthys aureus",
+      "family": "Cichlidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Blue Flash",
+      "common_name_es": "flash azul",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2017). Revista Peruana de Biología 24 (1): 3-10. DOI: 10.15381/rpb.v24i1.13104.",
+      "row": 152,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Tigrigobius saucrus",
+      "family": "Gobiidae",
+      "occurrence": "A:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Leopard Goby",
+      "common_name_es": "gobio severo",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Del Moral-Flores et al. (2013). Revista Mexicana de Biodiversidad 84:184-214. DOI: 10.7550/rmb.27335.",
+      "row": 133,
+      "class": "Actinopteri",
+      "order": "Batrachoidiformes"
+    },
+    {
+      "name": "Trinectes fluviatilis",
+      "family": "Achiridae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Freshwater Sole",
+      "common_name_es": "suela de agua dulce",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 353).",
+      "row": 141,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Urotrygon simulatrix",
+      "family": "Urotrygonidae",
+      "occurrence": "P:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Fake Round Ray",
+      "common_name_es": "raya redonda buhonera",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Ehemann et al. (2018). ZooKeys 774:17-39. DOI: 10.3897/zookeys.774.25028.",
+      "row": 10,
+      "class": "Elasmobranchii",
+      "order": "Myliobatiformes"
+    },
+    {
+      "name": "Vieja maculicauda",
+      "family": "Cichlidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Tailspot Cichlid",
+      "common_name_es": "mojarra de mancha en la cola",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Kattinger (1975). Bericht der Naturforschenden Gesellschaft in Bamberg 50:89-169.",
+      "row": 153,
+      "class": "Actinopteri",
+      "order": "Synbranchiformes"
+    },
+    {
+      "name": "Xiphophorus monticolus",
+      "family": "Poeciliidae",
+      "occurrence": "F:M",
+      "author": "",
+      "flags": "",
+      "common_name_en": "Southern Mountain Swordtail",
+      "common_name_es": "espada montañesa del sur",
+      "common_name_fr": "",
+      "addenda": "2025",
+      "change": "New to the List",
+      "source_ref": "Kallman et al. (2004). American Museum Novitates 3441:1-34. DOI: 10.1206/00030082(2004)441",
+      "row": 161,
+      "class": "Actinopteri",
+      "order": "Cyprinodontiformes"
+    }
+  ],
+  "renames": [
+    {
+      "from": "Careproctus attenuatus",
+      "to": "Allinectes attenuatus",
+      "occurrence": "P:U",
+      "change": "Formerly in Careproctus",
+      "source_ref": "Orr (2025). Zootaxa 5609(3): 301–334. DOI: 10.11646/zootaxa.5609.3.1.",
+      "row": 210
+    },
+    {
+      "from": "Astronesthes indicus",
+      "to": "Astronesthes indica",
+      "occurrence": null,
+      "change": "Gender correction",
+      "source_ref": "Eschmeyer et al. (2025). Catalog of Fishes. [Online.]",
+      "row": 61
+    },
+    {
+      "from": "Astronesthes niger",
+      "to": "Astronesthes nigra",
+      "occurrence": null,
+      "change": "Gender correction",
+      "source_ref": "Eschmeyer et al. (2025). Catalog of Fishes. [Online.]",
+      "row": 62
+    },
+    {
+      "from": "Beringraja cortezensis",
+      "to": "Caliraja cortezensis",
+      "occurrence": null,
+      "change": "Formerly in Beringraja",
+      "source_ref": "Ebert (2022). Revista de Biología Marina y Oceanografía 57:1-5.",
+      "row": 4
+    },
+    {
+      "from": "Beringraja inornata",
+      "to": "Caliraja inornata",
+      "occurrence": null,
+      "change": "Formerly in Beringraja",
+      "source_ref": "Ebert (2022). Revista de Biología Marina y Oceanografía 57:1-5.",
+      "row": 5
+    },
+    {
+      "from": "Beringraja rhina",
+      "to": "Caliraja rhina",
+      "occurrence": null,
+      "change": "Formerly in Beringraja",
+      "source_ref": "Ebert (2022). Revista de Biología Marina y Oceanografía 57:1-5.",
+      "row": 6
+    },
+    {
+      "from": "Beringraja stellulata",
+      "to": "Caliraja stellulata",
+      "occurrence": null,
+      "change": "Formerly in Beringraja",
+      "source_ref": "Ebert (2022). Revista de Biología Marina y Oceanografía 57:1-5.",
+      "row": 7
+    },
+    {
+      "from": "Temnocora candida",
+      "to": "Careproctus candidus",
+      "occurrence": null,
+      "change": "Formerly in Temnocara",
+      "source_ref": "Orr et al. (2019). Zootaxa 4642(1):1-79. DOI: 10.11646/zootaxa.4642.1.1.",
+      "row": 216,
+      "note": "The addenda prints 'Formerly in Temnocara'; the 8th edition and Eschmeyer both spell the genus 'Temnocora'. The DB spelling is treated as authoritative for the `from` key. Flag for the Committee."
+    },
+    {
+      "from": "Cyprinella garmani",
+      "to": "Cyprinella rubripinna",
+      "occurrence": null,
+      "change": "Replaces C. garmani",
+      "source_ref": "Fricke (2005). Stuttgarter Beiträge zur Naturkunde Serie A 684:1-95.",
+      "row": 38
+    },
+    {
+      "from": "Doryrhamphus excisus",
+      "to": "Doryrhamphus melanopleura",
+      "occurrence": null,
+      "change": "Replaces D. excisus",
+      "source_ref": "Stiller et al. (2022). BMC Biology 20 (75):1-22.",
+      "row": 121
+    },
+    {
+      "from": "Etmopterus benchleyi",
+      "to": "Etmopterus litvinovi",
+      "occurrence": null,
+      "change": "Replaces E. benchleyi",
+      "source_ref": "Agne et al. (2022). Frontiers in Ecology and Evolution 10 (910009): 1-10. DOI: 10.3389/fevo.2022.910009.",
+      "row": 2
+    },
+    {
+      "from": "Fundulus herminiamatildarum",
+      "to": "Fundulus herminiamatildae",
+      "occurrence": null,
+      "change": "Name corrected",
+      "source_ref": "García-Ramírez et al. (2022). American International Journal of Biology 9:9–23. DOI: 10.15640/aijb.v9n2a2.",
+      "row": 159
+    },
+    {
+      "from": "Galeocerdo cuvier",
+      "to": "Galeocerdo cuvieri",
+      "occurrence": null,
+      "change": "New family, Galeocerdonidae",
+      "source_ref": "Winton & Ebert (2022). Pp. 510-538. In: Heemstra et al. 2022: Coastal fishes of the western Indian Ocean. Volume 1.",
+      "row": 0,
+      "family": "Galeocerdonidae",
+      "from_family": "Carcharhinidae"
+    },
+    {
+      "from": "Sargocentron coruscum",
+      "to": "Neoniphon coruscus",
+      "occurrence": null,
+      "change": "Formerly in Sargocentron",
+      "source_ref": "Dornburg et al. (2012). Molecular Phylogenetics and Evolution 65:727-738. DOI: 10.1016/j.ympev.2012.07.020.",
+      "row": 103
+    },
+    {
+      "from": "Sargocentron suborbitale",
+      "to": "Neoniphon suborbitalis",
+      "occurrence": null,
+      "change": "Formerly in Sargocentron",
+      "source_ref": "Dornburg et al. (2012). Molecular Phylogenetics and Evolution 65:727-738. DOI: 10.1016/j.ympev.2012.07.020.",
+      "row": 104
+    },
+    {
+      "from": "Nothonotus rubrus",
+      "to": "Nothonotus ruber",
+      "occurrence": null,
+      "change": "Spelling correction",
+      "source_ref": "n/a",
+      "row": 234
+    },
+    {
+      "from": "Hemichromis guttatus",
+      "to": "Rubricatochromis guttatus",
+      "occurrence": null,
+      "change": "Formerly in Hemichromis",
+      "source_ref": "Lamboj & Koblmüller (2022). Hydrobiologia 850(10): 2177-2198. DOI: 10.1007/s10750-022-05060-y.",
+      "row": 150
+    },
+    {
+      "from": "Hemichromis letourneuxi",
+      "to": "Rubricatochromis letourneuxi",
+      "occurrence": null,
+      "change": "Formerly in Hemichromis",
+      "source_ref": "Lamboj & Koblmüller (2022). Hydrobiologia 850(10): 2177-2198. DOI: 10.1007/s10750-022-05060-y.",
+      "row": 151
+    },
+    {
+      "from": "Sparus auratus",
+      "to": "Sparus aurata",
+      "occurrence": null,
+      "change": "Spelling correction",
+      "source_ref": "n/a",
+      "row": 235
+    },
+    {
+      "from": "Synodus macrostigma",
+      "to": "Synodus macrostigmus",
+      "occurrence": null,
+      "change": "Gender correction",
+      "source_ref": "Eschmeyer et al. (2025). Catalog of Fishes. [Online.]",
+      "row": 77
+    },
+    {
+      "from": "Urotrygon chilensis",
+      "to": "Urotrygon asterias",
+      "occurrence": null,
+      "change": "Replaces U. chilensis",
+      "source_ref": "Ehemann et al. (2024). Journal of Fish Biology 774:17-39. DOI: 10.1111/jfb.15864.",
+      "row": 9,
+      "note": "Urotrygon asterias is currently a SYNONYM of Urotrygon munda in the DB. It is promoted to valid here; the stale synonym entry is swept by addenda_overlay.apply_synonyms()."
+    },
+    {
+      "from": "Thoburnia atripinnis",
+      "to": "Vexillichthys atripinnis",
+      "occurrence": null,
+      "change": "Formerly in Thoburnia",
+      "source_ref": "Armbruster (2024). Zootaxa 5536 (2):325-335. DOI: /10.11646/zootaxa.5536.2.8.",
+      "row": 37
+    }
+  ],
+  "updates": [
+    {
+      "name": "Alosa chrysochloris",
+      "set": {
+        "occurrence": "A-F:MU",
+        "common_name_es": "sábalo arenque"
+      },
+      "was": {
+        "occurrence": "A-F:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "García de León et al. (2005). Pp. 138-166. In: Cartron et al. (Eds.). Biodiversity, ecosystems and conservation in northern Mexico. Oxford University Press, Oxford.",
+      "row": 34
+    },
+    {
+      "name": "Ameiurus nebulosus",
+      "set": {
+        "occurrence": "F:CM[I]U",
+        "common_name_es": "bagre pardo"
+      },
+      "was": {
+        "occurrence": "F:CU",
+        "common_name_es": "barbotte brune"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Contreras-Balderas et al. (2004). Pp. 283-298. In: Lozano-Vilano & Contreras-Balderas (Eds.). Homenaje al doctor Andrés Reséndez Medina. Universidad Autónoma de Nuevo León, Mexico.",
+      "row": 51
+    },
+    {
+      "name": "Anotopterus pharao",
+      "set": {
+        "occurrence": "A-Ar:CMU",
+        "common_name_es": "daga cosmopolita"
+      },
+      "was": {
+        "occurrence": "A-Ar:CU",
+        "common_name_es": "pharaon"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 78
+    },
+    {
+      "name": "Apterichtus kendalli",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso sin aletas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 120).",
+      "row": 18
+    },
+    {
+      "name": "Araiophos eastropas",
+      "set": {
+        "family": "Sternoptychidae"
+      },
+      "was": {
+        "family": "Phosichthyidae"
+      },
+      "change": "We had the genus in Phosichthyidae",
+      "source_ref": "Smith et al. (2024). NOAA Professional Paper NMFS 24:24.13",
+      "row": 60
+    },
+    {
+      "name": "Argentina georgei",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "argentina vientre negro"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Ramírez et al. (2019). ZooKeys 846:117-132. DOI: 10.3391/BIR.2021.10.3.19.",
+      "row": 54
+    },
+    {
+      "name": "Bascanichthys scuticaris",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso pardo"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 19
+    },
+    {
+      "name": "Bassogigas gillii",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "brótula línea larga"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "brotula à longue ligne"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 257).",
+      "row": 105
+    },
+    {
+      "name": "Bathophilus metallicus",
+      "set": {
+        "occurrence": "A-P:MU",
+        "common_name_es": "demonio metálico"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 211).",
+      "row": 63
+    },
+    {
+      "name": "Bathyanthias cubensis",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "mero cubano"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2023). Regional Studies in Marine Science 68(103237):1-16. DOI: 10.1016/j.rsma.2023.103237.",
+      "row": 224
+    },
+    {
+      "name": "Bathypterois dubius",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_en": "Mediterranean Spiderfish",
+        "common_name_es": "tripié alafilosa"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_en": "Mediterrean Spiderfish",
+        "common_name_es": "cran-tactile à muselet"
+      },
+      "change": "New for Mexico; En name corrected",
+      "source_ref": "Fricke et al. (2024: 218).",
+      "row": 73
+    },
+    {
+      "name": "Bolinichthys photothorax",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "linternilla espolón"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Wisner (1976). NORDA Report 3:1-229.",
+      "row": 80
+    },
+    {
+      "name": "Brama dussumieri",
+      "set": {
+        "occurrence": "A-P:MU",
+        "common_name_es": "tristón aleta baja"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New, Pacific and Mexico",
+      "source_ref": "De la Cruz-Agüero et al. (2016). Journal of Fish Biology 89:1889-1896. DOI: 10.1111/jfb.13087.",
+      "row": 118
+    },
+    {
+      "name": "Bregmaceros houdei",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "bacalete estrellado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2023). Regional Studies in Marine Science 68(103237):1-16. DOI: 10.1016/j.rsma.2023.103237.",
+      "row": 91
+    },
+    {
+      "name": "Canthigaster jamestyleri",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "botete caradorado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 190
+    },
+    {
+      "name": "Careproctus gilberti",
+      "set": {
+        "occurrence": "P:CU",
+        "common_name_es": "limace à disque petit"
+      },
+      "was": {
+        "occurrence": "P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Canada",
+      "source_ref": "Kai et al. (2024). Zootaxa 5492(2):191-213. DOI: 10.11646/zootaxa.5492.2.3.",
+      "row": 217
+    },
+    {
+      "name": "Ceratias uranoscopus",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "diablo observador de estrellas"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "pêcheur astronome"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2023). Regional Studies in Marine Science 68(103237):1-16. DOI: 10.1016/j.rsma.2023.103237.",
+      "row": 189
+    },
+    {
+      "name": "Citharichthys arenaceus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "lenguado arenero"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2013). Revista Mexicana de Biodiversidad 84:184-214. DOI: 10.7550/rmb.27335.",
+      "row": 137
+    },
+    {
+      "name": "Corniger spinosus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "candil mejilla espinosa"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2023). Hidrobiológica 33(1):15-23. DOI: 10.24275/uam/izt/dcbs/hidro/2023v33n1/delmoral.",
+      "row": 101
+    },
+    {
+      "name": "Coryphaenoides filifer",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "carbonero aleta hilo"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "grenadier filamenté"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Townsend & Nichols (1925). Bulletin of the American Museum of Natural History 52(1):1-20.",
+      "row": 93
+    },
+    {
+      "name": "Coryphopterus alloides",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "gobio barbil"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 125
+    },
+    {
+      "name": "Decapterus tabl",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "macarela rabo colorado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Retzer (1990). Northeast Gulf Science 11(2):137-142.",
+      "row": 136
+    },
+    {
+      "name": "Diaphus effulgens",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "linternilla farolillos"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "lampe-de-tête carrée"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2023). Regional Studies in Marine Science 68(103237):1-16. DOI: 10.1016/j.rsma.2023.103237.",
+      "row": 81
+    },
+    {
+      "name": "Diaphus fulgens",
+      "set": {
+        "occurrence": "P:MU",
+        "common_name_es": "linternilla destellante"
+      },
+      "was": {
+        "occurrence": "P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Berry & Perkins (1966). Fishery Bulletin 65(3):625-682.",
+      "row": 82
+    },
+    {
+      "name": "Diaphus mollis",
+      "set": {
+        "occurrence": "A-P:CMU",
+        "common_name_es": "linternilla suave"
+      },
+      "was": {
+        "occurrence": "A-P:CU",
+        "common_name_es": "lampe-de-tête joue-droite"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Wisner (1976). NORDA Report 3:1-229.",
+      "row": 83
+    },
+    {
+      "name": "Dionda nigrotaeniata",
+      "set": {
+        "common_name_en": "Medina Roundnose Minnow"
+      },
+      "was": {
+        "common_name_en": "Guadalupe Roundnose Minnow"
+      },
+      "change": "Common name changed",
+      "source_ref": "Change advised by Texas SGCN to avoid geographical confusion.",
+      "row": 40
+    },
+    {
+      "name": "Dionda serena",
+      "set": {
+        "common_name_en": "Frio Roundnose Minnow"
+      },
+      "was": {
+        "common_name_en": "Nueces Roundnose Minnow"
+      },
+      "change": "Common name changed",
+      "source_ref": "Change advised by Texas SGCN to avoid geographical confusion.",
+      "row": 41
+    },
+    {
+      "name": "Diretmichthys parini",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "malcarado negro"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Kotlyar (1999). Voprosy Ikhtiologii 39(4):447-459.",
+      "row": 100
+    },
+    {
+      "name": "Dolichopteroides binocularis",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "duende binocular"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Iwamoto (2015). The IUCN Red List of Threatened Species e.T21101200A 21406191:1-8.",
+      "row": 56
+    },
+    {
+      "name": "Dolichopteryx pseudolongipes",
+      "set": {
+        "occurrence": "P:MU",
+        "common_name_es": "duende aliblanco"
+      },
+      "was": {
+        "occurrence": "P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Parin et al. (2009). Journal of Ichthyology 49(10):839-851. DOI: 10.1134/S0032945209100014.",
+      "row": 57
+    },
+    {
+      "name": "Dolopichthys allector",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "soñador coleccionista"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "rêveur à petites cornes"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 182
+    },
+    {
+      "name": "Echinorhinus brucus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tiburón espinoso"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2015). Arxius de Miscel·lània Zoològica 13: 47-163. DOI: 10.32800/amz.2015.13.0047.",
+      "row": 3
+    },
+    {
+      "name": "Embiotoca caryi",
+      "set": {
+        "common_name_es": "mojarra arcoíris"
+      },
+      "was": {
+        "common_name_es": "mojarra arcoiris"
+      },
+      "change": "Spelling correction in Sp common name",
+      "source_ref": "n/a",
+      "row": 177
+    },
+    {
+      "name": "Embiotoca lateralis",
+      "set": {
+        "common_name_es": "mojarra vivípara azul"
+      },
+      "was": {
+        "common_name_es": "mojarra azul"
+      },
+      "change": "Sp common name was duplicated in the Eighth Edition",
+      "source_ref": "n/a",
+      "row": 178
+    },
+    {
+      "name": "Enophrys bison",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "charrasco búfalo"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "chabot-bison"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 583).",
+      "row": 208
+    },
+    {
+      "name": "Ethadophis akkistikos",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso indiferente"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 20
+    },
+    {
+      "name": "Etropus microstomus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "lenguado boca pequeña"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2022). Acta Ichthyologica et Piscatoria 52(3):173-178. DOI: 10.3897/aiep.52.86368.",
+      "row": 138
+    },
+    {
+      "name": "Eumecichthys fiski",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "unicornio"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2016). Arxius de Miscel-lània Zoològica 13:47-163. DOI: 10.32800/amz.2015.13.0047.",
+      "row": 85
+    },
+    {
+      "name": "Eustomias longibarba",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "dragón de extremo largo"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "dragon à bout long"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Gibbs (1983). Smithsonian Contributions to Zoology 380:1-139.",
+      "row": 64
+    },
+    {
+      "name": "Eustomias variabilis",
+      "set": {
+        "occurrence": "A:CU",
+        "common_name_es": "dragon à museau long"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Canada",
+      "source_ref": "Harold & Milligan (2019). The IUCN Red List of Threatened Species e.T47165387A 47461991:1-7.",
+      "row": 66
+    },
+    {
+      "name": "Gillellus healae",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "miraestrellas enmascarado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Starnes (2010). The IUCN Red List of Threatened Species e.T155059A4719843:1-7.",
+      "row": 171
+    },
+    {
+      "name": "Gnathophis bracheatopos",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "congrio de ojo largo"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 132).",
+      "row": 31
+    },
+    {
+      "name": "Gobiosoma grosvenori",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "gobio de roca"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 128
+    },
+    {
+      "name": "Gobiosoma longipala",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "gobio de dos escamas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Paz-Ríos et al. (2021). Biodiversity Data Journal 9(e65317):1-19.",
+      "row": 129
+    },
+    {
+      "name": "Grammonus claudei",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "brótula arrecifal"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Dooley et al. (2015). The IUCN Red List of Threatened Species 2015: e.T16467411 A16509972:1-12.",
+      "row": 110
+    },
+    {
+      "name": "Halieutichthys intermedius",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "murciélago del golfo"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 669).",
+      "row": 181
+    },
+    {
+      "name": "Halosauropsis macrochir",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "anguila espinosa abisal"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "halosaure à longues nageoires"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 111).",
+      "row": 12
+    },
+    {
+      "name": "Haptenchelys texis",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "anguila degollada entrelazada"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 112).",
+      "row": 14
+    },
+    {
+      "name": "Heteroconger luteolus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "congrio de jardín amarillo"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "McEachran & Fechhelm (1998). Fishes of the Gulf of Mexico. University of Texas Press, Austin, TX.",
+      "row": 32
+    },
+    {
+      "name": "Hexagrammos decagrammus",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "molva de alga"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sourcil de varech"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 582).",
+      "row": 207
+    },
+    {
+      "name": "Hybognathus placitus",
+      "set": {
+        "occurrence": "F:CMU",
+        "common_name_es": "carpita llanera"
+      },
+      "was": {
+        "occurrence": "F:CU",
+        "common_name_es": "méné des plaines"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Contreras-Balderas et al. (2004). Pp. 283-298 in: Lozano-Vilano & Contreras-Balderas (Eds.), Homenaje al doctor Andrés Reséndez Medina. Universidad Autónoma de Nuevo León, Mexico.",
+      "row": 43
+    },
+    {
+      "name": "Hypleurochilus geminatus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "borracho crestado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Hildebrand (1958). Ciencia, Méx. 17(79):151-173.",
+      "row": 172
+    },
+    {
+      "name": "Hypsoblennius ionthas",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "borracho pecoso"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Castro-Aguirre et al. (1999). Ictiofauna estuarino-lagunar y vicaria de México. Noriega-Limusa, Mexico City.",
+      "row": 173
+    },
+    {
+      "name": "Ilyophis brunneus",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "anguila degollada de lodo"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "anguille égorgée brune"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Sulak & Shcherbachev (1997). Bulletin of Marine Science 60(3):1158-1194.",
+      "row": 15
+    },
+    {
+      "name": "Kali kerberti",
+      "set": {
+        "occurrence": "A-P:MU",
+        "common_name_es": "tragón mandíbula curva"
+      },
+      "was": {
+        "occurrence": "A-P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 114
+    },
+    {
+      "name": "Lampanyctus fernae",
+      "set": {
+        "occurrence": "P:MU",
+        "common_name_es": "linternilla de Alaska"
+      },
+      "was": {
+        "occurrence": "P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 233).",
+      "row": 84
+    },
+    {
+      "name": "Lepomis aquilensis",
+      "set": {
+        "occurrence": "F:MU",
+        "common_name_es": "mojarra orejona"
+      },
+      "was": {
+        "occurrence": "F:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Kim et al. (2022). Systematic Biology 71:273–285. DOI: 10.1093/sysbio/syab029",
+      "row": 194
+    },
+    {
+      "name": "Lepomis megalotis",
+      "set": {
+        "occurrence": "F:U"
+      },
+      "was": {
+        "occurrence": "F:MU"
+      },
+      "change": "Excluded from Mexico",
+      "source_ref": "Kim et al. (2022). Systematic Biology 71:273–285. DOI: 10.1093/sysbio/syab029",
+      "row": 195
+    },
+    {
+      "name": "Liopropoma eukrines",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "cabrilla lábrida"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "González-Gándara (2014). Ecosistemas y Recursos Agropecuarios 2(4):87-97.",
+      "row": 225
+    },
+    {
+      "name": "Liparis florae",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "baboso charco de marea"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "limace de bâche"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Stepien et al. (1991). Pacific Science 45(1):63-71.",
+      "row": 219
+    },
+    {
+      "name": "Lycenchelys paxillus",
+      "set": {
+        "occurrence": "A-Ar:CMU",
+        "common_name_es": "viruela común"
+      },
+      "was": {
+        "occurrence": "A-Ar:CU",
+        "common_name_es": "lycode commune"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 560).",
+      "row": 238
+    },
+    {
+      "name": "Lycodapus fierasfer",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "viruela boca negra"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "lycode nacre"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 239
+    },
+    {
+      "name": "Lycodes cortezianus",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "viruela aleta grande"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "lycode à grandes nageoires"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2013). Revista Mexicana de Biodiversidad 84:184-214. DOI: 10.7550/rmb.27335.",
+      "row": 240
+    },
+    {
+      "name": "Menidia audens",
+      "set": {
+        "occurrence": "F:MU",
+        "common_name_es": "plateadito del Misisipi"
+      },
+      "was": {
+        "occurrence": "F:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Suttkus et al. (2005). Southeastern Fishes Council Proceedings 48:1-9.",
+      "row": 155
+    },
+    {
+      "name": "Menidia clarkhubbsi",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "plateadito de Texas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 425).",
+      "row": 156
+    },
+    {
+      "name": "Microstomus bathybius",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "platija de profundidad"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "plie de profondeur"
+      },
+      "change": "New for Mexico",
+      "source_ref": "De la Cruz-Agüero et al. (1997). Catálogo de los peces marinos de Baja California Sur. Centro Interdisciplinario de Ciencias Marinas-Instituto Politécnico Nacional, La Paz, Mexico.",
+      "row": 140
+    },
+    {
+      "name": "Monolene antillarum",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "lenguado esbelto"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke (2024: 344).",
+      "row": 139
+    },
+    {
+      "name": "Moxostoma congestum",
+      "set": {
+        "occurrence": "F:MU",
+        "common_name_es": "matalote gris"
+      },
+      "was": {
+        "occurrence": "F:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Hoagstrom et al. (2021). Pp. 37-67. In: Propst et al. (Eds.). Standing between life and extinction: Ethics and ecology of conserving aquatic species in North American deserts. University of Chicago Press, Chicago.",
+      "row": 35
+    },
+    {
+      "name": "Neobythites multiocellatus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "brótula tres manchas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Nielsen et al. (1999). FAO species catalogue. Vol. 18. Ophidiiform fishes of the world (Order Ophidiiformes). An annotated and illustrated catalogue of pearlfishes, cusk-eels, brotulas and other ophidiiform fishes known to date. FAO, Rome.",
+      "row": 106
+    },
+    {
+      "name": "Nezumia bairdii",
+      "set": {
+        "occurrence": "A-Ar:CMU",
+        "common_name_es": "granadero punta de marlin"
+      },
+      "was": {
+        "occurrence": "A-Ar:CU",
+        "common_name_es": "grenadier du Grand Banc"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 247).",
+      "row": 95
+    },
+    {
+      "name": "Notemigonus crysoleucas",
+      "set": {
+        "occurrence": "F:CM[I]U",
+        "common_name_es": "carpita dorada"
+      },
+      "was": {
+        "occurrence": "F:CU",
+        "common_name_es": "méné jaune"
+      },
+      "change": "New for Mexico",
+      "source_ref": "García-de León et al. (2005). Pp. 138-166 in: Cartron et al. (Eds.), Biodiversity, ecosystems and conservation in northern Mexico. Oxford University Press, Oxford.",
+      "row": 44
+    },
+    {
+      "name": "Ophichthus cruentifer",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso con márgenes"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 23
+    },
+    {
+      "name": "Ophichthus hyposagmatus",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "lairón menor"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2024). Acta Ichthyologica et Piscatoria 54:103-108. DOI: 10.3897/aiep.54.119085.",
+      "row": 24
+    },
+    {
+      "name": "Ophichthus puncticeps",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso manchas pálidas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Chávez-López & Morán-Silva (2019). Ciencia Pesquera 27(1):65-82.",
+      "row": 25
+    },
+    {
+      "name": "Opistognathus robinsi",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "bocón aletas punteadas"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 384).",
+      "row": 176
+    },
+    {
+      "name": "Oreochromis urolepis",
+      "set": {
+        "occurrence": "F[I]:MU",
+        "common_name_es": "tilapia de Wami"
+      },
+      "was": {
+        "occurrence": "F[I]:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Rivas-González et al. (2014). The Southwestern Naturalist 59(1):15-21.",
+      "row": 148
+    },
+    {
+      "name": "Ostichthys trachypoma",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "soldado ojón"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Del Moral-Flores et al. (2023). Hidrobiológica 33(1):15-23. DOI: 10.24275/uam/izt/dcbs/hidro/2023v33n1/delmoral.",
+      "row": 102
+    },
+    {
+      "name": "Paraliparis calidus",
+      "set": {
+        "occurrence": "A-Ar:CMU",
+        "common_name_es": "baboso aleta baja"
+      },
+      "was": {
+        "occurrence": "A-Ar:CU",
+        "common_name_es": "limace ardente"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 586).",
+      "row": 221
+    },
+    {
+      "name": "Peprilus triacanthus",
+      "set": {
+        "occurrence": "A-Ar:CMU",
+        "common_name_es": "palometa del Atlántico"
+      },
+      "was": {
+        "occurrence": "A-Ar:CU",
+        "common_name_es": "stromatée à fossettes"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Chávez-López & Morán-Silva (2019). Ciencia Pesquera 27(1):65-82.",
+      "row": 113
+    },
+    {
+      "name": "Phenacobius mirabilis",
+      "set": {
+        "occurrence": "F:M[I]U",
+        "common_name_es": "carpita ventosa"
+      },
+      "was": {
+        "occurrence": "F:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Contreras-Balderas (1967). Lista de peces del estado de Nuevo León. Cuadernos del Instituto de Investigaciones Científicas 11:1-12.",
+      "row": 45
+    },
+    {
+      "name": "Physiculus karrerae",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "carbonero interatlántico"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Roa-Varón et al. (2019). The IUCN Red List of Threatened Species e.T60482607A 136951020:1-7.",
+      "row": 96
+    },
+    {
+      "name": "Plectobranchus evides",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "abrojo de barras azules"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "lompénie à barres bleues"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 562).",
+      "row": 243
+    },
+    {
+      "name": "Pseudomyrophis nimius",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tieso alargado"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 128).",
+      "row": 27
+    },
+    {
+      "name": "Pseudoscopelus altipinnis",
+      "set": {
+        "occurrence": "A-P:MU",
+        "common_name_es": "tragón aleta alta"
+      },
+      "was": {
+        "occurrence": "A-P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 276).",
+      "row": 115
+    },
+    {
+      "name": "Pseudoscopelus obtusifrons",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "tragón cabeza roma"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Melo (2010). Zootaxa 2710:1-78.",
+      "row": 116
+    },
+    {
+      "name": "Scardinius erythrophthalmus",
+      "set": {
+        "occurrence": "F[I]:CMU",
+        "common_name_es": "gardí"
+      },
+      "was": {
+        "occurrence": "F[I]:CU",
+        "common_name_es": "gardon rouge"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Contreras-Balderas et al. (2004). Pp. 283-298 in: Lozano-Vilano & Contreras-Balderas (Eds.). Homenaje al doctor Andrés Reséndez Medina. Universidad Autónoma de Nuevo León, Mexico.",
+      "row": 49
+    },
+    {
+      "name": "Scomberomorus regalis",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "sierra"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "Reinstated for Mexico",
+      "source_ref": "Zeng et al. (2022). ZooKeys 1135:157-170. DOI: 10.1007/s10641-018-0826-z.",
+      "row": 112
+    },
+    {
+      "name": "Scopelosaurus adleri",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "merluceta del Pacífico"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "lanterne-lézard du Pacifique"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Reyes-Bonilla et al. (2010). CalCOFI Reports 51:1-15.",
+      "row": 76
+    },
+    {
+      "name": "Sebastes aleutianus",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote ojo áspero"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste à oeil épineux"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 574).",
+      "row": 199
+    },
+    {
+      "name": "Sebastes alutus",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote del Pacífico"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste à longue mâchoire"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Snytko (1987). Journal of Ichthyology 27(1):142-146.",
+      "row": 200
+    },
+    {
+      "name": "Sebastes aurora",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote aurora"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste aurore"
+      },
+      "change": "New for Mexico",
+      "source_ref": "De la Cruz-Agüero et al. (1997). Catálogo de los peces marinos de Baja California Sur. Centro Interdisciplinario de Ciencias Marinas-Instituto Politécnico Nacional, La Paz, Mexico.",
+      "row": 201
+    },
+    {
+      "name": "Sebastes brevispinis",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote plateado-gris"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste argenté"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Snytko & Fedorov (1974). Voprosy Ikhtiologii 14:939-946.",
+      "row": 202
+    },
+    {
+      "name": "Sebastes helvomaculatus",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote de espinas rosadas"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste rosacé"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Alvarado-Villamar & Ruiz-Campos(1992). Ciencias Marinas 18(1): 79-92.",
+      "row": 203
+    },
+    {
+      "name": "Sebastes melanops",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote negro"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste noir"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Kramer & O'Connell (1995). Alaska Sea Grant, Marine Advisory Bulletin no. 25, Fairbanks, AK.",
+      "row": 204
+    },
+    {
+      "name": "Sebastes proriger",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote franja roja"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste à raie rouge"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Snytko & Fedorov (1975). Voprosy Ikhtiologii 14:939-946.",
+      "row": 205
+    },
+    {
+      "name": "Sebastes wilsoni",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "rocote pigmeo"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "sébaste pygmée"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 580).",
+      "row": 206
+    },
+    {
+      "name": "Sphyrna gilberti",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "cornuda de Carolina"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Rosales-Vázquez et al. (2022). Aquatic Research 5(3):250-256. DOI: 10.3153/AR22024.",
+      "row": 1
+    },
+    {
+      "name": "Stathmonotus hemphillii",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "trambollito morenita",
+        "family": "Labrisomidae"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": "",
+        "family": "Chaenopsidae"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 167,
+      "review": "Family moved Chaenopsidae -> Labrisomidae based on the table's placement, but the Change column says only 'New for Mexico'. Confirm before relying on it."
+    },
+    {
+      "name": "Symphurus minor",
+      "set": {
+        "occurrence": "A:CMU",
+        "common_name_es": "lengua escamas grandes"
+      },
+      "was": {
+        "occurrence": "A:CU",
+        "common_name_es": "sole à grandes écailles"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 143
+    },
+    {
+      "name": "Thaumatichthys axeli",
+      "set": {
+        "occurrence": "P:MU",
+        "common_name_es": "diablo maravilloso"
+      },
+      "was": {
+        "occurrence": "P:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Bertelsen & Struhsaker (1977). Galathea Report 14:7-40.",
+      "row": 187
+    },
+    {
+      "name": "Thaumatichthys binghami",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "pez maravilla"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Ramírez et al. (2019). ZooKeys 846:117-132. DOI: 10.3897/zookeys.846.31944.",
+      "row": 188
+    },
+    {
+      "name": "Varicus vespa",
+      "set": {
+        "occurrence": "A:MU",
+        "common_name_es": "gobio avispa"
+      },
+      "was": {
+        "occurrence": "A:U",
+        "common_name_es": ""
+      },
+      "change": "New for Mexico",
+      "source_ref": "Vega-Cendejas et al. (2023). Regional Studies in Marine Science 68(103237):1-16. DOI: 10.1016/j.rsma.2023.103237.",
+      "row": 134
+    },
+    {
+      "name": "Zesticelus profundorum",
+      "set": {
+        "occurrence": "P:CMU",
+        "common_name_es": "charrasco fofito"
+      },
+      "was": {
+        "occurrence": "P:CU",
+        "common_name_es": "chabot flasque"
+      },
+      "change": "New for Mexico",
+      "source_ref": "Bolin (1944). Stanford Ichthyological Bulletin 3(1):1-152.",
+      "row": 209
+    }
+  ],
+  "removals": [
+    {
+      "name": "Gambusia clarkhubbsi",
+      "reason": "Removed from the List by the 2025 Addenda (no replacement name given).",
+      "change": "Remove from List",
+      "source_ref": "Echelle et al. (2013), Copeia 2013(1):72-79.",
+      "row": 160
+    }
+  ],
+  "genus_rows": [
+    {
+      "genus": "Paraliparis",
+      "change": "Feminine gender correction in Fr common names",
+      "family": "Liparidae",
+      "source_ref": "n/a",
+      "row": 220
+    },
+    {
+      "genus": "Cebidichthys",
+      "change": "We had the genera in Stichaeidae; they belong in Cebidichthyidae",
+      "family": "Cebidichthyidae",
+      "source_ref": "Radchenko (2015). Russian Journal of Genetics 51:1096-1112. DOI: 10.1134/S1022795415100130.",
+      "row": 241
+    },
+    {
+      "genus": "Esselinichthys",
+      "change": "We had the genera in Stichaeidae; they belong in Cebidichthyidae",
+      "family": "Cebidichthyidae",
+      "source_ref": "Radchenko (2015). Russian Journal of Genetics 51:1096-1112. DOI: 10.1134/S1022795415100130.",
+      "row": 241
+    },
+    {
+      "genus": "Kasatkia",
+      "change": "We had the genera in Stichaeidae; they belong in Opisthocentridae",
+      "family": "Opisthocentridae",
+      "source_ref": "Radchenko (2015). Russian Journal of Genetics 51:1096-1112. DOI: 10.1134/S1022795415100130.",
+      "row": 242
+    },
+    {
+      "genus": "Lumpenopsis",
+      "change": "We had the genera in Stichaeidae; they belong in Opisthocentridae",
+      "family": "Opisthocentridae",
+      "source_ref": "Radchenko (2015). Russian Journal of Genetics 51:1096-1112. DOI: 10.1134/S1022795415100130.",
+      "row": 242
+    }
+  ],
+  "misspellings": [
+    {
+      "as_printed": "Apterichtus aequatorialis",
+      "corrected": "Apterichtus equatorialis",
+      "note": "Myers & Wade 1941. The List already holds four 'equatorialis' epithets and no 'aequatorialis'. Latinising to 'aequ-' would be an unjustified emendation under ICZN Art. 33.2.3.",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 120).",
+      "row": 17,
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    },
+    {
+      "as_printed": "Bollmania gomezi",
+      "corrected": "Bollmannia gomezi",
+      "note": "The gobiid genus is Bollmannia Jordan 1890 (8 species already in the List); the table drops an 'n'.",
+      "change": "New to the List",
+      "source_ref": "Fricke et al. (2024: 308).",
+      "row": 124,
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    },
+    {
+      "as_printed": "Ipnops agassizi",
+      "corrected": "Ipnops agassizii",
+      "note": "Garman 1899. The List already spells 6 of 7 Agassiz patronyms 'agassizii', including Leptochilichthys agassizii — the same author, same year.",
+      "change": "New to the List",
+      "source_ref": "Castro-Aguirre & Balart (1996). Hidrobiológica 6(1-2):67-76.",
+      "row": 74,
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    },
+    {
+      "as_printed": "Plectrobranchus evides",
+      "corrected": "Plectobranchus evides",
+      "note": "Gilbert 1890 — ALREADY in the 8th edition. The table's 'Plectrobranchus' inserts an 'r', which made the row look like a new species; it is in fact a new-for-Mexico occurrence record for an existing entry.",
+      "change": "New for Mexico",
+      "source_ref": "Fricke et al. (2024: 562).",
+      "row": 243,
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    },
+    {
+      "as_printed": "Symphurus ocullelus",
+      "corrected": "Symphurus oculellus",
+      "note": "Munroe 1991. oculus + diminutive -ellus; 'ocullelus' doubles the L in the wrong position and is not a well-formed Latin diminutive.",
+      "change": "New to the List",
+      "source_ref": "Robertson et al. (2019). ZooKeys 843:71-115. DOI: 10.3897/zookeys.843.33873.",
+      "row": 145,
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    }
+  ],
+  "curated_synonyms": [
+    {
+      "old": "Notropis deliciosus",
+      "new": "Miniellus stramineus",
+      "reason": "Present in the shipped 8th-edition build but absent from eschmeyer_cache.json (pre-existing cache drift). Re-asserted so a full synonym-map rebuild is lossless.",
+      "verified": "2026-07-14 (Eschmeyer's Catalog of Fishes)",
+      "locked_by_test": "fishfinder/test/classify.test.js:46"
+    },
+    {
+      "old": "Notropis lutrensis",
+      "new": "Cyprinella lutrensis",
+      "reason": "The old combination for the Red Shiner. BOTH candidate values were wrong: the shipped build had Cyprinella rutila (Mexican Red Shiner) and a rebuild produced Cyprinella rubripinna (Gibbous Shiner). Eschmeyer has no page under Notropis lutrensis, so neither is supported; Cyprinella lutrensis is the actual current combination.",
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; no record under Notropis lutrensis)"
+    },
+    {
+      "old": "Isabela ove",
+      "new": "Quassiremus evionthas",
+      "reason": "Isabela is a genus of Ophichthidae (snake eels) and Isabela ove appears in Eschmeyer's Ophichthidae listing, so the Ophichthid target is the right one. The shipped build mapped it to Scarus ghobban, a parrotfish (Labridae) — a pre-existing scraping error that 'keep what shipped' would have locked in.",
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes, Ophichthidae listing)"
+    },
+    {
+      "old": "Caecula equatorialis",
+      "new": "Apterichtus equatorialis",
+      "reason": "Original combination. Eschmeyer: 'Caecula equatorialis ... Valid as Apterichtus equatorialis (Myers & Wade 1941)'. The scrape missed it because the species query is by the current genus, which finds nothing.",
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes)"
+    },
+    {
+      "old": "Conger brasiliensis",
+      "new": "Conger triporiceps",
+      "reason": "A genuine HOMONYM, not a scraping artifact: Eschmeyer lists two nominal species under this name — 'brasiliensis, Conger Kaup 1856' (Synonym of Conger triporiceps) and another (Synonym of Cynoponticus savanna). A flat old->new map cannot express both. Pinned to the Kaup 1856 entry, which is what the 8th-edition build shipped; the Cynoponticus reading is equally legitimate for its own entry.",
+      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; two entries confirmed)"
+    }
+  ],
+  "unresolved": []
+}
