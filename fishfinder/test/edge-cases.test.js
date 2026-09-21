@@ -1,6 +1,6 @@
 const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
-const { engine, lookups } = require('./setup');
+const { engine, lookups, db } = require('./setup');
 
 const classify = (g, s) => engine.classifyName(lookups, g, s);
 
@@ -180,12 +180,20 @@ describe('fuzzy matching edge cases', () => {
   });
 
   describe('database integrity', () => {
+    // Floors track the current build (FF-8.1: 5,201 valid / 1,509 genera).
+    // Raise them whenever the database grows, so they keep catching a truncated
+    // or half-applied build rather than passing on anything vaguely large.
     it('has a reasonable number of valid names', () => {
-      assert.ok(lookups.validSet.size > 5000, `expected >5000 valid names, got ${lookups.validSet.size}`);
+      assert.ok(lookups.validSet.size > 5150, `expected >5150 valid names, got ${lookups.validSet.size}`);
+    });
+
+    it('metadata.species_count matches the actual database', () => {
+      assert.equal(lookups.validSet.size, db.metadata.species_count);
+      assert.equal(lookups.synonymMap.size, db.metadata.synonym_count);
     });
 
     it('has a reasonable number of synonyms', () => {
-      assert.ok(lookups.synonymMap.size > 8000, `expected >8000 synonyms, got ${lookups.synonymMap.size}`);
+      assert.ok(lookups.synonymMap.size > 8700, `expected >8700 synonyms, got ${lookups.synonymMap.size}`);
     });
 
     it('excludes verified extralimital valid species from the synonym map', () => {
@@ -200,11 +208,19 @@ describe('fuzzy matching edge cases', () => {
     });
 
     it('has a reasonable number of genera', () => {
-      assert.ok(lookups.generaSet.size > 1400, `expected >1400 genera, got ${lookups.generaSet.size}`);
+      assert.ok(lookups.generaSet.size > 1500, `expected >1500 genera, got ${lookups.generaSet.size}`);
     });
 
-    it('has common names for most species', () => {
-      assert.ok(lookups.commonNameMap.size > 4000, `expected >4000 common names, got ${lookups.commonNameMap.size}`);
+    // Exact, not a floor: commonNameMap is keyed on the English common name and
+    // is last-writer-wins, so a duplicated name silently drops a species from
+    // lookup with no error anywhere. The 2025 Addenda's coordinated Dionda
+    // rename is exactly this hazard.
+    it('has no English common-name collisions', () => {
+      const withEn = Object.values(db.valid_names)
+        .filter(v => v.common_name_en).length;
+      assert.equal(lookups.commonNameMap.size, withEn,
+        `${withEn - lookups.commonNameMap.size} species lost their common-name ` +
+        `lookup to a duplicate name`);
     });
   });
 });

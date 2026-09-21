@@ -107,16 +107,19 @@ describe('extractCommonNames', () => {
   it('fuzzy-matches a common name with 1-edit typo', () => {
     const text = 'We caught several largemouth bas in the pond.';
     const hits = engine.extractCommonNames(lookups, text, []);
-    const hit = hits.find(h => h.commonName && h.commonName.toLowerCase().includes('largemouth'));
+    // Match the exact name, not the 'largemouth' prefix: the database holds five
+    // species whose common name starts with it (Bass, Shiner, Lampfish, Blenny,
+    // and Conger, added by the 2025 Addenda).
+    const hit = hits.find(h => h.commonName === 'Largemouth Bass');
     assert.ok(hit, 'should fuzzy-match "largemouth bas" → "Largemouth Bass"');
     assert.equal(hit.type, 'common');
-    assert.ok(hit.suggestion);
+    assert.equal(hit.suggestion, 'Micropterus nigricans');
   });
 
   it('does not fuzzy-match a common name with 2+ edit distance', () => {
     const text = 'We caught several largemouth ba in the pond.';
     const hits = engine.extractCommonNames(lookups, text, []);
-    const hit = hits.find(h => h.commonName && h.commonName.toLowerCase().includes('largemouth'));
+    const hit = hits.find(h => h.commonName === 'Largemouth Bass');
     assert.equal(hit, undefined, 'should NOT fuzzy-match "largemouth ba" (2 edits)');
   });
 });
