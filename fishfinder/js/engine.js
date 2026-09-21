@@ -106,8 +106,12 @@
       const info       = lookups.db.valid_names[canonical];
       const commonName = info ? (info.common_name_en || '') : '';
       const changed    = info && info.flags && info.flags.includes('*');
+      // Names whose authority is a published addendum rather than the printed
+      // 8th edition. Kept as valid/changed (no new tier) — the marker is a
+      // provenance note, not a different classification.
+      const addenda    = (info && info.addenda) || null;
       return { type: changed ? 'changed' : 'valid', canonical, suggestion: null, commonName,
-               confidence: 1.0, editDistance: 0 };
+               addenda, confidence: 1.0, editDistance: 0 };
     }
 
     // 2. Known synonym / outdated name
@@ -123,6 +127,16 @@
     if (closestSyn && closestSyn.genusDist === 0 && closestSyn.dist > 0 && closestSyn.dist <= 2) {
       return { type: 'outdated', canonical: binomial, suggestion: closestSyn.newName,
                confidence: closestSyn.dist === 1 ? 0.80 : 0.60, editDistance: closestSyn.dist };
+    }
+
+    // 2c. Withdrawn from the List by a published addendum.
+    //     Must precede step 4: the genus usually survives the removal, so step 4
+    //     would otherwise return a bare "unknown" with no explanation.
+    if (lookups.removedMap.has(lower)) {
+      const rec = lookups.removedMap.get(lower);
+      return { type: 'unknown', canonical: binomial, suggestion: null,
+               removed: true, note: rec.reason || '',
+               confidence: 0.30, editDistance: null };
     }
 
     // 3. Common name match
@@ -320,8 +334,15 @@
       generaSet.add(genus.toLowerCase());
     }
 
+    // Names withdrawn from the List by a published addendum. The `|| {}` matters:
+    // engine.js also runs against archived database snapshots that predate this key.
+    const removedMap = new Map();
+    for (const [name, rec] of Object.entries(db.removed_names || {})) {
+      removedMap.set(name.toLowerCase(), rec);
+    }
+
     return {
-      db, validSet, validMap, synonymMap, generaSet,
+      db, validSet, validMap, synonymMap, generaSet, removedMap,
       commonNameMap, validList, synonymList,
       commonNamePrefixMap: null,  // built lazily
     };

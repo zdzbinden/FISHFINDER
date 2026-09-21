@@ -45,6 +45,28 @@
     el.textContent = new Date().getFullYear();
   });
 
+  // Provenance marker for names whose authority is the Committee's published
+  // addenda rather than the printed 8th edition. Not a classification tier —
+  // these names are VALID; the badge just says where the ruling came from.
+  const ADDENDA_BADGE =
+    '<span class="addenda-note" title="Recognized by the Committee\'s published ' +
+    'addenda to Names of Fishes, 8th edition; not in the printed book">addenda</span>';
+
+  // ── Data version (rendered from fish_names.json metadata) ─────────────────
+  function renderDataVersion() {
+    const md = (db && db.metadata) || {};
+    const version = md.data_version;
+    if (!version) return;
+
+    for (const el of document.querySelectorAll('.data-version')) {
+      el.textContent = version;
+    }
+    const count = document.getElementById('coverage-count');
+    if (count && md.species_count) {
+      count.textContent = md.species_count.toLocaleString('en-US');
+    }
+  }
+
   // ── Database loading ──────────────────────────────────────────────────────
   async function loadDatabase() {
     loadingEl.hidden   = false;
@@ -64,6 +86,10 @@
 
     // Build lookup structures (engine.js)
     lookups = FishEngine.buildLookups(db);
+
+    // Render the data version from metadata rather than hard-coding it, so it
+    // cannot drift the way the hard-coded species counts did.
+    renderDataVersion();
 
     loadingEl.hidden  = true;
     checkBtn.disabled = false;
@@ -131,6 +157,9 @@
             type:       result.type,
             suggestion: result.suggestion,
             commonName: result.commonName || '',
+            addenda:    result.addenda || null,
+            removed:    result.removed || false,
+            note:       result.note || '',
           });
         }
 
@@ -429,7 +458,10 @@
       summaryTbody.innerHTML = '';
       for (const f of deduped) {
         let suggestionCell;
-        if (f.type === 'changed') {
+        if (f.note) {
+          // Withdrawn from the List — explain rather than showing a bare "unknown".
+          suggestionCell = esc(f.note);
+        } else if (f.type === 'changed') {
           suggestionCell = f.commonName
             ? `Now: <em>${esc(f.commonName)}</em> &mdash; confirm intended species`
             : 'Confirm this is the intended species';
@@ -437,15 +469,18 @@
           const suggInfo    = db.valid_names[f.suggestion];
           const suggCommon  = suggInfo ? (suggInfo.common_name_en || '') : '';
           suggestionCell    = `<em>${esc(f.suggestion)}</em>` +
-            (suggCommon ? ` <span class="common-name">(${esc(suggCommon)})</span>` : '');
+            (suggCommon ? ` <span class="common-name">(${esc(suggCommon)})</span>` : '') +
+            (suggInfo && suggInfo.addenda ? ' ' + ADDENDA_BADGE : '');
         } else {
           suggestionCell = '—';
         }
 
+        const statusLabel = f.removed ? 'Removed from the List'
+                                      : (labels[f.type] || f.type);
         const tr = document.createElement('tr');
         tr.innerHTML =
           `<td class="name-cell">${esc(f.binomial)}</td>` +
-          `<td><span class="status-${f.type}">${labels[f.type] || f.type}</span></td>` +
+          `<td><span class="status-${f.type}">${statusLabel}</span></td>` +
           `<td>${suggestionCell}</td>`;
         summaryTbody.appendChild(tr);
       }
@@ -653,6 +688,10 @@
 
       if (f.type === 'changed' && f.commonName) {
         html += ' <span class="confirm-hint">confirm species</span>';
+      }
+
+      if (f.addenda) {
+        html += ' ' + ADDENDA_BADGE;
       }
 
       html += '</div>';
@@ -930,6 +969,12 @@
       `Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (${year}). ` +
       'Eschmeyer\'s Catalog of Fishes: Genera, Species, References. ' +
       'California Academy of Sciences. Electronic version accessed ' + year + '.',
+
+      'Schmitter-Soto, J.J., Bemis, K.E., Dowling, T.E., Findley, L.T., Girard, M.G., ' +
+      'Hendrickson, D.A., Ilves, K.L., Maslenikov, K.P., Ruiz-Campos, G., Scharpf, C., and ' +
+      'Walker, H.J. (2026). Addenda, corrigenda, et explanenda to Common and Scientific ' +
+      'Names of Fishes, Eighth Edition. Fisheries 51(5):225-227. ' +
+      'https://doi.org/10.1093/fshmag/vuaf083',
 
       'Zbinden, Z.D. (2026). FISHFINDER: Catching Fish Name Mistakes in Text. ' +
       'Fisheries. Advance online publication. https://doi.org/10.1093/fshmag/vuag058',

@@ -444,6 +444,22 @@ textarea::-webkit-scrollbar-thumb   { background: var(--lcd-muted); border-radiu
   font-style: normal;
 }
 
+/* Provenance marker: recognized by the published addenda, not the printed book.
+   Inherits the LCD text colour, so it needs no high-contrast override. */
+.addenda-note {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.6rem;
+  color: inherit;
+  opacity: 0.65;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0 0.22em;
+  white-space: nowrap;
+}
+
 /* ── Highlight spans ───────────────────────────────────────────────────────── */
 .hl {
   border-radius: 2px;
@@ -773,6 +789,16 @@ select.report-input {
   margin: 1.1rem 0 0.4rem;
   border-top: 1px solid var(--lcd-darker);
   padding-top: 0.6rem;
+}
+/* Sub-heading within a section — same voice as h3 but no rule above it, so it
+   reads as subordinate rather than starting a new top-level section. */
+.modal-body h4 {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lcd-muted);
+  margin: 0.9rem 0 0.35rem;
 }
 .modal-body ol, .modal-body ul {
   padding-left: 1.3rem;
