@@ -20,11 +20,12 @@ and the American Society of Ichthyologists and Herpetologists (ASIH).
 
 | Color  | Meaning |
 |--------|---------|
-| Green  | **Valid** — exact match in the 8th edition |
+| Green  | **Valid** — exact match in the 8th edition or its published addenda |
 | Blue   | **Changed in 8th edition** — name is valid but was reassigned or revised since the 7th edition; confirm this is the intended species (hover for current common name) |
 | Orange | **Outdated / Synonym** — replaced by a different name; suggestion shown with common name |
 | Red    | **Misspelled** — close match found; check the suggestion |
 | Purple | **Unknown** — genus looks fish-like but no close species match |
+| Purple | **Removed from the List** — the name was in the 8th edition but has since been withdrawn by a published addendum; no replacement is offered because none was published |
 
 Hover over any highlighted name to see its common name or suggested correction.
 
@@ -43,7 +44,8 @@ uv run --with pymupdf python ../parse_pdf.py
 Source: `../names_of_fishes/Names-of-Fishes-8-Table1.pdf`
 (The table-only PDF distributed by AFS — not the full book.)
 
-Extracts ~5,086 species with full metadata per entry:
+Extracts ~5,086 species with full metadata per entry (the published addenda then
+bring this to ~5,200 — see `apply_addenda.py`):
 `class`, `order`, `family`, `author`, `occurrence`, `flags`, `common_name_en`,
 `common_name_es`, `common_name_fr`
 
@@ -111,7 +113,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (78 tests across 4 files):
+against the real dataset (140 tests across 5 files):
 
 | File | Coverage |
 |------|----------|
