@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FISHFINDER — Scientific Name Validator</title>
-  <meta name="description" content="Validate scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023). Checks spelling, detects synonyms, and flags outdated names.">
-  <meta name="keywords" content="fish names, scientific name validator, Names of Fishes 8th edition, ichthyology, taxonomy, nomenclature, manuscript proofreading">
+  <meta name="description" content="Validate scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023) and its published addenda. Checks spelling, detects synonyms, and flags outdated names.">
+  <meta name="keywords" content="fish names, scientific name validator, Names of Fishes 8th edition, addenda corrigenda, ichthyology, taxonomy, nomenclature, manuscript proofreading">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://fishnames.net/">
   <meta property="og:title" content="FISHFINDER — Scientific Name Validator">
-  <meta property="og:description" content="Validate scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023). Checks spelling, detects synonyms, and flags outdated names.">
+  <meta property="og:description" content="Validate scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023) and its published addenda. Checks spelling, detects synonyms, and flags outdated names.">
   <meta property="og:url" content="https://fishnames.net/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://fishnames.net/data/og-preview.png">
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "FISHFINDER",
-    "description": "Validates scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023). Checks spelling, detects synonyms, and flags outdated names.",
+    "description": "Validates scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023) and its published addenda. Checks spelling, detects synonyms, and flags outdated names.",
     "url": "https://fishnames.net/",
     "applicationCategory": "ScienceApplication",
     "operatingSystem": "Any (web browser)",
@@ -56,7 +56,7 @@
   <!-- Brand header — mimics Lowrance top bar -->
   <div class="device-header">
     <h1 class="brand">FISHFINDER</h1>
-    <div class="model">FF-8</div>
+    <div class="model data-version" title="Data version: Names of Fishes 8th edition plus published addenda">FF-8</div>
   </div>
 
   <!-- Screen bezel + LCD -->
@@ -77,20 +77,45 @@
           </ol>
           <p class="info-tip">Tip: press <strong>HI-CON</strong> to switch between the default retro LCD palette and a high-contrast display mode (white background, dark text).</p>
 
-          <p><strong>FISHFINDER</strong> validates scientific fish names in manuscript text against the <em>Common and Scientific Names of Fishes from the United States, Canada, and Mexico</em>, 8th edition (Page et al., 2023), supplemented by synonym data from Eschmeyer's Catalog of Fishes. The underlying species list covers <strong>freshwater, brackish, and marine fishes</strong> of the United States, Canada, and Mexico — no separate mode is needed for any habitat category.</p>
+          <p><strong>FISHFINDER</strong> validates scientific fish names in manuscript text against the <em>Common and Scientific Names of Fishes from the United States, Canada, and Mexico</em>, 8th edition (Page et al., 2023) together with the Committee's published addenda, supplemented by synonym data from Eschmeyer's Catalog of Fishes. The underlying species list covers <strong>freshwater, brackish, and marine fishes</strong> of the United States, Canada, and Mexico — no separate mode is needed for any habitat category.</p>
 
           <h3>Classification codes</h3>
           <ul>
-            <li><span class="hl valid">VALID</span> &mdash; recognized in <em>Names of Fishes</em>, 8th edition</li>
+            <li><span class="hl valid">VALID</span> &mdash; recognized in <em>Names of Fishes</em>, 8th edition or its published addenda</li>
             <li><span class="hl changed">CHANGED</span> &mdash; valid but revised from the 7th edition; confirm species identity</li>
             <li><span class="hl outdated">OUTDATED</span> &mdash; known synonym; current valid name shown</li>
             <li><span class="hl misspelled">MISSPELLED</span> &mdash; close match found; suggestion shown</li>
             <li><span class="hl unknown">UNKNOWN</span> &mdash; genus recognized but species not in database</li>
+            <li><span class="hl unknown">REMOVED FROM THE LIST</span> &mdash; the name was in the 8th edition but has since been withdrawn by a published addendum; no replacement name is offered because none was published</li>
             <li><span class="hl common">COMMON NAME</span> &mdash; English common name detected; scientific equivalent shown</li>
           </ul>
 
           <h3>Coverage</h3>
-          <p>Covers ~5,086 species from U.S., Canadian, and Mexican waters (<em>Names of Fishes</em>, 8th edition) with synonyms from Eschmeyer's Catalog of Fishes. Freshwater, brackish, and marine species are all included.</p>
+          <p>Covers ~<span id="coverage-count">5,200</span> species from U.S., Canadian, and Mexican waters (<em>Names of Fishes</em>, 8th edition plus the Committee's published addenda) with synonyms from Eschmeyer's Catalog of Fishes. Freshwater, brackish, and marine species are all included. Current data version: <strong class="data-version">&mdash;</strong>.</p>
+
+          <!-- Deliberately NOT .data-version: this section documents what changed in
+               FF-8.1 specifically. Auto-updating the heading to a future version would
+               leave it describing the wrong release. -->
+          <h3>What&rsquo;s new in FF-8.1</h3>
+          <p>FISHFINDER now incorporates <a href="https://doi.org/10.1093/fshmag/vuaf083" target="_blank" rel="noopener"><em>Addenda, corrigenda, et explanenda to Common and Scientific Names of Fishes, Eighth Edition</em></a> (Schmitter-Soto et&nbsp;al., <em>Fisheries</em> 51(5):225&ndash;227), the Committee on Names of Fishes' first published update to the 8th edition.</p>
+          <ul>
+            <li><strong>115 species added</strong> that were not in the printed book &mdash; including whole genera the tool previously could not see at all, such as <em>Caliraja</em>, <em>Rubricatochromis</em>, and <em>Vexillichthys</em>.</li>
+            <li><strong>22 names re-targeted</strong> by genus transfers, replacements, and gender or spelling corrections. The superseded spelling is now flagged <span class="hl outdated">OUTDATED</span> with the current name shown &mdash; for example <em>Beringraja rhina</em> &rarr; <em>Caliraja rhina</em>, and <em>Sparus auratus</em> &rarr; <em>Sparus aurata</em>.</li>
+            <li><strong>1 species withdrawn</strong> from the List (<em>Gambusia clarkhubbsi</em>), now reported with an explanation rather than silently accepted.</li>
+            <li><strong>103 entries corrected</strong> in place &mdash; occurrence codes, Spanish and French common names, and family placements.</li>
+          </ul>
+          <p>Names whose authority is the addenda rather than the printed book carry an <span class="addenda-note">addenda</span> marker, so you can always tell the two apart. The data version shown in the footer identifies exactly which snapshot you are checking against: <strong>FF-8</strong> is the printed 8th edition, and each later <strong>.n</strong> adds a published addendum.</p>
+
+          <h4>Where FISHFINDER differs from the printed addenda</h4>
+          <p>Five names in the addenda&rsquo;s supplementary table disagree with the original published spellings recorded in Eschmeyer&rsquo;s Catalog. FISHFINDER follows the original spelling, since orthography is governed by the <em>International Code of Zoological Nomenclature</em> rather than by any checklist. <strong>The table&rsquo;s spelling still resolves to the right species</strong>, so a name copied straight from the addenda will always find its target.</p>
+          <ul>
+            <li><em>Ipnops agassizi</em> &rarr; <em>Ipnops agassizii</em> (Garman, 1899)</li>
+            <li><em>Symphurus ocullelus</em> &rarr; <em>Symphurus oculellus</em> (Munroe, 1991)</li>
+            <li><em>Apterichtus aequatorialis</em> &rarr; <em>Apterichtus equatorialis</em> (Myers &amp; Wade, 1941)</li>
+            <li><em>Bollmania gomezi</em> &rarr; <em>Bollmannia gomezi</em> &mdash; the genus is <em>Bollmannia</em> Jordan, 1890</li>
+            <li><em>Plectrobranchus evides</em> &rarr; <em>Plectobranchus evides</em> (Gilbert, 1890) &mdash; this species was <strong>already in the 8th edition</strong>, so the entry is a new Mexican occurrence record rather than an addition</li>
+          </ul>
+          <p>All five appear on rows the table labels &ldquo;New to the List&rdquo; or &ldquo;New for Mexico&rdquo; rather than &ldquo;Spelling correction,&rdquo; a category the addenda uses elsewhere, so these read as transcription slips rather than deliberate emendations. Every other new name in the table matches Eschmeyer exactly.</p>
 
           <h3>Key changes in the 8th edition</h3>
           <p>Several well-known names were revised. Notably, Largemouth Bass changed from <em>Micropterus salmoides</em> to <em>Micropterus nigricans</em>; <em>Micropterus salmoides</em> now refers exclusively to Florida Bass. Names flagged <span class="hl changed">CHANGED</span> warrant careful review.</p>
@@ -248,8 +273,9 @@
   <!-- Footer / brief credit -->
   <div class="device-footer">
     <em>Common and Scientific Names of Fishes</em>, 8th&nbsp;ed.
-    (Page&nbsp;et&nbsp;al.,&nbsp;2023 &mdash; AFS/ASIH) &middot;
-    Synonyms via Eschmeyer's Catalog of Fishes
+    (Page&nbsp;et&nbsp;al.,&nbsp;2023 &mdash; AFS/ASIH) + published addenda &middot;
+    Synonyms via Eschmeyer's Catalog of Fishes &middot;
+    DATA&nbsp;<span class="data-version">&mdash;</span>
     &middot; <a href="#" id="privacy-link" class="privacy-link">Privacy</a>
   </div>
 
@@ -270,6 +296,12 @@
       Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (<span class="current-year">2026</span>).
       <a href="https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp" target="_blank" rel="noopener"><em>Eschmeyer's Catalog of Fishes: Genera, Species, References.</em></a>
       California Academy of Sciences. Electronic version accessed <span class="current-year">2026</span>.
+    </p>
+    <p class="citation-entry">
+      Schmitter-Soto, J.J., Bemis, K.E., Dowling, T.E., Findley, L.T., Girard, M.G.,
+      Hendrickson, D.A., Ilves, K.L., Maslenikov, K.P., Ruiz-Campos, G., Scharpf, C., and
+      Walker, H.J. (2026). <a href="https://doi.org/10.1093/fshmag/vuaf083" target="_blank" rel="noopener">Addenda, corrigenda, et explanenda to <em>Common and Scientific
+      Names of Fishes</em>, Eighth Edition</a>. <em>Fisheries</em> 51(5):225&ndash;227.
     </p>
     <p class="citation-entry">
       Zbinden, Z.D. (2026). <a href="https://doi.org/10.1093/fshmag/vuag058" target="_blank" rel="noopener">FISHFINDER: Catching Fish Name Mistakes in Text</a>.
