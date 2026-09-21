@@ -9,10 +9,20 @@ For each valid species in fish_names.json, queries the catalog and collects:
   - any cases where the AFS 8th ed. name differs from Eschmeyer's accepted name
 
 Results are cached to eschmeyer_cache.json so interrupted runs resume cleanly.
-Running all ~5,300 species takes ~90 minutes at 1 req/sec.
+A cold run over all ~5,200 species takes ~3 hours at 2 s/request; with a warm
+cache only the new binomials are fetched.
+
+Re-applies the 2025 Addenda overlay (addenda_overlay.apply_synonyms) after
+rebuilding the map — without it a scrape silently reverts the addenda's
+demotions, retargeting and curated pairs.
 
 Usage:
-    uv run --with requests --with beautifulsoup4 python scrape_eschmeyer.py
+    uv run --with requests --with beautifulsoup4 python scrape_eschmeyer.py --merge
+        --merge          keep the existing synonym map, fold in only what is
+                         missing (production path: surgical diff, loses nothing)
+        (no flag)        rebuild the whole map from cache (verification path;
+                         must converge on the same map as --merge)
+        --rebuild-only   rebuild without scraping
 """
 
 import datetime
@@ -21,6 +31,8 @@ import re
 import sys
 import time
 from pathlib import Path
+
+import addenda_overlay
 
 try:
     import requests
@@ -230,6 +242,15 @@ def _find_original_genus(
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    # Status lines contain "→" and scraped names contain accented characters; the
+    # default Windows console codec (cp1252) cannot encode either and would abort
+    # a multi-hour scrape mid-run.
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, OSError):
+        pass
+
     if not DATA_PATH.exists():
         print(f"ERROR: {DATA_PATH} not found. Run parse_pdf.py first.")
         sys.exit(1)
@@ -249,6 +270,12 @@ def main():
         print(f"Loaded {len(extralimital_valids)} extralimital valids to exclude from synonyms")
 
     rebuild_only = "--rebuild-only" in sys.argv
+    # --merge keeps the existing synonym map and folds in only the entries for
+    # names missing from it (i.e. species the addenda just added). This is the
+    # production path: it gives a surgical diff on a 2 MB generated file and
+    # cannot drop a synonym it never touched. The full rebuild stays available
+    # as the verification path — the two must converge.
+    merge = "--merge" in sys.argv
 
     # Load or initialise cache
     if CACHE_PATH.exists():
@@ -311,10 +338,23 @@ def main():
     print(f"\nAll queries done. Building synonym map ...")
 
     # Build synonym map: old_binomial → current AFS valid name
-    synonyms: dict[str, str] = {}
+    # --merge starts from what is already shipped and only adds what is missing.
+    synonyms: dict[str, str] = dict(data.get("synonyms", {})) if merge else {}
     mismatches: list[tuple[str, str]] = []
 
+    # The cache is keyed by the name that was queried, so after the addenda demotes
+    # a name (e.g. Beringraja rhina -> Caliraja rhina) its cache entry survives and
+    # still points at a name that is no longer valid. Retarget those entries rather
+    # than dropping them — the synonyms they carry (7 for Galeocerdo cuvier alone)
+    # are legitimate and exist nowhere else.
+    _overlay = addenda_overlay.load_overlay()
+    demotions = ({r["from"]: r["to"] for r in _overlay["renames"]}
+                 if _overlay is not None else {})
+
     for binomial, entry in cache.items():
+        binomial = demotions.get(binomial, binomial)
+        if binomial not in data["valid_names"]:
+            continue  # withdrawn from the List, or otherwise stale
         if entry.get("valid") is None:
             continue  # failed request; skip
 
@@ -324,6 +364,11 @@ def main():
             # guard a valid non-North-American species (e.g. Misgurnus fossilis) is
             # mislabeled as an "outdated synonym" of an AFS congener.
             if old_name not in data["valid_names"] and old_name not in extralimital_valids:
+                # In merge mode never clobber an existing edge — it may have been
+                # retargeted by the addenda overlay and the cache still holds the
+                # pre-addenda target.
+                if merge and old_name in synonyms:
+                    continue
                 synonyms[old_name] = binomial
 
         # Track names AFS considers valid that Eschmeyer considers outdated
@@ -337,6 +382,23 @@ def main():
     data["metadata"]["synonym_count"]  = len(synonyms)
     data["metadata"]["extralimital_excluded"] = sorted(extralimital_valids)
     data["metadata"]["synonym_generated"] = datetime.date.today().isoformat()
+
+    # Re-assert the addenda synonym layer. Rebuilding the map above would otherwise
+    # revert the demotions, retargeting and curated pairs. Any script that writes
+    # data["synonyms"] must do this — same reasoning as the extralimital filter.
+    if _overlay is not None:
+        stats = addenda_overlay.apply_synonyms(data, _overlay)
+        addenda_overlay.stamp_metadata(data, _overlay, stats)
+        synonyms = data["synonyms"]
+        print(f"  Addenda overlay re-applied: {stats['demoted']} demoted, "
+              f"{stats['retargeted']} retargeted, {stats['curated']} curated, "
+              f"{stats['dangling_dropped']} dangling dropped")
+        errs = addenda_overlay.check_invariants(data, _overlay)
+        if errs:
+            print("\nINVARIANT FAILURES — nothing written:", file=sys.stderr)
+            for e in errs:
+                print(f"  - {e}", file=sys.stderr)
+            sys.exit(1)
 
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

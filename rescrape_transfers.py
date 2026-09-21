@@ -5,17 +5,24 @@ results because Eschmeyer files them under the original description genus.
 
 Strategy: query the family page and extract just the matching epithet entry.
 
+This script rewrites data["synonyms"] wholesale, so it re-applies the 2025
+Addenda overlay afterwards (addenda_overlay.apply_synonyms). Any future script
+that writes that key must do the same or it will silently revert the addenda.
+
 Usage:
     uv run --with requests --with beautifulsoup4 python rescrape_transfers.py
 """
 
 import json
 import re
+import sys
 import time
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+
+import addenda_overlay
 
 DATA_PATH  = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 CACHE_PATH = Path(__file__).parent / "eschmeyer_cache.json"
@@ -173,8 +180,19 @@ def main():
         with open(EXTRALIMITAL_PATH, encoding="utf-8") as f:
             extralimital_valids = set(json.load(f).keys())
 
+    # The cache is keyed by the name that was queried, so after an addendum demotes
+    # a name its cache entry survives pointing at a name that is no longer valid.
+    # Retarget rather than skip — the synonyms those entries carry are legitimate
+    # and exist nowhere else. Mirrors the same block in scrape_eschmeyer.py.
+    overlay = addenda_overlay.load_overlay()
+    demotions = ({r["from"]: r["to"] for r in overlay["renames"]}
+                 if overlay is not None else {})
+
     synonyms = {}
     for binomial, entry in cache.items():
+        binomial = demotions.get(binomial, binomial)
+        if binomial not in data["valid_names"]:
+            continue  # withdrawn from the List, or otherwise stale
         if entry.get("valid") is None:
             continue
         for old_name in entry.get("synonyms", []):
@@ -183,6 +201,22 @@ def main():
 
     data["synonyms"] = synonyms
     data["metadata"]["synonym_count"] = len(synonyms)
+
+    # Re-assert the addenda overlay: this rebuild would otherwise revert the
+    # demotions, retargeting and curated pairs. Same obligation as the
+    # extralimital filter above — every writer of data["synonyms"] must do it.
+    if overlay is not None:
+        stats = addenda_overlay.apply_synonyms(data, overlay)
+        addenda_overlay.stamp_metadata(data, overlay, stats)
+        synonyms = data["synonyms"]
+        print(f"Addenda overlay re-applied: {stats['demoted']} demoted, "
+              f"{stats['retargeted']} retargeted, {stats['curated']} curated.")
+        errs = addenda_overlay.check_invariants(data, overlay)
+        if errs:
+            print("\nINVARIANT FAILURES — nothing written:", file=sys.stderr)
+            for e in errs:
+                print(f"  - {e}", file=sys.stderr)
+            sys.exit(1)
 
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
