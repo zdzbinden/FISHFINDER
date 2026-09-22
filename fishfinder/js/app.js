@@ -972,7 +972,7 @@
 
       'Schmitter-Soto, J.J., Bemis, K.E., Dowling, T.E., Findley, L.T., Girard, M.G., ' +
       'Hendrickson, D.A., Ilves, K.L., Maslenikov, K.P., Ruiz-Campos, G., Scharpf, C., and ' +
-      'Walker, H.J. (2026). Addenda, corrigenda, et explanenda to Common and Scientific ' +
+      'Walker, H.J., Jr. (2026). Addenda, corrigenda, et explanenda to Common and Scientific ' +
       'Names of Fishes, Eighth Edition. Fisheries 51(5):225-227. ' +
       'https://doi.org/10.1093/fshmag/vuaf083',
 
