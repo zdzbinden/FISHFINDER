@@ -15,7 +15,11 @@ Keeping up with fish taxonomy is hard. Names get revised, genera get
 reshuffled, and the 8th edition introduced hundreds of changes. **FISHFINDER**
 scans your manuscript text and flags every scientific fish name that is outdated,
 misspelled, or changed since the previous edition -- so you can submit with
-confidence.
+confidence. Names abbreviated after first mention (*P. olivaris*) are checked
+too, so a manuscript is not proofread at its first mention only.
+
+See [CHANGELOG.md](CHANGELOG.md) for what has changed since the version described
+in the companion paper.
 
 ## What it does
 

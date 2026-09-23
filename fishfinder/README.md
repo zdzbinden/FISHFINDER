@@ -135,7 +135,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (139 tests across 5 files):
+against the real dataset (199 tests across 7 files):
 
 | File | Coverage |
 |------|----------|
@@ -143,6 +143,9 @@ against the real dataset (139 tests across 5 files):
 | `classify.test.js` | Classification decision tree (valid, changed, outdated, misspelled, unknown, common name, abbreviation filtering, confidence scoring) |
 | `extract.test.js` | Binomial regex extraction + common name matching (exact and fuzzy) |
 | `edge-cases.test.js` | Fuzzy matching boundaries, genus first-letter filter, charCode proximity, database integrity |
+| `abbrev.test.js` | Abbreviated genus resolution (`P. olivaris`), ambiguity tie-breaks, and the false-positive guards (author initials, `e.g.`, `Ph.D.`, reference lists) |
+| `low-confidence.test.js` | Prose demotion across the unknown/misspelled/outdated tiers, the English-word epithets that must *not* demote, and the `ae-`/`e-` epithet variants |
+| `addenda.test.js` | The FF-8.1 addenda overlay |
 
 ---
 
