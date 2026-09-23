@@ -125,7 +125,7 @@
           <p><strong>What is collected (with your consent):</strong> approximate location (city and country derived from your IP address via <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>), timestamp of your first scan in a session, and aggregate scan counts. This data documents tool reach and impact for academic reporting.</p>
           <p><strong>What is NOT collected:</strong> no manuscript text, no personal information, no login credentials, no cookies for tracking, and no user accounts.</p>
           <p><strong>Where data is stored:</strong> Firebase Realtime Database (Google infrastructure). Third-party services: ipapi.co (IP geolocation) and Firebase (storage).</p>
-          <p><strong>Your control:</strong> You can change your analytics preference at any time using the <em>Privacy</em> link at the bottom of the tool.</p>
+          <p><strong>Your control:</strong> You can change your analytics preference at any time using the <em>Privacy Settings</em> link at the bottom of the tool.</p>
 
           <h3>Report an issue</h3>
           <p>Found a bug or have a suggestion? Press the <strong>REPORT</strong> button below the device to submit a report directly, or <a href="https://github.com/zdzbinden/FISHFINDER/issues" target="_blank" rel="noopener">open an issue on GitHub</a>.</p>
@@ -272,9 +272,13 @@
 
   <!-- Footer. The source credit that used to sit here is now the Database
        Coverage panel below the device, and the data version is already on the
-       model badge in the header, so only the Privacy link remains. -->
+       model badge in the header. What remains is NOT a duplicate of the INFO
+       panel's Privacy section: that section describes what is collected, while
+       this link clears the stored consent and re-opens the accept/decline
+       banner. It is the only way to withdraw consent once the banner has been
+       dismissed, so it stays. -->
   <div class="device-footer">
-    <a href="#" id="privacy-link" class="privacy-link">Privacy</a>
+    <a href="#" id="privacy-link" class="privacy-link">Privacy Settings</a>
   </div>
 
 </div><!-- /.device -->

@@ -629,9 +629,12 @@ a.device-btn:hover { color: #c0c8d0; }
 /* ══════════════════════════════════════════════════════════════════════════════
    DEVICE FOOTER
    ══════════════════════════════════════════════════════════════════════════════ */
+/* Right-aligned: with only the Privacy link left, centring it read as an
+   orphaned label under the button row. Zero right padding lines it up with the
+   right edge of the screen bezel above it. */
 .device-footer {
-  text-align: center;
-  padding: 0.75rem 0.5rem 0.25rem;
+  text-align: right;
+  padding: 0.75rem 0 0.25rem;
   font-size: 0.65rem;
   color: #c0c8d0;
   letter-spacing: 0.01em;
@@ -1223,9 +1226,17 @@ select.report-input {
 }
 
 .privacy-link {
-  color: #8c9096;
+  /* #8c9096 measured 3.10:1 against the rendered footer background (#404348)
+     and failed WCAG AA, which needs 4.5:1 for text this size. #b4b9c0 gives
+     5.03:1. Still recessive, but legible. */
+  color: #b4b9c0;
   text-decoration: underline;
   cursor: pointer;
+  /* Padding, not a larger font: the text stays 0.65rem but the hit area clears
+     the 24px minimum target size. It is now the only control in the footer, so
+     it no longer has neighbouring text to be forgiving about mis-taps. */
+  display: inline-block;
+  padding: 0.35rem 0;
 }
 .privacy-link:hover { color: #a0c8e8; }
 
