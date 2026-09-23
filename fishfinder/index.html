@@ -281,6 +281,61 @@
 
 </div><!-- /.device -->
 
+<!-- ── Database panel ────────────────────────────────────────────────────── -->
+<!-- Every number here is filled from fish_names.json metadata at runtime by
+     renderDatabasePanel(). The static text is a fallback for a failed load —
+     do not treat it as the source of truth, and do not hand-update it. -->
+<section class="database-section">
+  <h2 class="database-header">DATABASE COVERAGE</h2>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" id="db-species">&mdash;</div>
+      <div class="stat-label">SPECIES</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="db-genera">&mdash;</div>
+      <div class="stat-label">GENERA</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="db-synonyms">&mdash;</div>
+      <div class="stat-label">SYNONYMS</div>
+    </div>
+  </div>
+
+  <dl class="database-facts">
+    <div class="database-fact">
+      <dt>Geographic coverage</dt>
+      <dd>
+        United States &middot; Canada &middot; Mexico
+        <span class="fact-note">freshwater, brackish and marine, including EEZ waters</span>
+      </dd>
+    </div>
+    <div class="database-fact">
+      <dt>Common names</dt>
+      <dd>
+        <span id="db-common-en">&mdash;</span> English &middot;
+        <span id="db-common-es">&mdash;</span> Spanish &middot;
+        <span id="db-common-fr">&mdash;</span> French
+      </dd>
+    </div>
+    <div class="database-fact">
+      <dt>Sources</dt>
+      <dd>
+        <em>Names of Fishes</em>, 8th edition + published addenda
+        <span class="fact-note">
+          synonyms from Eschmeyer's Catalog of Fishes, accessed
+          <span class="ecof-accessed">22 September 2026</span>
+        </span>
+      </dd>
+    </div>
+    <div class="database-fact">
+      <dt>Data version</dt>
+      <dd><strong class="data-version">&mdash;</strong></dd>
+    </div>
+  </dl>
+</section>
+
 <!-- ── Citations panel ───────────────────────────────────────────────────── -->
 <section class="citations-section">
   <h2 class="citations-header">REFERENCES &amp; CITATIONS</h2>
@@ -293,9 +348,9 @@
       Publication 37. American Fisheries Society, Bethesda, Maryland.
     </p>
     <p class="citation-entry">
-      Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (<span class="current-year">2026</span>).
+      Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (<span class="ecof-year">2026</span>).
       <a href="https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp" target="_blank" rel="noopener"><em>Eschmeyer's Catalog of Fishes: Genera, Species, References.</em></a>
-      California Academy of Sciences. Electronic version accessed <span class="current-year">2026</span>.
+      California Academy of Sciences. Electronic version accessed <span class="ecof-accessed">22 September 2026</span>.
     </p>
     <p class="citation-entry">
       Schmitter-Soto, J.J., Bemis, K.E., Dowling, T.E., Findley, L.T., Girard, M.G.,

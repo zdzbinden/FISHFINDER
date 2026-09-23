@@ -34,6 +34,8 @@ Usage:
                          then rebuild. Use after any parser change.
         --dry-run        scrape and rebuild, but do NOT write fish_names.json;
                          dump the proposed map to synonyms_dryrun.json instead.
+        --accessed=DATE  record YYYY-MM-DD as the date the catalog was queried
+                         (metadata.synonym_accessed, shown in the site citation).
 """
 
 import datetime
@@ -401,6 +403,10 @@ def main():
     # --dry-run: do everything except overwrite fish_names.json; dump the proposed
     # synonym map so it can be diffed first.
     dry_run = "--dry-run" in sys.argv
+    # --accessed=YYYY-MM-DD backfills the date the catalog was actually queried,
+    # for a rebuild that runs offline after the fetch happened on an earlier day.
+    accessed_override = next(
+        (a.split("=", 1)[1] for a in sys.argv if a.startswith("--accessed=")), None)
 
     # Load or initialise cache
     if CACHE_PATH.exists():
@@ -571,6 +577,17 @@ def main():
     data["metadata"]["synonym_count"]  = len(synonyms)
     data["metadata"]["extralimital_excluded"] = sorted(extralimital_valids)
     data["metadata"]["synonym_generated"] = datetime.date.today().isoformat()
+
+    # The date the catalog was actually queried over the network. This is what the
+    # site's Eschmeyer citation renders, so it must NOT move on an offline rebuild
+    # (--reparse / --rebuild-only do no fetching). synonym_generated does move, and
+    # citing it would overstate when the data was last checked against the source.
+    if accessed_override:
+        data["metadata"]["synonym_accessed"] = accessed_override
+    elif remaining:
+        data["metadata"]["synonym_accessed"] = datetime.date.today().isoformat()
+    elif "synonym_accessed" not in data["metadata"]:
+        data["metadata"]["synonym_accessed"] = data["metadata"]["synonym_generated"]
 
     # Re-assert the addenda synonym layer. Rebuilding the map above would otherwise
     # revert the demotions, retargeting and curated pairs. Any script that writes

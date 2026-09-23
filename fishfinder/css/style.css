@@ -809,13 +809,62 @@ select.report-input {
 /* ══════════════════════════════════════════════════════════════════════════════
    CITATIONS SECTION
    ══════════════════════════════════════════════════════════════════════════════ */
-.citations-section {
+.citations-section,
+.database-section {
   max-width: 920px;
   width: 100%;
   background: #211f1b;
   border: 1px solid #3a3630;
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
+}
+
+/* ── Database coverage panel ──────────────────────────────────────────────── */
+.database-header {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #8a8e86;
+  margin-bottom: 0.85rem;
+}
+
+.database-facts {
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Label column is fixed so the values line up; it collapses on narrow screens. */
+.database-fact {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.25rem 1rem;
+  align-items: baseline;
+}
+
+.database-fact dt {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8e86;
+}
+
+.database-fact dd {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #c8d0b8;
+}
+
+/* Secondary detail sits under its value rather than competing with it. */
+.fact-note {
+  display: block;
+  font-size: 0.72rem;
+  color: #9a9e94;
+  margin-top: 0.15rem;
 }
 
 .citations-header {
@@ -1217,7 +1266,9 @@ select.report-input {
   .results-grid { grid-template-columns: 1fr; }
   .brand { font-size: 1.8rem; }
   .stats-row { flex-direction: column; }
-  .citations-section, .affiliations-section, .support-section, .dashboard { padding: 1rem; }
+  .citations-section, .affiliations-section, .support-section, .dashboard,
+  .database-section { padding: 1rem; }
+  .database-fact { grid-template-columns: 1fr; gap: 0.1rem; }
   .affiliations-body { gap: 1.5rem; }
   .affiliation-logo { height: 190px; }
   .device-btn,

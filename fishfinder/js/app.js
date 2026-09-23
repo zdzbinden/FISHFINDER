@@ -40,10 +40,25 @@
   const summaryTbody   = document.getElementById('summary-tbody');
   const issueBadge     = document.getElementById('issue-count');
 
-  // ── Dynamic year in citations ─────────────────────────────────────────────
-  document.querySelectorAll('.current-year').forEach(el => {
-    el.textContent = new Date().getFullYear();
-  });
+  // ── Eschmeyer access date ─────────────────────────────────────────────────
+  // Rendered from metadata.synonym_accessed, NOT from the browser's clock. The
+  // citation previously used the current year, so it claimed the catalog had been
+  // accessed whenever the visitor happened to load the page. The real date is when
+  // the scrape ran, and it only moves when the catalog is actually re-queried.
+  function formatAccessed(iso) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (!m) return null;
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                    'August', 'September', 'October', 'November', 'December'];
+    return { year: m[1], long: `${Number(m[3])} ${MONTHS[Number(m[2]) - 1]} ${m[1]}` };
+  }
+
+  function renderEschmeyerDate() {
+    const acc = formatAccessed((db && db.metadata && db.metadata.synonym_accessed) || '');
+    if (!acc) return;   // leave the static fallback in the markup
+    document.querySelectorAll('.ecof-year').forEach(el => { el.textContent = acc.year; });
+    document.querySelectorAll('.ecof-accessed').forEach(el => { el.textContent = acc.long; });
+  }
 
   // Provenance marker for names whose authority is the Committee's published
   // addenda rather than the printed 8th edition. Not a classification tier —
@@ -65,6 +80,33 @@
     if (count && md.species_count) {
       count.textContent = md.species_count.toLocaleString('en-US');
     }
+  }
+
+  // ── Database coverage panel ───────────────────────────────────────────────
+  // Counted from the loaded database, not hard-coded, so the panel cannot drift
+  // out of step with fish_names.json the way the old species counts did.
+  function renderDatabasePanel() {
+    if (!db || !db.valid_names) return;
+    const n = (x) => x.toLocaleString('en-US');
+    const set = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+
+    const entries = Object.values(db.valid_names);
+    let en = 0, es = 0, fr = 0;
+    for (const e of entries) {
+      if (e.common_name_en) en++;
+      if (e.common_name_es) es++;
+      if (e.common_name_fr) fr++;
+    }
+
+    set('db-species',  n(entries.length));
+    set('db-genera',   n((db.genera || []).length));
+    set('db-synonyms', n(Object.keys(db.synonyms || {}).length));
+    set('db-common-en', n(en));
+    set('db-common-es', n(es));
+    set('db-common-fr', n(fr));
   }
 
   // ── Database loading ──────────────────────────────────────────────────────
@@ -90,6 +132,8 @@
     // Render the data version from metadata rather than hard-coding it, so it
     // cannot drift the way the hard-coded species counts did.
     renderDataVersion();
+    renderEschmeyerDate();
+    renderDatabasePanel();
 
     loadingEl.hidden  = true;
     checkBtn.disabled = false;
@@ -958,7 +1002,11 @@
 
   // ── Copy citations ─────────────────────────────────────────────────────────
   function copyCitations() {
-    const year = new Date().getFullYear();
+    // Eschmeyer's is a continuously updated online resource, so the citation year
+    // and access date are the date OUR data was fetched — not today's date.
+    const acc = formatAccessed((db && db.metadata && db.metadata.synonym_accessed) || '');
+    const ecofYear = acc ? acc.year : '2026';
+    const ecofAccessed = acc ? acc.long : '22 September 2026';
     const text = [
       'Page, L.M., Bemis, K.E., Dowling, T.E., Espinosa-Pérez, H., Findley, L.T., Gilbert, C.R., ' +
       'Hartel, K.E., Lea, R.N., Mandrak, N.E., Neighbors, M.A., Schmitter-Soto, J.J., and ' +
@@ -966,9 +1014,9 @@
       'United States, Canada, and Mexico, 8th edition. American Fisheries Society Special ' +
       'Publication 37. American Fisheries Society, Bethesda, Maryland.',
 
-      `Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (${year}). ` +
+      `Fricke, R., Eschmeyer, W.N., and Van der Laan, R. (eds.) (${ecofYear}). ` +
       'Eschmeyer\'s Catalog of Fishes: Genera, Species, References. ' +
-      'California Academy of Sciences. Electronic version accessed ' + year + '.',
+      'California Academy of Sciences. Electronic version accessed ' + ecofAccessed + '.',
 
       'Schmitter-Soto, J.J., Bemis, K.E., Dowling, T.E., Findley, L.T., Girard, M.G., ' +
       'Hendrickson, D.A., Ilves, K.L., Maslenikov, K.P., Ruiz-Campos, G., Scharpf, C., and ' +
