@@ -15,7 +15,10 @@
   --lcd-dark:    #7d8b66;
   --lcd-darker:  #6d7b56;
   --lcd-text:    #0e1a04;
-  --lcd-muted:   #1c2c0c;
+  /* Darkened from #1c2c0c, which measured 4.07:1 against --lcd-dark and so
+     failed AA everywhere it carries body text (.common-name in the species
+     list, the INFO panel, the low-confidence summary). Now 4.75:1. */
+  --lcd-muted:   #111e07;
 
   /* Highlight colors — tuned for readability on LCD green */
   --hl-valid-bg:       #9ab882;
@@ -129,7 +132,11 @@ main {
   font-family: Arial, sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
-  color: #c4c8ce;
+  /* Lightened from #c4c8ce, which measured 3.65:1 against the rendered housing
+     gradient behind it (rgb(94,98,104) — lighter than the CSS mid-stop, which is
+     why this has to be measured from pixels). #d8dce2 still fell short at
+     4.46:1; this is 4.90:1. */
+  color: #e2e6ec;
   letter-spacing: 0.05em;
 }
 
@@ -439,18 +446,26 @@ textarea::-webkit-scrollbar-thumb   { background: var(--lcd-muted); border-radiu
 .confirm-hint {
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.65rem;
-  color: var(--hl-changed-text);
-  opacity: 0.8;
+  /* Not var(--hl-changed-text): that colour is tuned for the blue CHANGED chip,
+     and this hint sits on the plain LCD instead, where it measured 3.21:1 at
+     opacity 0.8 and still only 4.15:1 at full strength. This darker blue keeps
+     the "changed" association at 4.81:1, and stays dark-on-white in HI-CON. */
+  color: #04182f;
   font-style: normal;
 }
 
-/* Provenance marker: recognized by the published addenda, not the printed book.
-   Inherits the LCD text colour, so it needs no high-contrast override. */
-.addenda-note {
+/* Provenance markers: where a ruling came from (.addenda-note), and the
+   as-written form of an abbreviated genus (.abbrev-note). Both inherit the LCD
+   text colour, so neither needs a high-contrast override. */
+.addenda-note,
+.abbrev-note {
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.6rem;
   color: inherit;
-  opacity: 0.65;
+  /* No opacity. At 0.65 these measured 2.96:1 against the rendered LCD — the
+     badge is only 9.6px, so fading it fails WCAG AA outright. The border, caps
+     and letter-spacing already mark it as secondary; at full strength the pair
+     measures 4.93:1. */
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -459,6 +474,48 @@ textarea::-webkit-scrollbar-thumb   { background: var(--lcd-muted); border-radiu
   padding: 0 0.22em;
   white-space: nowrap;
 }
+/* The abbreviation is a name, not a label, so it keeps its case. */
+.abbrev-note {
+  text-transform: none;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+/* ── Low-confidence group ──────────────────────────────────────────────────────
+   Prose-shaped matches, collapsed rather than hidden. Deliberately quiet: it
+   should read as an aside, not a second issues table competing for attention. */
+.low-confidence {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--lcd-darker);
+  padding-top: 0.5rem;
+}
+.low-confidence[hidden] { display: none; }
+.low-confidence > summary {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--lcd-muted);
+  cursor: pointer;
+  /* Clears the 24px minimum target size without enlarging the text. */
+  padding: 0.35rem 0.2rem;
+  list-style-position: inside;
+}
+.low-confidence > summary:hover { color: var(--lcd-text); }
+.low-confidence > summary:focus-visible {
+  outline: 2px solid var(--lcd-text);
+  outline-offset: 1px;
+}
+.low-confidence-badge {
+  font-weight: 700;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0 0.3em;
+}
+/* No opacity on either of these. Fading the hint to 0.8 measured 3.64:1 and
+   fading the table rows to 0.85 measured 4.08:1, both under the 4.5:1 floor.
+   Being collapsed inside a <details> is what marks this group as secondary;
+   it does not also need to be dimmer than the text beside it. */
+.low-confidence-table { margin-top: 0.4rem; }
 
 /* ── Highlight spans ───────────────────────────────────────────────────────── */
 .hl {
@@ -557,7 +614,12 @@ td.name-cell { font-style: italic; }
 .status-common     { background: var(--hl-common-bg);     color: var(--hl-common-text); }
 
 .common-name {
-  color: var(--lcd-muted);
+  /* Not --lcd-muted: the scanline overlay darkens the LCD under roughly every
+     fourth pixel row, and a common name that happens to land on scanlines
+     measured 4.40:1 there against 4.75:1 between them. Whether a given row lands
+     on one depends on layout, so it has to clear AA in the worst case. The name
+     is already distinguished from the binomial beside it by not being italic. */
+  color: var(--lcd-text);
   font-style: normal;
 }
 
@@ -908,7 +970,8 @@ select.report-input {
   background: linear-gradient(180deg, #2e2c28 0%, #252320 100%);
   border: 1px solid #3a3630;
   border-radius: 4px;
-  color: #80847a;
+  /* Lightened from #80847a, which measured 3.70:1 on this gradient. Now 5.04:1. */
+  color: #989c92;
   padding: 0.4rem 1rem;
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.68rem;
@@ -1042,7 +1105,8 @@ select.report-input {
   background: linear-gradient(180deg, #2e2c28 0%, #252320 100%);
   border: 1px solid #3a3630;
   border-radius: 4px;
-  color: #80847a;
+  /* Lightened from #80847a, which measured 3.70:1 on this gradient. Now 5.04:1. */
+  color: #989c92;
   padding: 0.4rem 1rem;
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.68rem;
@@ -1216,8 +1280,9 @@ select.report-input {
 }
 .consent-accept:hover { background: #3a4a2a; }
 .consent-decline {
+  /* Label lightened from #8a8e86 (4.18:1) to clear AA at 5.00:1. */
   background: #2e2c28;
-  color: #8a8e86;
+  color: #989c92;
 }
 .consent-decline:hover { background: #3e3c38; }
 .consent-btn:focus-visible {

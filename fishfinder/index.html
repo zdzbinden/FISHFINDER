@@ -90,6 +90,12 @@
             <li><span class="hl common">COMMON NAME</span> &mdash; English common name detected; scientific equivalent shown</li>
           </ul>
 
+          <h3>Abbreviated genus names</h3>
+          <p>Names abbreviated after first mention &mdash; <em>P. olivaris</em> for <em>Pylodictis olivaris</em> &mdash; are checked too, so a manuscript is not only proofread at its first mention. The genus is resolved from a spelled-out mention elsewhere in your text, so it is always a genus you wrote; abbreviations whose genus never appears in full, and ones where two spelled-out genera share the initial and nothing distinguishes them, are left alone rather than guessed. A row marked <span class="abbrev-note">P. olivaris</span> shows the form as written beside the full name. Corrections keep your abbreviation, except where the genus itself changes, which is spelled out so the change is not hidden behind an initial.</p>
+
+          <h3>Low-confidence matches</h3>
+          <p>A genus followed by an ordinary word looks like a species name to any text scanner &mdash; &ldquo;<em>Ranzania</em> includes&hellip;&rdquo;, &ldquo;<em>Bagre</em> mainly&hellip;&rdquo;. These are collected into a collapsed group below the issues table instead of being reported as errors, and are never rewritten by COPY. They are set aside rather than hidden, because roughly 200 real epithets are also ordinary English words (<em>Hypanus say</em>, <em>Haemulon album</em>, <em>Etheostoma obama</em>) and discarding them outright would miss real names.</p>
+
           <h3>Coverage</h3>
           <p>Covers ~<span id="coverage-count">5,200</span> species from U.S., Canadian, and Mexican waters (<em>Names of Fishes</em>, 8th edition plus the Committee's published addenda) with synonyms from Eschmeyer's Catalog of Fishes. Freshwater, brackish, and marine species are all included. Current data version: <strong class="data-version">&mdash;</strong>.</p>
 
@@ -249,6 +255,29 @@
                   </thead>
                   <tbody id="summary-tbody"></tbody>
                 </table>
+
+                <!-- Matches that read like ordinary prose ("Ranzania includes").
+                     Collapsed, not suppressed: 199 real epithets are also
+                     ordinary English words, so hiding these outright would cause
+                     false negatives. -->
+                <details id="low-confidence" class="low-confidence" hidden>
+                  <summary>
+                    <span id="low-confidence-count" class="low-confidence-badge">0</span>
+                    <span id="low-confidence-label">low-confidence matches</span>
+                    <span class="low-confidence-hint">&mdash; likely ordinary prose, not species names</span>
+                  </summary>
+                  <table class="low-confidence-table">
+                    <caption class="sr-only">Low-confidence matches, likely ordinary prose</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Suggestion</th>
+                      </tr>
+                    </thead>
+                    <tbody id="low-confidence-tbody"></tbody>
+                  </table>
+                </details>
               </div>
             </div>
 

@@ -39,6 +39,10 @@
   const summaryTable   = document.getElementById('summary-table');
   const summaryTbody   = document.getElementById('summary-tbody');
   const issueBadge     = document.getElementById('issue-count');
+  const lowConfBlock   = document.getElementById('low-confidence');
+  const lowConfTbody   = document.getElementById('low-confidence-tbody');
+  const lowConfCount   = document.getElementById('low-confidence-count');
+  const lowConfLabel   = document.getElementById('low-confidence-label');
 
   // ── Eschmeyer access date ─────────────────────────────────────────────────
   // Rendered from metadata.synonym_accessed, NOT from the browser's clock. The
@@ -66,6 +70,18 @@
   const ADDENDA_BADGE =
     '<span class="addenda-note" title="Recognized by the Committee\'s published ' +
     'addenda to Names of Fishes, 8th edition; not in the printed book">addenda</span>';
+
+  // The genus was abbreviated in the text and expanded from a spelled-out
+  // mention elsewhere. Like ADDENDA_BADGE this is a qualifier, not a tier — the
+  // classification is unchanged. It exists because 173 of 602 abbreviated
+  // mentions in the test corpus produced a row for a binomial that appears
+  // nowhere in the manuscript as typed, so without showing the as-written form
+  // the reader searches for "Pylodictis olivarus" and finds nothing.
+  function abbrevBadge(f) {
+    return '<span class="abbrev-note" title="Written as &ldquo;' + esc(f.text) +
+      '&rdquo;; genus expanded from a spelled-out mention elsewhere in the text">' +
+      esc(f.text) + '</span>';
+  }
 
   // ── Data version (rendered from fish_names.json metadata) ─────────────────
   function renderDataVersion() {
@@ -155,16 +171,69 @@
       .replace(/'/g,  '&#39;');
   }
 
+  // ── One finding shape, built in one place ─────────────────────────────────
+  // runCheck() and copyText() both used to build this literal, with different
+  // fields, so every new field had to be added twice or the COPY path would
+  // silently disagree with the display.
+  function makeFinding(cand, result) {
+    let replacement = result.suggestion;
+    if (replacement && cand.abbrev) {
+      const parts = result.suggestion.split(' ');
+      // Keep the author's abbreviation, but ONLY when the genus is unchanged.
+      // For a genus change (Stizostedion vitreum -> Sander vitreus) writing
+      // "S. vitreus" would hide the change behind an initial that still reads as
+      // the old genus, so there the corrected text spells the new genus out.
+      if (parts[0].toLowerCase() === cand.genus.toLowerCase()) {
+        // Slice rather than rebuild "P. " so the author's own spacing survives:
+        // P.olivarus stays P.olivaris, which keeps index + text.length exact.
+        replacement = cand.text.slice(0, cand.text.length - cand.species.length) +
+                      parts.slice(1).join(' ');
+      }
+    }
+    return {
+      text:          cand.text,
+      binomial:      `${cand.genus} ${cand.species}`,
+      index:         cand.index,
+      type:          result.type,
+      suggestion:    result.suggestion,
+      replacement,
+      abbrev:        cand.abbrev || '',
+      lowConfidence: FishEngine.isLowConfidence(cand, result),
+      commonName:    result.commonName || '',
+      addenda:       result.addenda || null,
+      removed:       result.removed || false,
+      note:          result.note || '',
+    };
+  }
+
+  function scanText(text) {
+    const findings = [];
+    for (const cand of FishEngine.extractCandidates(text, lookups)) {
+      const result = FishEngine.classifyName(lookups, cand.genus, cand.species);
+      if (result) findings.push(makeFinding(cand, result));
+    }
+    // Second pass: common names (2+ words), skipping spans already claimed.
+    const binomialSpans = findings.map(f => ({ start: f.index, end: f.index + f.text.length }));
+    findings.push(...FishEngine.extractCommonNames(lookups, text, binomialSpans));
+    return findings;
+  }
+
   // ── Build corrected plain text (replace correctable names) ────────────────
   function buildCorrectedText(text, findings) {
     // Work backwards to preserve index positions
     const correctable = findings
       .filter(f => f.suggestion && (f.type === 'outdated' || f.type === 'misspelled'))
+      // Never rewrite a demoted match. "Auxis may" is a verb, and splicing
+      // "Auxis rochei" over it would corrupt the user's manuscript silently.
+      .filter(f => !f.lowConfidence)
       .sort((a, b) => b.index - a.index);
 
     let out = text;
     for (const f of correctable) {
-      out = out.slice(0, f.index) + f.suggestion + out.slice(f.index + f.text.length);
+      // `replacement` preserves an abbreviated genus; common-name findings have
+      // none and fall through to `suggestion`.
+      out = out.slice(0, f.index) + (f.replacement || f.suggestion) +
+            out.slice(f.index + f.text.length);
     }
     return out;
   }
@@ -188,29 +257,7 @@
     // Yield to browser to update button state, then process
     setTimeout(() => {
       try {
-        const candidates = FishEngine.extractCandidates(text, lookups);
-        const findings   = [];
-
-        for (const cand of candidates) {
-          const result = FishEngine.classifyName(lookups, cand.genus, cand.species);
-          if (!result) continue;
-          findings.push({
-            text:       cand.text,
-            binomial:   `${cand.genus} ${cand.species}`,
-            index:      cand.index,
-            type:       result.type,
-            suggestion: result.suggestion,
-            commonName: result.commonName || '',
-            addenda:    result.addenda || null,
-            removed:    result.removed || false,
-            note:       result.note || '',
-          });
-        }
-
-        // Second pass: scan for common names (2+ words, case-insensitive)
-        const binomialSpans = findings.map(f => ({ start: f.index, end: f.index + f.text.length }));
-        const commonHits = FishEngine.extractCommonNames(lookups, text, binomialSpans);
-        findings.push(...commonHits);
+        const findings = scanText(text);
 
         // Cache for copyText reuse
         lastFindings = findings;
@@ -474,33 +521,34 @@
 
     const issues = findings.filter(f => f.type !== 'valid' && f.type !== 'common');
 
-    if (issues.length === 0) {
-      noIssuesEl.hidden  = false;
-      summaryTable.hidden = true;
-      issueBadge.textContent = '';
-    } else {
-      noIssuesEl.hidden   = true;
-      summaryTable.hidden = false;
-      issueBadge.textContent = String(issues.length);
+    // Matches that look like ordinary prose ("Ranzania includes") or that we
+    // resolved from an abbreviation without confidence. Split out rather than
+    // suppressed: hiding them would create false negatives, and 199 real
+    // epithets are also ordinary English words.
+    const primary = issues.filter(f => !f.lowConfidence);
+    const demoted = issues.filter(f =>  f.lowConfidence);
 
-      const seen    = new Set();
-      const deduped = [];
-      for (const f of issues) {
-        if (!seen.has(f.binomial)) {
-          seen.add(f.binomial);
-          deduped.push(f);
-        }
+    const labels = {
+      changed:    'Changed in 8th edition',
+      outdated:   'Outdated / Synonym',
+      misspelled: 'Misspelled',
+      unknown:    'Unknown fish name',
+    };
+
+    // Dedup on the binomial, but prefer a spelled-out mention over an
+    // abbreviated one so the table shows the name as the author first wrote it.
+    function dedupe(list) {
+      const seen = new Map();
+      for (const f of list) {
+        const prev = seen.get(f.binomial);
+        if (!prev || (prev.abbrev && !f.abbrev)) seen.set(f.binomial, f);
       }
+      return [...seen.values()];
+    }
 
-      const labels = {
-        changed:    'Changed in 8th edition',
-        outdated:   'Outdated / Synonym',
-        misspelled: 'Misspelled',
-        unknown:    'Unknown fish name',
-      };
-
-      summaryTbody.innerHTML = '';
-      for (const f of deduped) {
+    function renderRows(tbody, list) {
+      tbody.innerHTML = '';
+      for (const f of dedupe(list)) {
         let suggestionCell;
         if (f.note) {
           // Withdrawn from the List — explain rather than showing a bare "unknown".
@@ -523,11 +571,35 @@
                                       : (labels[f.type] || f.type);
         const tr = document.createElement('tr');
         tr.innerHTML =
-          `<td class="name-cell">${esc(f.binomial)}</td>` +
+          `<td class="name-cell">${esc(f.binomial)}` +
+            (f.abbrev ? ' ' + abbrevBadge(f) : '') + `</td>` +
           `<td><span class="status-${f.type}">${statusLabel}</span></td>` +
           `<td>${suggestionCell}</td>`;
-        summaryTbody.appendChild(tr);
+        tbody.appendChild(tr);
       }
+      return tbody.childElementCount;
+    }
+
+    if (primary.length === 0) {
+      noIssuesEl.hidden  = false;
+      summaryTable.hidden = true;
+      issueBadge.textContent = '';
+    } else {
+      noIssuesEl.hidden   = true;
+      summaryTable.hidden = false;
+      // Count the rows actually shown. This used to report the pre-dedup total,
+      // so the badge could claim more issues than the table listed.
+      issueBadge.textContent = String(renderRows(summaryTbody, primary));
+    }
+
+    if (demoted.length === 0) {
+      lowConfBlock.hidden = true;
+    } else {
+      lowConfBlock.hidden = false;
+      lowConfBlock.open   = false;   // collapsed on every scan, never sticky
+      const shown = renderRows(lowConfTbody, demoted);
+      lowConfCount.textContent = String(shown);
+      lowConfLabel.textContent = shown === 1 ? 'low-confidence match' : 'low-confidence matches';
     }
 
     resultsSection.hidden = false;
@@ -570,18 +642,7 @@
     // Reuse cached findings if text hasn't changed since last scan
     const findings = (lastFindings && lastScanText === text)
       ? lastFindings
-      : (() => {
-          const cands = FishEngine.extractCandidates(text, lookups);
-          const results = [];
-          for (const cand of cands) {
-            const result = FishEngine.classifyName(lookups, cand.genus, cand.species);
-            if (!result) continue;
-            results.push({ text: cand.text, index: cand.index, type: result.type, suggestion: result.suggestion });
-          }
-          const binomialSpans = results.map(r => ({ start: r.index, end: r.index + r.text.length }));
-          results.push(...FishEngine.extractCommonNames(lookups, text, binomialSpans));
-          return results;
-        })();
+      : scanText(text);
 
     copyToClipboard(buildCorrectedText(text, findings), copyBtn);
   }
@@ -703,7 +764,12 @@
   function buildSpeciesListHTML(findings) {
     const seen = new Map();
     for (const f of findings) {
-      if (!seen.has(f.binomial)) seen.set(f.binomial, f);
+      // Prefer a spelled-out mention over an abbreviated one for the same
+      // species, so the row reads as the author first wrote it. An abbreviated
+      // mention of a name already listed folds in here for free — 429 of 602
+      // abbreviated mentions in the test corpus did exactly that.
+      const prev = seen.get(f.binomial);
+      if (!prev || (prev.abbrev && !f.abbrev)) seen.set(f.binomial, f);
     }
 
     speciesCountEl.textContent = seen.size ? String(seen.size) : '';
@@ -715,7 +781,11 @@
     let html = '';
     for (const [, f] of seen) {
       html += '<div class="species-row">';
-      html += `<span class="hl ${f.type}" aria-label="${esc(f.binomial)}: ${f.type}"><em>${esc(f.binomial)}</em></span>`;
+      const label = f.abbrev
+        ? `${esc(f.binomial)}: ${f.type}, written as ${esc(f.text)}`
+        : `${esc(f.binomial)}: ${f.type}`;
+      html += `<span class="hl ${f.type}" aria-label="${label}"><em>${esc(f.binomial)}</em></span>`;
+      if (f.abbrev) html += ' ' + abbrevBadge(f);
 
       if (f.commonName) {
         html += ` <span class="common-name">${esc(f.commonName)}</span>`;
