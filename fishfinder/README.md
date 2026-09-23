@@ -59,8 +59,26 @@ Queries [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/r
 each species and adds older/synonymized names to `fish_names.json`. Handles both
 strict synonyms and genus transfers (reclassifications).
 
-Results are cached to `../eschmeyer_cache.json` so interrupted runs resume cleanly.
-The full run takes ~3 hours at a respectful request rate.
+Results are cached two ways, and the difference matters:
+
+- `../eschmeyer_cache.json` — the *parsed* results, one entry per species.
+- `../eschmeyer_text/` — the *normalized page text* the parser ran on.
+
+Interrupted runs resume from either. Only the second makes a parser change
+replayable: `--reparse` re-runs the parser over the stored text with no network
+and finishes in seconds, where re-fetching takes hours. Both are gitignored and
+have no copy in version control, so back them up before deleting.
+
+A cold run over all ~5,200 species takes **~5 hours** at a respectful request
+rate. Useful flags:
+
+| flag | effect |
+|---|---|
+| `--merge` | keep the existing map, add only what is missing (production path) |
+| `--reparse` | re-parse the stored page text, no network — use after a parser change |
+| `--rebuild-only` | rebuild the map from the parsed cache, no network |
+| `--dry-run` | build the map but do not write `fish_names.json` |
+| `--accessed=YYYY-MM-DD` | record the date the catalog was queried, shown in the site citation |
 
 ---
 
@@ -86,10 +104,14 @@ When a new edition of *Names of Fishes* is published:
    ```powershell
    uv run --with pymupdf python ../parse_pdf.py
    ```
-3. Delete `../eschmeyer_cache.json` and re-run the synonym scraper:
+3. Back up, then delete, `../eschmeyer_cache.json` **and** `../eschmeyer_text/`
+   (neither is in version control), and re-run the synonym scraper:
    ```powershell
-   uv run --with requests --with beautifulsoup4 python ../scrape_eschmeyer.py
+   uv run --with requests --with beautifulsoup4 python ../scrape_eschmeyer.py --dry-run
    ```
+   `--dry-run` writes the proposed map to `../synonyms_dryrun.json` so it can be
+   diffed against the shipped one before anything is overwritten. Re-run without
+   the flag, or with `--rebuild-only`, once the diff looks right.
 4. Commit and push `data/fish_names.json`.
 
 ---
