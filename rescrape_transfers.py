@@ -53,23 +53,22 @@ def fetch_family_species(family: str, epithet: str, session: requests.Session) -
         return None
 
 
-def parse_for_genus_transfer(html: str, target_genus: str, target_epithet: str) -> dict:
+def parse_for_genus_transfer(html: str, target_genus: str, target_epithet: str) -> set[str]:
     """
     Parse a family+epithet result page looking for entries that reference the
     target genus (AFS name). Collects the original genus as a synonym.
     """
-    from scrape_eschmeyer import parse_results
+    from scrape_eschmeyer import entry_header_re
 
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text(separator=" ")
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'\s+,', ',', text)
 
-    # Find entry headers matching our epithet
-    ENTRY_HEADER = re.compile(
-        r'(' + re.escape(target_epithet) + r'),\s+([A-Z][a-z]+)'
-        r'(?=(?:\s+\([A-Z][a-z]+\))?\s+[A-Z][a-z]+\s+\[)'
-    )
+    # Find entry headers matching our epithet. Built by the shared helper so this
+    # copy carries the mid-word anchor and trinomial support too — an epithet like
+    # "alia" would otherwise match inside "Somalia, Raja ...".
+    ENTRY_HEADER = entry_header_re(target_epithet)
 
     original_genera = set()
     for m in ENTRY_HEADER.finditer(text):
@@ -89,11 +88,12 @@ def parse_for_genus_transfer(html: str, target_genus: str, target_epithet: str) 
                 r'Valid as ' + re.escape(target_genus) + r' ' + re.escape(target_epithet),
                 text
             ):
-                # Look backwards for any "epithet, Genus" header
+                # Look backwards for any "epithet, Genus" header. Uses the shared
+                # strict pattern: this fallback previously matched a bare
+                # "word, Capitalized" anywhere in the page, so ordinary prose could
+                # supply the "original genus".
                 before = text[:vm.start()]
-                hdr_matches = list(re.finditer(
-                    r'([a-z][a-z-]+),\s+([A-Z][a-z]+)', before
-                ))
+                hdr_matches = list(entry_header_re().finditer(before))
                 if hdr_matches:
                     last_hdr = hdr_matches[-1]
                     orig_g = last_hdr.group(2)

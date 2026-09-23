@@ -180,7 +180,8 @@ describe('fuzzy matching edge cases', () => {
   });
 
   describe('database integrity', () => {
-    // Floors track the current build (FF-8.1: 5,201 valid / 1,509 genera).
+    // Floors track the current build (FF-8.1: 5,200 valid / 1,507 genera /
+    // 10,152 synonyms after the 2026-09-23 parser fix and re-scrape).
     // Raise them whenever the database grows, so they keep catching a truncated
     // or half-applied build rather than passing on anything vaguely large.
     it('has a reasonable number of valid names', () => {
@@ -193,7 +194,7 @@ describe('fuzzy matching edge cases', () => {
     });
 
     it('has a reasonable number of synonyms', () => {
-      assert.ok(lookups.synonymMap.size > 8700, `expected >8700 synonyms, got ${lookups.synonymMap.size}`);
+      assert.ok(lookups.synonymMap.size > 10000, `expected >10000 synonyms, got ${lookups.synonymMap.size}`);
     });
 
     it('excludes verified extralimital valid species from the synonym map', () => {

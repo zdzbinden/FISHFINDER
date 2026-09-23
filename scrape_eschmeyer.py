@@ -8,9 +8,16 @@ For each valid species in fish_names.json, queries the catalog and collects:
   - synonyms (older names that map to the current accepted name)
   - any cases where the AFS 8th ed. name differs from Eschmeyer's accepted name
 
-Results are cached to eschmeyer_cache.json so interrupted runs resume cleanly.
-A cold run over all ~5,200 species takes ~3 hours at 2 s/request; with a warm
-cache only the new binomials are fetched.
+Results are cached two ways, and the distinction matters:
+  - eschmeyer_cache.json  — PARSED results, one entry per species
+  - eschmeyer_text/       — the normalized page TEXT the parser ran on
+Only the second lets a parser fix be replayed offline (--reparse). The first
+alone does not: it already contains whatever the old parser produced.
+
+Interrupted runs resume cleanly from either. A cold run over all ~5,200 species
+takes roughly 4.5-5.5 hours — 5,096 x 2 s plus 104 x 15 s of pauses is already
+~3 h 16 m of sleeping before per-request latency. With a warm cache only the new
+binomials are fetched.
 
 Re-applies the 2025 Addenda overlay (addenda_overlay.apply_synonyms) after
 rebuilding the map — without it a scrape silently reverts the addenda's
@@ -23,9 +30,14 @@ Usage:
         (no flag)        rebuild the whole map from cache (verification path;
                          must converge on the same map as --merge)
         --rebuild-only   rebuild without scraping
+        --reparse        re-run the parser over eschmeyer_text/ with no network,
+                         then rebuild. Use after any parser change.
+        --dry-run        scrape and rebuild, but do NOT write fish_names.json;
+                         dump the proposed map to synonyms_dryrun.json instead.
 """
 
 import datetime
+import gzip
 import json
 import re
 import sys
@@ -45,6 +57,10 @@ except ImportError:
 DATA_PATH  = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 CACHE_PATH = Path(__file__).parent / "eschmeyer_cache.json"
 EXTRALIMITAL_PATH = Path(__file__).parent / "extralimital_valids.json"
+# Normalized page text, one gzipped JSON file per species. eschmeyer_cache.json
+# holds only PARSED results, so a parser bug used to cost a full ~5 h re-fetch to
+# correct. With this, a parser change replays offline via --reparse.
+TEXT_CACHE_DIR = Path(__file__).parent / "eschmeyer_text"
 
 BASE_URL = (
     "https://researcharchive.calacademy.org"
@@ -64,10 +80,43 @@ HEADERS = {
 
 # Eschmeyer entry header: "epithet, Genus" with lookahead for "Author [Year]"
 # Used in both parse_results() and _find_original_genus() to locate entry boundaries.
-ENTRY_HEADER_RE = re.compile(
-    r'([a-z][a-z-]+),\s+([A-Z][a-z]+)'
-    r'(?=(?:\s+\([A-Z][a-z]+\))?\s+[A-Z][a-z]+\s+\[)'
-)
+#
+# The leading (?<![A-Za-z-]) is load-bearing. Without it the scan can start in the
+# MIDDLE of a capitalized word and read its tail as an epithet, because type-locality
+# prose satisfies the whole pattern including the "Word [" lookahead:
+#   "Unalaska Island, Bering Sea [North Pacific]"  ->  ('sland', 'Bering')
+#   "...Cove, Isabela Island [Albemarle]"          ->  ('ove',   'Isabela')
+# That shipped 36 junk synonyms before it was caught. A bare \b is NOT sufficient —
+# it still admits hyphenated place names ("Ponta-delgada, Santa Maria [...]").
+#
+# Group 3 is the optional middle token of a TRINOMIAL header:
+#   "hawaiensis, Argyropelecus lynchus Schultz [L. P.] 1961"
+# Subspecies entries were previously invisible, so their status lines were attributed
+# to whatever entry preceded them. Callers use groups 1 and 2 only, which keeps the
+# emitted name "Genus epithet" (Argyropelecus hawaiensis); group 3 exists so the
+# header is SEEN, which is what stops the mis-attribution.
+def entry_header_re(epithet: str | None = None) -> re.Pattern:
+    """
+    Compile an entry-header pattern. Pass `epithet` to pin it to one epithet
+    (rescrape_transfers.py does this); omit it to match any header.
+
+    Shared so the two scrapers cannot drift apart — they previously carried
+    separate copies and only one of them got fixed.
+    """
+    first = re.escape(epithet) if epithet else r'[a-z][a-z-]+'
+    # Author token in the lookahead is [A-Z][^\s\[]* , not [A-Z][a-z]+ : catalog
+    # authors are routinely non-ASCII (Lütken, Günther, Lacepède), and the pages
+    # additionally arrive with encoding damage ("G?nther"). Requiring ASCII there
+    # left 324 pages with NO matchable header at all, so their synonyms were only
+    # ever harvested by accident, via a spurious header. Tolerating the author
+    # rescues 250 of them. The anchor above is what rejects prose, not this token.
+    return re.compile(
+        r'(?<![A-Za-z-])(' + first + r'),\s+([A-Z][a-z]+)(?:\s+([a-z][a-z-]+))?'
+        r'(?=(?:\s+\([A-Z][a-z]+\))?\s+[A-Z][^\s\[]*\s+\[)'
+    )
+
+
+ENTRY_HEADER_RE = entry_header_re()
 
 
 # ── Fetch ─────────────────────────────────────────────────────────────────────
@@ -95,30 +144,83 @@ def fetch_species(genus: str, species: str, session: requests.Session) -> str | 
 
 # ── Parse ─────────────────────────────────────────────────────────────────────
 
-def parse_results(html: str, target_genus: str, target_species: str) -> dict:
+def _text_path(binomial: str) -> Path:
+    return TEXT_CACHE_DIR / (binomial.replace(" ", "_") + ".json.gz")
+
+
+def save_text(binomial: str, genus: str, epithet: str, text: str,
+              retry_genus: str | None = None) -> None:
     """
-    Parse a catalog result page for one genus+species query.
+    Persist the normalized page text that produced this species' cache entry.
+
+    `retry_genus` records the genus-transfer fallback, so --reparse can reproduce
+    the extra synonym the scrape loop appends outside parse_text().
+    """
+    TEXT_CACHE_DIR.mkdir(exist_ok=True)
+    payload = {"binomial": binomial, "genus": genus, "epithet": epithet,
+               "retry_genus": retry_genus, "text": text}
+    with gzip.open(_text_path(binomial), "wt", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False)
+
+
+def load_text(binomial: str) -> dict | None:
+    """Return the stored payload for one species, or None if not cached."""
+    p = _text_path(binomial)
+    if not p.exists():
+        return None
+    with gzip.open(p, "rt", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def normalize_html(html: str) -> str:
+    """
+    Flatten a catalog page to the single-line string every parser rule works on.
+
+    This is the only thing parse_text() needs, so it is what the text cache
+    stores — not the HTML.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(separator=" ")
+    text = re.sub(r'\s+', ' ', text)       # collapse all whitespace to single spaces
+    text = re.sub(r'\s+,', ',', text)      # fix "word , word" from tag-boundary spaces
+    return text
+
+
+def parse_results(html: str, target_genus: str, target_species: str) -> dict:
+    """Parse a catalog result page for one genus+species query."""
+    return parse_text(normalize_html(html), target_genus, target_species)
+
+
+def parse_text(text: str, target_genus: str, target_species: str) -> dict:
+    """
+    Parse normalized page text for one genus+species query.
 
     Returns a dict:
         valid        – True if Eschmeyer considers this the accepted name
         current_name – accepted binomial (may differ from AFS name)
         synonyms     – list of older binomials that map to this species
     """
-    soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text(separator=" ")
-    text = re.sub(r'\s+', ' ', text)       # collapse all whitespace to single spaces
-    text = re.sub(r'\s+,', ',', text)      # fix "word , word" from tag-boundary spaces
+    # `from_trinomial` lists the subset of `synonyms` that came from a SUBSPECIES
+    # header, where "Genus species subspecies" is flattened to "Genus subspecies".
+    # That flattening can manufacture a binomial belonging to a different fish:
+    # "auratus, Cyprinus tinca" (a variety of tench) flattens to "Cyprinus auratus",
+    # which is Linnaeus's goldfish. The map build uses this to let a real binomial
+    # always outrank a flattened subspecies.
+    result = {"valid": False, "current_name": "", "synonyms": [], "from_trinomial": []}
 
-    result = {"valid": False, "current_name": "", "synonyms": []}
+    # Epithet fragment. The trailing (?:-[a-z]+)* is required for hyphenated
+    # epithets: a bare [a-z]+ truncates "x-punctatus" to "x", which produced
+    # phantom names like "Hybopsis x" and "Astroscopus y".
+    EPITHET = r'[a-z]+(?:-[a-z]+)*'
 
     # "Current status: Valid as Genus species"
-    m = re.search(r'Current status[:\s]+Valid as\s+([A-Z][a-z]+\s+[a-z]+)', text)
+    m = re.search(r'Current status[:\s]+Valid as\s+([A-Z][a-z]+\s+' + EPITHET + r')', text)
     if m:
         result["valid"] = True
         result["current_name"] = m.group(1)
 
     # "Current status: Synonym of Genus species"
-    m = re.search(r'Current status[:\s]+Synonym of\s+([A-Z][a-z]+\s+[a-z]+)', text)
+    m = re.search(r'Current status[:\s]+Synonym of\s+([A-Z][a-z]+\s+' + EPITHET + r')', text)
     if m:
         result["valid"] = False
         result["current_name"] = m.group(1)
@@ -138,7 +240,7 @@ def parse_results(html: str, target_genus: str, target_species: str) -> dict:
     # Eschmeyer entry header format: "epithet, OriginalGenus Author Year"
     # (lowercase epithet first, then title-case genus — reversed from normal)
 
-    SYNONYM_OF_RE = re.compile(r'Synonym of ([A-Z][a-z]+ [a-z]+)')
+    SYNONYM_OF_RE = re.compile(r'Synonym of ([A-Z][a-z]+ ' + EPITHET + r')')
 
     def last_header_before(pos):
         """Return (epithet, genus) of the entry header nearest before `pos`."""
@@ -155,6 +257,8 @@ def parse_results(html: str, target_genus: str, target_species: str) -> dict:
         old_binomial = f"{hdr.group(2)} {hdr.group(1)}"
         if old_binomial != target_binomial and old_binomial not in result["synonyms"]:
             result["synonyms"].append(old_binomial)
+            if hdr.group(3):
+                result["from_trinomial"].append(old_binomial)
 
         # Also capture historical names cited within this same entry's text span.
         # e.g. an entry may say "•Synonym of Phoxinus erythrogaster ... •Synonym of
@@ -177,6 +281,8 @@ def parse_results(html: str, target_genus: str, target_species: str) -> dict:
         if old_genus != target_genus and old_binomial != target_binomial \
                 and old_binomial not in result["synonyms"]:
             result["synonyms"].append(old_binomial)
+            if hdr.group(3):
+                result["from_trinomial"].append(old_binomial)
 
         # Also capture other genus placements cited within this entry's text span.
         # e.g. querying Rhizoprionodon terraenovae → entry "terraenovae, Squalus"
@@ -259,6 +365,20 @@ def main():
         data = json.load(f)
 
     species_list = list(data["valid_names"].keys())
+
+    # Eschmeyer is keyed by ITS OWN spelling. For a species the addenda renamed,
+    # that is the PRE-addenda name: querying "Galeocerdo cuvieri" returns an empty
+    # page because the catalog says "Galeocerdo cuvier". A warm cache used to hide
+    # this — it still held entries under the old keys, which the map build below
+    # retargets via `demotions`. A cold scrape has no such entries, so those
+    # species silently lose every synonym (6 of the 22 renames, 16 edges).
+    # Fetch the pre-addenda names too and let the existing retargeting fold them in.
+    _renames = addenda_overlay.load_overlay()
+    pre_addenda_names = [r["from"] for r in _renames["renames"]
+                         if r["from"] not in data["valid_names"]] if _renames else []
+    post_addenda = ({r["from"]: r["to"] for r in _renames["renames"]}
+                    if _renames else {})
+    scrape_list = species_list + pre_addenda_names
     print(f"Loaded {len(species_list)} species from fish_names.json")
 
     # Valid extralimital species that must never be recorded as synonyms
@@ -276,6 +396,11 @@ def main():
     # cannot drop a synonym it never touched. The full rebuild stays available
     # as the verification path — the two must converge.
     merge = "--merge" in sys.argv
+    # --reparse: rebuild the parsed cache from stored page text, no network.
+    reparse = "--reparse" in sys.argv
+    # --dry-run: do everything except overwrite fish_names.json; dump the proposed
+    # synonym map so it can be diffed first.
+    dry_run = "--dry-run" in sys.argv
 
     # Load or initialise cache
     if CACHE_PATH.exists():
@@ -285,9 +410,34 @@ def main():
     else:
         cache = {}
 
-    remaining = [s for s in species_list if s not in cache]
-    if rebuild_only:
-        print("--rebuild-only: skipping scrape; rebuilding synonym map from cache")
+    # --reparse re-runs the parser over the stored page text with no network, then
+    # rebuilds. This is the path for a parser fix: it replays in seconds instead of
+    # a ~5 h re-fetch. Requires a text cache built by an earlier scrape.
+    if reparse:
+        if not TEXT_CACHE_DIR.exists():
+            print(f"ERROR: --reparse needs {TEXT_CACHE_DIR.name}/, which does not exist.")
+            print("It is populated by a normal scrape. Nothing to replay.")
+            sys.exit(1)
+        n_reparsed = n_missing = 0
+        for binomial in scrape_list:
+            payload = load_text(binomial)
+            if payload is None:
+                n_missing += 1
+                continue
+            entry = parse_text(payload["text"], payload["genus"], payload["epithet"])
+            if payload.get("retry_genus"):
+                old_binomial = f"{payload['retry_genus']} {payload['epithet']}"
+                if old_binomial not in entry["synonyms"] and old_binomial != binomial:
+                    entry["synonyms"].append(old_binomial)
+            cache[binomial] = entry
+            n_reparsed += 1
+        print(f"--reparse: re-parsed {n_reparsed} species from stored text"
+              + (f"; {n_missing} had no stored text (left as-is)" if n_missing else ""))
+        _save_cache(cache)
+
+    remaining = [s for s in scrape_list if s not in cache]
+    if rebuild_only or reparse:
+        print("skipping scrape; rebuilding synonym map from cache")
         remaining = []
     print(f"{len(remaining)} species left to query  (~{len(remaining)//60} min at 1 req/s)\n")
 
@@ -299,14 +449,22 @@ def main():
 
         html = fetch_species(genus, epithet, session)
         if html is not None:
-            entry = parse_results(html, genus, epithet)
+            text = normalize_html(html)
+            entry = parse_text(text, genus, epithet)
+            used_retry_genus = None
 
             # If no results and species was a genus transfer (parenthesized author),
             # try querying by family + epithet to find the original genus, then retry.
+            # For a pre-addenda name there is no valid_names record of its own, so
+            # fall back to its post-addenda counterpart's author/family — otherwise
+            # the fallback never fires and the species keeps zero synonyms.
+            meta = data["valid_names"].get(binomial)
+            if meta is None:
+                meta = data["valid_names"].get(post_addenda.get(binomial, ""), {})
             if (not entry["synonyms"] and not entry["current_name"]
-                    and data["valid_names"][binomial].get("author", "").startswith("(")):
+                    and meta.get("author", "").startswith("(")):
                 orig_genus = _find_original_genus(
-                    data["valid_names"][binomial].get("family", ""),
+                    meta.get("family", ""),
                     epithet, genus, session
                 )
                 if orig_genus:
@@ -314,11 +472,15 @@ def main():
                     time.sleep(DELAY)
                     retry_html = fetch_species(orig_genus, epithet, session)
                     if retry_html:
-                        entry = parse_results(retry_html, genus, epithet)
+                        text = normalize_html(retry_html)
+                        entry = parse_text(text, genus, epithet)
+                        used_retry_genus = orig_genus
                         old_binomial = f"{orig_genus} {epithet}"
                         if old_binomial not in entry["synonyms"] and old_binomial != binomial:
                             entry["synonyms"].append(old_binomial)
 
+            # Store the text that produced this entry, so --reparse is faithful.
+            save_text(binomial, genus, epithet, text, used_retry_genus)
             cache[binomial] = entry
             status = "valid" if entry["valid"] else f"→ {entry['current_name'] or '?'}"
             print(f"{status}  ({len(entry['synonyms'])} synonyms)")
@@ -351,6 +513,14 @@ def main():
     demotions = ({r["from"]: r["to"] for r in _overlay["renames"]}
                  if _overlay is not None else {})
 
+    # Two passes. A name flattened from a subspecies header ("Cyprinus tinca
+    # auratus" -> "Cyprinus auratus") can collide with a real binomial belonging to
+    # a different fish (Linnaeus's goldfish). Since first writer wins below, every
+    # binomial-derived claim is laid down before any trinomial-derived one, so a
+    # real name always outranks a flattened subspecies. 10 names collide this way.
+    # Collect (target, name, is_flattened) once, then lay the claims down in two
+    # passes so ordering is explicit rather than a side effect of cache order.
+    claims: list[tuple[str, str, bool]] = []
     for binomial, entry in cache.items():
         binomial = demotions.get(binomial, binomial)
         if binomial not in data["valid_names"]:
@@ -358,7 +528,26 @@ def main():
         if entry.get("valid") is None:
             continue  # failed request; skip
 
+        flattened = set(entry.get("from_trinomial", []))
         for old_name in entry.get("synonyms", []):
+            # Drop epithets under 3 characters. These are source-side data errors
+            # in the catalog ("um, Balistes Montrouzier [X.] 1857" — the epithet is
+            # literally "um"), and engine.js's classifyName rejects anything shorter
+            # than 3 anyway, so nothing usable is lost.
+            parts = old_name.split()
+            if len(parts) != 2 or len(parts[1]) < 3:
+                continue
+            claims.append((binomial, old_name, old_name in flattened))
+
+        # Track names AFS considers valid that Eschmeyer considers outdated
+        current = entry.get("current_name", "")
+        if not entry.get("valid") and current and current != binomial:
+            mismatches.append((binomial, current))
+
+    for flattened_pass in (False, True):
+        for binomial, old_name, is_flattened in claims:
+            if is_flattened != flattened_pass:
+                continue
             # Only add as synonym if it's not already a valid AFS name, and not a
             # valid extralimital species (Reviewer 1, round 2). Without the second
             # guard a valid non-North-American species (e.g. Misgurnus fossilis) is
@@ -369,12 +558,12 @@ def main():
                 # pre-addenda target.
                 if merge and old_name in synonyms:
                     continue
+                # A flattened subspecies never displaces a real binomial. Within a
+                # pass the original last-writer-wins order is preserved, so this
+                # change affects only binomial-vs-trinomial ties.
+                if flattened_pass and old_name in synonyms:
+                    continue
                 synonyms[old_name] = binomial
-
-        # Track names AFS considers valid that Eschmeyer considers outdated
-        current = entry.get("current_name", "")
-        if not entry.get("valid") and current and current != binomial:
-            mismatches.append((binomial, current))
 
     # Write enriched fish_names.json
     data["synonyms"] = synonyms
@@ -399,6 +588,18 @@ def main():
             for e in errs:
                 print(f"  - {e}", file=sys.stderr)
             sys.exit(1)
+
+    if dry_run:
+        # Caches are still written (the scrape's work is never thrown away); only
+        # fish_names.json is left alone, so the new map can be diffed against the
+        # shipped one before anything is overwritten.
+        out = Path(__file__).parent / "synonyms_dryrun.json"
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump(data["synonyms"], f, ensure_ascii=False, indent=2, sort_keys=True)
+        print(f"\n--dry-run: fish_names.json NOT written.")
+        print(f"  Proposed map ({len(synonyms)} synonyms) written to {out.name} for diffing.")
+        print(f"  Name mismatches : {len(mismatches)}  (AFS valid != Eschmeyer valid)")
+        return
 
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

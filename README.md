@@ -52,7 +52,7 @@ python -m http.server 8080
 The name database is assembled in two stages:
 
 1. **Parse** the AFS table PDF (~5,086 species with full metadata)
-2. **Apply** the Committee's published addenda (`apply_addenda.py`) — +116 species,
+2. **Apply** the Committee's published addenda (`apply_addenda.py`) — +115 species,
    22 renames, 1 withdrawal, yielding ~5,200 species (data version FF-8.1)
 3. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains)
 

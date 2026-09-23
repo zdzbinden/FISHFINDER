@@ -204,16 +204,18 @@ CURATED_SYNONYMS = [
         "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; no record under "
                     "Notropis lutrensis)",
     },
-    {
-        "old": "Isabela ove",
-        "new": "Quassiremus evionthas",
-        "reason": "Isabela is a genus of Ophichthidae (snake eels) and Isabela ove "
-                  "appears in Eschmeyer's Ophichthidae listing, so the Ophichthid "
-                  "target is the right one. The shipped build mapped it to Scarus "
-                  "ghobban, a parrotfish (Labridae) — a pre-existing scraping error "
-                  "that 'keep what shipped' would have locked in.",
-        "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes, Ophichthidae listing)",
-    },
+    # REMOVED 2026-09-22: "Isabela ove" -> "Quassiremus evionthas".
+    #
+    # It was never a name. It is a parser artifact: ENTRY_HEADER_RE had no left
+    # word boundary, so "...Sulphur Cove, Isabela Island [Albemarle]" in a type
+    # locality was read as the entry header ('ove', 'Isabela'). The 2026-09-21
+    # note rationalized it ("Isabela is a genus of Ophichthidae, so the Ophichthid
+    # target is the right one") — Isabela IS a real snake-eel genus, which is
+    # exactly why the artifact looked plausible enough to pin.
+    #
+    # Curating it made the overlay re-assert it after every rebuild, so the regex
+    # fix alone could not have removed it. See test_scraper_parsing.py.
+    #
     # Synonyms for addenda-added species that the scrape could not find on its own,
     # recovered by querying Eschmeyer by family+epithet (2026-09-21).
     {
@@ -234,6 +236,31 @@ CURATED_SYNONYMS = [
                   "1856 entry, which is what the 8th-edition build shipped; the "
                   "Cynoponticus reading is equally legitimate for its own entry.",
         "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; two entries confirmed)",
+    },
+    # Two more homonyms, surfaced by the 2026-09-22 parser fix. Before it, the
+    # rival pages failed to parse at all (their entry authors are non-ASCII), so
+    # these names had only one claimant and needed no curation. Now both pages
+    # parse and the loser of a dict-order race would silently win.
+    {
+        "old": "Etrumeus teres",
+        "new": "Etrumeus sadina",
+        "reason": "Two nominal species. Eschmeyer's Etrumeus sadina page states "
+                  "\"Mitchill's species sadina predates teres DeKay\" and carries "
+                  "'Synonym of Etrumeus teres (DeKay 1842)'. The rival claim from "
+                  "Etrumeus acuminatus is an incidental chain reference inside the "
+                  "Perkinsia othonops entry, and acuminatus is a Pacific species "
+                  "while teres/sadina is the Atlantic round herring.",
+        "verified": "2026-09-22 (Eschmeyer's Catalog of Fishes; both pages read)",
+    },
+    {
+        "old": "Scomber pelamis",
+        "new": "Katsuwonus pelamis",
+        "reason": "Senior homonym wins. 'pelamis, Scomber Linnaeus [C.] 1758' is the "
+                  "basionym of the skipjack tuna and its entry reads 'Valid as "
+                  "Katsuwonus pelamis (Linnaeus 1758)'. The rival, 'pelamis, Scomber "
+                  "Brünnich [M. T.] 1768' (Synonym of Sarda sarda), is a junior "
+                  "homonym; a manuscript writing Scomber pelamis means the Linnaean one.",
+        "verified": "2026-09-22 (Eschmeyer's Catalog of Fishes; both entries read)",
     },
 ]
 
@@ -500,7 +527,7 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
         "source": {
             "citation": "Schmitter-Soto, J.J., K.E. Bemis, T.E. Dowling, L.T. Findley, "
                         "M.G. Girard, D.A. Hendrickson, K.L. Ilves, K.P. Maslenikov, "
-                        "G. Ruiz-Campos, C. Scharpf, and H.J. Walker. 2026. "
+                        "G. Ruiz-Campos, C. Scharpf, and H.J. Walker, Jr. 2026. "
                         "Addenda, corrigenda, et explanenda to Common and Scientific "
                         "Names of Fishes, Eighth Edition. Fisheries 51(5):225-227.",
             "doi": "10.1093/fshmag/vuaf083",

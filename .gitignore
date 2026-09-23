@@ -1,8 +1,10 @@
 # Source PDF — copyrighted, not for distribution
 names_of_fishes/
 
-# Eschmeyer scraper cache (large, local only)
+# Eschmeyer scraper caches and dry-run output (large, local only)
 eschmeyer_cache.json
+eschmeyer_text/
+synonyms_dryrun.json
 
 # Dev-only scripts
 debug_pdf.py

@@ -102,7 +102,11 @@ describe('2025 Addenda', () => {
       ['Raja cortezensis',      'Caliraja cortezensis'],
       ['Raia stellulata',       'Caliraja stellulata'],
       ['Galeus maculatus',      'Galeocerdo cuvieri'],        // 1 of 7 inbound
-      ['Liparis candida',       'Careproctus candidus'],
+      // 'Liparis candida' was here until the 2026-09-23 rebuild. Eschmeyer has no
+      // record under that name any more — a direct query returns an empty page, and
+      // Careproctus candidus's own entry gives the original combination as
+      // Careproctus candidus (same genus, so excluded by design). It was stale
+      // cache data, and the rebuild follows Eschmeyer's current state.
       ['Moxostoma atripinnis',  'Vexillichthys atripinnis'],
       ['Holocentrum coruscum',  'Neoniphon coruscus'],
       ['Notropis garmani',      'Cyprinella rubripinna'],
@@ -225,7 +229,6 @@ describe('2025 Addenda', () => {
     for (const [old, expected] of [
       ['Notropis deliciosus', 'Miniellus stramineus'],   // pre-existing cache drift
       ['Notropis lutrensis',  'Cyprinella lutrensis'],   // Red Shiner; both candidates were wrong
-      ['Isabela ove',         'Quassiremus evionthas'],  // Ophichthidae, not a parrotfish
       ['Conger brasiliensis', 'Conger triporiceps'],     // genuine homonym; Kaup 1856 entry
       // Recovered by hand after the scrape missed them (queried by family+epithet).
       ['Caecula equatorialis', 'Apterichtus equatorialis'],  // original combination
@@ -234,6 +237,14 @@ describe('2025 Addenda', () => {
         assert.equal(db.synonyms[old], expected);
       });
     }
+
+    // "Isabela ove" was curated here until 2026-09-22. It was a parser artifact,
+    // not a name: "...Cove, Isabela Island [Albemarle]" in a type locality read as
+    // an entry header. Pinning it meant the overlay re-asserted it after every
+    // rebuild. Assert it stays gone.
+    it('Isabela ove is not a synonym (was a parser artifact)', () => {
+      assert.equal(db.synonyms['Isabela ove'], undefined);
+    });
   });
 
   describe('transcription errors in the supplementary table', () => {

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "data_version": "FF-8.1",
   "source": {
-    "citation": "Schmitter-Soto, J.J., K.E. Bemis, T.E. Dowling, L.T. Findley, M.G. Girard, D.A. Hendrickson, K.L. Ilves, K.P. Maslenikov, G. Ruiz-Campos, C. Scharpf, and H.J. Walker. 2026. Addenda, corrigenda, et explanenda to Common and Scientific Names of Fishes, Eighth Edition. Fisheries 51(5):225-227.",
+    "citation": "Schmitter-Soto, J.J., K.E. Bemis, T.E. Dowling, L.T. Findley, M.G. Girard, D.A. Hendrickson, K.L. Ilves, K.P. Maslenikov, G. Ruiz-Campos, C. Scharpf, and H.J. Walker, Jr. 2026. Addenda, corrigenda, et explanenda to Common and Scientific Names of Fishes, Eighth Edition. Fisheries 51(5):225-227.",
     "doi": "10.1093/fshmag/vuaf083",
     "supplement": "vuaf083_supplementary_data.docx",
     "note": "Year confirmed as 2026 from the AFS/OUP record (Volume 51, Issue 5, May 2026). The PDF itself is inconsistent - a 2025 copyright line, a 2025 running head, and an advance-access date of 2025-09-16."
   },
-  "generated": "2026-09-21",
+  "generated": "2026-09-23",
   "parser": "parse_addenda.py 1.0",
   "expected": {
     "data_rows": 244,
@@ -3661,12 +3661,6 @@
       "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; no record under Notropis lutrensis)"
     },
     {
-      "old": "Isabela ove",
-      "new": "Quassiremus evionthas",
-      "reason": "Isabela is a genus of Ophichthidae (snake eels) and Isabela ove appears in Eschmeyer's Ophichthidae listing, so the Ophichthid target is the right one. The shipped build mapped it to Scarus ghobban, a parrotfish (Labridae) — a pre-existing scraping error that 'keep what shipped' would have locked in.",
-      "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes, Ophichthidae listing)"
-    },
-    {
       "old": "Caecula equatorialis",
       "new": "Apterichtus equatorialis",
       "reason": "Original combination. Eschmeyer: 'Caecula equatorialis ... Valid as Apterichtus equatorialis (Myers & Wade 1941)'. The scrape missed it because the species query is by the current genus, which finds nothing.",
@@ -3677,6 +3671,18 @@
       "new": "Conger triporiceps",
       "reason": "A genuine HOMONYM, not a scraping artifact: Eschmeyer lists two nominal species under this name — 'brasiliensis, Conger Kaup 1856' (Synonym of Conger triporiceps) and another (Synonym of Cynoponticus savanna). A flat old->new map cannot express both. Pinned to the Kaup 1856 entry, which is what the 8th-edition build shipped; the Cynoponticus reading is equally legitimate for its own entry.",
       "verified": "2026-09-21 (Eschmeyer's Catalog of Fishes; two entries confirmed)"
+    },
+    {
+      "old": "Etrumeus teres",
+      "new": "Etrumeus sadina",
+      "reason": "Two nominal species. Eschmeyer's Etrumeus sadina page states \"Mitchill's species sadina predates teres DeKay\" and carries 'Synonym of Etrumeus teres (DeKay 1842)'. The rival claim from Etrumeus acuminatus is an incidental chain reference inside the Perkinsia othonops entry, and acuminatus is a Pacific species while teres/sadina is the Atlantic round herring.",
+      "verified": "2026-09-22 (Eschmeyer's Catalog of Fishes; both pages read)"
+    },
+    {
+      "old": "Scomber pelamis",
+      "new": "Katsuwonus pelamis",
+      "reason": "Senior homonym wins. 'pelamis, Scomber Linnaeus [C.] 1758' is the basionym of the skipjack tuna and its entry reads 'Valid as Katsuwonus pelamis (Linnaeus 1758)'. The rival, 'pelamis, Scomber Brünnich [M. T.] 1768' (Synonym of Sarda sarda), is a junior homonym; a manuscript writing Scomber pelamis means the Linnaean one.",
+      "verified": "2026-09-22 (Eschmeyer's Catalog of Fishes; both entries read)"
     }
   ],
   "unresolved": []
