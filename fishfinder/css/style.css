@@ -634,11 +634,19 @@ td.name-cell { font-style: italic; }
   flex-wrap: wrap;
 }
 
-a.device-btn {
+/* A link styled as a device button. The panel-scoped selectors are load-bearing:
+   `.info-panel a` has the same specificity as `a.device-btn` and comes later in
+   this file, so inside the INFO and REPORT panels it won the tie, and the REPORT
+   panel's GITHUB ISSUES button rendered as underlined dark-green LCD text on the
+   dark button — 1.33:1, found by tools/a11y-audit.js on 2026-09-24. */
+a.device-btn,
+.info-panel a.device-btn {
+  color: #c0c8d0;
   text-decoration: none;
   text-align: center;
 }
-a.device-btn:hover { color: #c0c8d0; }
+a.device-btn:hover,
+.info-panel a.device-btn:hover { color: #c0c8d0; }
 
 .device-btn {
   background: linear-gradient(180deg, #50545a 0%, #42464c 50%, #36393e 100%);
@@ -1458,6 +1466,9 @@ select.report-input {
   font-weight: 700;
   line-height: 1;
   padding: 0 0.45rem;
+  /* The glyph alone made a 25x17 target, under the 24x24 minimum. */
+  min-width: 24px;
+  min-height: 24px;
   cursor: pointer;
   flex-shrink: 0;
 }
