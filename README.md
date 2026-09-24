@@ -69,6 +69,8 @@ FISHFINDER/
 ├── parse_pdf.py              # Step 1: AFS table PDF → fish_names.json
 ├── scrape_eschmeyer.py       # Step 2: synonym enrichment from Eschmeyer's
 ├── make_basemap.py           # Regenerates the usage-map basemap (Natural Earth)
+├── tools/a11y-audit.js       # WCAG contrast + target-size audit (headless Chrome)
+├── CHANGELOG.md              # Changes since the version in the companion paper
 ├── database.rules.json       # Firebase Realtime DB security rules
 ├── .github/workflows/        # GitHub Actions deploy workflow
 ├── fishfinder/               # Static web app (GitHub Pages)

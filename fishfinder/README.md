@@ -176,7 +176,21 @@ against the real dataset (199 tests across 7 files):
 
 ## Accessibility
 
-FISHFINDER targets WCAG AA compliance (Lighthouse Accessibility score: 100):
+FISHFINDER targets WCAG 2.2 AA. Contrast and target size are measured on the
+rendered page, not estimated from the stylesheet:
+
+```powershell
+node tools/a11y-audit.js          # from the repo root; or: cd fishfinder && npm run a11y
+```
+
+The audit serves the site itself, drives headless Chrome over the DevTools
+protocol, scans a sample manuscript, opens every panel and collapsed group, and
+reads each text element's real background from screenshot pixels — the housing,
+footer and buttons are gradients, so the CSS colour is not what the text sits
+on. It covers both themes at 1280 px and 390 px and exits non-zero on any
+failure. Needs Node 22+ and Chrome; no packages. Last run: 0 failures across all
+16 configurations.
+
 
 - All interactive elements have `:focus-visible` indicators
 - `aria-label` on highlight spans, `aria-live` on count badges
@@ -184,7 +198,8 @@ FISHFINDER targets WCAG AA compliance (Lighthouse Accessibility score: 100):
 - Modal focus trap with return-to-trigger on close
 - Skip-to-content link for keyboard navigation
 - Semantic headings (`<h1>`/`<h2>`) and `<main>` landmark
-- All 23 text/background color pairs pass 4.5:1 contrast ratio
+- Every text element passes 4.5:1 (3:1 for large text), and every
+  interactive target is at least 24×24 px, verified by the audit above
 - **HI-CON button** toggles a high-contrast display mode (white LCD,
   dark text, ≥7:1 classification colors) for users who prefer it over
   the default sage-green palette. State persists across sessions.

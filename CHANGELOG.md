@@ -17,6 +17,29 @@ update publication should cite.
 
 ## Unreleased
 
+### Accessibility
+
+- **The accessibility audit is now a committed tool**, `tools/a11y-audit.js`
+  (`npm run a11y` from `fishfinder/`). It measures WCAG 2.2 AA contrast and
+  target size on the rendered page across both themes, two widths and four
+  passes, and exits non-zero on any failure. No dependencies; not deployed.
+- Its first run opened the INFO and REPORT panels, which the previous sweep had
+  never measured, and found two live defects:
+  - The REPORT panel's **GITHUB ISSUES** button rendered as underlined
+    dark-green text on the dark button, **1.33:1**. An earlier fix for it was
+    losing a cascade tie: `.info-panel a` has the same specificity as
+    `a.device-btn` and comes later in the stylesheet.
+  - The onboarding hint's dismiss button was **25×17 px**, under the 24×24
+    minimum.
+- Correction to the entry below: its phone-width measurements actually laid out
+  at 474 px, because headless Chrome clamps a narrow window. The tool now pins
+  the width exactly and warns if it cannot. Re-measured at a true 390 px:
+  0 failures.
+
+---
+
+## 2026-09-23 — abbreviated genus names, prose demote, accessibility sweep
+
 ### Engine
 
 - **Abbreviated genus names are now detected.** Journals abbreviate the genus

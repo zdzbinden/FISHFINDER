@@ -2,6 +2,7 @@
   "name": "fishfinder-tests",
   "private": true,
   "scripts": {
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "a11y": "node ../tools/a11y-audit.js"
   }
 }
