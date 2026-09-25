@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Content Security Policy. Keep it straight after the charset: a <meta>
+       CSP only governs what comes after it, and it used to sit below the
+       Google Fonts stylesheet, which it therefore never covered.
+       - Scripts are allowed by exact, versioned URL, and each is also pinned
+         by an integrity hash in the CDN list in js/app.js.
+         test/security.test.js keeps the two lists in step, and
+         tools/csp-smoke.js re-checks the live files in a browser.
+       - https://*.firebaseio.com: the Realtime Database hands each connection
+         to a shard host, and falls back to long-polling (JSONP <script> tags
+         plus a frame on that host) on networks that block WebSockets, so no
+         single host can be named. frame-src looks unused but is not:
+         tools/csp-smoke.js's longpoll pass fails without it.
+       - 'unsafe-inline' in style-src: Leaflet sets inline styles.
+       - frame-ancestors (anti-framing) and HSTS need real HTTP headers, which
+         GitHub Pages cannot send; a <meta> CSP ignores frame-ancestors. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.12.3/mammoth.browser.min.js https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js https://unpkg.com/leaflet@1.9.4/dist/leaflet.js https://*.firebaseio.com; style-src 'self' https://unpkg.com/leaflet@1.9.4/dist/leaflet.css https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' https://ipapi.co https://*.firebaseio.com wss://*.firebaseio.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; frame-src https://*.firebaseio.com; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FISHFINDER — Scientific Name Validator</title>
   <meta name="description" content="Validate scientific fish names in manuscript text against Names of Fishes, 8th edition (Page et al., 2023) and its published addenda. Checks spelling, detects synonyms, and flags outdated names.">
@@ -17,8 +33,6 @@
   <meta property="og:image" content="https://fishnames.net/data/og-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="667">
-  <!-- CSP: 'unsafe-inline' in style-src required by Leaflet map + dynamic element sizing -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.12.3/mammoth.browser.min.js https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js https://unpkg.com/leaflet@1.9.4/dist/leaflet.js https://*.firebaseio.com; style-src 'self' https://unpkg.com/leaflet@1.9.4/dist/leaflet.css https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' https://ipapi.co https://*.firebaseio.com wss://*.firebaseio.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; frame-src https://*.firebaseio.com;">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
