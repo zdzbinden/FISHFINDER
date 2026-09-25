@@ -17,6 +17,14 @@ update publication should cite.
 
 ## Unreleased
 
+### Interface
+
+- The INFO panel's **Privacy** section now says which records are public (the
+  ones behind the usage map), that REPORT submissions, including the optional
+  email, are private to the maintainer, and which third parties a page view or
+  a file load contacts. The old "no personal information" line contradicted
+  the optional REPORT email and is gone.
+
 ### Accessibility
 
 - **The accessibility audit is now a committed tool**, `tools/a11y-audit.js`
@@ -35,6 +43,57 @@ update publication should cite.
   at 474 px, because headless Chrome clamps a narrow window. The tool now pins
   the width exactly and warns if it cannot. Re-measured at a true 390 px:
   0 failures.
+
+### Security
+
+A security audit of the site, its hosting and its database (2026-09-25).
+Fixed:
+
+- **Issue reports were publicly readable.** Anyone could download every report
+  sent with REPORT, including the optional email address. Reports are now
+  private to the maintainer.
+- **Database records could be overwritten or deleted by anyone**, the usage
+  counters included, because Firebase does not validate deletes. Records are
+  now create-only and the counters undeletable. Reads of the visit history are
+  capped at 500 records.
+- **Usage-map popups rendered database text as HTML.** Visit records can be
+  written by anyone, so a crafted city name could have put links, forms or
+  styles in front of every visitor. Popup text is now escaped.
+- **The pdf.js worker loaded without an integrity hash**, and on every PDF load
+  it came in through a pdf.js fallback that would have run a tampered CDN copy
+  in the page. It is now hashed like every other CDN file, and pdf.js can no
+  longer fetch it by itself.
+- **Libraries.**
+  - SheetJS **0.18.5 → 0.20.3**. CVE-2023-30533 and CVE-2024-22363: a crafted
+    spreadsheet could pollute object prototypes or stall the tab. It now comes
+    from SheetJS's own CDN, since the fix never reached npm or cdnjs.
+  - mammoth **1.6.0 → 1.12.3**, for CVE-2025-11849, which was not reachable
+    from the browser.
+  - pdf.js now runs with `isEvalSupported: false` (CVE-2024-4367, already
+    blocked by the CSP).
+- **CSP.** Moved ahead of the font stylesheet, which it previously missed.
+  Added `object-src 'none'`, `base-uri 'self'` and `form-action 'self'`, and
+  removed `'unsafe-inline'` from `style-src`.
+- **Script loading.** A failed CDN load is now retried instead of treated as
+  loaded, which also removes a race between the dashboard and REPORT.
+- **The map can no longer be pinned.** It shows the newest 500 visits by time.
+  It used to order by record key, which a writer could choose so that a record
+  stayed on the map indefinitely.
+- **Visit records store less.** New records keep coordinates rounded to ~1 km
+  and the hour, not the millisecond.
+- **Deploy workflow.** The actions are pinned to commit SHAs and kept current by
+  Dependabot. There are no workflow-level permissions, and checkout keeps no
+  token.
+
+Added:
+
+- `SECURITY.md`: how to report a vulnerability privately, and what is public by
+  design.
+- `test/security.test.js`: 27 tests, bringing the suite to 226. Run against the
+  pre-audit code, 19 of them fail.
+- `tools/csp-smoke.js` (`npm run csp`): a headless-Chrome check that fails on any
+  CSP violation or integrity failure. Its tamper passes swap CDN files for
+  hostile code and confirm none of it runs.
 
 ---
 

@@ -70,9 +70,11 @@ FISHFINDER/
 ├── scrape_eschmeyer.py       # Step 2: synonym enrichment from Eschmeyer's
 ├── make_basemap.py           # Regenerates the usage-map basemap (Natural Earth)
 ├── tools/a11y-audit.js       # WCAG contrast + target-size audit (headless Chrome)
+├── tools/csp-smoke.js        # CSP + integrity smoke check (headless Chrome)
 ├── CHANGELOG.md              # Changes since the version in the companion paper
+├── SECURITY.md               # How to report a vulnerability; what is public by design
 ├── database.rules.json       # Firebase Realtime DB security rules
-├── .github/workflows/        # GitHub Actions deploy workflow
+├── .github/                  # Deploy workflow (actions pinned by SHA) + Dependabot
 ├── fishfinder/               # Static web app (GitHub Pages)
 │   ├── index.html
 │   ├── css/style.css         # Retro Lowrance fish-finder aesthetic

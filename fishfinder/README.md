@@ -135,7 +135,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (199 tests across 7 files):
+against the real dataset (226 tests across 8 files):
 
 | File | Coverage |
 |------|----------|
@@ -146,31 +146,55 @@ against the real dataset (199 tests across 7 files):
 | `abbrev.test.js` | Abbreviated genus resolution (`P. olivaris`), ambiguity tie-breaks, and the false-positive guards (author initials, `e.g.`, `Ph.D.`, reference lists) |
 | `low-confidence.test.js` | Prose demotion across the unknown/misspelled/outdated tiers, the English-word epithets that must *not* demote, and the `ae-`/`e-` epithet variants |
 | `addenda.test.js` | The FF-8.1 addenda overlay |
+| `security.test.js` | The CSP, integrity hashes on every CDN file, HTML escaping, the Firebase rules, the deploy workflow's action pins, and the shape of every name in the database |
 
 ---
 
 ## Security
 
-- **Content Security Policy (CSP):** Enforced via `<meta>` tag with exact
-  versioned CDN URLs (no directory wildcards) and Firebase transport support.
-  `'unsafe-inline'` in `style-src` is required by Leaflet. The usage map
-  serves its own vector basemap (`data/world-110m.json`) rather than calling a
-  tile service, so no tile-host domain appears in the CSP at all.
-- **Subresource Integrity (SRI):** All CDN-loaded scripts and stylesheets
-  include `sha384` integrity hashes and `crossorigin="anonymous"` attributes.
-  The `loadScript()` and `loadStyle()` helpers in `app.js` apply SRI
-  automatically from the centralized `CDN` config object.
-- **Firebase security rules:** Writes restricted to `fishfinder/visits` (push
-  with schema validation for lat/lng bounds, string lengths, timestamp sanity)
-  and `fishfinder/stats` (increment-only counters). No extra fields allowed.
-  Rules deployed via `firebase deploy --only database` from
-  `database.rules.json` at the project root. API key restricted by domain
-  in Google Cloud Console.
-- **Privacy & consent:** Analytics (geolocation via ipapi.co, scan counts)
-  are gated on explicit user consent via a localStorage-based banner with
-  accept/decline. All `localStorage` calls are wrapped in try/catch for
-  private browsing mode. Client-side rate limiting prevents write spam.
-  No manuscript text leaves the user's device.
+A static site has no server of its own to attack. What remains is the page's
+code, its third-party libraries, and the Firebase database that stores usage
+statistics and REPORT submissions. Each is protected as follows:
+
+- **Content Security Policy.** A `<meta>` CSP, placed first in `<head>` because
+  it only governs what comes after it. Scripts load only from the page itself,
+  from exact versioned CDN URLs, and from `*.firebaseio.com`: Firebase moves
+  connections between shard hosts and falls back to long-polling with JSONP
+  scripts, so no single host can be named. There is no `'unsafe-inline'` or
+  `'unsafe-eval'` anywhere, and `object-src 'none'`, `base-uri 'self'` and
+  `form-action 'self'` are set. GitHub Pages cannot send HTTP headers, so
+  `frame-ancestors` (anti-framing) and HSTS are not available.
+- **Subresource Integrity.** Every CDN file, the pdf.js worker included, is
+  pinned by an `sha384` hash in the `CDN` object in `app.js` and refused if the
+  CDN serves anything else. pdf.js is never allowed to fetch its worker by
+  itself, because that path carried no hash. SheetJS comes from
+  `cdn.sheetjs.com`, since its fixed releases are not on npm or cdnjs.
+- **Untrusted text.** Everything rendered as HTML goes through `esc()`: names
+  and common names from the database, text from uploaded files, and the
+  location strings in visit records, which anyone can write.
+- **Firebase rules** (`database.rules.json`). Visit records and reports are
+  create-only and validated field by field. The two counters only go up and
+  cannot be deleted. Reports cannot be read by visitors at all, and the visit
+  history can be read only 500 records at a time. The rules are deployed with
+  `firebase deploy --only database`; GitHub Actions does not deploy them.
+- **Privacy & consent.** Analytics (geolocation via ipapi.co, scan counts) run
+  only after explicit consent. Visit records keep coordinates rounded to about
+  1 km and the hour of the visit. No manuscript text leaves the device.
+- **Deploy pipeline.** The workflow's actions are pinned to commit SHAs, kept
+  current by Dependabot, and run with no permissions beyond what Pages needs.
+
+Two checks keep this true: `test/security.test.js`, part of the suite above,
+and `tools/csp-smoke.js`. The smoke check loads the page in headless Chrome,
+exercises every feature that pulls in third-party code, and fails on any CSP
+violation or integrity failure. One pass swaps every CDN file for tampered
+code and confirms none of it runs. It never writes to the live database.
+
+```powershell
+node tools/csp-smoke.js                              # from the repo root; or: cd fishfinder && npm run csp
+node tools/csp-smoke.js --url https://fishnames.net/ # the deployed site
+```
+
+To report a vulnerability, see [SECURITY.md](../SECURITY.md).
 
 ---
 
