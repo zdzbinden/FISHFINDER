@@ -2,10 +2,10 @@
   "rules": {
     "fishfinder": {
       "visits": {
-        ".read": true,
+        ".read": "query.limitToLast <= 500",
         ".indexOn": ["ts"],
         "$pushId": {
-          ".write": true,
+          ".write": "!data.exists() && newData.exists()",
           ".validate": "newData.hasChildren(['lat','lng','country','city','ts'])",
           "lat":     { ".validate": "newData.isNumber() && newData.val() >= -90 && newData.val() <= 90" },
           "lng":     { ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180" },
@@ -16,9 +16,8 @@
         }
       },
       "issues": {
-        ".read": true,
         "$pushId": {
-          ".write": true,
+          ".write": "!data.exists() && newData.exists()",
           ".validate": "newData.hasChildren(['type','title','body','ts'])",
           "type":    { ".validate": "newData.isString() && newData.val().length <= 50" },
           "title":   { ".validate": "newData.isString() && newData.val().length <= 200" },
@@ -31,8 +30,8 @@
       },
       "stats": {
         ".read": true,
-        "sessions":      { ".write": true, ".validate": "newData.isNumber() && ((!data.exists() && newData.val() === 1) || (data.exists() && newData.val() === data.val() + 1))" },
-        "species_total": { ".write": true, ".validate": "newData.isNumber() && newData.val() >= data.val() && newData.val() <= data.val() + 500" },
+        "sessions":      { ".write": "newData.exists()", ".validate": "newData.isNumber() && ((!data.exists() && newData.val() === 1) || (data.exists() && newData.val() === data.val() + 1))" },
+        "species_total": { ".write": "newData.exists()", ".validate": "newData.isNumber() && ((!data.exists() && newData.val() >= 0 && newData.val() <= 500) || (data.exists() && newData.val() >= data.val() && newData.val() <= data.val() + 500))" },
         "$other":        { ".validate": false }
       }
     }

@@ -1,0 +1,11 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned actions in .github/workflows/ current. One grouped PR
+  # a month; merging it redeploys the site with the updated actions.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      actions:
+        patterns: ["*"]
