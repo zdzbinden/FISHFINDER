@@ -650,16 +650,29 @@
   }
 
   // ── Lazy script loader (CDN libraries loaded on first use) ────────────────
+  // One promise per URL. The old check ("a <script> with this src exists")
+  // resolved while a tag was still loading, so the dashboard and REPORT could
+  // both start Firebase before it existed, and it resolved for a tag that had
+  // FAILED, so a retry "succeeded" with nothing loaded. A failed tag is now
+  // removed and forgotten, so the next attempt is a real one.
+  const scriptLoads = new Map();
+
   function loadScript(src, integrity) {
-    return new Promise((resolve, reject) => {
-      if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
-      const s = document.createElement('script');
-      s.src = src;
-      if (integrity) { s.integrity = integrity; s.crossOrigin = 'anonymous'; }
-      s.onload = resolve;
-      s.onerror = () => reject(new Error('Failed to load ' + src.split('/').pop()));
-      document.head.appendChild(s);
-    });
+    if (!scriptLoads.has(src)) {
+      scriptLoads.set(src, new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = src;
+        if (integrity) { s.integrity = integrity; s.crossOrigin = 'anonymous'; }
+        s.onload = resolve;
+        s.onerror = () => {
+          s.remove();
+          scriptLoads.delete(src);
+          reject(new Error('Failed to load ' + src.split('/').pop()));
+        };
+        document.head.appendChild(s);
+      }));
+    }
+    return scriptLoads.get(src);
   }
 
   function loadStyle(href, integrity) {
@@ -671,14 +684,21 @@
     document.head.appendChild(l);
   }
 
+  // Every entry needs an integrity hash, and its exact URL must also appear in
+  // the CSP in index.html; test/security.test.js checks both, and
+  // tools/csp-smoke.js re-hashes the live files.
   const CDN = {
-    mammoth:     { src: 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
-                   integrity: 'sha384-nFoSjZIoH3CCp8W639jJyQkuPHinJ2NHe7on1xvlUA7SuGfJAfvMldrsoAVm6ECz' },
-    xlsx:        { src: 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-                   integrity: 'sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw' },
+    mammoth:     { src: 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.12.3/mammoth.browser.min.js',
+                   integrity: 'sha384-xqNXvcKbEqifokHcBnB0H32p+OQchhD/T/xJGWCMAW5fC0c0MBf9atO3weoPCT84' },
+    // SheetJS stopped publishing to npm, and so to cdnjs, at 0.18.5, which has
+    // two advisories (prototype pollution, ReDoS) when reading a crafted file.
+    // Fixed releases come only from the vendor's own CDN.
+    xlsx:        { src: 'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js',
+                   integrity: 'sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT' },
     pdfjs:       { src: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
                    integrity: 'sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e' },
-    pdfjsW:      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',  // no SRI (worker)
+    pdfjsW:      { src: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+                   integrity: 'sha384-SnzOobpRMLXZ52iJvZm/C0fYw0OQemTXzTjIsdsfMcrCtCEe9qgzxTd3RSklO5x2' },
     firebaseApp: { src: 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js',
                    integrity: 'sha384-ZaR6mWzmJtrRibZ1Vm7SoHFr8OXjyAuGAXalGDKqbxFT18oi/z+oZLIRFkpeNor1' },
     firebaseDb:  { src: 'https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js',
@@ -722,7 +742,15 @@
           break;
         case 'pdf':
           await loadScript(CDN.pdfjs.src, CDN.pdfjs.integrity);
-          pdfjsLib.GlobalWorkerOptions.workerSrc = CDN.pdfjsW;
+          // Load pdf.js's worker ourselves, hashed. pdf.js uses a worker it
+          // finds already loaded; failing that it tries a blob: Worker (the CSP
+          // blocks it) and then injects its OWN <script> for workerSrc, with no
+          // integrity check. So never reach getDocument() without ours.
+          await loadScript(CDN.pdfjsW.src, CDN.pdfjsW.integrity);
+          if (!(window.pdfjsWorker && window.pdfjsWorker.WorkerMessageHandler)) {
+            throw new Error('the PDF reader did not load');
+          }
+          pdfjsLib.GlobalWorkerOptions.workerSrc = CDN.pdfjsW.src;
           text = await extractPdf(file);
           break;
         default:
@@ -752,7 +780,10 @@
 
   async function extractPdf(file) {
     const buf  = await file.arrayBuffer();
-    const pdf  = await pdfjsLib.getDocument({ data: buf }).promise;
+    // isEvalSupported:false is the vendor's mitigation for CVE-2024-4367
+    // (script execution from a crafted PDF font) on pdf.js 3.x. The CSP's lack
+    // of 'unsafe-eval' already blocks that; this says so explicitly.
+    const pdf  = await pdfjsLib.getDocument({ data: buf, isEvalSupported: false }).promise;
     const pages = [];
     for (let i = 1; i <= pdf.numPages; i++) {
       const page    = await pdf.getPage(i);
