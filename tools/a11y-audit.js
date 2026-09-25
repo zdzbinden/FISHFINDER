@@ -166,7 +166,10 @@ function findChrome(explicit) {
   return found;
 }
 
-async function launchChrome(chromePath, width) {
+// `network: true` (tools/csp-smoke.js) lets the page reach its CDNs and
+// Firebase, through the system proxy if there is one. The audit itself keeps
+// everything off-host.
+async function launchChrome(chromePath, width, { network = false } = {}) {
   const profile = await fsp.mkdtemp(path.join(os.tmpdir(), 'ff-a11y-'));
   const proc = spawn(chromePath, [
     '--headless=new', '--disable-gpu', '--hide-scrollbars',
@@ -176,11 +179,12 @@ async function launchChrome(chromePath, width) {
     // Port 0: Chrome picks a free port and writes it to DevToolsActivePort, so
     // this can never collide with a Chrome the user already has open.
     '--remote-debugging-port=0',
-    '--no-first-run', '--no-default-browser-check', '--no-proxy-server',
+    '--no-first-run', '--no-default-browser-check',
     '--disable-background-networking', '--disable-sync',
     '--disable-component-update', '--disable-default-apps',
     // Firebase, geolocation and the Leaflet CDN fail fast instead of stalling.
-    '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1',
+    ...(network ? [] : ['--no-proxy-server',
+                        '--host-resolver-rules=MAP * ~NOTFOUND , EXCLUDE 127.0.0.1']),
     'about:blank',
   ], { stdio: 'ignore' });
 
@@ -234,7 +238,9 @@ class Tab {
     return tab;
   }
 
-  constructor(url) { this.url = url; this.id = 0; this.pending = new Map(); }
+  constructor(url) {
+    this.url = url; this.id = 0; this.pending = new Map(); this.listeners = new Map();
+  }
 
   async connect() {
     this.ws = new WebSocket(this.url);
@@ -243,11 +249,20 @@ class Tab {
     }), 10000, 'tab socket');
     this.ws.onmessage = ev => {
       const msg = JSON.parse(ev.data);
+      if (msg.method) {                       // a protocol event, not a reply
+        for (const fn of this.listeners.get(msg.method) || []) fn(msg.params);
+        return;
+      }
       const p = msg.id && this.pending.get(msg.id);
       if (!p) return;
       this.pending.delete(msg.id);
       msg.error ? p.reject(new Error(`${p.method}: ${msg.error.message}`)) : p.resolve(msg.result);
     };
+  }
+
+  on(method, fn) {
+    if (!this.listeners.has(method)) this.listeners.set(method, []);
+    this.listeners.get(method).push(fn);
   }
 
   send(method, params = {}, timeoutMs = 30000) {
@@ -678,18 +693,24 @@ function report(opts, { results, seconds }) {
   return errors ? 2 : failures ? 1 : 0;
 }
 
-(async () => {
-  const opts = parseArgs(process.argv.slice(2));
-  let outcome;
-  try {
-    outcome = await run(opts);
-  } catch (e) {
-    console.error(`a11y-audit: ${e.message}`);
-    process.exit(2);
-  }
-  if (opts.json) {
-    await fsp.writeFile(opts.json, JSON.stringify({ generated: new Date().toISOString(),
-      ...outcome }, null, 1));
-  }
-  process.exit(report(opts, outcome));
-})();
+// The browser plumbing is shared with tools/csp-smoke.js.
+module.exports = { SITE, SAMPLE, sleep, startServer, findChrome, launchChrome,
+                   stopChrome, withTimeout, Tab };
+
+if (require.main === module) {
+  (async () => {
+    const opts = parseArgs(process.argv.slice(2));
+    let outcome;
+    try {
+      outcome = await run(opts);
+    } catch (e) {
+      console.error(`a11y-audit: ${e.message}`);
+      process.exit(2);
+    }
+    if (opts.json) {
+      await fsp.writeFile(opts.json, JSON.stringify({ generated: new Date().toISOString(),
+        ...outcome }, null, 1));
+    }
+    process.exit(report(opts, outcome));
+  })();
+}
