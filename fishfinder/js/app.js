@@ -162,8 +162,10 @@
   }
 
   // ── HTML escaping ──────────────────────────────────────────────────────────
+  // String() because database records are written by anyone: a missing or
+  // non-string field must render as text, not throw halfway through a loop.
   function esc(str) {
-    return str
+    return String(str ?? '')
       .replace(/&/g,  '&amp;')
       .replace(/</g,  '&lt;')
       .replace(/>/g,  '&gt;')
@@ -904,12 +906,14 @@
       const geo = await fetch('https://ipapi.co/json/').then(r => r.json());
       if (!geo || !geo.latitude) return;
       const fbDb = await initFirebase();
+      // Visit records are public (they draw the usage map), so store no more
+      // precision than the map needs: ~1 km, and the hour rather than the ms.
       await fbDb.ref('fishfinder/visits').push({
-        lat:     geo.latitude,
-        lng:     geo.longitude,
+        lat:     Math.round(geo.latitude * 100) / 100,
+        lng:     Math.round(geo.longitude * 100) / 100,
         country: geo.country_name || '',
         city:    geo.city || '',
-        ts:      Date.now(),
+        ts:      Math.floor(Date.now() / 3600000) * 3600000,
       });
       await fbDb.ref('fishfinder/stats/sessions').transaction(v => (v || 0) + 1);
       storageSet('ff_last_write', String(Date.now()));
@@ -946,8 +950,12 @@
       document.getElementById('stat-species').textContent =
         (stats.species_total || 0).toLocaleString();
 
-      // Visits for map + unique location count
-      const visitsSnap = await fbDb.ref('fishfinder/visits').limitToLast(500).get();
+      // Visits for map + unique location count. The newest 500 by timestamp:
+      // the default order is by key, and a writer who picked a key sorting
+      // last could have kept a record on the map for good. The database rules
+      // refuse any read of this node without a limit of 500 or less.
+      const visitsSnap = await fbDb.ref('fishfinder/visits')
+        .orderByChild('ts').limitToLast(500).get();
       const visits = visitsSnap.val() ? Object.values(visitsSnap.val()) : [];
       const locations = new Set(visits.map(v => [v.city, v.country].filter(Boolean).join(', ')).filter(Boolean));
       document.getElementById('stat-locations').textContent = locations.size.toLocaleString();
@@ -995,13 +1003,16 @@
 
       for (const v of visits) {
         if (v.lat && v.lng) {
+          // Anyone can write a visit record, and Leaflet renders popup
+          // content as HTML, so the location text is escaped.
+          const where = esc([v.city, v.country].filter(Boolean).join(', '));
           window.L.circleMarker([v.lat, v.lng], {
             // Bright LCD phosphor green. At this radius a dark outline eats
             // most of the dot, so the stroke stays in the same bright family
             // and the fill is fully opaque.
             radius: 1.0, fillColor: '#c8f57a',
             color: '#8fbf4a', weight: 0.4, fillOpacity: 1,
-          }).bindPopup(`${v.city ? v.city + ', ' : ''}${v.country}`).addTo(map);
+          }).bindPopup(where).addTo(map);
         }
       }
     } catch (e) {

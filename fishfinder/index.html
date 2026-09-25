@@ -128,9 +128,11 @@
 
           <h3>Privacy</h3>
           <p>No manuscript text you enter is transmitted off your device &mdash; all processing happens locally in your browser.</p>
-          <p><strong>What is collected (with your consent):</strong> approximate location (city and country derived from your IP address via <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>), timestamp of your first scan in a session, and aggregate scan counts. This data documents tool reach and impact for academic reporting.</p>
-          <p><strong>What is NOT collected:</strong> no manuscript text, no personal information, no login credentials, no cookies for tracking, and no user accounts.</p>
-          <p><strong>Where data is stored:</strong> Firebase Realtime Database (Google infrastructure). Third-party services: ipapi.co (IP geolocation) and Firebase (storage).</p>
+          <p><strong>What is collected (with your consent):</strong> approximate location (city and country derived from your IP address via <a href="https://ipapi.co" target="_blank" rel="noopener">ipapi.co</a>, with coordinates rounded to about 1&nbsp;km), the hour of your first scan in a session, and aggregate scan counts. This data documents tool reach and impact for academic reporting.</p>
+          <p><strong>What is public:</strong> the usage statistics and map below the tool are drawn from those location records, so the records themselves &mdash; city, country, rounded coordinates and hour &mdash; can be viewed by anyone. They hold no IP address, name or email.</p>
+          <p><strong>What is NOT collected:</strong> no manuscript text, no login credentials, no cookies for tracking, and no user accounts.</p>
+          <p><strong>Issue reports:</strong> a report sent with <strong>REPORT</strong> stores what you type, the optional email address, and your browser&rsquo;s user-agent string. Reports are private: only the maintainer can read them.</p>
+          <p><strong>Where data is stored:</strong> Firebase Realtime Database (Google infrastructure). Third-party services: ipapi.co (IP geolocation) and Firebase (storage). Viewing the page also fetches the usage map&rsquo;s library and statistics (unpkg, Google Firebase) and the display font (Google Fonts); opening a Word, Excel or PDF file fetches its reader library (cdnjs, SheetJS), but the file itself never leaves your device. Like any web request, these fetches reveal your IP address to the server that answers them.</p>
           <p><strong>Your control:</strong> You can change your analytics preference at any time using the <em>Privacy Settings</em> link at the bottom of the tool.</p>
 
           <h3>Report an issue</h3>
