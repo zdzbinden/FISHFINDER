@@ -84,6 +84,20 @@ Fixed:
 - **Deploy workflow.** The actions are pinned to commit SHAs and kept current by
   Dependabot. There are no workflow-level permissions, and checkout keeps no
   token.
+- **Repository.**
+  - Secret scanning with push protection, Dependabot alerts and private
+    vulnerability reporting are on.
+  - `main` can no longer be deleted or force-pushed.
+  - Actions are limited to GitHub's own, and must be pinned by SHA.
+- **Domain.**
+  - fishnames.net is verified with GitHub, so no other account can claim it.
+  - It is signed with DNSSEC.
+  - CAA limits certificate issuance to Let's Encrypt plus the certificate
+    authorities Cloudflare adds automatically.
+  - SPF and DMARC records make mail forged "from" fishnames.net get rejected.
+- **Meta-analysis lockfile.** Pillow 12.2.0 → 12.3.0, clearing 13 Dependabot
+  advisories. None was reachable: Pillow is only matplotlib's image back end,
+  and the pipeline never opens an outside image.
 
 Added:
 
