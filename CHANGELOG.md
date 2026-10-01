@@ -44,6 +44,11 @@ moved, and the classification fields (class, order, family) were corrected.
     most documented in its Appendix 1 (e.g. mullets in Blenniiformes, following
     Dornburg & Near 2021). `classification_crosscheck.json` lists each with its
     reason.
+- **Synonyms 10,090 → 10,091:** *Cyclopterus nudus*, the original name of the
+  Padded Clingfish, now resolves to *Arcos nudus*. The catalog files the
+  species under that name, so the scrape searched for it by family, and with
+  the clingfishes filed as mullets it searched the wrong one. It is the only
+  species the family error cost a synonym.
 - The removal note for *Gambusia clarkhubbsi* now cites the addenda as the rest
   of the database does ("H.J. Walker, Jr.").
 - **Synonyms 10,152 → 10,090.**
@@ -199,8 +204,8 @@ Added:
 - **The overlay's invariants cover classification:** every species has a class,
   order and family, each family has one order, and each genus has one family.
   The build refuses to write a database that breaks them.
-- Tests: 12 header tests in `test_parse_pdf.py`, and 15 classification tests in
-  `taxonomy.test.js` (suite now 252).
+- Tests: 12 header tests in `test_parse_pdf.py`, and 16 classification tests in
+  `taxonomy.test.js` (suite now 253).
 
 ---
 

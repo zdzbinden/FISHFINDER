@@ -4,7 +4,7 @@
     "year": 2023,
     "source": "Common and Scientific Names of Fishes from the United States, Canada, and Mexico (AFS/ASIH)",
     "species_count": 5200,
-    "synonym_count": 10090,
+    "synonym_count": 10091,
     "data_version": "FF-8.1",
     "addenda": {
       "data_version": "FF-8.1",
@@ -68466,6 +68466,7 @@
     "Squalus cuvier": "Galeocerdo cuvieri",
     "Urolophus goodei": "Urotrygon asterias",
     "Urolophus chilensis": "Urotrygon asterias",
+    "Cyclopterus nudus": "Arcos nudus",
     "Lampetra septentrionalis": "Lethenteron camtschaticum",
     "Lampetra major": "Lethenteron camtschaticum",
     "Petromyzon camtschaticus": "Lethenteron camtschaticum",

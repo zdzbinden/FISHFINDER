@@ -10,7 +10,7 @@
  */
 const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
-const { db } = require('./setup');
+const { db, engine, lookups } = require('./setup');
 
 const entries = Object.entries(db.valid_names);
 
@@ -71,6 +71,17 @@ describe('species the header bug misfiled', () => {
       assert.equal(info.family, family);
     });
   }
+});
+
+describe('a synonym the wrong family cost', () => {
+  it('Cyclopterus nudus is the outdated name for Arcos nudus', () => {
+    // The catalog files Arcos nudus under its original combination, so the scrape
+    // fell back to a family+epithet search. Filed as a mullet, the clingfish was
+    // searched for in Mugilidae and kept no synonyms until the family was fixed.
+    const r = engine.classifyName(lookups, 'Cyclopterus', 'nudus');
+    assert.equal(r.type, 'outdated');
+    assert.equal(r.suggestion, 'Arcos nudus');
+  });
 });
 
 describe('addenda placements decided against the catalog (2026-10-01)', () => {
