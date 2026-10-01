@@ -181,7 +181,7 @@ describe('fuzzy matching edge cases', () => {
 
   describe('database integrity', () => {
     // Floors track the current build (FF-8.1: 5,200 valid / 1,507 genera /
-    // 10,152 synonyms after the 2026-09-23 parser fix and re-scrape).
+    // 10,090 synonyms after the 2026-10-01 chain fix; 10,152 before it).
     // Raise them whenever the database grows, so they keep catching a truncated
     // or half-applied build rather than passing on anything vaguely large.
     it('has a reasonable number of valid names', () => {

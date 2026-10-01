@@ -3,7 +3,8 @@ Regression tests for the Eschmeyer page parser in scrape_eschmeyer.py.
 
 Run: uv run --with requests --with beautifulsoup4 python -m unittest test_scraper_parsing -v
 
-Four defects motivated these tests, all found in September 2026:
+Five defects motivated these tests, all found in September 2026 (the fifth
+early October):
 
 1. DECAPITATION. The pattern had no left anchor, so the scan could start in the
    middle of a capitalized word and read its tail as an epithet. Eschmeyer
@@ -27,13 +28,23 @@ Four defects motivated these tests, all found in September 2026:
    with encoding damage on top. 324 pages had no matchable header at all; their
    synonyms were only ever harvested by accident, via a spurious header.
 
+5. UNGATED HISTORICAL CHAIN. Every "Synonym of X" bullet in an entry was read as
+   a former name of the page's species. A bullet is one author's placement, and
+   an author who put the entry under a different species is disagreeing:
+   "pullus, Pimelodus ... Synonym of Ictalurus melas -- (La Rivers 1994)" on the
+   Ameiurus nebulosus page shipped Ictalurus melas -> Brown Bullhead. Fixing it
+   removed 63 shipped edges and retargeted 13 (Coris julis -> Tautoga onitis was
+   one). The rejected names are checked in the catalog by verify_chain_names.py.
+
 The SPURIOUS cases below are the ones that actually shipped bad data. Do not relax
 the anchor to a bare \\b: it still admits hyphenated place names.
 """
 
 import unittest
 
-from scrape_eschmeyer import ENTRY_HEADER_RE, entry_header_re, parse_text
+from scrape_eschmeyer import (ENTRY_HEADER_RE, apply_chain_verdicts, entry_header_re,
+                              parse_text)
+from verify_chain_names import classify, own_entries
 
 
 class TestRealHeaders(unittest.TestCase):
@@ -186,6 +197,123 @@ class TestNonAsciiAuthors(unittest.TestCase):
                       "Sulphur Cove, Isabela Island [Albemarle]",
                       "Ponta-delgada, Santa Maria [ref. 1]"]:
             self.assertEqual(ENTRY_HEADER_RE.findall(prose), [], prose)
+
+
+# Reconstructed from the Ameiurus nebulosus page. "felis" sits 2 edits from
+# "melas", which is why page epithets are allowed 1 edit and not 2.
+NEBULOSUS_PAGE = (
+    "felis, Pimelodus Agassiz [L.] 1850:281 [ref. 66] Lake Superior. "
+    "•Synonym of Ictalurus nebulosus (Lesueur 1819) -- (La Rivers 1994). "
+    "Current status: Synonym of Ameiurus nebulosus (Lesueur 1819). Ictaluridae. "
+    "pullus, Pimelodus DeKay [J. E.] 1842:184 [ref. 1098] New York. "
+    "•Synonym of Ictalurus nebulosus (Lesueur 1819) -- (Smith 1986). "
+    "•Synonym of Ictalurus melas (Rafinesque 1820) -- (La Rivers 1994). "
+    "•Synonym of Ameiurus nebulosus (Lesueur 1819) -- (Ferraris 2007). "
+    "Current status: Synonym of Ameiurus nebulosus (Lesueur 1819). Ictaluridae. "
+)
+
+
+class TestChainGate(unittest.TestCase):
+    """Defect 5: a 'Synonym of X' bullet names the target only if the page ties X to it."""
+
+    def test_disputed_placement_is_rejected(self):
+        r = parse_text(NEBULOSUS_PAGE, "Ameiurus", "nebulosus")
+        self.assertNotIn("Ictalurus melas", r["synonyms"])
+        self.assertIn("Ictalurus melas", r["chain_rejected"])
+
+    def test_older_combination_of_target_is_kept(self):
+        r = parse_text(NEBULOSUS_PAGE, "Ameiurus", "nebulosus")
+        self.assertIn("Ictalurus nebulosus", r["synonyms"])
+        self.assertIn("Pimelodus pullus", r["synonyms"])
+
+    def test_misspelling_of_target_is_kept(self):
+        text = ("omul, Salmo Pallas [P. S.] 1776:705 [ref. 1] Siberia. "
+                "•Synonym of Coregonus autumanlis (Pallas 1776) -- (x). "
+                "Current status: Synonym of Coregonus autumnalis (Pallas 1776). Salmonidae.")
+        r = parse_text(text, "Coregonus", "autumnalis")
+        self.assertIn("Coregonus autumanlis", r["synonyms"])
+
+    def test_name_the_page_lumps_into_target_is_kept(self):
+        # Mobula japanica is "Valid as" for an entry the page places under the
+        # target, so a bullet naming it is a former name of the target.
+        text = ("japanica, Cephaloptera Müller [J.] & Henle [J.] 1841:185 [ref. 1] Japan. "
+                "•Valid as Mobula japanica (Müller & Henle 1841) -- (a). "
+                "Current status: Synonym of Mobula mobular (Bonnaterre 1788). Mobulidae. "
+                "rancureli, Mobula Cadenat [J.] 1959:1 [ref. 2] Senegal. "
+                "•Synonym of Mobula japanica (Müller & Henle 1841) -- (b). "
+                "Current status: Synonym of Mobula mobular (Bonnaterre 1788). Mobulidae.")
+        r = parse_text(text, "Mobula", "mobular")
+        self.assertIn("Mobula japanica", r["synonyms"])
+        self.assertEqual(r["chain_rejected"], [])
+
+
+VALID = {"Antennarius scaber", "Tautoga onitis", "Ameiurus melas", "Ameiurus nebulosus",
+         "Careproctus pycnosoma", "Careproctus gilberti"}
+
+
+class TestChainVerification(unittest.TestCase):
+    """verify_chain_names.classify on a rejected name's own catalog page."""
+
+    def test_prior_edition_name_is_kept(self):
+        page = ("striatus, Lophius Shaw [G.] 1794:pl. 210 [ref. 1] Tahiti. "
+                "•Valid as Antennarius striatus (Shaw 1794) -- (Nelson et al. 2004:93 "
+                "[ref. 27807 ], Page et al. 2013:97 [ref. 32708 ]). "
+                "Current status: Valid as Antennarius striatus (Shaw 1794). Antennariidae.")
+        r = classify("Antennarius striatus", ["Antennarius scaber"], [page], [], VALID, {})
+        self.assertEqual((r["verdict"], r["target"]), ("prior_edition", "Antennarius scaber"))
+        self.assertEqual(r["afs_editions"], ["6th", "7th"])
+
+    def test_valid_extralimital_species_is_removed(self):
+        page = ("julis, Labrus Linnaeus [C.] 1758:284 [ref. 1] Mediterranean. "
+                "Current status: Valid as Coris julis (Linnaeus 1758). Labridae.")
+        r = classify("Coris julis", ["Tautoga onitis"], [page], [], VALID, {})
+        self.assertEqual(r["verdict"], "remove")
+
+    def test_name_of_another_listed_species_is_retargeted(self):
+        page = ("melas, Silurus Rafinesque [C. S.] 1820:51 [ref. 1] Ohio River. "
+                "•Valid as Ictalurus melas (Rafinesque 1820) -- (a). "
+                "Current status: Valid as Ameiurus melas (Rafinesque 1820). Ictaluridae.")
+        r = classify("Ictalurus melas", ["Ameiurus nebulosus"], [page], [], VALID, {})
+        self.assertEqual((r["verdict"], r["target"]), ("retarget", "Ameiurus melas"))
+
+    def test_catalog_name_translated_to_list_name(self):
+        # The catalog's Allinectes pycnosoma is the List's Careproctus pycnosoma.
+        page = ("pycnosoma, Careproctus Gilbert [C. H.] 1896:440 [ref. 1] Alaska. "
+                "•Valid as Allocareproctus pycnosoma (Gilbert 1896) -- (a). "
+                "Current status: Valid as Allinectes pycnosoma (Gilbert 1896). Liparidae.")
+        r = classify("Allocareproctus pycnosoma", ["Careproctus gilberti"], [page], [], VALID,
+                     {"Allinectes pycnosoma": "Careproctus pycnosoma"})
+        self.assertEqual((r["verdict"], r["target"]), ("retarget", "Careproctus pycnosoma"))
+
+    def test_no_fuzzy_entry_match(self):
+        # caurinus is 2 edits from marinus; matching it resolved Sebastes marinus
+        # to the Copper Rockfish in an early version.
+        page = ("caurinus, Sebastes Richardson [J.] 1844:17 [ref. 1] Sitka. "
+                "Current status: Valid as Sebastes caurinus Richardson 1844. Sebastidae.")
+        self.assertEqual(own_entries(page, "Sebastes marinus"), [])
+        r = classify("Sebastes marinus", ["Sebastes norvegicus"], [page], [], VALID, {})
+        self.assertEqual(r["verdict"], "review")
+
+
+class TestApplyChainVerdicts(unittest.TestCase):
+
+    def test_applies_only_verdicts_with_a_valid_target(self):
+        syn = {}
+        n = apply_chain_verdicts(syn, {
+            "Antennarius striatus": {"verdict": "prior_edition", "target": "Antennarius scaber"},
+            "Coris julis": {"verdict": "remove", "target": None},
+            "Foo bar": {"verdict": "restore", "target": "Not listed"},
+        }, VALID, set())
+        self.assertEqual(syn, {"Antennarius striatus": "Antennarius scaber"})
+        self.assertEqual(n, 1)
+
+    def test_never_maps_a_valid_or_extralimital_name(self):
+        syn = {}
+        apply_chain_verdicts(syn, {
+            "Ameiurus melas": {"verdict": "restore", "target": "Ameiurus nebulosus"},
+            "Misgurnus fossilis": {"verdict": "restore", "target": "Tautoga onitis"},
+        }, VALID, {"Misgurnus fossilis"})
+        self.assertEqual(syn, {})
 
 
 if __name__ == "__main__":

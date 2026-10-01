@@ -80,6 +80,34 @@ rate. Useful flags:
 | `--dry-run` | build the map but do not write `fish_names.json` |
 | `--accessed=YYYY-MM-DD` | record the date the catalog was queried, shown in the site citation |
 
+### Step 2b — Verify the names the chain gate rejects
+
+```powershell
+uv run --with requests --with beautifulsoup4 python ../verify_chain_names.py
+uv run --with requests --with beautifulsoup4 python ../scrape_eschmeyer.py --rebuild-only
+```
+
+Within a catalog entry, each "Synonym of X" bullet records one author's
+placement. Step 2 keeps a cited name only when the page itself ties it to the
+species. An author who put the entry under a *different* species is disagreeing,
+not giving a former name. Without that check, *Ictalurus melas* shipped as Brown
+Bullhead, on the strength of one 1994 placement.
+
+The check cannot tell a disagreement from a name that an earlier edition of
+*Names of Fishes* applied to the fish. *Antennarius striatus*, in the 6th and 7th
+editions, is now *A. scaber*. So `verify_chain_names.py` looks up each rejected
+name on its own catalog page. It reads the current status and checks whether
+the 6th or 7th edition list is cited for the name. It then writes a verdict to
+`../chain_verdicts.json` (committed): `restore`, `retarget`, `prior_edition`,
+`remove` or `review`. The map build applies the first three.
+
+Entries marked `reviewed` were decided by hand and are never overwritten. A
+`prior_edition` verdict points at the target the chain proposed, and that
+successor is not checked automatically. *Squalus mitsukurii*'s chain target was
+*S. acanthias*, but the fish is *S. clarkae*. Confirm each new one, then mark it
+`reviewed`. Fetched pages go to `../eschmeyer_text/verify/`, so `--offline`
+replays them without the network.
+
 ---
 
 ## Running locally
@@ -135,7 +163,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (226 tests across 8 files):
+against the real dataset (237 tests across 8 files):
 
 | File | Coverage |
 |------|----------|

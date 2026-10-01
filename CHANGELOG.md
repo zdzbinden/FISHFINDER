@@ -17,6 +17,48 @@ update publication should cite.
 
 ## Unreleased
 
+### Database
+
+Data version stays **FF-8.1**: the taxonomy is unchanged, only synonyms moved.
+
+- **Synonyms 10,152 → 10,090.**
+  - **The cause.** Within an Eschmeyer catalog entry, the parser read every
+    "Synonym of X" bullet as a former name of the page's species. A bullet is
+    one author's placement. When an author put the entry under a different
+    species, the parser still recorded X as a former name. *Ictalurus melas*
+    shipped as an outdated name for Brown Bullhead because La Rivers (1994)
+    filed *Pimelodus pullus* under it. It is the Black Bullhead, *Ameiurus
+    melas*.
+  - **The fix.** Such a name is now kept only if the page ties it to the
+    species. Every rejected name was looked up on its own catalog page.
+- **13 names now point at the right species**, among them:
+  - *Ictalurus melas* → *A. melas*;
+  - *Salmo clarkii* → *Oncorhynchus clarkii*;
+  - *Semotilus margarita* → *Margariscus margarita*;
+  - *Squalus mitsukurii* → *S. clarkae*, not *S. acanthias*.
+- **63 names removed:**
+  - 50 are valid species elsewhere, and had been sending authors to an
+    unrelated fish (*Coris julis* → Tautog; *Conger conger*, *Osmerus
+    eperlanus*, *Squalus megalops* likewise);
+  - 7 are synonyms of species not on the List;
+  - 4 are misspellings the engine already corrects;
+  - 1 is a catalog artifact, and 1 has no catalog record.
+  - Names in genera on the List are still flagged, as UNKNOWN.
+- **12 rejected names kept with their old target.**
+  - 9 because the 6th or 7th edition of *Names of Fishes* used them for the
+    North American fish, though they belong elsewhere today:
+    - *Antennarius striatus* → *A. scaber*;
+    - *Microphis brachyurus* → *M. lineatus*, with *Oostethus brachyurus* and
+      a catalog misspelling of it;
+    - *Hirundichthys rondeletii* → *H. volador*;
+    - *Proterorhinus marmoratus* → *P. semilunaris*;
+    - *Merluccius angustimanus*, *Makaira mazara* and *Sciades hymenorrhinos*.
+  - 3 by catalog evidence the check cannot read. *Sebastes marinus* is a
+    misapplied-name entry for *S. norvegicus*, and *Gobiomorus lateralis* was
+    used for *G. maculatus*.
+- **Added:** *Sciades hymenorrhinus*, the 6th edition's spelling for what is
+  now *S. dowii* (occurrence PM, Flapnose Sea Catfish).
+
 ### Interface
 
 - The INFO panel's **Privacy** section now says which records are public (the
@@ -108,6 +150,20 @@ Added:
 - `tools/csp-smoke.js` (`npm run csp`): a headless-Chrome check that fails on any
   CSP violation or integrity failure. Its tamper passes swap CDN files for
   hostile code and confirm none of it runs.
+
+### Internal
+
+- **`verify_chain_names.py`**, a new pipeline step between the scrape and the
+  map build.
+  - It looks up each name the chain check rejects on the name's own catalog
+    page. It reads the current status and whether the catalog cites the 6th
+    or 7th edition list (Nelson et al. 2004, Page et al. 2013) for the name.
+  - It writes a verdict per name to the committed `chain_verdicts.json`, which
+    the map build applies.
+  - 22 verdicts were decided by hand. They record the evidence (catalog
+    entries, ITIS, WoRMS) and are never overwritten.
+- Tests: 11 parser and verification tests in `test_scraper_parsing.py`, and 11
+  engine tests in `classify.test.js` (suite now 237).
 
 ---
 

@@ -55,6 +55,54 @@ describe('classifyName', () => {
     }
   });
 
+  // ── Names from one author's placement elsewhere (2026-10-01) ────────────
+  //    The scraper read every "Synonym of X" bullet in a catalog entry as a
+  //    former name of the page's species. One author putting the entry under a
+  //    different species is a disagreement, not a former name: La Rivers (1994)
+  //    filed Pimelodus pullus under Ictalurus melas, and Ictalurus melas shipped
+  //    as Brown Bullhead. The rejected names were then each looked up in the
+  //    catalog (verify_chain_names.py, chain_verdicts.json).
+  describe('names from a disputed placement', () => {
+    it('suggests Black Bullhead for Ictalurus melas, not Brown Bullhead', () => {
+      const r = classify('Ictalurus', 'melas');
+      assert.ok(r);
+      assert.equal(r.type, 'outdated');
+      assert.equal(r.suggestion, 'Ameiurus melas');
+    });
+
+    // Valid elsewhere, but the 6th or 7th edition of Names of Fishes used the
+    // name for this fish, so a manuscript using it is out of date.
+    for (const [g, s, exp] of [
+      ['Antennarius', 'striatus', 'Antennarius scaber'],
+      ['Microphis', 'brachyurus', 'Microphis lineatus'],
+      ['Squalus', 'mitsukurii', 'Squalus clarkae'],          // not the chain's S. acanthias
+      ['Sciades', 'hymenorrhinus', 'Sciades dowii'],         // 6th-ed. spelling, occurrence PM
+      ['Proterorhinus', 'marmoratus', 'Proterorhinus semilunaris'],
+    ]) {
+      it(`flags prior-edition name ${g} ${s} as outdated -> ${exp}`, () => {
+        const r = classify(g, s);
+        assert.ok(r);
+        assert.equal(r.type, 'outdated');
+        assert.equal(r.suggestion, exp);
+      });
+    }
+
+    // Valid species the chain had pointed at an unrelated North American fish.
+    for (const [g, s] of [
+      ['Coris', 'julis'],                 // was -> Tautoga onitis
+      ['Conger', 'conger'],               // was -> Rhynchoconger flavus
+      ['Osmerus', 'eperlanus'],           // was -> Osmerus mordax
+      ['Squalus', 'megalops'],            // was -> Squalus acanthias
+      ['Gaidropsarus', 'mediterraneus'],  // was -> Micromesistius poutassou
+    ]) {
+      it(`does not suggest replacing ${g} ${s}`, () => {
+        const r = classify(g, s);
+        assert.notEqual(r && r.type, 'outdated');
+        assert.ok(!(r && r.suggestion), 'must not suggest a replacement');
+      });
+    }
+  });
+
   // ── Extralimital valid species must NOT be flagged (Reviewer 1, round 2) ──
   //    Valid species outside the Names of Fishes area that were wrongly scraped
   //    as synonyms. Verified against Eschmeyer's Catalog and removed; see

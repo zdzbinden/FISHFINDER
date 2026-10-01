@@ -53,12 +53,12 @@ python -m http.server 8080
 
 ## How the data is built
 
-The name database is assembled in two stages:
+The name database is assembled in three stages:
 
 1. **Parse** the AFS table PDF (~5,086 species with full metadata)
 2. **Apply** the Committee's published addenda (`apply_addenda.py`) — +115 species,
    22 renames, 1 withdrawal, yielding ~5,200 species (data version FF-8.1)
-3. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains)
+3. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains). A historical name the catalog attributes to a single author's placement elsewhere is looked up on its own catalog page before it is kept (`verify_chain_names.py`)
 
 See [`fishfinder/README.md`](fishfinder/README.md) for full pipeline documentation.
 
@@ -68,6 +68,8 @@ See [`fishfinder/README.md`](fishfinder/README.md) for full pipeline documentati
 FISHFINDER/
 ├── parse_pdf.py              # Step 1: AFS table PDF → fish_names.json
 ├── scrape_eschmeyer.py       # Step 2: synonym enrichment from Eschmeyer's
+├── verify_chain_names.py     # Step 2b: catalog verdicts on rejected chain names
+├── chain_verdicts.json       # Those verdicts, applied by the map build
 ├── make_basemap.py           # Regenerates the usage-map basemap (Natural Earth)
 ├── tools/a11y-audit.js       # WCAG contrast + target-size audit (headless Chrome)
 ├── tools/csp-smoke.js        # CSP + integrity smoke check (headless Chrome)

@@ -1,0 +1,875 @@
+{
+  "Acanthurus dussumieri": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Acanthurus xanthopterus"
+    ],
+    "catalog_status": "Valid as Acanthurus dussumieri",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Acanthurus mata": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Acanthurus xanthopterus"
+    ],
+    "catalog_status": "Valid as Acanthurus mata",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Achirus achirus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Achirus lineatus"
+    ],
+    "catalog_status": "Valid as Achirus achirus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Allocareproctus pycnosoma": {
+    "verdict": "retarget",
+    "target": "Careproctus pycnosoma",
+    "chain_targets": [
+      "Allocareproctus jordani",
+      "Careproctus gilberti"
+    ],
+    "catalog_status": "Valid as Allinectes pycnosoma",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Ameiurus ictalurus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Ameiurus nebulosus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Catalog data-entry artifact: 'Synonym of Ameiurus ictalurus Lesueur 1819 -- (authors)'. No such nominal species."
+  },
+  "Antennarius drombus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Abantennarius coccineus"
+    ],
+    "catalog_status": "Valid as Abantennarius drombus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Antennarius striatus": {
+    "verdict": "prior_edition",
+    "target": "Antennarius scaber",
+    "chain_targets": [
+      "Antennarius scaber"
+    ],
+    "catalog_status": "Valid as Antennarius striatus",
+    "afs_editions": [
+      "6th",
+      "7th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th and 7th eds. name for the western Atlantic frogfish. The A. scaber page files 7 of its nominal species under A. striatus (Pietsch & Grobecker 1987, Pietsch 1990)."
+  },
+  "Astyanax fasciatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Astyanax aeneus",
+      "Astyanax brevimanus",
+      "Astyanax finitimus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Chalceus fasciatus Cuvier 1819, now Valid as Psalidodon fasciatus (South America). No Names of Fishes edition is cited for it. Checked via genus=Chalceus."
+  },
+  "Awaous tajasica": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Awaous banana"
+    ],
+    "catalog_status": "Valid as Awaous tajasica",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Balistes punctatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Balistes capriscus"
+    ],
+    "catalog_status": "Valid as Balistes punctatus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Bellocia koefoedi": {
+    "verdict": "retarget",
+    "target": "Bathytroctes macrolepis",
+    "chain_targets": [
+      "Narcetes erimelas"
+    ],
+    "catalog_status": "Synonym of Bathytroctes macrolepis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Belone imperialis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Tylosurus acus",
+      "Tylosurus crocodilus"
+    ],
+    "catalog_status": "Valid as Tylosurus imperialis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Belone marisrubri": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Tylosurus crocodilus",
+      "Tylosurus pacificus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Esox belone var. marisrubri; current status Synonym of Tylosurus choram (Red Sea). The 'var.' header does not parse."
+  },
+  "Belone platyura": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Platybelone argalus",
+      "Strongylura exilis"
+    ],
+    "catalog_status": "Valid as Platybelone platyura",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Benthodesmus elongatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Benthodesmus simonyi"
+    ],
+    "catalog_status": "Valid as Benthodesmus elongatus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Carapus homei": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Carapus dubius"
+    ],
+    "catalog_status": "Valid as Encheliophis homei",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Carcharhinus amblyrhynchoides": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Carcharhinus limbatus"
+    ],
+    "catalog_status": "Valid as Carcharhinus amblyrhynchoides",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Carcharhinus amblyrhynchos": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Carcharhinus falciformis"
+    ],
+    "catalog_status": "Valid as Carcharhinus amblyrhynchos",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Chaenomugil leuciscus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Mugil cephalus"
+    ],
+    "catalog_status": "Valid as Neomyxus leuciscus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Cichlasoma sieboldii": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Herichthys deppii"
+    ],
+    "catalog_status": "Valid as Talamancaheros sieboldii",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Conger conger": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Rhynchoconger flavus"
+    ],
+    "catalog_status": "Valid as Conger conger",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Coregonus lavaretus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Coregonus pidschian"
+    ],
+    "catalog_status": "Valid as Coregonus lavaretus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Coris julis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Tautoga onitis"
+    ],
+    "catalog_status": "Valid as Coris julis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Diaphus suborbitalis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Diaphus termophilus"
+    ],
+    "catalog_status": "Valid as Diaphus suborbitalis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Diplectrum radiale": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Diplectrum formosum"
+    ],
+    "catalog_status": "Valid as Diplectrum radiale",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Engraulis australis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Engraulis mordax"
+    ],
+    "catalog_status": "Valid as Engraulis australis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Gaidropsarus mediterraneus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Micromesistius poutassou"
+    ],
+    "catalog_status": "Valid as Gaidropsarus mediterraneus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Gobiomorus lateralis": {
+    "verdict": "restore",
+    "target": "Gobiomorus maculatus",
+    "chain_targets": [
+      "Gobiomorus maculatus"
+    ],
+    "catalog_status": "Synonym of Dormitator latifrons",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Philypnus lateralis Gill 1860 (Cabo San Lucas) was used as Gobiomorus lateralis for the Pacific Sleeper (Hoese in Fischer et al. 1995; Kullander 2003). Its syntypes are now placed in Dormitator latifrons (Fricke et al. 2024), already mapped as Philypnus lateralis. WoRMS: unaccepted, valid name G. maculatus."
+  },
+  "Hemichromis bimaculatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Rubricatochromis guttatus"
+    ],
+    "catalog_status": "Valid as Rubricatochromis bimaculatus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Hesperoleucas symmetricus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Hesperoleucus venustus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Misspelling. The engine already corrects it to Hesperoleucus symmetricus; the chain's target was wrong."
+  },
+  "Hirundichthys rondeletii": {
+    "verdict": "prior_edition",
+    "target": "Hirundichthys volador",
+    "chain_targets": [
+      "Hirundichthys volador"
+    ],
+    "catalog_status": "Valid as Hirundichthys rondeletii",
+    "afs_editions": [
+      "6th",
+      "7th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th and 7th eds. name (Blackwing Flyingfish). The H. volador page files 5 of its nominal species under H. rondeletii (Parin 1973, Parin & Gibbs 1990, Collette et al. 1992)."
+  },
+  "Hoplosternum thoracatum": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Hoplosternum littorale"
+    ],
+    "catalog_status": "Valid as Megalechis thoracata",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Idiacanthus atlanticus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Idiacanthus fasciola"
+    ],
+    "catalog_status": "Valid as Idiacanthus atlanticus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Kyphosus sectator": {
+    "verdict": "retarget",
+    "target": "Kyphosus sectatrix",
+    "chain_targets": [
+      "Kyphosus bigibbus"
+    ],
+    "catalog_status": "Valid as Kyphosus sectatrix",
+    "afs_editions": [
+      "7th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Lethenteron kessleri": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Lethenteron camtschaticum"
+    ],
+    "catalog_status": "Valid as Lethenteron kessleri",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Lethenteron reissneri": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Lethenteron camtschaticum"
+    ],
+    "catalog_status": "Valid as Lethenteron reissneri",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Lycodes knipowitschi": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Lycodes mucosus"
+    ],
+    "catalog_status": "Valid as Lycodes knipowitschi",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Makaira mazara": {
+    "verdict": "prior_edition",
+    "target": "Makaira nigricans",
+    "chain_targets": [
+      "Makaira nigricans"
+    ],
+    "catalog_status": "Uncertain as Makaira mazara",
+    "afs_editions": [
+      "6th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th ed. listed it; from the 7th the Pacific blue marlin is M. nigricans (A-P in the 8th). Catalog status: Uncertain as Makaira mazara."
+  },
+  "Melanostomias spilorhynchus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Melanostomias bartonbeani"
+    ],
+    "catalog_status": "Valid as Melanostomias spilorhynchus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Merluccius angustimanus": {
+    "verdict": "prior_edition",
+    "target": "Merluccius productus",
+    "chain_targets": [
+      "Merluccius productus"
+    ],
+    "catalog_status": "Valid as Merluccius angustimanus",
+    "afs_editions": [
+      "6th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th ed. listed it; the 7th and 8th do not. The M. productus page files Merluccius hernandezi under it."
+  },
+  "Microphis brachyurus": {
+    "verdict": "prior_edition",
+    "target": "Microphis lineatus",
+    "chain_targets": [
+      "Microphis lineatus"
+    ],
+    "catalog_status": "Valid as Microphis brachyurus",
+    "afs_editions": [
+      "6th",
+      "7th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th and 7th eds. name for the Opossum Pipefish; M. lineatus was treated as its subspecies (Dawson 1984, McEachran & Fechhelm 1998, Castro-Aguirre et al. 1999)."
+  },
+  "Microphus brachyurus": {
+    "verdict": "prior_edition",
+    "target": "Microphis lineatus",
+    "chain_targets": [
+      "Microphis lineatus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Catalog misspelling of Microphis brachyurus (bullet in the Syngnathus cayennensis entry)."
+  },
+  "Misgurnus mizolepis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Misgurnus anguillicaudatus"
+    ],
+    "catalog_status": "Synonym of Misgurnus dabryanus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Mola ramsayi": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Mola mola"
+    ],
+    "catalog_status": "Synonym of Mola alexandrini",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Monopterus javanensis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Monopterus albus"
+    ],
+    "catalog_status": "Valid as Monopterus javanensis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Mycteroperca rubra": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Alphestes afer",
+      "Mycteroperca acutirostris",
+      "Mycteroperca tigris"
+    ],
+    "catalog_status": "Valid as Mycteroperca rubra",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Narcine brasiliensis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Narcine bancroftii"
+    ],
+    "catalog_status": "Valid as Narcine brasiliensis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Neomyxus leuciscus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Mugil cephalus"
+    ],
+    "catalog_status": "Valid as Neomyxus leuciscus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Neopomacentrus fallax": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Neopomacentrus cyanomos"
+    ],
+    "catalog_status": "Synonym of Neopomacentrus taeniurus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Neopomacentrus taeniurus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Neopomacentrus cyanomos"
+    ],
+    "catalog_status": "Valid as Neopomacentrus taeniurus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Notropis bifenatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Notropis heterolepis"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Misspelling. The engine already corrects it to Notropis bifrenatus; the chain's target was wrong."
+  },
+  "Notropis lutibundus": {
+    "verdict": "restore",
+    "target": "Miniellus stramineus",
+    "chain_targets": [
+      "Miniellus stramineus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Catalog typo for Notropis ludibundus, an older name for the Sand Shiner (Gilbert 1998 bullet)."
+  },
+  "Notropis lutrensus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Cyprinella rutila"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Misspelling. The engine already corrects it to Cyprinella lutrensis; the chain's target was wrong."
+  },
+  "Oostethus brachyurus": {
+    "verdict": "prior_edition",
+    "target": "Microphis lineatus",
+    "chain_targets": [
+      "Microphis lineatus"
+    ],
+    "catalog_status": "Valid as Microphis brachyurus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "via": "Microphis brachyurus",
+    "reviewed": "2026-10-01",
+    "reason": "Older combination of Microphis brachyurus; the catalog resolves it there."
+  },
+  "Osmerus eperlanus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Osmerus mordax"
+    ],
+    "catalog_status": "Valid as Osmerus eperlanus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Platybelone platyura": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Platybelone argalus"
+    ],
+    "catalog_status": "Valid as Platybelone platyura",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Pomacentrus fuscus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Stegastes leucostictus"
+    ],
+    "catalog_status": "Valid as Stegastes fuscus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Pristis clavata": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Pristis pristis"
+    ],
+    "catalog_status": "Valid as Pristis clavata",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Proterorhinus marmoratus": {
+    "verdict": "prior_edition",
+    "target": "Proterorhinus semilunaris",
+    "chain_targets": [
+      "Proterorhinus semilunaris"
+    ],
+    "catalog_status": "Valid as Proterorhinus marmoratus",
+    "afs_editions": [
+      "6th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th ed. name for the Tubenose Goby introduced to the Great Lakes; the 7th adopted P. semilunaris (cited on its page)."
+  },
+  "Psenes arafurensis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Psenes cyanophrys"
+    ],
+    "catalog_status": "Valid as Psenes arafurensis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Pungitius laevis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Pungitius pungitius"
+    ],
+    "catalog_status": "Valid as Pungitius laevis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Raja chilensis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Dipturus laevis"
+    ],
+    "catalog_status": "Synonym of Sympterygia lima",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Raja ocellatra": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Rostroraja eglanteria"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "Misspelling. The engine already corrects it to Leucoraja ocellata; the chain's target was wrong."
+  },
+  "Rivulus ocellatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Kryptolebias marmoratus"
+    ],
+    "catalog_status": "Valid as Kryptolebias ocellatus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Salvelinus lepechini": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Salvelinus alpinus"
+    ],
+    "catalog_status": "Valid as Salvelinus lepechini",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Sardina pilchardus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Sardinella aurita"
+    ],
+    "catalog_status": "Valid as Sardina pilchardus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Scarus gibbus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Scarus rubroviolaceus"
+    ],
+    "catalog_status": "Valid as Chlorurus gibbus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Sciades hymenorrhinos": {
+    "verdict": "prior_edition",
+    "target": "Sciades dowii",
+    "chain_targets": [
+      "Sciades dowii"
+    ],
+    "catalog_status": "Synonym of Sciades herzbergii",
+    "afs_editions": [
+      "6th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th ed. listed it as S. hymenorrhinus with occurrence PM, Flapnose Sea Catfish, bagre moreno (ITIS TSN 682299). The 8th ed. gives S. dowii the same names and P:M. The catalog now places the name in S. herzbergii, a South American species not on the List."
+  },
+  "Sciades hymenorrhinus": {
+    "chain_targets": [],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verdict": "prior_edition",
+    "target": "Sciades dowii",
+    "reviewed": "2026-10-01",
+    "reason": "The 6th ed. spelling of Sciades hymenorrhinos; see that entry. Not a chain name; added on review."
+  },
+  "Scomber quadripunctatus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Euthynnus alletteratus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "No catalog record under this name. Left unmapped; the engine flags it UNKNOWN (Scomber is on the List)."
+  },
+  "Sebastes marinus": {
+    "verdict": "restore",
+    "target": "Sebastes norvegicus",
+    "chain_targets": [
+      "Sebastes norvegicus"
+    ],
+    "catalog_status": null,
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "The S. norvegicus page has a misapplied-name entry: 'marinus, Sebastes See Perca norvegica ... Misapplied new combination of Perca marina Linnaeus 1758 for Sebastes norvegicus'. It has no author, so the entry-header pattern cannot read it."
+  },
+  "Siderea grisea": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Echidna nebulosa"
+    ],
+    "catalog_status": "Synonym of Gymnothorax thyrsoideus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Squalus blainville": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Squalus acanthias"
+    ],
+    "catalog_status": "Valid as Squalus blainville",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Squalus megalops": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Squalus acanthias"
+    ],
+    "catalog_status": "Valid as Squalus megalops",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Squalus mitsukurii": {
+    "verdict": "prior_edition",
+    "target": "Squalus clarkae",
+    "chain_targets": [
+      "Squalus acanthias"
+    ],
+    "catalog_status": "Valid as Squalus mitsukurii",
+    "afs_editions": [
+      "6th",
+      "7th"
+    ],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)",
+    "reviewed": "2026-10-01",
+    "reason": "6th and 7th eds. listed it (Shortspine Spurdog; ITIS: western Atlantic, Mexico). Valid species of the eastern Atlantic and Indo-West Pacific; the western Atlantic fish was described as S. clarkae (Pfleger et al. 2018), Gulf Dogfish in the 8th ed. with the * flag. The chain's S. acanthias is wrong."
+  },
+  "Thalassoma amblycephalum": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Thalassoma lucasanum"
+    ],
+    "catalog_status": "Valid as Thalassoma amblycephalum",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Thalassoma trilobatum": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Novaculichthys taeniourus"
+    ],
+    "catalog_status": "Valid as Thalassoma trilobatum",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Trachonurus villosus": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Trachonurus sulcatus"
+    ],
+    "catalog_status": "Valid as Trachonurus villosus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Tylosurus imperialis": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Tylosurus acus",
+      "Tylosurus crocodilus"
+    ],
+    "catalog_status": "Valid as Tylosurus imperialis",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  },
+  "Valamugil seheli": {
+    "verdict": "remove",
+    "target": null,
+    "chain_targets": [
+      "Mugil cephalus"
+    ],
+    "catalog_status": "Synonym of Neomyxus leuciscus",
+    "afs_editions": [],
+    "verified": "2026-09-30 (Eschmeyer's Catalog of Fishes)"
+  }
+}

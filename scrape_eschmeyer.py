@@ -23,6 +23,11 @@ Re-applies the 2025 Addenda overlay (addenda_overlay.apply_synonyms) after
 rebuilding the map — without it a scrape silently reverts the addenda's
 demotions, retargeting and curated pairs.
 
+Names the historical-chain gate rejects are checked one by one in the catalog
+by verify_chain_names.py, which writes chain_verdicts.json; the map build here
+applies those verdicts. After a scrape or --reparse that changes what the gate
+rejects, run verify_chain_names.py and then --rebuild-only.
+
 Usage:
     uv run --with requests --with beautifulsoup4 python scrape_eschmeyer.py --merge
         --merge          keep the existing synonym map, fold in only what is
@@ -59,6 +64,11 @@ except ImportError:
 DATA_PATH  = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 CACHE_PATH = Path(__file__).parent / "eschmeyer_cache.json"
 EXTRALIMITAL_PATH = Path(__file__).parent / "extralimital_valids.json"
+# Catalog verdicts on the names the historical-chain gate rejects, written by
+# verify_chain_names.py. Committed, so a rebuild needs no network to apply them.
+CHAIN_VERDICTS_PATH = Path(__file__).parent / "chain_verdicts.json"
+# Verdicts that put a name back in the map. "remove" and "review" add nothing.
+CHAIN_VERDICTS_APPLIED = {"restore", "retarget", "prior_edition"}
 # Normalized page text, one gzipped JSON file per species. eschmeyer_cache.json
 # holds only PARSED results, so a parser bug used to cost a full ~5 h re-fetch to
 # correct. With this, a parser change replays offline via --reparse.
@@ -125,7 +135,12 @@ ENTRY_HEADER_RE = entry_header_re()
 
 def fetch_species(genus: str, species: str, session: requests.Session) -> str | None:
     """Return raw HTML for the catalog page, or None after retries are exhausted."""
-    params = {"tbl": "species", "genus": genus, "species": species}
+    return fetch_params({"tbl": "species", "genus": genus, "species": species}, session)
+
+
+def fetch_params(params: dict, session: requests.Session) -> str | None:
+    """Any catalog query (e.g. a whole family), with fetch_species's retries."""
+    label = " ".join(str(v) for k, v in params.items() if k != "tbl")
     wait = RETRY_BACKOFF
     for attempt in range(1, MAX_RETRIES + 1):
         try:
@@ -140,7 +155,7 @@ def fetch_species(genus: str, species: str, session: requests.Session) -> str | 
                 # Reset connection pool (requests reconnects lazily)
                 session.close()
             else:
-                print(f"WARNING: gave up on {genus} {species}: {e}")
+                print(f"WARNING: gave up on {label}: {e}")
                 return None
 
 
@@ -188,6 +203,17 @@ def normalize_html(html: str) -> str:
     return text
 
 
+def _edit_distance(a: str, b: str) -> int:
+    """Levenshtein distance; the same bound engine.js uses for misspellings."""
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
 def parse_results(html: str, target_genus: str, target_species: str) -> dict:
     """Parse a catalog result page for one genus+species query."""
     return parse_text(normalize_html(html), target_genus, target_species)
@@ -198,9 +224,11 @@ def parse_text(text: str, target_genus: str, target_species: str) -> dict:
     Parse normalized page text for one genus+species query.
 
     Returns a dict:
-        valid        – True if Eschmeyer considers this the accepted name
-        current_name – accepted binomial (may differ from AFS name)
-        synonyms     – list of older binomials that map to this species
+        valid          – True if Eschmeyer considers this the accepted name
+        current_name   – accepted binomial (may differ from AFS name)
+        synonyms       – list of older binomials that map to this species
+        chain_rejected – names the historical-chain gate refused (see below);
+                         verify_chain_names.py checks each one in the catalog
     """
     # `from_trinomial` lists the subset of `synonyms` that came from a SUBSPECIES
     # header, where "Genus species subspecies" is flattened to "Genus subspecies".
@@ -208,7 +236,8 @@ def parse_text(text: str, target_genus: str, target_species: str) -> dict:
     # "auratus, Cyprinus tinca" (a variety of tench) flattens to "Cyprinus auratus",
     # which is Linnaeus's goldfish. The map build uses this to let a real binomial
     # always outrank a flattened subspecies.
-    result = {"valid": False, "current_name": "", "synonyms": [], "from_trinomial": []}
+    result = {"valid": False, "current_name": "", "synonyms": [], "from_trinomial": [],
+              "chain_rejected": []}
 
     # Epithet fragment. The trailing (?:-[a-z]+)* is required for hyphenated
     # epithets: a bare [a-z]+ truncates "x-punctatus" to "x", which produced
@@ -251,6 +280,27 @@ def parse_text(text: str, target_genus: str, target_species: str) -> dict:
             best = m   # keep advancing; last match is the one we want
         return best
 
+    # What this page itself says belongs to the target, used to gate the
+    # historical chain below: the epithet of each entry whose status reads
+    # "Synonym of" or "Valid as" the target, and every name some author used as
+    # valid for one of those entries. Group 3 (a trinomial's parent species) is
+    # deliberately left out; the page says nothing about where the parent belongs.
+    page_epithets = set()
+    for status_m in re.finditer(
+            r'(?:Synonym of|Valid as) ' + re.escape(target_binomial), text):
+        hdr = last_header_before(status_m.start())
+        if hdr:
+            page_epithets.add(hdr.group(1))
+    page_valid_as = set(re.findall(r'Valid as ([A-Z][a-z]+ ' + EPITHET + r')', text))
+
+    def names_target(binomial):
+        """True if a cited binomial is the target, or a nominal species the page
+        places under it, under another combination or spelling."""
+        epithet = binomial.split(" ", 1)[1]
+        return (_edit_distance(epithet, target_species) <= 2
+                or binomial in page_valid_as
+                or any(_edit_distance(epithet, e) <= 1 for e in page_epithets))
+
     # 1. Strict synonyms: "Synonym of <target>"
     for status_m in re.finditer(r'Synonym of ' + re.escape(target_binomial), text):
         hdr = last_header_before(status_m.start())
@@ -265,12 +315,32 @@ def parse_text(text: str, target_genus: str, target_species: str) -> dict:
         # Also capture historical names cited within this same entry's text span.
         # e.g. an entry may say "•Synonym of Phoxinus erythrogaster ... •Synonym of
         # Chrosomus erythrogaster" — the earlier name is also a synonym of the target.
+        #
+        # Only when names_target() accepts the cited name. Each bullet is one
+        # author's placement, and an author who put this entry under a DIFFERENT
+        # species is disagreeing, not naming the target. "pullus, Pimelodus" on
+        # the Ameiurus nebulosus page carries "•Synonym of Ictalurus melas --
+        # (La Rivers 1994)", and the ungated chain shipped Ictalurus melas ->
+        # Brown Bullhead. It is the Black Bullhead. Others like it included
+        # Coris julis -> Tautoga onitis. The gate keeps misspellings (Coregonus
+        # autumanlis) and names the page itself lumps into the target (Mobula
+        # japanica, "Valid as" for the page's "japanica, Cephaloptera" entry).
+        # Page epithets get 1 edit, not 2: "felis, Pimelodus" is on that same
+        # page, and felis -> melas is 2.
+        #
+        # The gate cannot tell a disagreement from a name an earlier Names of
+        # Fishes edition applied to this fish (Antennarius striatus, 7th ed., for
+        # what is now A. scaber). Rejected names are kept in chain_rejected, and
+        # verify_chain_names.py looks each one up in the catalog.
         entry_text = text[hdr.start():status_m.end()]
         for other_m in SYNONYM_OF_RE.finditer(entry_text):
             other_binomial = other_m.group(1)
-            if (other_binomial != target_binomial
-                    and other_binomial not in result["synonyms"]):
+            if other_binomial == target_binomial or other_binomial in result["synonyms"]:
+                continue
+            if names_target(other_binomial):
                 result["synonyms"].append(other_binomial)
+            elif other_binomial not in result["chain_rejected"]:
+                result["chain_rejected"].append(other_binomial)
 
     # 2. Reclassifications: "Valid as <target>" where genus differs
     #    e.g. querying Nothonotus juliae → entry "juliae, Etheostoma ... Valid as Nothonotus juliae"
@@ -302,6 +372,9 @@ def parse_text(text: str, target_genus: str, target_species: str) -> dict:
                     and other_binomial not in result["synonyms"]):
                 result["synonyms"].append(other_binomial)
 
+    # A name refused in one entry may be accepted from another on the same page.
+    result["chain_rejected"] = [n for n in result["chain_rejected"]
+                                if n not in result["synonyms"]]
     return result
 
 
@@ -571,6 +644,17 @@ def main():
                     continue
                 synonyms[old_name] = binomial
 
+    # Last, the catalog's verdicts on names the chain gate rejected. These were
+    # each looked up on their own catalog page (and some decided by hand), so
+    # they outrank the scraped claims above; an override is reported, since it
+    # can mean a verdict has gone stale against a newer scrape.
+    if CHAIN_VERDICTS_PATH.exists():
+        with open(CHAIN_VERDICTS_PATH, encoding="utf-8") as f:
+            verdicts = json.load(f)
+        n_applied = apply_chain_verdicts(synonyms, verdicts, data["valid_names"],
+                                         extralimital_valids)
+        print(f"  Chain verdicts applied: {n_applied} of {len(verdicts)}")
+
     # Write enriched fish_names.json
     data["synonyms"] = synonyms
     data["metadata"]["synonym_source"] = "Eschmeyer's Catalog of Fishes"
@@ -631,6 +715,26 @@ def main():
             print(f"    AFS: {afs:<35s}  Eschmeyer: {esch}")
         if len(mismatches) > 10:
             print(f"    ... and {len(mismatches) - 10} more (see eschmeyer_cache.json)")
+
+
+def apply_chain_verdicts(synonyms: dict, verdicts: dict, valid_names: dict,
+                         extralimital_valids: set) -> int:
+    """Add each verdict that names a target to the synonym map; returns the count."""
+    n = 0
+    for name, v in verdicts.items():
+        target = v.get("target")
+        if v.get("verdict") not in CHAIN_VERDICTS_APPLIED or not target:
+            continue
+        if target not in valid_names:
+            print(f"  WARNING: chain verdict {name} -> {target}: target is not a valid name; skipped")
+            continue
+        if name in valid_names or name in extralimital_valids:
+            continue
+        if synonyms.get(name, target) != target:
+            print(f"  NOTE: chain verdict overrides {name} -> {synonyms[name]} with {target}")
+        synonyms[name] = target
+        n += 1
+    return n
 
 
 def _save_cache(cache: dict) -> None:
