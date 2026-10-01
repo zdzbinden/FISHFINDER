@@ -13,11 +13,11 @@
   },
   "summary": {
     "families_agree": 325,
-    "families_via_species": 5,
+    "families_via_species": 4,
     "known_differences": 20,
     "unexplained": 0,
     "species_with_catalog_family": 5134,
-    "species_family_differs": 193
+    "species_family_differs": 192
   },
   "orders": {
     "Acanthuridae": {
@@ -1275,9 +1275,8 @@
       "catalog": "Gadiformes",
       "status": "agree"
     },
-    "Platyrhynidae": {
+    "Platyrhinidae": {
       "afs": "Torpediniformes",
-      "via": "Platyrhinidae",
       "catalog": "Torpediniformes",
       "status": "agree"
     },
@@ -2068,14 +2067,6 @@
       "species": 1,
       "genera": [
         "Acanthonus"
-      ]
-    },
-    {
-      "afs": "Platyrhynidae",
-      "catalog": "Platyrhinidae",
-      "species": 1,
-      "genera": [
-        "Platyrhinoidis"
       ]
     },
     {

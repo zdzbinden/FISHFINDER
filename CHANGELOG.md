@@ -34,11 +34,17 @@ moved, and the classification fields (class, order, family) were corrected.
     mullets. An older note blamed page boundaries; that diagnosis was wrong.
   - **A gap in the book.** The 8th edition omits ORDER CHARACIFORMES (p. 76).
     Characidae and Bryconidae (19 species) are now in Characiformes, where
-    Eschmeyer's Catalog and the 7th edition put them.
+    Eschmeyer's Catalog puts them. No passage in the book moves them to
+    Cypriniformes.
   - **Two addenda placements.** The addenda's table split two genera across
     families. All five *Stathmonotus* are now in Labrisomidae, where the addenda
     and the catalog agree, and *Polymetme corythaeola* is in Phosichthyidae with
     its congener.
+  - **Platyrhynidae → Platyrhinidae.** The book's spelling of the thornback
+    family. Family-group names follow the ICZN, which forms them from the type
+    genus, here *Platyrhina*; the catalog, ITIS and WoRMS all use Platyrhinidae.
+    The order Polymixiformes (usually Polymixiiformes) stays as printed, since
+    order names fall outside the Code.
   - **Checked against Eschmeyer's Catalog classification:** 325 of 345 families
     get the same order. The other 20 are deliberate choices of the 8th edition,
     most documented in its Appendix 1 (e.g. mullets in Blenniiformes, following
@@ -204,8 +210,8 @@ Added:
 - **The overlay's invariants cover classification:** every species has a class,
   order and family, each family has one order, and each genus has one family.
   The build refuses to write a database that breaks them.
-- Tests: 12 header tests in `test_parse_pdf.py`, and 16 classification tests in
-  `taxonomy.test.js` (suite now 253).
+- Tests: 13 header tests in `test_parse_pdf.py`, and 17 classification tests in
+  `taxonomy.test.js` (suite now 254).
 
 ---
 

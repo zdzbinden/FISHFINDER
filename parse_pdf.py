@@ -45,14 +45,28 @@ HEADER_LIKE_RE = re.compile(r'\bCLASS\s|\bORDER\s|^[*^&+]?\s*[A-Z][a-z]+idae\b.*
 
 # Order headers the printed book omits. The 8th edition has no
 # "ORDER CHARACIFORMES": *Characidae follows Leuciscidae directly on p. 76, and
-# the order appears nowhere in Table 1, Appendix 1 or the Index, so read literally
-# the tetras would be cypriniforms. Neither Appendix 1 nor any other source moves
-# them there. The book says its arrangement follows Fricke et al. (2022,
+# the order appears nowhere in the book, so read literally the tetras are
+# cypriniforms (the Index even pages Cypriniformes as 63-77). Appendix 1, which
+# records each order the edition adds and each family it transfers, says nothing
+# of the kind. The book says its arrangement follows Fricke et al. (2022,
 # Eschmeyer's Catalog of Fishes), which places Characidae and Bryconidae in
-# Characiformes, as did the 7th edition. Keyed by the family header the missing
-# order header should precede; main() aborts unless each fires exactly once.
+# Characiformes. Keyed by the family header the missing order header should
+# precede; main() aborts unless each fires exactly once.
 MISSING_ORDER_HEADERS = {
     "Characidae": "Characiformes",
+}
+
+# Family names the book misspells, printed -> corrected. The ICZN governs
+# family-group names and forms them from the stem of the type genus (Art. 29.3):
+# Platyrhina gives Platyrhinidae, the spelling of Eschmeyer's Catalog, ITIS and
+# WoRMS, and the List's own genus is Platyrhinoidis. The book prints
+# "Platyrhynidae" throughout (List of Families p. 6, Table 1 p. 43, Index). This
+# is the rule already applied to the addenda's misspellings: the Code governs
+# spelling, AFS the taxonomy. Order names are outside the Code, so POLYMIXIFORMES
+# (usually Polymixiiformes) stays as printed. main() aborts unless each fires
+# exactly once.
+FAMILY_SPELLINGS = {
+    "Platyrhynidae": "Platyrhinidae",
 }
 
 GENUS_RE   = re.compile(r'^[A-Z][a-z]{1,}$')          # allow 2-char genera e.g. Zu
@@ -185,6 +199,7 @@ def main():
     orders: list = []
     families: list = []
     injected: list = []
+    respelled: list = []
     unparsed: list = []
 
     print(f"Opening {PDF_PATH} ...")
@@ -216,6 +231,9 @@ def main():
                     if family in MISSING_ORDER_HEADERS:
                         current_order = MISSING_ORDER_HEADERS[family]
                         injected.append(family)
+                    if family in FAMILY_SPELLINGS:
+                        respelled.append(family)
+                        family = FAMILY_SPELLINGS[family]
                     current_family = family
                     families.append(current_family)
                     continue
@@ -261,6 +279,10 @@ def main():
             errors.append(f"MISSING_ORDER_HEADERS[{fam!r}] fired {n} times, expected 1")
         if MISSING_ORDER_HEADERS[fam] in orders:
             errors.append(f"{MISSING_ORDER_HEADERS[fam]} is now printed; drop the injection")
+    for fam in FAMILY_SPELLINGS:
+        n = respelled.count(fam)
+        if n != 1:
+            errors.append(f"FAMILY_SPELLINGS[{fam!r}] fired {n} times, expected 1")
     if errors:
         print("\nERROR: header audit failed; nothing written.")
         for e in errors:
@@ -288,7 +310,8 @@ def main():
     print(f"  Valid species : {len(valid_names)}")
     print(f"  Unique genera : {len(genera)}")
     print(f"  Headers       : {len(classes)} classes, {len(orders)} orders "
-          f"(+{len(injected)} injected), {len(families)} families")
+          f"(+{len(injected)} injected), {len(families)} families "
+          f"({len(respelled)} respelled)")
 
 
 if __name__ == '__main__':

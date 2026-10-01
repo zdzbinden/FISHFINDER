@@ -63,6 +63,7 @@ describe('species the header bug misfiled', () => {
     ['Astyanax mexicanus', 'Characiformes', 'Characidae', 'the book omits the header'],
     ['Brycon guatemalensis', 'Characiformes', 'Bryconidae', 'the book omits the header'],
     ['Agamyxis pectinifrons', 'Siluriformes', 'Doradidae', 'addenda family, inherited'],
+    ['Platyrhinoidis triseriata', 'Torpediniformes', 'Platyrhinidae', 'book prints Platyrhynidae'],
   ]) {
     it(`${name}: ${order} / ${family} (${why})`, () => {
       const info = db.valid_names[name];

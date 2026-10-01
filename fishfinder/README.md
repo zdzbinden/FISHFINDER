@@ -53,7 +53,8 @@ Class, order and family come from the header lines between species rows. The
 parser stops on a header it cannot read, because a missed header does not fail:
 it files every following species under the previous taxon. That is how 51% of
 species once carried the wrong order. The book itself omits one header, ORDER
-CHARACIFORMES, which the parser supplies (`MISSING_ORDER_HEADERS`).
+CHARACIFORMES, which the parser supplies (`MISSING_ORDER_HEADERS`), and misspells
+one family, Platyrhinidae, which it corrects (`FAMILY_SPELLINGS`).
 
 ### Step 2 — Enrich with synonyms from Eschmeyer's Catalog of Fishes
 
@@ -185,7 +186,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (253 tests across 9 files):
+against the real dataset (254 tests across 9 files):
 
 | File | Coverage |
 |------|----------|

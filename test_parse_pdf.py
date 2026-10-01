@@ -23,8 +23,8 @@ line it cannot parse, and on an injection that does not fire exactly once.
 
 import unittest
 
-from parse_pdf import (MISSING_ORDER_HEADERS, audit_header, parse_class, parse_family,
-                       parse_order, parse_species_line)
+from parse_pdf import (FAMILY_SPELLINGS, MISSING_ORDER_HEADERS, audit_header, parse_class,
+                       parse_family, parse_order, parse_species_line)
 
 SPECIES_ROW = ("*\tEptatretus caribbeaus Fernholm, 1982................................"
                ".....A:M....................Little Hagfish............................"
@@ -97,6 +97,15 @@ class TestMissingOrderHeaders(unittest.TestCase):
         # The injection is keyed on the family header that follows the gap.
         header = "*Characidae–En-tetras, Sp-pepescas y sardinitas, Fr-characins"
         self.assertIn(parse_family(header), MISSING_ORDER_HEADERS)
+
+
+class TestFamilySpellings(unittest.TestCase):
+    def test_platyrhinidae(self):
+        # ICZN Art. 29.3: the stem of the type genus Platyrhina. Order names are
+        # outside the Code, so the printed POLYMIXIFORMES is deliberately absent.
+        self.assertEqual(FAMILY_SPELLINGS, {"Platyrhynidae": "Platyrhinidae"})
+        header = "Platyrhynidae–En-thornbacks, Sp-guitarras espinudas, Fr-guitares de mer épineuses"
+        self.assertIn(parse_family(header), FAMILY_SPELLINGS)
 
 
 if __name__ == "__main__":
