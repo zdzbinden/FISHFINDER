@@ -282,9 +282,10 @@ def main():
             continue
         texts = [page["text"]]
         if not own_entries(page["text"], name):
-            # The family comes from the List's record for the chain target, so
-            # it inherits parse_pdf.py's page-boundary family errors (~7% of
-            # species). A wrong family only costs a "review".
+            # The family comes from the List's record for the chain target. Where
+            # the catalog divides a family differently (Gobiidae vs Oxudercidae,
+            # see classification_crosscheck.json) the listing can miss the entry;
+            # that only costs a "review".
             family = valid.get(chain_targets[0], {}).get("family", "")
             fam = fetch("_family_" + family, {"tbl": "species", "family": family}) if family else None
             if fam is not None:

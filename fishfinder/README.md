@@ -49,6 +49,12 @@ bring this to ~5,200 — see `apply_addenda.py`):
 `class`, `order`, `family`, `author`, `occurrence`, `flags`, `common_name_en`,
 `common_name_es`, `common_name_fr`
 
+Class, order and family come from the header lines between species rows. The
+parser stops on a header it cannot read, because a missed header does not fail:
+it files every following species under the previous taxon. That is how 51% of
+species once carried the wrong order. The book itself omits one header, ORDER
+CHARACIFORMES, which the parser supplies (`MISSING_ORDER_HEADERS`).
+
 ### Step 2 — Enrich with synonyms from Eschmeyer's Catalog of Fishes
 
 ```powershell
@@ -108,6 +114,22 @@ successor is not checked automatically. *Squalus mitsukurii*'s chain target was
 `reviewed`. Fetched pages go to `../eschmeyer_text/verify/`, so `--offline`
 replays them without the network.
 
+### Check — classification against Eschmeyer's Catalog
+
+```powershell
+uv run --with requests --with beautifulsoup4 python ../verify_classification.py
+```
+
+FISHFINDER never reads `class`, `order` or `family`, so nothing else notices
+when they go wrong. This compares each family's order with
+[Eschmeyer's Catalog classification](https://www.calacademy.org/eschmeyers-catalog-of-fishes-classification),
+which the 8th edition says it generally follows. The 20 families where the 8th
+edition chose differently are listed with their reasons, usually an Appendix 1
+entry; any other difference fails the run. It also compares each species'
+family with the one on its own catalog page, for information. Results go to
+`../classification_crosscheck.json` (committed); `--offline` reuses the stored
+page.
+
 ---
 
 ## Running locally
@@ -163,7 +185,7 @@ node --test test/*.test.js
 
 Uses the Node.js built-in test runner (`node:test` + `node:assert`). Zero npm
 dependencies. Tests load `fish_names.json` directly and exercise the engine
-against the real dataset (237 tests across 8 files):
+against the real dataset (252 tests across 9 files):
 
 | File | Coverage |
 |------|----------|
@@ -174,6 +196,7 @@ against the real dataset (237 tests across 8 files):
 | `abbrev.test.js` | Abbreviated genus resolution (`P. olivaris`), ambiguity tie-breaks, and the false-positive guards (author initials, `e.g.`, `Ph.D.`, reference lists) |
 | `low-confidence.test.js` | Prose demotion across the unknown/misspelled/outdated tiers, the English-word epithets that must *not* demote, and the `ae-`/`e-` epithet variants |
 | `addenda.test.js` | The FF-8.1 addenda overlay |
+| `taxonomy.test.js` | Class, order and family: one order per family, one family per genus, and the species the old header bug misfiled |
 | `security.test.js` | The CSP, integrity hashes on every CDN file, HTML escaping, the Firebase rules, the deploy workflow's action pins, and the shape of every name in the database |
 
 ---

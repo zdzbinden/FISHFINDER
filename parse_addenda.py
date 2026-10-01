@@ -150,13 +150,11 @@ GENUS_ROW_RE = re.compile(r"^([A-Z][a-z]+)(?:\s+and\s*([A-Z][a-z]+))?\s+spp\.$")
 # The 5 families the addenda introduces. `anchor` names an existing DB entry —
 # a binomial, a genus, or a sibling family — from which class/order are inherited.
 #
-# On `order`: the DB's order field is wrong for entire families (a documented
-# page-boundary carry-over bug in parse_pdf.py — e.g. every catfish family is filed
-# under "Gymnotiformes", every stichaeid relative under "Tetraodontiformes"). We
-# deliberately inherit the *sibling's* value rather than the correct one, so new
-# entries stay internally consistent with their own family. When the parser bug is
-# fixed, every entry in a family gets corrected together, these included. The field
-# is not read by the engine, the app, or any test.
+# On `order`: until 2026-10-01 parse_pdf.py missed every `*`-flagged order header,
+# so these anchors handed on wrong orders (Doradidae as "Gymnotiformes", the two
+# stichaeid splits as "Tetraodontiformes"). Inheriting kept each new family
+# consistent with its relatives, so regenerating this file after the parser fix
+# corrected them together with everything else.
 NEW_FAMILIES = {
     "Galeocerdonidae":  {"en": "tiger sharks",            "es": "tintoreras",
                          "fr": "requins tigre",
@@ -174,6 +172,37 @@ NEW_FAMILIES = {
                          "fr": "stichées épineux",
                          "anchor": "Kasatkia"},                 # genus, split from Stichaeidae
 }
+
+# Family placements the table implies but never states. The table groups its rows
+# under family headings, and a row filed under a different family from the List's
+# is otherwise read as a reclassification. Decided 2026-10-01 with Eschmeyer's
+# Catalog classification as the guide: AFS is primary, and the catalog breaks the
+# tie only where the 8th edition and the addenda disagree. A genus never ends up
+# split across families (addenda_overlay.check_invariants enforces it).
+CURATED_GENUS_MOVES = {
+    "Stathmonotus": {
+        "family": "Labrisomidae",
+        "note": "The 8th edition prints all 5 species in Chaenopsidae. The addenda "
+                "table files S. hemphillii under Labrisomidae, but its Change column "
+                "says only 'New for Mexico'; unlike Cebidichthys, no genus move is "
+                "stated. Eschmeyer's Catalog places the genus in Labrisomidae, so the "
+                "whole genus moves rather than one species. Our inference: Committee "
+                "confirmation requested.",
+    },
+}
+
+FAMILY_OVERRIDES = {
+    "Polymetme corythaeola": {
+        "family": "Phosichthyidae",
+        "note": "The addenda table files this new species under Stomiidae. Its only "
+                "congener in the List, P. thaeocoryla, is in Phosichthyidae, and "
+                "Eschmeyer's Catalog places Polymetme in Yarrellidae, a split from "
+                "Phosichthyidae that the 8th edition does not recognize. Neither "
+                "supports Stomiidae. Committee confirmation requested.",
+    },
+}
+
+CURATED_DECIDED = "2026-10-01 (Eschmeyer's Catalog of Fishes classification)"
 
 # Pre-existing cache drift: present in the shipped 8th-ed build but absent from
 # eschmeyer_cache.json, so any full rebuild of the synonym map silently loses it.
@@ -362,8 +391,9 @@ def parse_common_names(cell: str) -> dict[str, str]:
 def modal_class_order(valid_names: dict, family: str) -> tuple[str, str]:
     """Most common (class, order) for a family in the current DB.
 
-    parse_pdf.py's documented page-boundary carry-over bug makes any single
-    entry unreliable, so take the mode rather than the first hit.
+    Every species in a family shares one (class, order); check_invariants in
+    addenda_overlay.py enforces it. The mode, rather than the first hit, only
+    guards against a database that predates that check.
     """
     counts: dict[tuple[str, str], int] = {}
     for info in valid_names.values():
@@ -454,7 +484,12 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
             if setv:
                 rec = {"name": name, "set": setv, "was": was,
                        "change": change, "source_ref": source, "row": idx}
-                if "family" in setv and "family" not in change.lower() \
+                genus_move = CURATED_GENUS_MOVES.get(name.split(" ")[0], {})
+                if "family" in setv and genus_move.get("family") == setv["family"]:
+                    rec["family_note"] = (
+                        f"The whole genus moves to {setv['family']}: see the curated "
+                        f"genus row for {name.split(' ')[0]}.")
+                elif "family" in setv and "family" not in change.lower() \
                         and not change.lower().startswith("we had the gen"):
                     rec["review"] = (
                         f"Family moved {was['family']} -> {setv['family']} based on the "
@@ -463,6 +498,9 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
                     )
                 updates.append(rec)
         else:
+            table_family = family
+            if name in FAMILY_OVERRIDES:
+                family = FAMILY_OVERRIDES[name]["family"]
             rec = {
                 "name": name, "family": family,
                 "occurrence": occurrence or "", "author": "", "flags": "",
@@ -472,6 +510,10 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
                 "addenda": "2025",
                 "change": change, "source_ref": source, "row": idx,
             }
+            if family != table_family:
+                rec["table_family"] = table_family
+                rec["family_note"] = FAMILY_OVERRIDES[name]["note"]
+                rec["decided"] = CURATED_DECIDED
             cls, order = modal_class_order(valid_names, family)
             rec["class"], rec["order"] = cls, order
             additions.append(rec)
@@ -503,6 +545,16 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
             for nf in new_families:
                 if nf["family"] == add["family"]:
                     add["class"], add["order"] = nf["class"], nf["order"]
+
+    # Curated genus moves ride on genus_rows, which apply_taxonomy (A5) applies to
+    # every species in the genus. They follow the table's own rows.
+    n_table_genus_rows = len(genus_rows)
+    for genus, mv in CURATED_GENUS_MOVES.items():
+        genus_rows.append({
+            "genus": genus, "change": "Curated: not a row of the addenda table",
+            "family": mv["family"], "source": "curated", "note": mv["note"],
+            "decided": CURATED_DECIDED,
+        })
 
     misspellings.sort(key=lambda r: r["as_printed"])
     additions.sort(key=lambda r: r["name"])
@@ -544,7 +596,8 @@ def build_overlay(rows: list[list[str]], valid_names: dict) -> dict:
             "renames": len(renames),
             "removals": len(removals),
             "updates": len(updates),
-            "genus_rows": len(genus_rows),
+            "genus_rows": n_table_genus_rows,
+            "curated_genus_moves": len(genus_rows) - n_table_genus_rows,
             "new_families": len(new_families),
             "misspellings_corrected": len(misspellings),
             "species_before": len(valid_names),
@@ -623,7 +676,7 @@ def main() -> int:
     print(f"  renames     {e['renames']:4d}")
     print(f"  updates     {e['updates']:4d}")
     print(f"  removals    {e['removals']:4d}")
-    print(f"  genus rows  {e['genus_rows']:4d}")
+    print(f"  genus rows  {e['genus_rows']:4d}  (+{e['curated_genus_moves']} curated)")
     print(f"  misspellings corrected {e['misspellings_corrected']:2d}")
     print(f"  unresolved  {len(overlay['unresolved']):4d}")
     print(f"  species {e['species_before']} -> {e['species_after']}")
@@ -642,8 +695,13 @@ def main() -> int:
         if not OUT_PATH.exists():
             print(f"\n--check: {OUT_PATH.name} does not exist yet.", file=sys.stderr)
             return 1
-        current = OUT_PATH.read_text(encoding="utf-8")
-        if current == text:
+        # `generated` is today's date, so a byte comparison failed on every day
+        # but the one the file was written. Compare everything else.
+        current = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+        current.pop("generated", None)
+        fresh = dict(overlay)
+        fresh.pop("generated", None)
+        if current == fresh:
             print(f"\n--check: {OUT_PATH.name} is up to date.")
             return 0
         print(f"\n--check: {OUT_PATH.name} DIFFERS from a fresh parse.", file=sys.stderr)

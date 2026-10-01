@@ -1,0 +1,2122 @@
+{
+  "source": {
+    "title": "Eschmeyer's Catalog of Fishes Classification",
+    "editors": "R. van der Laan and R. Fricke",
+    "url": "https://www.calacademy.org/eschmeyers-catalog-of-fishes-classification",
+    "accessed": "2026-10-01"
+  },
+  "database": {
+    "data_version": "FF-8.1",
+    "species": 5200,
+    "families": 345,
+    "orders": 70
+  },
+  "summary": {
+    "families_agree": 325,
+    "families_via_species": 5,
+    "known_differences": 20,
+    "unexplained": 0,
+    "species_with_catalog_family": 5134,
+    "species_family_differs": 193
+  },
+  "orders": {
+    "Acanthuridae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Achiridae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Acipenseridae": {
+      "afs": "Acipenseriformes",
+      "catalog": "Acipenseriformes",
+      "status": "agree"
+    },
+    "Aetobatidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Agonidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Albulidae": {
+      "afs": "Albuliformes",
+      "catalog": "Albuliformes",
+      "status": "agree"
+    },
+    "Alepisauridae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Alepocephalidae": {
+      "afs": "Alepocephaliformes",
+      "catalog": "Alepocephaliformes",
+      "status": "agree"
+    },
+    "Alopiidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Alosidae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Amblyopsidae": {
+      "afs": "Percopsiformes",
+      "catalog": "Percopsiformes",
+      "status": "agree"
+    },
+    "Amiidae": {
+      "afs": "Amiiformes",
+      "catalog": "Amiiformes",
+      "status": "agree"
+    },
+    "Ammodytidae": {
+      "afs": "Labriformes",
+      "catalog": "Labriformes",
+      "status": "agree"
+    },
+    "Anablepidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Anacanthobatidae": {
+      "afs": "Rajiformes",
+      "catalog": "Rajiformes",
+      "status": "agree"
+    },
+    "Anarhichadidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Anguillidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Anomalopidae": {
+      "afs": "Trachichthyiformes",
+      "catalog": "Trachichthyiformes",
+      "status": "agree"
+    },
+    "Anoplogastridae": {
+      "afs": "Trachichthyiformes",
+      "catalog": "Trachichthyiformes",
+      "status": "agree"
+    },
+    "Anoplopomatidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Anotopteridae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Antennariidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Anthiadidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Antigoniidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Aphredoderidae": {
+      "afs": "Percopsiformes",
+      "catalog": "Percopsiformes",
+      "status": "agree"
+    },
+    "Apogonidae": {
+      "afs": "Kurtiformes",
+      "catalog": "Gobiiformes",
+      "status": "afs_differs",
+      "reason": "Appendix 1 (p. 236): Kurtiformes new to the list, transferred from Perciformes following Thacker (2009) and McCraney et al. (2020). The catalog places it in Gobiiformes."
+    },
+    "Argentinidae": {
+      "afs": "Argentiniformes",
+      "catalog": "Argentiniformes",
+      "status": "agree"
+    },
+    "Arhynchobatidae": {
+      "afs": "Rajiformes",
+      "catalog": "Rajiformes",
+      "status": "agree"
+    },
+    "Ariidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Ariommatidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Ateleopodidae": {
+      "afs": "Ateleopodiformes",
+      "catalog": "Ateleopodiformes",
+      "status": "agree"
+    },
+    "Atherinidae": {
+      "afs": "Atheriniformes",
+      "catalog": "Atheriniformes",
+      "status": "agree"
+    },
+    "Atherinopsidae": {
+      "afs": "Atheriniformes",
+      "catalog": "Atheriniformes",
+      "status": "agree"
+    },
+    "Aulopidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Aulorhynchidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Aulostomidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Balistidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Barbourisiidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Bathyclupeidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Bathygadidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Bathylagidae": {
+      "afs": "Argentiniformes",
+      "catalog": "Argentiniformes",
+      "status": "agree"
+    },
+    "Bathymasteridae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Bathysauridae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Batrachoididae": {
+      "afs": "Batrachoidiformes",
+      "catalog": "Batrachoidiformes",
+      "status": "agree"
+    },
+    "Belonidae": {
+      "afs": "Beloniformes",
+      "catalog": "Beloniformes",
+      "status": "agree"
+    },
+    "Bembropidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Berycidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Blenniidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Bothidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Bramidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Bregmacerotidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Bryconidae": {
+      "afs": "Characiformes",
+      "catalog": "Characiformes",
+      "status": "agree"
+    },
+    "Bythitidae": {
+      "afs": "Ophidiiformes",
+      "catalog": "Ophidiiformes",
+      "status": "agree"
+    },
+    "Callichthyidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Callionymidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Carangidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Carapidae": {
+      "afs": "Ophidiiformes",
+      "catalog": "Ophidiiformes",
+      "status": "agree"
+    },
+    "Carcharhinidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Carchariidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Caristiidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Catostomidae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Caulophrynidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Cebidichthyidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Centrarchidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Centriscidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Centrolophidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Centrophoridae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Centrophrynidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Centropomidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Ceratiidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Cetomimidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Cetorhinidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Chaenopsidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Chaetodontidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Chanidae": {
+      "afs": "Gonorynchiformes",
+      "catalog": "Gonorynchiformes",
+      "status": "agree"
+    },
+    "Channidae": {
+      "afs": "Anabantiformes",
+      "catalog": "Anabantiformes",
+      "status": "agree"
+    },
+    "Characidae": {
+      "afs": "Characiformes",
+      "catalog": "Characiformes",
+      "status": "agree"
+    },
+    "Chaunacidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Chiasmodontidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Chimaeridae": {
+      "afs": "Chimaeriformes",
+      "catalog": "Chimaeriformes",
+      "status": "agree"
+    },
+    "Chlamydoselachidae": {
+      "afs": "Hexanchiformes",
+      "catalog": "Hexanchiformes",
+      "status": "agree"
+    },
+    "Chlopsidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Chlorophthalmidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Cichlidae": {
+      "afs": "Cichliformes",
+      "catalog": "Cichliformes",
+      "status": "agree"
+    },
+    "Cirrhitidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Clariidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Clinidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Clupeidae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Cobitidae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Colocongridae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Congridae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Coryphaenidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Cottidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Cryptacanthodidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Cyclopsettidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Cyclopteridae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Cyematidae": {
+      "afs": "Saccopharyngiformes",
+      "catalog": "Anguilliformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Saccopharyngiformes; Appendix 1 records no change. The catalog includes these families in Anguilliformes."
+    },
+    "Cynoglossidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Cyprinidae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Cyprinodontidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Dactylopteridae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Dactyloscopidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Dalatiidae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Dasyatidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Derichthyidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Diceratiidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Dinematichthyidae": {
+      "afs": "Ophidiiformes",
+      "catalog": "Ophidiiformes",
+      "status": "agree"
+    },
+    "Diodontidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Diretmidae": {
+      "afs": "Trachichthyiformes",
+      "catalog": "Trachichthyiformes",
+      "status": "agree"
+    },
+    "Doradidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Dorosomatidae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Draconettidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Echeneidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Echinorhinidae": {
+      "afs": "Echinorhiniformes",
+      "catalog": "Echinorhiniformes",
+      "status": "agree"
+    },
+    "Elassomatidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Eleotridae": {
+      "afs": "Gobiiformes",
+      "catalog": "Gobiiformes",
+      "status": "agree"
+    },
+    "Elopidae": {
+      "afs": "Elopiformes",
+      "catalog": "Elopiformes",
+      "status": "agree"
+    },
+    "Embiotocidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Emmelichthyidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Engraulidae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Ephippidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Epigonidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Epinephelidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Esocidae": {
+      "afs": "Esociformes",
+      "catalog": "Salmoniformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Esociformes; Appendix 1 records no change. The catalog includes pikes in Salmoniformes."
+    },
+    "Etmopteridae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Eurypharyngidae": {
+      "afs": "Saccopharyngiformes",
+      "catalog": "Anguilliformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Saccopharyngiformes; Appendix 1 records no change. The catalog includes these families in Anguilliformes."
+    },
+    "Evermannellidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Exocoetidae": {
+      "afs": "Beloniformes",
+      "catalog": "Beloniformes",
+      "status": "agree"
+    },
+    "Fistulariidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Fundulidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Gadidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Gaidropsaridae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Galeocerdonidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Gasterosteidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Gempylidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Gerreidae": {
+      "afs": "Labriformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "Appendix 1 (p. 246): Labriformes new to the list, Gerreidae transferred from Perciformes following Betancur-R. et al. (2017) and Dornburg & Near (2021). The catalog places it in Acanthuriformes."
+    },
+    "Gibberichthyidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Gigantactinidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Giganturidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Ginglymostomatidae": {
+      "afs": "Orectolobiformes",
+      "catalog": "Orectolobiformes",
+      "status": "agree"
+    },
+    "Girellidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Gobiesocidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Gobiidae": {
+      "afs": "Gobiiformes",
+      "catalog": "Gobiiformes",
+      "status": "agree"
+    },
+    "Gonostomatidae": {
+      "afs": "Stomiiformes",
+      "catalog": "Stomiiformes",
+      "status": "agree"
+    },
+    "Goodeidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Grammatidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Grammicolepididae": {
+      "afs": "Zeiformes",
+      "catalog": "Zeiformes",
+      "status": "agree"
+    },
+    "Gurgesiellidae": {
+      "afs": "Rajiformes",
+      "catalog": "Rajiformes",
+      "status": "agree"
+    },
+    "Gymnotidae": {
+      "afs": "Gymnotiformes",
+      "catalog": "Gymnotiformes",
+      "status": "agree"
+    },
+    "Gymnuridae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Haemulidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Halosauridae": {
+      "afs": "Notacanthiformes",
+      "catalog": "Notacanthiformes",
+      "status": "agree"
+    },
+    "Hemiramphidae": {
+      "afs": "Beloniformes",
+      "catalog": "Beloniformes",
+      "status": "agree"
+    },
+    "Heptapteridae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Heterenchelyidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Heterodontidae": {
+      "afs": "Heterodontiformes",
+      "catalog": "Heterodontiformes",
+      "status": "agree"
+    },
+    "Hexagrammidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Hexanchidae": {
+      "afs": "Hexanchiformes",
+      "catalog": "Hexanchiformes",
+      "status": "agree"
+    },
+    "Himantolophidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Hiodontidae": {
+      "afs": "Hiodontiformes",
+      "catalog": "Hiodontiformes",
+      "status": "agree"
+    },
+    "Holocentridae": {
+      "afs": "Holocentriformes",
+      "catalog": "Beryciformes",
+      "status": "afs_differs",
+      "reason": "Appendix 1 (p. 231): Holocentriformes new to the list, transferred from Beryciformes following Moore (1993) and Betancur-R. et al. (2017). The catalog keeps it in Beryciformes."
+    },
+    "Howellidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Icosteidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Ictaluridae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Ipnopidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Istiophoridae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Jordaniidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Kuhliidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Kyphosidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Labridae": {
+      "afs": "Labriformes",
+      "catalog": "Labriformes",
+      "status": "agree"
+    },
+    "Labrisomidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Lacantuniidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Lamnidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Lampridae": {
+      "afs": "Lampriformes",
+      "catalog": "Lampriformes",
+      "status": "agree"
+    },
+    "Lepisosteidae": {
+      "afs": "Lepisosteiformes",
+      "catalog": "Lepisosteiformes",
+      "status": "agree"
+    },
+    "Leuciscidae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Linophrynidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Liparidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Lobotidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Lophiidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Lophotidae": {
+      "afs": "Lampriformes",
+      "catalog": "Lampriformes",
+      "status": "agree"
+    },
+    "Loricariidae": {
+      "afs": "Siluriformes",
+      "catalog": "Siluriformes",
+      "status": "agree"
+    },
+    "Lutjanidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Luvaridae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Macrouridae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Malacanthidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Mastacembelidae": {
+      "afs": "Synbranchiformes",
+      "catalog": "Synbranchiformes",
+      "status": "agree"
+    },
+    "Megachasmidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Megalopidae": {
+      "afs": "Elopiformes",
+      "catalog": "Elopiformes",
+      "status": "agree"
+    },
+    "Melamphaidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Melanocetidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Melanonidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Merlucciidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Microdesmidae": {
+      "afs": "Gobiiformes",
+      "via": "Gobiidae",
+      "catalog": "Gobiiformes",
+      "status": "agree"
+    },
+    "Microstomatidae": {
+      "afs": "Argentiniformes",
+      "catalog": "Argentiniformes",
+      "status": "agree"
+    },
+    "Mitsukurinidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Mobulidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Molidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Monacanthidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Monognathidae": {
+      "afs": "Saccopharyngiformes",
+      "catalog": "Anguilliformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Saccopharyngiformes; Appendix 1 records no change. The catalog includes these families in Anguilliformes."
+    },
+    "Moridae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Moringuidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Moronidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Mugilidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Mugiliformes",
+      "status": "afs_differs",
+      "reason": "Appendix 1 (p. 241): transferred from Perciformes to Blenniiformes following Dornburg & Near (2021). The catalog has Mugiliformes."
+    },
+    "Mullidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Muraenesocidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Muraenidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Myctophidae": {
+      "afs": "Myctophiformes",
+      "catalog": "Myctophiformes",
+      "status": "agree"
+    },
+    "Myliobatidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Myxinidae": {
+      "afs": "Myxiniformes",
+      "catalog": "Myxiniformes",
+      "status": "agree"
+    },
+    "Narcinidae": {
+      "afs": "Torpediniformes",
+      "catalog": "Torpediniformes",
+      "status": "agree"
+    },
+    "Nematistiidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Nemichthyidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Neoceratiidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Neocyematidae": {
+      "afs": "Saccopharyngiformes",
+      "catalog": "Anguilliformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Saccopharyngiformes; Appendix 1 records no change. The catalog includes these families in Anguilliformes."
+    },
+    "Neoscopelidae": {
+      "afs": "Myctophiformes",
+      "catalog": "Myctophiformes",
+      "status": "agree"
+    },
+    "Nettastomatidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Nomeidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Notacanthidae": {
+      "afs": "Notacanthiformes",
+      "catalog": "Notacanthiformes",
+      "status": "agree"
+    },
+    "Notopteridae": {
+      "afs": "Osteoglossiformes",
+      "catalog": "Osteoglossiformes",
+      "status": "agree"
+    },
+    "Notosudidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Odontaspididae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Ogcocephalidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Omosudidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Oneirodidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Ophichthidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Ophidiidae": {
+      "afs": "Ophidiiformes",
+      "catalog": "Ophidiiformes",
+      "status": "agree"
+    },
+    "Opisthocentridae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Opisthoproctidae": {
+      "afs": "Argentiniformes",
+      "catalog": "Argentiniformes",
+      "status": "agree"
+    },
+    "Opistognathidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Oplegnathidae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Oreosomatidae": {
+      "afs": "Zeiformes",
+      "catalog": "Zeiformes",
+      "status": "agree"
+    },
+    "Osmeridae": {
+      "afs": "Osmeriformes",
+      "catalog": "Osmeriformes",
+      "status": "agree"
+    },
+    "Osphronemidae": {
+      "afs": "Anabantiformes",
+      "catalog": "Anabantiformes",
+      "status": "agree"
+    },
+    "Ostraciidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Oxynotidae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Paralepididae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Paralichthyidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Parazenidae": {
+      "afs": "Zeiformes",
+      "catalog": "Zeiformes",
+      "status": "agree"
+    },
+    "Pempheridae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Pentacerotidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Pentanchidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Percidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Percopsidae": {
+      "afs": "Percopsiformes",
+      "catalog": "Percopsiformes",
+      "status": "agree"
+    },
+    "Petromyzontidae": {
+      "afs": "Petromyzontiformes",
+      "catalog": "Petromyzontiformes",
+      "status": "agree"
+    },
+    "Pholidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Phosichthyidae": {
+      "afs": "Stomiiformes",
+      "catalog": "Stomiiformes",
+      "status": "agree"
+    },
+    "Phycidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Platyrhynidae": {
+      "afs": "Torpediniformes",
+      "via": "Platyrhinidae",
+      "catalog": "Torpediniformes",
+      "status": "agree"
+    },
+    "Platytroctidae": {
+      "afs": "Alepocephaliformes",
+      "catalog": "Alepocephaliformes",
+      "status": "agree"
+    },
+    "Pleuronectidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Poeciliidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Poecilopsettidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Polymixiidae": {
+      "afs": "Polymixiformes",
+      "catalog": "Polymixiiformes",
+      "status": "afs_differs",
+      "reason": "Same order, spelled differently: the 8th edition prints POLYMIXIFORMES, the catalog Polymixiiformes."
+    },
+    "Polynemidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Polyodontidae": {
+      "afs": "Acipenseriformes",
+      "catalog": "Acipenseriformes",
+      "status": "agree"
+    },
+    "Polyprionidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Pomacanthidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Pomacentridae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Pomatomidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Potamotrygonidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Priacanthidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Pristidae": {
+      "afs": "Rhinopristiformes",
+      "catalog": "Rhinopristiformes",
+      "status": "agree"
+    },
+    "Pristigasteridae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Profundulidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Proscylliidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Pseudocarchariidae": {
+      "afs": "Lamniformes",
+      "catalog": "Lamniformes",
+      "status": "agree"
+    },
+    "Pseudotriakidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Psychrolutidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Ptilichthyidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Rachycentridae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Radiicephalidae": {
+      "afs": "Lampriformes",
+      "catalog": "Lampriformes",
+      "status": "agree"
+    },
+    "Rajidae": {
+      "afs": "Rajiformes",
+      "catalog": "Rajiformes",
+      "status": "agree"
+    },
+    "Regalecidae": {
+      "afs": "Lampriformes",
+      "catalog": "Lampriformes",
+      "status": "agree"
+    },
+    "Rhamphocottidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Rhincodontidae": {
+      "afs": "Orectolobiformes",
+      "catalog": "Orectolobiformes",
+      "status": "agree"
+    },
+    "Rhinobatidae": {
+      "afs": "Rhinopristiformes",
+      "catalog": "Rhinopristiformes",
+      "status": "agree"
+    },
+    "Rhinochimaeridae": {
+      "afs": "Chimaeriformes",
+      "catalog": "Chimaeriformes",
+      "status": "agree"
+    },
+    "Rhinopteridae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Rivulidae": {
+      "afs": "Cyprinodontiformes",
+      "catalog": "Cyprinodontiformes",
+      "status": "agree"
+    },
+    "Rondeletiidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Saccopharyngidae": {
+      "afs": "Saccopharyngiformes",
+      "catalog": "Anguilliformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps Saccopharyngiformes; Appendix 1 records no change. The catalog includes these families in Anguilliformes."
+    },
+    "Salmonidae": {
+      "afs": "Salmoniformes",
+      "catalog": "Salmoniformes",
+      "status": "agree"
+    },
+    "Schindleriidae": {
+      "afs": "Gobiiformes",
+      "via": "Gobiidae",
+      "catalog": "Gobiiformes",
+      "status": "agree"
+    },
+    "Sciaenidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Scomberesocidae": {
+      "afs": "Beloniformes",
+      "catalog": "Beloniformes",
+      "status": "agree"
+    },
+    "Scombridae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Scombrolabracidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Scopelarchidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Scophthalmidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Scorpaenichthyidae": {
+      "afs": "Perciformes",
+      "via": "Jordaniidae",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Scorpaenidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Scorpididae": {
+      "afs": "Centrarchiformes",
+      "catalog": "Centrarchiformes",
+      "status": "agree"
+    },
+    "Scyliorhinidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Scytalinidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Serranidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Serrivomeridae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Setarchidae": {
+      "afs": "Perciformes",
+      "via": "Scorpaenidae",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Soleidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Somniosidae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Sparidae": {
+      "afs": "Perciformes",
+      "catalog": "Acanthuriformes",
+      "status": "afs_differs",
+      "reason": "The 8th edition keeps this family in Perciformes. Appendix 1 (p. 243) moves only Acanthuridae, Chaetodontidae, Ephippidae, Lobotidae, Luvaridae, Pomacanthidae and Zanclidae to Acanthuriformes, following Gill & Leis (2019)."
+    },
+    "Sphyraenidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Sphyrnidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Spratelloididae": {
+      "afs": "Clupeiformes",
+      "catalog": "Clupeiformes",
+      "status": "agree"
+    },
+    "Squalidae": {
+      "afs": "Squaliformes",
+      "catalog": "Squaliformes",
+      "status": "agree"
+    },
+    "Squatinidae": {
+      "afs": "Squatiniformes",
+      "catalog": "Squatiniformes",
+      "status": "agree"
+    },
+    "Steindachneriidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Stephanoberycidae": {
+      "afs": "Beryciformes",
+      "catalog": "Beryciformes",
+      "status": "agree"
+    },
+    "Stereolepididae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Sternoptychidae": {
+      "afs": "Stomiiformes",
+      "catalog": "Stomiiformes",
+      "status": "agree"
+    },
+    "Stichaeidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Stomiidae": {
+      "afs": "Stomiiformes",
+      "catalog": "Stomiiformes",
+      "status": "agree"
+    },
+    "Stromateidae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Stylephoridae": {
+      "afs": "Stylephoriformes",
+      "catalog": "Gadiformes",
+      "status": "afs_differs",
+      "reason": "Appendix 1 (p. 229): Stylephoriformes new to the list, transferred from Lampriformes following Miya et al. (2007) and Betancur-R. et al. (2017). The catalog places it in Gadiformes."
+    },
+    "Symphysanodontidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Synagropidae": {
+      "afs": "Acropomatiformes",
+      "catalog": "Acropomatiformes",
+      "status": "agree"
+    },
+    "Synaphobranchidae": {
+      "afs": "Anguilliformes",
+      "catalog": "Anguilliformes",
+      "status": "agree"
+    },
+    "Synbranchidae": {
+      "afs": "Synbranchiformes",
+      "catalog": "Synbranchiformes",
+      "status": "agree"
+    },
+    "Syngnathidae": {
+      "afs": "Syngnathiformes",
+      "catalog": "Syngnathiformes",
+      "status": "agree"
+    },
+    "Synodontidae": {
+      "afs": "Aulopiformes",
+      "catalog": "Aulopiformes",
+      "status": "agree"
+    },
+    "Tetragonuridae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Tetraodontidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Thaumatichthyidae": {
+      "afs": "Lophiiformes",
+      "catalog": "Lophiiformes",
+      "status": "agree"
+    },
+    "Tincidae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Torpedinidae": {
+      "afs": "Torpediniformes",
+      "catalog": "Torpediniformes",
+      "status": "agree"
+    },
+    "Trachichthyidae": {
+      "afs": "Trachichthyiformes",
+      "catalog": "Trachichthyiformes",
+      "status": "agree"
+    },
+    "Trachipteridae": {
+      "afs": "Lampriformes",
+      "catalog": "Lampriformes",
+      "status": "agree"
+    },
+    "Trachyrincidae": {
+      "afs": "Gadiformes",
+      "catalog": "Gadiformes",
+      "status": "agree"
+    },
+    "Triacanthodidae": {
+      "afs": "Tetraodontiformes",
+      "catalog": "Tetraodontiformes",
+      "status": "agree"
+    },
+    "Triakidae": {
+      "afs": "Carcharhiniformes",
+      "catalog": "Carcharhiniformes",
+      "status": "agree"
+    },
+    "Trichiuridae": {
+      "afs": "Scombriformes",
+      "catalog": "Scombriformes",
+      "status": "agree"
+    },
+    "Trichodontidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Triglidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Tripterygiidae": {
+      "afs": "Blenniiformes",
+      "catalog": "Blenniiformes",
+      "status": "agree"
+    },
+    "Trygonorrhinidae": {
+      "afs": "Rhinopristiformes",
+      "catalog": "Rhinopristiformes",
+      "status": "agree"
+    },
+    "Uranoscopidae": {
+      "afs": "Labriformes",
+      "catalog": "Labriformes",
+      "status": "agree"
+    },
+    "Urotrygonidae": {
+      "afs": "Myliobatiformes",
+      "catalog": "Myliobatiformes",
+      "status": "agree"
+    },
+    "Xenocyprididae": {
+      "afs": "Cypriniformes",
+      "catalog": "Cypriniformes",
+      "status": "agree"
+    },
+    "Xiphiidae": {
+      "afs": "Carangiformes",
+      "catalog": "Carangiformes",
+      "status": "agree"
+    },
+    "Zanclidae": {
+      "afs": "Acanthuriformes",
+      "catalog": "Acanthuriformes",
+      "status": "agree"
+    },
+    "Zaniolepididae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Zaproridae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    },
+    "Zeidae": {
+      "afs": "Zeiformes",
+      "catalog": "Zeiformes",
+      "status": "agree"
+    },
+    "Zeniontidae": {
+      "afs": "Zeiformes",
+      "catalog": "Zeiformes",
+      "status": "agree"
+    },
+    "Zoarcidae": {
+      "afs": "Perciformes",
+      "catalog": "Perciformes",
+      "status": "agree"
+    }
+  },
+  "families": [
+    {
+      "afs": "Gobiidae",
+      "catalog": "Oxudercidae",
+      "species": 45,
+      "genera": [
+        "Acanthogobius",
+        "Awaous",
+        "Clevelandia",
+        "Ctenogobius",
+        "Eucyclogobius",
+        "Evermannia",
+        "Evorthodus",
+        "Gillichthys",
+        "Gnatholepis",
+        "Gobioides",
+        "Gobionellus",
+        "Ilypnus",
+        "Lepidogobius",
+        "Lethops",
+        "Oxyurichthys",
+        "Quietula",
+        "Rhinogobius",
+        "Sicydium",
+        "Tridentiger",
+        "Typhlogobius"
+      ]
+    },
+    {
+      "afs": "Characidae",
+      "catalog": "Acestrorhamphidae",
+      "species": 17,
+      "genera": [
+        "Astyanax",
+        "Hyphessobrycon"
+      ]
+    },
+    {
+      "afs": "Microdesmidae",
+      "catalog": "Gobiidae",
+      "species": 13,
+      "genera": [
+        "Cerdale",
+        "Clarkichthys",
+        "Microdesmus",
+        "Ptereleotris"
+      ]
+    },
+    {
+      "afs": "Epinephelidae",
+      "catalog": "Grammistidae",
+      "species": 12,
+      "genera": [
+        "Jeboehlkia",
+        "Pseudogramma",
+        "Rypticus"
+      ]
+    },
+    {
+      "afs": "Carangidae",
+      "catalog": "Trachinotidae",
+      "species": 10,
+      "genera": [
+        "Oligoplites",
+        "Trachinotus"
+      ]
+    },
+    {
+      "afs": "Epinephelidae",
+      "catalog": "Liopropomatidae",
+      "species": 9,
+      "genera": [
+        "Bathyanthias",
+        "Liopropoma"
+      ]
+    },
+    {
+      "afs": "Stichaeidae",
+      "catalog": "Lumpenidae",
+      "species": 8,
+      "genera": [
+        "Acantholumpenus",
+        "Anisarchus",
+        "Leptoclinus",
+        "Lumpenella",
+        "Lumpenus",
+        "Poroclinus"
+      ]
+    },
+    {
+      "afs": "Malacanthidae",
+      "catalog": "Latilidae",
+      "species": 7,
+      "genera": [
+        "Caulolatilus",
+        "Lopholatilus"
+      ]
+    },
+    {
+      "afs": "Agonidae",
+      "catalog": "Hemilepidotidae",
+      "species": 6,
+      "genera": [
+        "Hemilepidotus"
+      ]
+    },
+    {
+      "afs": "Bothidae",
+      "catalog": "Monolenidae",
+      "species": 6,
+      "genera": [
+        "Monolene"
+      ]
+    },
+    {
+      "afs": "Agonidae",
+      "catalog": "Hemitripteridae",
+      "species": 4,
+      "genera": [
+        "Blepsias",
+        "Hemitripterus"
+      ]
+    },
+    {
+      "afs": "Bothidae",
+      "catalog": "Taeniopsettidae",
+      "species": 4,
+      "genera": [
+        "Engyophrys",
+        "Perissias",
+        "Trichopsetta"
+      ]
+    },
+    {
+      "afs": "Phosichthyidae",
+      "catalog": "Vinciguerriidae",
+      "species": 4,
+      "genera": [
+        "Pollichthys",
+        "Vinciguerria"
+      ]
+    },
+    {
+      "afs": "Synodontidae",
+      "catalog": "Harpadontidae",
+      "species": 4,
+      "genera": [
+        "Saurida"
+      ]
+    },
+    {
+      "afs": "Agonidae",
+      "catalog": "Nautichthyidae",
+      "species": 3,
+      "genera": [
+        "Nautichthys"
+      ]
+    },
+    {
+      "afs": "Gadidae",
+      "catalog": "Lotidae",
+      "species": 3,
+      "genera": [
+        "Brosme",
+        "Lota",
+        "Molva"
+      ]
+    },
+    {
+      "afs": "Gonostomatidae",
+      "catalog": "Diplophidae",
+      "species": 3,
+      "genera": [
+        "Diplophos",
+        "Manducus"
+      ]
+    },
+    {
+      "afs": "Ophidiidae",
+      "catalog": "Brotulidae",
+      "species": 3,
+      "genera": [
+        "Brotula"
+      ]
+    },
+    {
+      "afs": "Phosichthyidae",
+      "catalog": "Ichthyococcidae",
+      "species": 3,
+      "genera": [
+        "Ichthyococcus"
+      ]
+    },
+    {
+      "afs": "Phosichthyidae",
+      "catalog": "Yarrellidae",
+      "species": 3,
+      "genera": [
+        "Polymetme",
+        "Yarrella"
+      ]
+    },
+    {
+      "afs": "Thaumatichthyidae",
+      "catalog": "Oneirodidae",
+      "species": 3,
+      "genera": [
+        "Lasiognathus"
+      ]
+    },
+    {
+      "afs": "Clupeidae",
+      "catalog": "Dussumieriidae",
+      "species": 2,
+      "genera": [
+        "Etrumeus"
+      ]
+    },
+    {
+      "afs": "Esocidae",
+      "catalog": "Umbridae",
+      "species": 2,
+      "genera": [
+        "Umbra"
+      ]
+    },
+    {
+      "afs": "Microstomatidae",
+      "catalog": "Bathylagidae",
+      "species": 2,
+      "genera": [
+        "Leuroglossus"
+      ]
+    },
+    {
+      "afs": "Ophidiidae",
+      "catalog": "Bythitidae",
+      "species": 2,
+      "genera": [
+        "Petrotyx"
+      ]
+    },
+    {
+      "afs": "Setarchidae",
+      "catalog": "Scorpaenidae",
+      "species": 2,
+      "genera": [
+        "Ectreposebastes",
+        "Setarches"
+      ]
+    },
+    {
+      "afs": "Stichaeidae",
+      "catalog": "Cebidichthyidae",
+      "species": 2,
+      "genera": [
+        "Esselenichthys"
+      ]
+    },
+    {
+      "afs": "Atherinidae",
+      "catalog": "Atherinomoridae",
+      "species": 1,
+      "genera": [
+        "Atherinomorus"
+      ]
+    },
+    {
+      "afs": "Bythitidae",
+      "catalog": "Ophidiidae",
+      "species": 1,
+      "genera": [
+        "Thalassobathia"
+      ]
+    },
+    {
+      "afs": "Gempylidae",
+      "catalog": "Lepidocybiidae",
+      "species": 1,
+      "genera": [
+        "Lepidocybium"
+      ]
+    },
+    {
+      "afs": "Leuciscidae",
+      "catalog": "Acheilognathidae",
+      "species": 1,
+      "genera": [
+        "Rhodeus"
+      ]
+    },
+    {
+      "afs": "Ophidiidae",
+      "catalog": "Acanthonidae",
+      "species": 1,
+      "genera": [
+        "Acanthonus"
+      ]
+    },
+    {
+      "afs": "Platyrhynidae",
+      "catalog": "Platyrhinidae",
+      "species": 1,
+      "genera": [
+        "Platyrhinoidis"
+      ]
+    },
+    {
+      "afs": "Schindleriidae",
+      "catalog": "Gobiidae",
+      "species": 1,
+      "genera": [
+        "Schindleria"
+      ]
+    },
+    {
+      "afs": "Scorpaenichthyidae",
+      "catalog": "Jordaniidae",
+      "species": 1,
+      "genera": [
+        "Scorpaenichthys"
+      ]
+    },
+    {
+      "afs": "Scyliorhinidae",
+      "catalog": "Pentanchidae",
+      "species": 1,
+      "genera": [
+        "Cephalurus"
+      ]
+    },
+    {
+      "afs": "Stichaeidae",
+      "catalog": "Opisthocentridae",
+      "species": 1,
+      "genera": [
+        "Plectobranchus"
+      ]
+    },
+    {
+      "afs": "Zaniolepididae",
+      "catalog": "Hexagrammidae",
+      "species": 1,
+      "genera": [
+        "Oxylebius"
+      ]
+    }
+  ]
+}

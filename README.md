@@ -55,7 +55,9 @@ python -m http.server 8080
 
 The name database is assembled in three stages:
 
-1. **Parse** the AFS table PDF (~5,086 species with full metadata)
+1. **Parse** the AFS table PDF (~5,086 species with full metadata). Orders and
+   families are checked against Eschmeyer's Catalog classification
+   (`verify_classification.py`)
 2. **Apply** the Committee's published addenda (`apply_addenda.py`) — +115 species,
    22 renames, 1 withdrawal, yielding ~5,200 species (data version FF-8.1)
 3. **Enrich** with synonyms scraped from [Eschmeyer's Catalog of Fishes](https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp) (genus transfers, strict synonyms, and historical synonym chains). A historical name the catalog attributes to a single author's placement elsewhere is looked up on its own catalog page before it is kept (`verify_chain_names.py`)
@@ -70,6 +72,8 @@ FISHFINDER/
 ├── scrape_eschmeyer.py       # Step 2: synonym enrichment from Eschmeyer's
 ├── verify_chain_names.py     # Step 2b: catalog verdicts on rejected chain names
 ├── chain_verdicts.json       # Those verdicts, applied by the map build
+├── verify_classification.py  # Checks orders/families against Eschmeyer's classification
+├── classification_crosscheck.json  # Its report, with a reason for each difference
 ├── make_basemap.py           # Regenerates the usage-map basemap (Natural Earth)
 ├── tools/a11y-audit.js       # WCAG contrast + target-size audit (headless Chrome)
 ├── tools/csp-smoke.js        # CSP + integrity smoke check (headless Chrome)

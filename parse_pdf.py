@@ -7,6 +7,12 @@ Source: names_of_fishes/Names-of-Fishes-8-Table1.pdf
 This is the table-only PDF distributed by AFS. Each species row uses dot-leader
 column separators; text is correctly encoded (no reversal needed).
 
+Class, order and family come from the header lines between species rows. A run
+aborts if a header-shaped line is not recognized (see audit_header), because a
+missed header does not fail; it silently files every following species under
+the previous taxon. That is how 51% of species shipped with the wrong order
+until 2026-10-01.
+
 Usage:
     uv run --with pymupdf python parse_pdf.py
 
@@ -18,13 +24,6 @@ import re
 import sys
 from pathlib import Path
 
-try:
-    import fitz  # pymupdf
-except ImportError:
-    print("ERROR: pymupdf not installed.")
-    print("Run: uv run --with pymupdf python parse_pdf.py")
-    sys.exit(1)
-
 PDF_PATH    = Path(__file__).parent / "names_of_fishes" / "Names-of-Fishes-8-Table1.pdf"
 OUTPUT_PATH = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 
@@ -32,9 +31,29 @@ OUTPUT_PATH = Path(__file__).parent / "fishfinder" / "data" / "fish_names.json"
 
 HAS_DOTS_RE = re.compile(r'\.{4,}')   # species rows have 4+ consecutive dots
 
-CLASS_RE  = re.compile(r'^CLASS\s+([A-Z]+)\s*[–—-]+\s*(.+)$')
-ORDER_RE  = re.compile(r'^ORDER\s+([A-Z]{4,})')
-FAMILY_RE = re.compile(r'^[*^&+]?\s*([A-Z][a-z]+(?:idae|inae))\s*[–—-]')
+# Headers carry the same `*` flag as species rows when the taxon is new or changed
+# since the 7th edition ("*ORDER SILURIFORMES"). ORDER_RE once anchored on a bare
+# "^ORDER" and missed all 20 flagged orders.
+CLASS_RE  = re.compile(r'^[*^&+]?\s*CLASS\s+([A-Z]+)\s*[–—-]+\s*(.+)$')
+ORDER_RE  = re.compile(r'^[*^&+]?\s*ORDER\s+([A-Z]{4,})')
+# The separator is a dash everywhere except "Gobiesocidae, En-clingfishes", which
+# the book prints with a comma; without it all 43 clingfishes were filed as mullets.
+FAMILY_RE = re.compile(r'^[*^&+]?\s*([A-Z][a-z]+(?:idae|inae))\s*[–—,-]')
+
+# A line that names a taxon. Used only to audit that every such line was parsed.
+HEADER_LIKE_RE = re.compile(r'\bCLASS\s|\bORDER\s|^[*^&+]?\s*[A-Z][a-z]+idae\b.*\bEn-')
+
+# Order headers the printed book omits. The 8th edition has no
+# "ORDER CHARACIFORMES": *Characidae follows Leuciscidae directly on p. 76, and
+# the order appears nowhere in Table 1, Appendix 1 or the Index, so read literally
+# the tetras would be cypriniforms. Neither Appendix 1 nor any other source moves
+# them there. The book says its arrangement follows Fricke et al. (2022,
+# Eschmeyer's Catalog of Fishes), which places Characidae and Bryconidae in
+# Characiformes, as did the 7th edition. Keyed by the family header the missing
+# order header should precede; main() aborts unless each fires exactly once.
+MISSING_ORDER_HEADERS = {
+    "Characidae": "Characiformes",
+}
 
 GENUS_RE   = re.compile(r'^[A-Z][a-z]{1,}$')          # allow 2-char genera e.g. Zu
 SPECIES_RE = re.compile(r'^[a-z][a-z-]{2,}$')         # allow hyphens e.g. x-punctatus
@@ -136,9 +155,21 @@ def parse_family(line: str) -> str | None:
     return m.group(1) if m else None
 
 
+def audit_header(line: str) -> bool:
+    """True when a stripped line that no parser accepted still looks like a header."""
+    return not HAS_DOTS_RE.search(line) and bool(HEADER_LIKE_RE.search(line))
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    try:
+        import fitz  # pymupdf; imported here so the regexes are testable without it
+    except ImportError:
+        print("ERROR: pymupdf not installed.")
+        print("Run: uv run --with pymupdf python parse_pdf.py")
+        sys.exit(1)
+
     if not PDF_PATH.exists():
         print(f"ERROR: PDF not found at {PDF_PATH}")
         sys.exit(1)
@@ -150,6 +181,11 @@ def main():
     current_class  = ''
     current_order  = ''
     current_family = ''
+    classes: list = []
+    orders: list = []
+    families: list = []
+    injected: list = []
+    unparsed: list = []
 
     print(f"Opening {PDF_PATH} ...")
     with fitz.open(str(PDF_PATH)) as pdf:
@@ -166,20 +202,28 @@ def main():
                 cls = parse_class(stripped)
                 if cls:
                     current_class = cls[0]
+                    classes.append(current_class)
                     continue
 
                 order = parse_order(stripped)
                 if order:
                     current_order = order
+                    orders.append(current_order)
                     continue
 
                 family = parse_family(stripped)
                 if family:
+                    if family in MISSING_ORDER_HEADERS:
+                        current_order = MISSING_ORDER_HEADERS[family]
+                        injected.append(family)
                     current_family = family
+                    families.append(current_family)
                     continue
 
                 entry = parse_species_line(line)
                 if not entry:
+                    if audit_header(stripped):
+                        unparsed.append(f"p{page_idx + 1}: {stripped}")
                     continue
 
                 g, s    = entry['genus'], entry['species']
@@ -202,6 +246,27 @@ def main():
             if page_idx % 20 == 0:
                 print(f"  page {page_idx + 1}/{total}  ({len(valid_names)} names so far)")
 
+    # Each check guards a failure that is otherwise silent: a missed or doubled
+    # header, or an injected one the PDF no longer needs.
+    errors = []
+    if unparsed:
+        errors.append(f"{len(unparsed)} header-like line(s) not parsed:\n    "
+                      + "\n    ".join(unparsed))
+    dup = sorted({f for f in families if families.count(f) > 1})
+    if dup:
+        errors.append(f"family header(s) seen more than once: {dup}")
+    for fam in MISSING_ORDER_HEADERS:
+        n = injected.count(fam)
+        if n != 1:
+            errors.append(f"MISSING_ORDER_HEADERS[{fam!r}] fired {n} times, expected 1")
+        if MISSING_ORDER_HEADERS[fam] in orders:
+            errors.append(f"{MISSING_ORDER_HEADERS[fam]} is now printed; drop the injection")
+    if errors:
+        print("\nERROR: header audit failed; nothing written.")
+        for e in errors:
+            print(f"  - {e}")
+        sys.exit(1)
+
     data = {
         'metadata': {
             'edition':       8,
@@ -222,6 +287,8 @@ def main():
     print(f"\nDone.  ({size_kb:.0f} KB written to {OUTPUT_PATH})")
     print(f"  Valid species : {len(valid_names)}")
     print(f"  Unique genera : {len(genera)}")
+    print(f"  Headers       : {len(classes)} classes, {len(orders)} orders "
+          f"(+{len(injected)} injected), {len(families)} families")
 
 
 if __name__ == '__main__':

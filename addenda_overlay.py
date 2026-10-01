@@ -138,7 +138,9 @@ def apply_taxonomy(data: dict, ov: dict, log=print) -> dict:
         stats["removed"] += 1
 
     # A5 — genus-level family moves (Cebidichthys, Esselinichthys, Kasatkia,
-    # Lumpenopsis; Paraliparis carries a French-name note only).
+    # Lumpenopsis; Paraliparis carries a French-name note only), plus the curated
+    # Stathmonotus move (parse_addenda.CURATED_GENUS_MOVES). Family only: each move
+    # stays within one order, and check_invariants fails the build if one doesn't.
     for g in ov.get("genus_rows", []):
         fam = g.get("family")
         if not fam:
@@ -290,6 +292,27 @@ def check_invariants(data: dict, ov: dict) -> list[str]:
     if bad_shape:
         errs.append(f"{len(bad_shape)} names the engine cannot classify: "
                     f"{bad_shape[:5]}")
+
+    # Classification. FISHFINDER never reads these fields, so nothing else notices
+    # when they go wrong: until 2026-10-01, 51% of species carried the wrong order.
+    blank = [n for n, i in vn.items()
+             if not (i.get("class") and i.get("order") and i.get("family"))]
+    if blank:
+        errs.append(f"{len(blank)} entries with an empty class/order/family: {blank[:5]}")
+    fam_rank: dict[str, set] = {}
+    gen_fam: dict[str, set] = {}
+    for name, info in vn.items():
+        fam_rank.setdefault(info.get("family"), set()).add(
+            (info.get("class"), info.get("order")))
+        gen_fam.setdefault(name.split(" ")[0], set()).add(info.get("family"))
+    split = {f: sorted(r, key=str) for f, r in fam_rank.items() if len(r) > 1}
+    if split:
+        errs.append(f"{len(split)} families in more than one class/order: "
+                    f"{dict(list(split.items())[:3])}")
+    split = {g: sorted(f, key=str) for g, f in gen_fam.items() if len(f) > 1}
+    if split:
+        errs.append(f"{len(split)} genera in more than one family: "
+                    f"{dict(list(split.items())[:3])}")
 
     if exp.get("species_after") and len(vn) != exp["species_after"]:
         errs.append(f"species_count {len(vn)} != expected {exp['species_after']}")

@@ -19,8 +19,33 @@ update publication should cite.
 
 ### Database
 
-Data version stays **FF-8.1**: the taxonomy is unchanged, only synonyms moved.
+Data version stays **FF-8.1**: no name was added, removed or renamed. Synonyms
+moved, and the classification fields (class, order, family) were corrected.
 
+- **Orders and families corrected.** 2,673 of 5,200 species (51%) had the wrong
+  order, and 48 the wrong family. FISHFINDER never reads these fields, so name
+  checking was unaffected, but anyone reusing the database got bad data. There
+  was no Perciformes at all: perches, snappers and sculpins were filed under
+  Tetraodontiformes, and catfishes under Gymnotiformes.
+  - **The cause.** The book marks the 20 orders that are new since the 7th
+    edition with `*` (`*ORDER SILURIFORMES`), and the parser only read headers
+    that start with `ORDER`. It also missed `Gobiesocidae, En-clingfishes`, the
+    one family header printed with a comma, so 43 clingfishes were filed as
+    mullets. An older note blamed page boundaries; that diagnosis was wrong.
+  - **A gap in the book.** The 8th edition omits ORDER CHARACIFORMES (p. 76).
+    Characidae and Bryconidae (19 species) are now in Characiformes, where
+    Eschmeyer's Catalog and the 7th edition put them.
+  - **Two addenda placements.** The addenda's table split two genera across
+    families. All five *Stathmonotus* are now in Labrisomidae, where the addenda
+    and the catalog agree, and *Polymetme corythaeola* is in Phosichthyidae with
+    its congener.
+  - **Checked against Eschmeyer's Catalog classification:** 325 of 345 families
+    get the same order. The other 20 are deliberate choices of the 8th edition,
+    most documented in its Appendix 1 (e.g. mullets in Blenniiformes, following
+    Dornburg & Near 2021). `classification_crosscheck.json` lists each with its
+    reason.
+- The removal note for *Gambusia clarkhubbsi* now cites the addenda as the rest
+  of the database does ("H.J. Walker, Jr.").
 - **Synonyms 10,152 → 10,090.**
   - **The cause.** Within an Eschmeyer catalog entry, the parser read every
     "Synonym of X" bullet as a former name of the page's species. A bullet is
@@ -164,6 +189,18 @@ Added:
     entries, ITIS, WoRMS) and are never overwritten.
 - Tests: 11 parser and verification tests in `test_scraper_parsing.py`, and 11
   engine tests in `classify.test.js` (suite now 237).
+- **`parse_pdf.py` now stops on a header it cannot read**, instead of filing the
+  following species under the previous taxon. It also stops if a family header
+  repeats, or if the Characiformes correction stops being needed.
+- **`verify_classification.py`**, a new check of the database's orders against
+  Eschmeyer's Catalog classification. It writes `classification_crosscheck.json`
+  (committed) and fails on any difference without a recorded reason. Run on the
+  old database, it reports 138 unexplained families.
+- **The overlay's invariants cover classification:** every species has a class,
+  order and family, each family has one order, and each genus has one family.
+  The build refuses to write a database that breaks them.
+- Tests: 12 header tests in `test_parse_pdf.py`, and 15 classification tests in
+  `taxonomy.test.js` (suite now 252).
 
 ---
 
