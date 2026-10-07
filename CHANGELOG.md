@@ -102,6 +102,11 @@ moved, and the classification fields (class, order, family) were corrected.
   email, are private to the maintainer, and which third parties a page view or
   a file load contacts. The old "no personal information" line contradicted
   the optional REPORT email and is gone.
+- The **Support** module's giving button now goes to the lab's own UMCES
+  GiveCampus page (campaign 88172), replacing the general UMCES campaign that
+  stood in since the move away from Ko-fi. The line under it now says gifts
+  "support the lab behind FISHFINDER", since the old "designated to FISHFINDER"
+  was never true of the stand-in page.
 
 ### Accessibility
 
